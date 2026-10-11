@@ -1,0 +1,201 @@
+import json
+import os
+import sys
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parent.parent
+FIX = Path(__file__).parent / "fixtures"
+sys.path.insert(0, str(ROOT))
+
+
+@pytest.fixture
+def sandbox(tmp_path, monkeypatch):
+    """Point every state/prototype path at a temp dir and use the fake claude binary."""
+    from pipeline import config, llm, state
+    monkeypatch.setattr(config, "PROTOTYPES", tmp_path / "prototypes")
+    monkeypatch.setattr(config, "STATE_DIR", tmp_path / "state")
+    monkeypatch.setattr(config, "OUT", tmp_path / "out")
+    monkeypatch.setattr(config, "SITE", tmp_path / "site")
+    monkeypatch.setattr(state, "EPISODES", tmp_path / "state" / "episodes.json")
+    monkeypatch.setattr(state, "QUEUE", tmp_path / "state" / "upgrade_queue.json")
+    monkeypatch.setattr(llm, "COST_LOG", tmp_path / "state" / "costs.jsonl")
+    fake = Path(__file__).parent / "fake_claude.py"
+    os.chmod(fake, 0o755)
+    monkeypatch.setattr(config, "CLAUDE_BIN", str(fake))
+    (tmp_path / "prototypes").mkdir()
+    return tmp_path
+
+
+def test_parse_listing():
+    from pipeline.feed import parse_listing
+    eps = parse_listing((FIX / "listing.html").read_text())
+    assert [e.slug for e in eps] == [
+        "robots-run-the-farm-ep-300", "guest-interview-on-oceans", "ask-us-anything-ama-299",
+        "chips-and-grids-ep298"]
+    assert eps[0].number == 300 and eps[0].date == "2026-10-10"
+    assert eps[1].number is None
+    assert eps[1].url.startswith("https://podscripts.co/podcasts/moonshots-with-peter-diamandis/")
+    assert eps[2].number == 299 and eps[3].number == 298
+
+
+def test_parse_episode():
+    from pipeline.feed import parse_episode
+    url = "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/robots-run-the-farm-ep-300"
+    ep = parse_episode((FIX / "episode.html").read_text(), url)
+    assert ep.title.startswith("Robots Run the Farm") and ep.number == 300
+    assert ep.date == "2026-10-10"
+    assert [ts for ts, _ in ep.segments] == ["00:00:00", "00:00:31", "00:12:05", "01:02:44"]
+    assert "battery cost" in ep.segments[2][1]
+    assert "comments" not in ep.segments[-1][1]          # end marker cut
+    assert "99:99:99" not in ep.transcript_text()        # scripts stripped
+    assert ep.transcript_text().splitlines()[1].startswith("[00:00:31] ")
+
+
+@pytest.mark.parametrize("title,num", [
+    ("GPT-6 Astra Saturates ARC-AGI-3 | EP #286", 286), ("Ask the Mates | MOONSHOTS AMA #289", 289),
+    ("OpenAI Pauses Training | EP#282", 282), ("Urgent Update | Ep. 272", 272),
+    ("Martine Rothblatt: Growing Organs by 2030", None), ("Kimi K3 Released w/ Emad", None)])
+def test_episode_number(title, num):
+    from pipeline.feed import episode_number
+    assert episode_number(title) == num
+
+
+def test_detect_bootstraps_then_finds_new(sandbox, monkeypatch, capsys):
+    from pipeline import cli, feed, state
+    from pipeline.feed import parse_listing
+    listing = parse_listing((FIX / "listing.html").read_text())
+    monkeypatch.setattr(feed, "fetch_listing", lambda page=1: listing[1:])
+    cli.main(["detect"])
+    eps = state.load_episodes()
+    assert eps["guest-interview-on-oceans"]["status"] == "new"
+    assert all(eps[s]["status"] == "skipped" for s in ("ask-us-anything-ama-299", "chips-and-grids-ep298"))
+    monkeypatch.setattr(feed, "fetch_listing", lambda page=1: listing)
+    cli.main(["detect"])
+    assert state.load_episodes()["robots-run-the-farm-ep-300"]["status"] == "new"
+    assert cli.pending_slugs(state.load_episodes()) == [
+        "guest-interview-on-oceans", "robots-run-the-farm-ep-300"]   # oldest first
+
+
+def test_select_ranks_filters_and_routes_upgrades():
+    from pipeline.extract import score, select
+    mk = lambda t, f, w, fi, n, rel=None: {"title": t, "feasibility": f, "wow": w, "fidelity": fi,
+                                           "novelty": n, "related_existing": rel}
+    ideas = [mk("A", 5, 5, 5, 5), mk("B", 4, 4, 4, 4), mk("C", 5, 4, 4, 4, rel="ep1-old"),
+             mk("D", 2, 5, 5, 5), mk("E", 3, 2, 2, 2), mk("a", 5, 5, 5, 5)]
+    for i in ideas:
+        i["score"] = score(i)
+    build, upg = select(ideas, {"ep1-old"}, max_ideas=2, min_score=3.6)
+    assert [i["title"] for i in build] == ["A", "B"]          # D: infeasible, E: low, 'a' dup
+    assert [i["title"] for i in upg] == ["C"]
+    build, upg = select(ideas, set(), max_ideas=5, min_score=3.6)
+    assert "C" in [i["title"] for i in build] and not upg     # unknown slug -> treated as new
+
+
+def test_extract_with_fake_claude(sandbox):
+    from pipeline.extract import extract_ideas
+    from pipeline.feed import parse_episode
+    ep = parse_episode((FIX / "episode.html").read_text(),
+                       "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/x-ep-300")
+    data = extract_ideas(ep)
+    assert data["ideas"][0]["title"] == "Solar Tipping Map"
+    assert data["ideas"][0]["score"] > data["ideas"][1]["score"]
+    log = (sandbox / "state" / "costs.jsonl").read_text().strip().splitlines()
+    assert json.loads(log[-1])["label"].startswith("extract:")
+
+
+def test_review_gate(monkeypatch):
+    from pipeline import config
+    from pipeline.review import overall, passed
+    monkeypatch.setattr(config, "PASS_SCORE", 7.0)
+    good = {"scores": dict(works=8, fidelity=8, wow=7, ux=7, code=7, honesty=9),
+            "verdict": "pass", "must_fix": []}
+    assert overall(good["scores"]) == 7.65
+    assert passed(good, {"ok": True})
+    assert not passed(good, {"ok": False})
+    assert not passed({**good, "must_fix": ["broken button"]}, {"ok": True})
+    assert not passed({**good, "scores": {**good["scores"], "honesty": 5}}, {"ok": True})
+    assert not passed({**good, "verdict": "fix"}, {"ok": True})
+
+
+def _fake_proto(root: Path, slug: str, status="ready", ep_date="2026-10-10", version=1):
+    d = root / "prototypes" / slug
+    d.mkdir(parents=True)
+    (d / "index.html").write_text("<!doctype html><title>t</title><p>hello</p>")
+    (d / "preview.png").write_bytes(b"\x89PNG")
+    (d / ".review").mkdir()
+    (d / ".review" / "secret.txt").write_text("x")
+    (d / "meta.json").write_text(json.dumps({
+        "slug": slug, "title": f"Title {slug} <b>", "one_liner": "does a thing",
+        "headline": "Drag & see", "status": status, "version": version, "overall": 8.2,
+        "timestamp": "00:12:05", "created": "2026-10-10T00:00:00+00:00",
+        "episode": {"slug": f"ep-{ep_date}", "title": "Ep title", "number": 300,
+                    "date": ep_date, "url": "https://example.com/ep"}}))
+    return d
+
+
+def test_gallery_only_ready_and_escaped(sandbox):
+    from pipeline.gallery import build_site
+    _fake_proto(sandbox, "ep300-one", version=2)
+    _fake_proto(sandbox, "ep299-two", ep_date="2026-10-03")
+    _fake_proto(sandbox, "ep300-draft", status="draft")
+    site = build_site()
+    html = (site / "index.html").read_text()
+    assert "Title ep300-one &lt;b&gt;" in html and "<b>\"" not in html
+    assert "ep300-draft" not in html
+    assert html.index("ep300-one") < html.index("ep299-two")   # newest episode first
+    assert (site / "p" / "ep300-one" / "index.html").exists()
+    assert not (site / "p" / "ep300-one" / ".review").exists()
+    assert not (site / "p" / "ep300-one" / "meta.json").exists()
+    assert json.loads((site / "feed.json").read_text())[0]["slug"] == "ep300-one"
+    assert ">v2<" in html
+
+
+def test_gallery_empty_state(sandbox):
+    from pipeline.gallery import build_site
+    html = (build_site() / "index.html").read_text()
+    assert "No prototypes are published yet" in html
+
+
+def test_upgrade_pick_prefers_queue_then_lowest(sandbox):
+    from pipeline import state
+    from pipeline.upgrade import pick_target
+    a = _fake_proto(sandbox, "ep1-a")
+    b = _fake_proto(sandbox, "ep2-b")
+    for d, score, upd in ((a, 8.5, "2026-01-01T00:00:00+00:00"), (b, 7.1, "2026-01-02T00:00:00+00:00")):
+        m = state.read_meta(d); m.update(overall=score, updated=upd); state.write_meta(d, m)
+    assert pick_target()[0].name == "ep2-b"                 # lowest score
+    state.enqueue_upgrade("ep1-a", "revisited", "ep-300")
+    assert pick_target()[0].name == "ep1-a"                 # queue wins
+    m = state.read_meta(b); m["updated"] = state.now(); state.write_meta(b, m)
+    m = state.read_meta(a); m["updated"] = state.now(); state.write_meta(a, m)
+    assert pick_target()[0].name == "ep1-a"                 # queued ignores cooldown
+    state.pop_upgrade("ep1-a")
+    assert pick_target() is None                            # both on cooldown
+
+
+def test_verify_real_browser(tmp_path):
+    pytest.importorskip("playwright")
+    from pipeline.verify import verify
+    good = tmp_path / "good"
+    good.mkdir()
+    (good / "README.md").write_text("# ok")
+    (good / "index.html").write_text(
+        "<!doctype html><meta name=viewport content='width=device-width'><h1>Demo</h1>"
+        "<p>" + "Some readable text. " * 10 + "</p><button onclick=\"document.body.dataset.x=1\">Go</button>")
+    rep = verify(good)
+    assert rep["ok"], rep["problems"]
+    assert (good / "preview.png").exists() and (good / ".review" / "mobile.png").exists()
+    assert rep["views"]["desktop"]["clicked"] >= 1
+
+    bad = tmp_path / "bad"
+    bad.mkdir()
+    (bad / "index.html").write_text(
+        "<!doctype html><meta name=viewport content='width=device-width'>"
+        "<div style='width:900px'>wide</div><button onclick='nope()'>Boom</button>"
+        "<script>console.error('kaput')</script>")
+    rep = verify(bad)
+    assert not rep["ok"]
+    text = " ".join(rep["problems"])
+    assert "kaput" in text and "overflow" in text and "README.md" in text and "nope" in text

@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Unit tests
+        run: python -m pytest -q
+
+      - name: Smoke-test changed prototypes
+        run: |
+          base="${{ github.event.pull_request.base.sha || 'origin/main' }}"
+          dirs=$(git diff --name-only "$base"...HEAD -- prototypes/ | cut -d/ -f2 | sort -u)
+          status=0
+          for d in $dirs; do
+            [ -f "prototypes/$d/index.html" ] || continue
+            echo "::group::$d"; python scripts/smoke.py "prototypes/$d" || status=1; echo "::endgroup::"
+          done
+          exit $status

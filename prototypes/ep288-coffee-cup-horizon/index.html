@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Cup Horizon — when does it get cheaper than coffee?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="hero">
+    <div class="hero-cup" aria-hidden="true">
+      <span class="steam s1"></span>
+      <span class="steam s2"></span>
+      <span class="steam s3"></span>
+      <span class="cup">☕</span>
+    </div>
+    <div class="hero-text">
+      <h1>Coffee Cup Horizon</h1>
+      <p class="tagline">Enter what an AI feat costs today. Watch the price fall until it's cheaper than your coffee.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="panel controls" aria-label="Controls">
+      <div class="presets" role="group" aria-label="Podcast presets">
+        <button class="preset-btn" data-preset="brown" type="button">
+          <span class="preset-name">Noam Brown's claim</span>
+          <span class="preset-sub">$300K → $20 in 2 yrs</span>
+        </button>
+        <button class="preset-btn" data-preset="mathresult" type="button">
+          <span class="preset-name">This week's math result</span>
+          <span class="preset-sub">$3M, same curve</span>
+        </button>
+        <button class="preset-btn is-active" data-preset="custom" type="button">
+          <span class="preset-name">Custom</span>
+          <span class="preset-sub">your own numbers</span>
+        </button>
+      </div>
+
+      <div class="field">
+        <label for="startCost">Starting cost today</label>
+        <div class="field-row">
+          <span class="unit">$</span>
+          <input type="number" id="startCost" min="0.01" step="any" value="300000">
+        </div>
+        <input type="range" id="startCostSlider" min="0" max="7" step="0.01" value="5.47712">
+      </div>
+
+      <div class="field">
+        <label for="decline">Yearly decline — cost divides by this much each year</label>
+        <div class="field-row">
+          <span class="unit">÷</span>
+          <input type="number" id="decline" min="1.01" step="0.1" value="122.47">
+          <span class="unit">/yr</span>
+        </div>
+        <input type="range" id="declineSlider" min="1.05" max="500" step="0.01" value="122.47">
+      </div>
+
+      <div class="field">
+        <label for="coffee">Price of a cup of coffee</label>
+        <div class="field-row">
+          <span class="unit">$</span>
+          <input type="number" id="coffee" min="0.5" step="0.5" value="5">
+        </div>
+        <input type="range" id="coffeeSlider" min="0.5" max="15" step="0.5" value="5">
+      </div>
+
+      <p class="note" id="activeNote">Pick a preset above, or set your own starting cost and yearly decline rate.</p>
+    </section>
+
+    <section class="panel chart-panel" aria-label="Cost curve">
+      <div class="chart-head">
+        <div class="readout">
+          <span class="readout-label">Crosses the coffee line</span>
+          <span class="readout-value" id="crossDate">—</span>
+          <span class="readout-sub" id="crossSub"></span>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <svg id="chart" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="chartTitle">
+          <title id="chartTitle">Log-scale chart of cost falling toward the price of a cup of coffee over time</title>
+          <g id="gridLayer"></g>
+          <g id="coffeeLayer"></g>
+          <g id="curveLayer"></g>
+          <g id="markerLayer"></g>
+          <g id="axisLayer"></g>
+        </svg>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="panel strip-panel" aria-label="Preset comparison">
+    <h2 class="strip-title">Side by side</h2>
+    <div class="strip" id="strip"></div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      Figures from Noam Brown's claim and "this week's math result" are <strong>as stated on the podcast</strong> —
+      illustrative claims, not audited data. Everything else is your own input, run through transparent exponential math.
+    </p>
+    <p>
+      Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/should-we-slow-down-ai-progress-moonshots-288" target="_blank" rel="noopener">Moonshots #288: Should we slow down AI progress?</a>,
+      around 00:58:55. Fan-made prototype, not affiliated with the show.
+    </p>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

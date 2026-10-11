@@ -1,0 +1,87 @@
+name: Watch for new episodes
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"   # every 2 hours
+  workflow_dispatch:
+    inputs:
+      episode_url:
+        description: "Build this podscripts episode URL now (optional)"
+        required: false
+      max_ideas:
+        description: "Prototypes to build for the episode (default 2)"
+        required: false
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false   # the agent never sees a git token
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Detect new episodes
+        id: detect
+        run: python -m pipeline detect
+
+      - name: Install browser and Claude Code
+        if: steps.detect.outputs.new == 'true' || inputs.episode_url != ''
+        run: |
+          python -m playwright install --with-deps chromium
+          npm install -g @anthropic-ai/claude-code
+
+      - name: Build, test and review prototypes
+        id: build
+        if: steps.detect.outputs.new == 'true' || inputs.episode_url != ''
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MODEL: ${{ vars.MODEL }}
+          MAX_IDEAS: ${{ vars.MAX_IDEAS }}
+          PASS_SCORE: ${{ vars.PASS_SCORE }}
+          EPISODE_URL: ${{ inputs.episode_url }}
+          MAX_IDEAS_INPUT: ${{ inputs.max_ideas }}
+        run: |
+          [ -z "$ANTHROPIC_API_KEY" ] && unset ANTHROPIC_API_KEY
+          [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && unset CLAUDE_CODE_OAUTH_TOKEN
+          args=()
+          [ -n "$EPISODE_URL" ] && args+=(--episode-url "$EPISODE_URL")
+          [ -n "$MAX_IDEAS_INPUT" ] && args+=(--max-ideas "$MAX_IDEAS_INPUT")
+          python -m pipeline run "${args[@]}"
+
+      - name: Save state and open pull request
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTO_PUBLISH: ${{ vars.AUTO_PUBLISH }}
+        run: bash scripts/ship.sh out/run.json
+
+      - name: Keep review artifacts
+        if: always() && (steps.detect.outputs.new == 'true' || inputs.episode_url != '')
+        uses: actions/upload-artifact@v4
+        with:
+          name: review-${{ github.run_id }}
+          path: |
+            out/
+            prototypes/*/.review/
+          if-no-files-found: ignore
+          retention-days: 14
