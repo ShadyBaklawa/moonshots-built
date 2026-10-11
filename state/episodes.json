@@ -1,1 +1,184 @@
-{}
+{
+  "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301": {
+    "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",
+    "date": "2026-10-07",
+    "number": 301,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301",
+    "status": "error",
+    "attempts": 1,
+    "found": "2026-10-11T20:19:46+00:00",
+    "updated": "2026-10-11T20:20:20+00:00",
+    "note": "extract failed: extract:why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301: success: Not logged in · Please run /login"
+  },
+  "google-xs-astro-teller-the-1b-bet-no-ceo-will-back-moonshots-3x-cheaper-in-16-yrs-and-clean-water-at-1cl-ep-300": {
+    "title": "Google X's Astro Teller: The $1B Bet No CEO Will Back, Moonshots 3x Cheaper in 16 Yrs, and Clean Water at 1¢/L| EP #300",
+    "date": "2026-10-05",
+    "number": 300,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/google-xs-astro-teller-the-1b-bet-no-ceo-will-back-moonshots-3x-cheaper-in-16-yrs-and-clean-water-at-1cl-ep-300",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "recursives-670m-bet-on-self-improving-ai-sonnet-55-hits-70-elon-co-leads-pentagon-push-ep-299": {
+    "title": "Recursive's $670M Bet on Self-Improving AI, Sonnet 5.5 Hits 70%, Elon Co-Leads Pentagon Push | EP #299",
+    "date": "2026-10-03",
+    "number": 299,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/recursives-670m-bet-on-self-improving-ai-sonnet-55-hits-70-elon-co-leads-pentagon-push-ep-299",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "can-we-still-build-ai-safely-the-white-house-thinks-so-moonshots-298": {
+    "title": "Can We Still Build AI Safely? The White House Thinks So | MOONSHOTS #298",
+    "date": "2026-10-02",
+    "number": 298,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-we-still-build-ai-safely-the-white-house-thinks-so-moonshots-298",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "why-were-living-in-a-biological-singularity-with-ben-lamm-moonshots-live-297": {
+    "title": "Why We're Living in a Biological Singularity With Ben Lamm | MOONSHOTS Live #297",
+    "date": "2026-09-30",
+    "number": 297,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-were-living-in-a-biological-singularity-with-ben-lamm-moonshots-live-297",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "cathie-wood-on-tesla-spacex-merger-1m-bitcoin-more-ais-than-humans-ep-296-moonshots-live": {
+    "title": "Cathie Wood on Tesla-SpaceX Merger, $1M Bitcoin, More AIs Than Humans | EP #296 | Moonshots Live",
+    "date": "2026-09-29",
+    "number": 296,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/cathie-wood-on-tesla-spacex-merger-1m-bitcoin-more-ais-than-humans-ep-296-moonshots-live",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "we-gave-away-2000000-to-5-ai-builders-moonshots-live": {
+    "title": "We Gave Away $2,000,000 To 5 AI Builders | MOONSHOTS Live",
+    "date": "2026-09-28",
+    "number": null,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/we-gave-away-2000000-to-5-ai-builders-moonshots-live",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "why-we-gave-away-350000000-for-someone-to-build-the-next-star-trek-moonshots-live": {
+    "title": "Why We Gave Away $3,500,000.00 for Someone to Build the Next Star Trek | Moonshots Live",
+    "date": "2026-09-28",
+    "number": null,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-we-gave-away-350000000-for-someone-to-build-the-next-star-trek-moonshots-live",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "palmer-luckey-autonomous-weapons-are-ancient-and-why-anduril-wont-build-humanoids-moonshots-live-ep-295": {
+    "title": "Palmer Luckey: Autonomous Weapons Are Ancient and Why Anduril Won't Build Humanoids | Moonshots Live | EP #295",
+    "date": "2026-09-28",
+    "number": 295,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/palmer-luckey-autonomous-weapons-are-ancient-and-why-anduril-wont-build-humanoids-moonshots-live-ep-295",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "why-jensen-and-zuck-think-the-doomers-are-wrong-plus-ai-gets-a-rebrand-294-moonshots-live": {
+    "title": "Why Jensen and Zuck think the doomers are wrong (plus AI get’s a rebrand) | #294 MOONSHOTS Live",
+    "date": "2026-09-27",
+    "number": 294,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-jensen-and-zuck-think-the-doomers-are-wrong-plus-ai-gets-a-rebrand-294-moonshots-live",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "ask-the-mates-anything-round-2-moonshots-ama-293": {
+    "title": "Ask the Mates Anything Round #2 | MOONSHOTS AMA #293",
+    "date": "2026-09-22",
+    "number": 293,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ask-the-mates-anything-round-2-moonshots-ama-293",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "robinhoods-vlad-tenev-on-tokenizing-everything-openais-6-misalignment-reports-figures-robot-makes-beds-ep-292": {
+    "title": "Robinhood's Vlad Tenev on Tokenizing Everything, OpenAI's 6 Misalignment Reports, Figure's Robot Makes Beds | EP #292",
+    "date": "2026-09-19",
+    "number": 292,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/robinhoods-vlad-tenev-on-tokenizing-everything-openais-6-misalignment-reports-figures-robot-makes-beds-ep-292",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "frontier-labs-want-to-slow-down-openai-delays-its-2026-ipo-anthropic-flags-5-bioweapon-cases-ep-291": {
+    "title": "Frontier Labs Want to Slow Down, OpenAI Delays Its 2026 IPO, Anthropic Flags 5 Bioweapon Cases | EP #291",
+    "date": "2026-09-17",
+    "number": 291,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/frontier-labs-want-to-slow-down-openai-delays-its-2026-ipo-anthropic-flags-5-bioweapon-cases-ep-291",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "martine-rothblatt-growing-unlimited-organs-ai-consciousness-digital-personhood-by-2030": {
+    "title": "Martine Rothblatt: Growing Unlimited Organs, AI Consciousness, & Digital Personhood by 2030",
+    "date": "2026-09-15",
+    "number": null,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/martine-rothblatt-growing-unlimited-organs-ai-consciousness-digital-personhood-by-2030",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "ask-the-mates-anything-moonshots-ama-289": {
+    "title": "Ask the Mates anything | MOONSHOTS AMA #289",
+    "date": "2026-09-13",
+    "number": 289,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ask-the-mates-anything-moonshots-ama-289",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "should-we-slow-down-ai-progress-moonshots-288": {
+    "title": "Should we slow down AI progress? | MOONSHOTS #288",
+    "date": "2026-09-11",
+    "number": 288,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/should-we-slow-down-ai-progress-moonshots-288",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "why-jensen-huang-believes-weve-reached-agi-and-inside-openais-german-website-hijack-287": {
+    "title": "Why Jensen Huang Believes We’ve Reached AGI and Inside OpenAI’s German Website Hijack | #287",
+    "date": "2026-09-09",
+    "number": 287,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-jensen-huang-believes-weve-reached-agi-and-inside-openais-german-website-hijack-287",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "gpt-6-astra-saturates-arc-agi-3-teslas-30k-cybercab-floods-austin-anthropic-proves-fermats-last-theorem-ep-286": {
+    "title": "GPT-6 Astra Saturates ARC-AGI-3, Tesla's $30K Cybercab Floods Austin, Anthropic Proves Fermat's Last Theorem | EP #286",
+    "date": "2026-09-05",
+    "number": 286,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/gpt-6-astra-saturates-arc-agi-3-teslas-30k-cybercab-floods-austin-anthropic-proves-fermats-last-theorem-ep-286",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "humanitys-first-star-probe-architect-labs-beats-nvidia-34x-musk-wants-satellites-to-cool-earth-ep-285": {
+    "title": "Humanity's First Star Probe, Architect Labs Beats NVIDIA 3.4x, Musk Wants Satellites to Cool Earth | EP #285",
+    "date": "2026-09-02",
+    "number": 285,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/humanitys-first-star-probe-architect-labs-beats-nvidia-34x-musk-wants-satellites-to-cool-earth-ep-285",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  },
+  "nvidias-962b-quarter-chinas-200000-fake-accounts-openais-new-chip-ep-284": {
+    "title": "NVIDIA's $96.2B Quarter, China's 200,000 Fake Accounts, & OpenAI's New Chip | EP #284",
+    "date": "2026-08-29",
+    "number": 284,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/nvidias-962b-quarter-chinas-200000-fake-accounts-openais-new-chip-ep-284",
+    "status": "skipped",
+    "attempts": 0,
+    "found": "2026-10-11T20:19:46+00:00"
+  }
+}
