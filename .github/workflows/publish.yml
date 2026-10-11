@@ -1,0 +1,68 @@
+name: Publish gallery
+
+on:
+  push:
+    branches: [main]
+    paths: ["prototypes/**", "pipeline/gallery.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build site
+        env:
+          SOURCE_BASE_URL: ${{ vars.SOURCE_BASE_URL }}
+          SITE_TITLE: ${{ vars.SITE_TITLE }}
+        run: python -m pipeline gallery
+
+      # Option A (private pipeline repo on a free plan): push the site to a separate PUBLIC repo
+      # and serve it with GitHub Pages from that repo's gh-pages branch.
+      - name: Push site to public repo
+        if: vars.PUBLISH_REPO != ''
+        env:
+          TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+          REPO: ${{ vars.PUBLISH_REPO }}
+        run: |
+          cd site
+          git init -q -b gh-pages
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Publish $(date -u +%F)"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${REPO}.git" gh-pages
+
+      # Option B (public repo, or GitHub Pro/Team): GitHub Pages from this repo.
+      - uses: actions/upload-pages-artifact@v3
+        if: vars.PUBLISH_REPO == ''
+        with:
+          path: site
+
+  deploy:
+    if: vars.PUBLISH_REPO == ''
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

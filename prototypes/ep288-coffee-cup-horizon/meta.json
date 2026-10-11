@@ -1,0 +1,36 @@
+{
+  "slug": "ep288-coffee-cup-horizon",
+  "title": "Coffee Cup Horizon",
+  "one_liner": "Enter what an AI feat costs today and see when it gets cheaper than a cup of coffee.",
+  "headline": "Pick a cost claim quoted on the show (or type your own) and watch an animated curve show the exact month it falls below a cup of coffee.",
+  "episode": {
+    "slug": "should-we-slow-down-ai-progress-moonshots-288",
+    "title": "Should we slow down AI progress? | MOONSHOTS #288",
+    "number": 288,
+    "date": "2026-09-11",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/should-we-slow-down-ai-progress-moonshots-288"
+  },
+  "timestamp": "00:58:55",
+  "idea_score": 4.55,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-10-11T15:20:51+00:00",
+  "updated": "2026-10-11T15:20:51+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-11T15:20:51+00:00",
+      "overall": 8.35,
+      "summary": "A faithful, well-executed build of the idea: hand-rolled SVG log-scale chart, animated curve, dashed coffee threshold, live crossing-date readout, two podcast-sourced presets plus free custom input, and a side-by-side comparison strip. Figures are clearly attributed as podcast claims, the footer credit is present, there are no external dependencies, and both desktop and mobile screenshots show clean, legible layouts with working interactions. A couple of small polish gaps (an off-chart annotation bug and missing accessible names on the range sliders) keep it just short of flawless, but nothing here blocks publishing."
+    }
+  ]
+}

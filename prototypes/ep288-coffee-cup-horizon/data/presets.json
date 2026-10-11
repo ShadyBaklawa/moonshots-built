@@ -1,0 +1,19 @@
+[
+  {
+    "id": "brown",
+    "label": "Noam Brown's claim",
+    "source": "as stated on the podcast",
+    "startCost": 300000,
+    "endCost": 20,
+    "years": 2,
+    "note": "A frontier AI result that cost \"hundreds of thousands of dollars\" became doable for about $20 within roughly two years — cited by Peter Diamandis, attributed to Noam Brown."
+  },
+  {
+    "id": "mathresult",
+    "label": "This week's math result",
+    "source": "as stated on the podcast, projected",
+    "startCost": 3000000,
+    "years": null,
+    "note": "A multi-million-dollar math result discussed the same week, projected forward using Brown's $300K→$20-in-2-years decline rate (not an official figure)."
+  }
+]

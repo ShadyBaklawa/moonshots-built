@@ -1,0 +1,23 @@
+{
+  "title": "Coffee Cup Horizon",
+  "one_liner": "Enter what an AI feat costs today and see when it gets cheaper than a cup of coffee.",
+  "timestamp": "00:58:55",
+  "speaker": "Peter Diamandis, citing Noam Brown",
+  "context": "The hosts discuss the claim that frontier AI results which cost hundreds of thousands of dollars became doable for about $20 within roughly two years, and project the same curve onto this week's multi-million-dollar math result.",
+  "demo": "A log-scale cost curve that falls toward a 'cup of coffee' line. The visitor picks a preset quoted on the show or enters their own cost and yearly decline factor, and an animated line shows the crossing date. A strip compares several presets side by side.",
+  "data_plan": "Bundled presets using figures as stated on the podcast, labeled as such; everything else is user input and transparent math.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Figures are podcast claims, not audited data; attribute and label them as illustrative.",
+  "score": 4.55,
+  "episode": {
+    "slug": "should-we-slow-down-ai-progress-moonshots-288",
+    "title": "Should we slow down AI progress? | MOONSHOTS #288",
+    "number": 288,
+    "date": "2026-09-11",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/should-we-slow-down-ai-progress-moonshots-288"
+  }
+}
