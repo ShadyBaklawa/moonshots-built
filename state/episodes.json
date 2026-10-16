@@ -1,4 +1,15 @@
 {
+  "openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302": {
+    "title": "OpenAI Bulk-Solves 722 Math Problems, Anthropic’s Cruelty Policy, and Elon’s Quadrillion-Dollar SpaceX | EP #302",
+    "date": "2026-10-15",
+    "number": 302,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302",
+    "status": "error",
+    "attempts": 1,
+    "found": "2026-10-16T04:35:19+00:00",
+    "updated": "2026-10-16T04:35:47+00:00",
+    "note": "extract failed: extract:openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302: success: Not logged in · Please run /login"
+  },
   "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301": {
     "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",
     "date": "2026-10-07",
