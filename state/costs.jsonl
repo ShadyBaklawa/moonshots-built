@@ -19,3 +19,10 @@
 {"at": "2026-10-20T21:17:12+00:00", "label": "review:ep302-the-slop-drop", "est_cost_usd": 0.1726, "turns": 12, "subtype": "success"}
 {"at": "2026-10-20T21:20:27+00:00", "label": "build:ep302-rudeness-multiplier", "est_cost_usd": 0.4224, "turns": 27, "subtype": "success"}
 {"at": "2026-10-20T21:21:30+00:00", "label": "review:ep302-rudeness-multiplier", "est_cost_usd": 0.1385, "turns": 11, "subtype": "success"}
+{"at": "2026-10-20T21:24:59+00:00", "label": "extract:why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301", "est_cost_usd": 0.3506, "turns": 2, "subtype": "success"}
+{"at": "2026-10-20T21:28:27+00:00", "label": "build:ep301-neutrino-phone", "est_cost_usd": 0.4165, "turns": 19, "subtype": "success"}
+{"at": "2026-10-20T21:29:43+00:00", "label": "review:ep301-neutrino-phone", "est_cost_usd": 0.1572, "turns": 12, "subtype": "success"}
+{"at": "2026-10-20T21:36:19+00:00", "label": "build:ep301-3sum-breaker", "est_cost_usd": 0.7872, "turns": 27, "subtype": "success"}
+{"at": "2026-10-20T21:38:25+00:00", "label": "review:ep301-3sum-breaker", "est_cost_usd": 0.2594, "turns": 13, "subtype": "success"}
+{"at": "2026-10-20T21:40:37+00:00", "label": "build:ep301-3sum-breaker:fix1", "est_cost_usd": 0.3697, "turns": 21, "subtype": "success"}
+{"at": "2026-10-20T21:42:06+00:00", "label": "review:ep301-3sum-breaker", "est_cost_usd": 0.1617, "turns": 10, "subtype": "success"}

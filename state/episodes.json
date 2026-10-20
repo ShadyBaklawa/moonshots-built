@@ -110,11 +110,58 @@
     "date": "2026-10-07",
     "number": 301,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301",
-    "status": "error",
+    "status": "built",
     "attempts": 3,
     "found": "2026-10-11T20:19:46+00:00",
-    "updated": "2026-10-12T09:16:14+00:00",
-    "note": "extract failed: extract:why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301: success: Not logged in · Please run /login"
+    "updated": "2026-10-20T21:42:06+00:00",
+    "note": "extract failed: extract:why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301: success: Not logged in · Please run /login",
+    "prototypes": [
+      "ep301-neutrino-phone",
+      "ep301-3sum-breaker"
+    ],
+    "ideas": [
+      {
+        "title": "Neutrino Phone",
+        "score": 4.5,
+        "timestamp": "02:28:13"
+      },
+      {
+        "title": "3SUM Breaker",
+        "score": 4.2,
+        "timestamp": "00:36:38"
+      },
+      {
+        "title": "Agent Census 2027",
+        "score": 4.1,
+        "timestamp": "01:34:28"
+      },
+      {
+        "title": "Tech Tree for Humanity",
+        "score": 3.95,
+        "timestamp": "01:01:48"
+      },
+      {
+        "title": "Compute Breadline",
+        "score": 3.65,
+        "timestamp": "01:09:47"
+      },
+      {
+        "title": "GDP Mirage",
+        "score": 3.55,
+        "timestamp": "02:10:58"
+      },
+      {
+        "title": "Personhood Ladder",
+        "score": 3.2,
+        "timestamp": "02:29:20"
+      },
+      {
+        "title": "Robot Density Dial",
+        "score": 3.2,
+        "timestamp": "01:59:50"
+      }
+    ],
+    "summary": "The Moonshots crew digs into the new White House \"Superintelligence Force,\" Sam Altman's \"accept some bad things happening\" stance versus Anthropic's safety-cartel push, and a wave of compute-scarcity stories (NVL72 leases, RAM as the real bottleneck, Epic AI's estimate of up to 1.9 billion AI agents running on 2027 chip supply). They also debate AI personhood after Mustafa Suleyman's essay on Claude's \"constitution,\" GDP's failure to capture AI-driven abundance/deflation, a surprising subquadratic breakthrough on the 3SUM algorithm, and Tesla's 10-million-robot-a-year Optimus gigafactory, plus a Nobel Prize nod to optogenetics with a personal MIT-dorm-room origin story from Alex Wisner-Gross."
   },
   "google-xs-astro-teller-the-1b-bet-no-ceo-will-back-moonshots-3x-cheaper-in-16-yrs-and-clean-water-at-1cl-ep-300": {
     "title": "Google X's Astro Teller: The $1B Bet No CEO Will Back, Moonshots 3x Cheaper in 16 Yrs, and Clean Water at 1¢/L| EP #300",
