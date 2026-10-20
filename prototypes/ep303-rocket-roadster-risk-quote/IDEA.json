@@ -1,0 +1,23 @@
+{
+  "title": "Rocket Roadster Risk Quote",
+  "one_liner": "A tongue-in-cheek insurance calculator for cars with strapped-on rocket thrusters and 2G fan-suction levitation.",
+  "timestamp": "00:12:19",
+  "speaker": "Hosts",
+  "context": "After watching Tesla's flying Roadster demo do 0-60 in under a second and hover upside down via thrusters, the hosts joke that no insurer would touch it and ask what coverage would even cost.",
+  "demo": "User picks a trim (Performance/Thrust/Rocket) or enters custom 0-60 time, top speed, and toggles like 'has rocket thrusters' and 'can fly upside down.' The page spits out an escalating, satirically-worded premium quote and a list of exclusions ('voids coverage if thrusters engaged above 2G'), with a gauge that maxes out and breaks for the Rocket trim.",
+  "data_plan": "User input; underlying premium formula is a simple weighted multiplier built from the real specs stated on the podcast (0.6-1.6s 0-60, 230mph top speed, 380km/h rocket trim), clearly a simulated/joke calculation.",
+  "feasibility": 5,
+  "wow": 5,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Purely satirical numbers could be mistaken for real insurance guidance; should be labeled clearly as a joke calculator.",
+  "score": 4.65,
+  "episode": {
+    "slug": "flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303",
+    "title": "Flying Tesla Car, Robot Brains Halving in Cost Every 3 Weeks, and Why Incentives Decide AI Alignment | #303",
+    "number": 303,
+    "date": "2026-10-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303"
+  }
+}

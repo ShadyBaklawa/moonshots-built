@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocket Roadster Risk Quote</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stripes" aria-hidden="true"></div>
+
+<header class="hero">
+  <p class="tag">INTERSTELLAR MUTUAL &middot; UNDERWRITING DESK</p>
+  <h1>Rocket Roadster<br>Risk Quote&trade;</h1>
+  <p class="sub">A satirical premium calculator for cars that leave the atmosphere. No real insurer will touch this. Neither will we.</p>
+  <p class="joke-badge">⚠ 100% simulated numbers &mdash; for laughs only, not financial advice</p>
+</header>
+
+<main class="deck">
+
+  <section class="panel config" aria-label="Configure your vehicle">
+    <h2>Configure Your Menace</h2>
+
+    <div class="trims" role="group" aria-label="Choose a trim">
+      <button class="trim-btn" data-trim="performance" type="button">
+        <span class="trim-name">Performance</span>
+        <span class="trim-spec">3.1s 0-60 &middot; 155 mph</span>
+      </button>
+      <button class="trim-btn" data-trim="thrust" type="button">
+        <span class="trim-name">Thrust</span>
+        <span class="trim-spec">1.6s 0-60 &middot; 230 mph</span>
+      </button>
+      <button class="trim-btn active" data-trim="rocket" type="button">
+        <span class="trim-name">Rocket</span>
+        <span class="trim-spec">0.6s 0-60 &middot; 380 km/h airborne</span>
+      </button>
+      <button class="trim-btn" data-trim="custom" type="button">
+        <span class="trim-name">Custom</span>
+        <span class="trim-spec">build your own menace</span>
+      </button>
+    </div>
+
+    <div class="custom-fields" id="customFields" hidden>
+      <label for="zeroSixty">0&ndash;60 mph time (seconds)</label>
+      <input type="range" id="zeroSixty" min="0.4" max="6" step="0.1" value="1.6">
+      <output id="zeroSixtyVal">1.6s</output>
+
+      <label for="topSpeed">Top speed (mph, ground or air)</label>
+      <input type="range" id="topSpeed" min="80" max="260" step="5" value="230">
+      <output id="topSpeedVal">230 mph</output>
+    </div>
+
+    <div class="toggles">
+      <label class="toggle">
+        <input type="checkbox" id="thrusters" checked>
+        <span>Has strapped-on rocket thrusters</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="upsideDown" checked>
+        <span>Can fly upside down via fan-suction levitation</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="commute">
+        <span>Will be driven (flown?) to the office daily</span>
+      </label>
+    </div>
+  </section>
+
+  <section class="panel result" aria-label="Your quote">
+    <h2>Your Premium Quote</h2>
+
+    <div class="gauge-wrap">
+      <svg id="gaugeSvg" viewBox="0 0 220 130" aria-hidden="true">
+        <path d="M 15 115 A 95 95 0 0 1 205 115" class="gauge-track"></path>
+        <path id="gaugeFill" d="M 15 115 A 95 95 0 0 1 205 115" class="gauge-fill"></path>
+        <line id="gaugeNeedle" x1="110" y1="115" x2="110" y2="30" class="gauge-needle"></line>
+        <circle cx="110" cy="115" r="7" class="gauge-hub"></circle>
+      </svg>
+      <p class="gauge-label" id="gaugeLabel">UNDERWRITING RISK</p>
+    </div>
+
+    <p class="quote-caption" id="quoteCaption">Annual premium</p>
+    <p class="quote-number" id="quoteNumber">$0</p>
+    <p class="quote-note" id="quoteNote"></p>
+
+    <h3>Exclusions &amp; Fine Print</h3>
+    <ul class="exclusions" id="exclusions"></ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303" target="_blank" rel="noopener">Moonshots #303</a>, around 00:12:19. Fan-made prototype, not affiliated with the show.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

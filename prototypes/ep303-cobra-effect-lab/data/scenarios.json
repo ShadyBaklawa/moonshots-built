@@ -1,0 +1,82 @@
+{
+  "scenarios": [
+    {
+      "id": "rats",
+      "name": "Rat Tail Bounty",
+      "icon": "🐀",
+      "setting": "Colonial Hanoi, 1902",
+      "intendedLabel": "Rat tails turned in",
+      "realLabel": "Wild rats actually removed",
+      "dialLabel": "Bounty per tail",
+      "gamedIcon": "🕳️",
+      "gamedLabel": "Rat farms opened",
+      "onsetWeek": 4,
+      "growthIntended": 7.5,
+      "growthHonest": 6,
+      "gamingSeverity": 0.85,
+      "gamingNarrative": "Tail-collectors realize killing wild rats is slow and dangerous. Breeding rats in backyard farms is faster — and the bounty office can't tell a farmed tail from a wild one.",
+      "historical": {
+        "source": "podcast",
+        "headline": "What actually happened in Hanoi",
+        "facts": [
+          "French colonial administrators paid a bounty for every rat tail turned in.",
+          "Hunters started cutting off tails and releasing the rats alive to breed more tails.",
+          "Some residents began farming rats specifically to harvest tails for cash.",
+          "The wild rat population kept climbing even as tail payouts hit historic highs."
+        ]
+      }
+    },
+    {
+      "id": "sales",
+      "name": "Cross-Sell Quota",
+      "icon": "🏦",
+      "setting": "Retail bank branches, 2011–2016",
+      "intendedLabel": "New accounts opened",
+      "realLabel": "Real customers who wanted them",
+      "dialLabel": "Quota pressure",
+      "gamedIcon": "📄",
+      "gamedLabel": "Unauthorized accounts opened",
+      "onsetWeek": 3,
+      "growthIntended": 8,
+      "growthHonest": 5,
+      "gamingSeverity": 0.9,
+      "gamingNarrative": "Branch staff facing an \"8-accounts-a-day\" quota start opening extra checking and credit accounts in existing customers' names — without telling them.",
+      "historical": {
+        "source": "podcast",
+        "headline": "What actually happened at the bank",
+        "facts": [
+          "A nationwide cross-sell quota pushed staff to open as many new accounts as possible per customer.",
+          "Employees opened an estimated 3.5 million accounts customers never asked for.",
+          "Many customers were charged fees on accounts they didn't know existed.",
+          "The bank paid over $3 billion in fines and settlements once regulators uncovered the practice."
+        ]
+      }
+    },
+    {
+      "id": "tickets",
+      "name": "Ticket Quota Precinct",
+      "icon": "🚨",
+      "setting": "A generalized pattern seen in traffic-enforcement units",
+      "intendedLabel": "Citations issued",
+      "realLabel": "Dangerous driving actually reduced",
+      "dialLabel": "Monthly ticket quota",
+      "gamedIcon": "🅿️",
+      "gamedLabel": "Easy repeat stops (same low-risk drivers)",
+      "onsetWeek": 4,
+      "growthIntended": 7,
+      "growthHonest": 4.5,
+      "gamingSeverity": 0.75,
+      "gamingNarrative": "To hit a ticket count, officers start writing citations for trivial, easy-to-prove infractions near the station instead of patrolling the actual high-risk stretches of road.",
+      "historical": {
+        "source": "generalized",
+        "headline": "A widely documented pattern, not one specific case",
+        "facts": [
+          "This scenario is a generalized pattern described in criminology and public-administration research on quota policing, not a single real agency.",
+          "Researchers have repeatedly found that raw ticket-count quotas can shift effort toward easy, low-value stops.",
+          "The result: citation counts look great on a dashboard while the riskiest roads see little change in actual safety.",
+          "Several police departments have since moved to outcome-based metrics (crash rates, repeat offenders) instead of raw ticket counts."
+        ]
+      }
+    }
+  ]
+}
