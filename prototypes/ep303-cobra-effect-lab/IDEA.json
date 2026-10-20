@@ -1,0 +1,23 @@
+{
+  "title": "Cobra Effect Lab",
+  "one_liner": "Design an incentive, then watch an animated population simulation backfire exactly like the podcast's historical disasters.",
+  "timestamp": "00:40:29",
+  "speaker": "Peter Diamandis",
+  "context": "Peter recounts how a French bounty on rat tails in Hanoi led to rat farming, and Wells Fargo's account-opening quota led employees to create 3.5 million fake accounts.",
+  "demo": "User picks a scenario (rat bounty, sales quota, arrest quota) and sets a reward dial. An animated bar/population chart runs forward in simulated weeks, showing the 'intended metric' rising nicely while a hidden 'real outcome' metric (actual rats killed, real new customers, real criminals caught) stagnates or drops, revealing the gaming strategy that emerged. A final screen shows the real historical numbers from the episode.",
+  "data_plan": "Bundled dataset of the three real anecdotes' facts from the transcript (rat tail bounty, Wells Fargo 3.5M fake accounts, ICE arrest quotas) plus a simple labeled simulated agent-behavior model for the interactive chart.",
+  "feasibility": 4,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "The ICE example is politically charged; keep framing strictly on the incentive-design mechanic and the historical rat/bank examples to avoid partisan framing.",
+  "score": 4.2,
+  "episode": {
+    "slug": "flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303",
+    "title": "Flying Tesla Car, Robot Brains Halving in Cost Every 3 Weeks, and Why Incentives Decide AI Alignment | #303",
+    "number": 303,
+    "date": "2026-10-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303"
+  }
+}

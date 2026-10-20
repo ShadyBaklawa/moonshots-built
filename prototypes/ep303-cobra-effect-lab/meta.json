@@ -1,0 +1,36 @@
+{
+  "slug": "ep303-cobra-effect-lab",
+  "title": "Cobra Effect Lab",
+  "one_liner": "Design an incentive, then watch an animated population simulation backfire exactly like the podcast's historical disasters.",
+  "headline": "Pick an incentive scenario (rat bounty, bank quota, ticket quota), crank a pressure dial, and watch a 10-week animated chart show the \"official metric\" soar while the real outcome quietly craters — then compare it to what actually happened.",
+  "episode": {
+    "slug": "flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303",
+    "title": "Flying Tesla Car, Robot Brains Halving in Cost Every 3 Weeks, and Why Incentives Decide AI Alignment | #303",
+    "number": 303,
+    "date": "2026-10-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303"
+  },
+  "timestamp": "00:40:29",
+  "idea_score": 4.2,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 7,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 7.95,
+  "created": "2026-10-20T20:34:25+00:00",
+  "updated": "2026-10-20T20:34:25+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-20T20:34:25+00:00",
+      "overall": 7.95,
+      "summary": "A tight, well-polished build that nails the cobra-effect concept with three scenarios, a single incentive dial, a live canvas chart splitting official metric vs. real outcome, a gaming-strategy reveal banner, and a historical-facts closing card. This is clearly a second pass: every must_fix and most improvements from the prior review (disabled-button state, mismatched fallback icon, color-only line distinction, missing radiogroup keyboard nav, static-tone reveal text) have been addressed. It's publishable as-is, with only minor polish items remaining."
+    }
+  ]
+}

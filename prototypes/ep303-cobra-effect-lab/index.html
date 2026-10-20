@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cobra Effect Lab</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="lab-header">
+  <div class="lab-title">
+    <span class="lab-emblem">🐍📈</span>
+    <div>
+      <h1>Cobra Effect Lab</h1>
+      <p class="tagline">Design an incentive. Watch it game itself.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="panel" id="setup-panel">
+    <h2><span class="step-no">1</span> Pick a scenario</h2>
+    <div class="scenario-grid" id="scenario-grid" role="radiogroup" aria-label="Scenario"></div>
+
+    <h2><span class="step-no">2</span> Set the incentive dial</h2>
+    <div class="dial-row">
+      <label for="dial" id="dial-label">Incentive strength</label>
+      <input type="range" id="dial" min="1" max="10" value="6" step="1" />
+      <div class="dial-readout"><span id="dial-value">6</span><span class="dial-unit">/10</span></div>
+    </div>
+    <p class="dial-hint">Higher = a juicier reward for hitting the number, whatever it takes.</p>
+
+    <button id="run-btn" class="run-btn" disabled>▶ Run 10-week simulation</button>
+  </section>
+
+  <section class="panel" id="sim-panel" hidden>
+    <div class="sim-header">
+      <h2 id="sim-scenario-name">Scenario</h2>
+      <span class="week-badge">Week <span id="week-now">0</span> / 10</span>
+    </div>
+
+    <div class="chart-wrap">
+      <canvas id="chart" width="760" height="300" aria-label="Simulated chart of official metric vs real outcome over 10 weeks" role="img"></canvas>
+      <div class="legend">
+        <span class="legend-item"><span class="dot intended" aria-hidden="true"></span><span id="legend-intended">Official metric</span><span class="legend-hint">— solid line</span></span>
+        <span class="legend-item"><span class="dot real" aria-hidden="true"></span><span id="legend-real">Real outcome</span><span class="legend-hint">— dashed line</span></span>
+      </div>
+    </div>
+
+    <div class="gamed-strip" id="gamed-strip" hidden>
+      <div class="gamed-icons" id="gamed-icons" aria-hidden="true"></div>
+      <p><strong id="gamed-label">Gamed units</strong>: <span id="gamed-count">0</span></p>
+    </div>
+
+    <div class="reveal-banner" id="reveal-banner" hidden>
+      <strong>🚨 Gaming strategy detected</strong>
+      <p id="reveal-text"></p>
+    </div>
+
+    <div class="sim-actions">
+      <button id="reset-btn" class="secondary-btn" hidden>↺ Try another incentive</button>
+    </div>
+  </section>
+
+  <section class="panel" id="history-panel" hidden>
+    <h2 id="history-headline">What actually happened</h2>
+    <p class="dial-recap" id="dial-recap"></p>
+    <span class="history-tag" id="history-tag">as stated on the podcast</span>
+    <ul id="history-facts"></ul>
+    <button id="again-btn" class="secondary-btn">↺ Design a new incentive</button>
+  </section>
+
+  <p class="data-note">Scenario facts for the rat-tail and bank anecdotes are <strong>as stated on the podcast</strong>; the traffic-ticket scenario is a <strong>generalized, non-partisan pattern</strong>, not a specific real agency. All week-by-week numbers and charts are a <strong>simulated model</strong>, not measured data.</p>
+</main>
+
+<footer>
+  Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303" target="_blank" rel="noopener">Moonshots #303</a>, around 00:40:29. Fan-made prototype, not affiliated with the show.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
