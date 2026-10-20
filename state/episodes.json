@@ -57,11 +57,53 @@
     "date": "2026-10-15",
     "number": 302,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302",
-    "status": "error",
+    "status": "built",
     "attempts": 3,
     "found": "2026-10-16T04:35:19+00:00",
-    "updated": "2026-10-16T16:42:31+00:00",
-    "note": "extract failed: extract:openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302: success: Not logged in · Please run /login"
+    "updated": "2026-10-20T21:21:30+00:00",
+    "note": "extract failed: extract:openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302: success: Not logged in · Please run /login",
+    "prototypes": [
+      "ep302-the-slop-drop",
+      "ep302-rudeness-multiplier"
+    ],
+    "ideas": [
+      {
+        "title": "The Slop Drop",
+        "score": 4.4,
+        "timestamp": "00:40:55"
+      },
+      {
+        "title": "Rudeness Multiplier",
+        "score": 4.0,
+        "timestamp": "00:05:31"
+      },
+      {
+        "title": "Intervention Pathfinder",
+        "score": 3.95,
+        "timestamp": "01:09:20"
+      },
+      {
+        "title": "Matter Compiler",
+        "score": 3.95,
+        "timestamp": "01:16:12"
+      },
+      {
+        "title": "Orders of Magnitude",
+        "score": 3.75,
+        "timestamp": "01:38:06"
+      },
+      {
+        "title": "Grey Goo Growth Lab",
+        "score": 3.65,
+        "timestamp": "01:19:43"
+      },
+      {
+        "title": "Crypto Cooked Clock",
+        "score": 3.35,
+        "timestamp": "01:49:15"
+      }
+    ],
+    "summary": "The hosts cover OpenAI's \"slop drop\" of 722 bulk-solved math problems (and the backlash from mathematicians), Anthropic's new policy against being cruel to Claude alongside Elon's warnings against \"torturing\" AI, Meta's Muse Wonder launch and the coming battle over who owns your personal AI memory, a $1.8B push toward a virtual cell for bulk-solving biology, Jeff Holden's atom-by-atom \"Matter Compiler\" at Atomic Machines, new brain-computer-interface demos (Paradromics, Sabi), and Elon's claim that SpaceX could be worth orders of magnitude more than Earth's entire economy."
   },
   "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301": {
     "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",

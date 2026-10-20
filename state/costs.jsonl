@@ -14,3 +14,8 @@
 {"at": "2026-10-20T20:31:18+00:00", "label": "review:ep303-cobra-effect-lab", "est_cost_usd": 0.2017, "turns": 15, "subtype": "success"}
 {"at": "2026-10-20T20:33:15+00:00", "label": "build:ep303-cobra-effect-lab:fix1", "est_cost_usd": 0.3949, "turns": 27, "subtype": "success"}
 {"at": "2026-10-20T20:34:25+00:00", "label": "review:ep303-cobra-effect-lab", "est_cost_usd": 0.2114, "turns": 16, "subtype": "success"}
+{"at": "2026-10-20T21:12:19+00:00", "label": "extract:openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302", "est_cost_usd": 0.2495, "turns": 2, "subtype": "success"}
+{"at": "2026-10-20T21:15:32+00:00", "label": "build:ep302-the-slop-drop", "est_cost_usd": 0.3969, "turns": 19, "subtype": "success"}
+{"at": "2026-10-20T21:17:12+00:00", "label": "review:ep302-the-slop-drop", "est_cost_usd": 0.1726, "turns": 12, "subtype": "success"}
+{"at": "2026-10-20T21:20:27+00:00", "label": "build:ep302-rudeness-multiplier", "est_cost_usd": 0.4224, "turns": 27, "subtype": "success"}
+{"at": "2026-10-20T21:21:30+00:00", "label": "review:ep302-rudeness-multiplier", "est_cost_usd": 0.1385, "turns": 11, "subtype": "success"}
