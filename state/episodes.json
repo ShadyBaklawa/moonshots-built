@@ -5,9 +5,9 @@
     "number": 303,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303",
     "status": "error",
-    "attempts": 2,
+    "attempts": 3,
     "found": "2026-10-20T04:54:31+00:00",
-    "updated": "2026-10-20T11:42:35+00:00",
+    "updated": "2026-10-20T17:12:50+00:00",
     "note": "extract failed: extract:flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303: success: Not logged in · Please run /login"
   },
   "openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302": {
