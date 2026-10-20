@@ -7,3 +7,10 @@
 {"at": "2026-10-20T04:55:03+00:00", "label": "extract:flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
 {"at": "2026-10-20T11:42:35+00:00", "label": "extract:flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
 {"at": "2026-10-20T17:12:50+00:00", "label": "extract:flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
+{"at": "2026-10-20T20:22:30+00:00", "label": "extract:flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303", "est_cost_usd": 0.2399, "turns": 2, "subtype": "success"}
+{"at": "2026-10-20T20:25:10+00:00", "label": "build:ep303-rocket-roadster-risk-quote", "est_cost_usd": 0.3203, "turns": 13, "subtype": "success"}
+{"at": "2026-10-20T20:26:32+00:00", "label": "review:ep303-rocket-roadster-risk-quote", "est_cost_usd": 0.1596, "turns": 9, "subtype": "success"}
+{"at": "2026-10-20T20:30:02+00:00", "label": "build:ep303-cobra-effect-lab", "est_cost_usd": 0.4236, "turns": 19, "subtype": "success"}
+{"at": "2026-10-20T20:31:18+00:00", "label": "review:ep303-cobra-effect-lab", "est_cost_usd": 0.2017, "turns": 15, "subtype": "success"}
+{"at": "2026-10-20T20:33:15+00:00", "label": "build:ep303-cobra-effect-lab:fix1", "est_cost_usd": 0.3949, "turns": 27, "subtype": "success"}
+{"at": "2026-10-20T20:34:25+00:00", "label": "review:ep303-cobra-effect-lab", "est_cost_usd": 0.2114, "turns": 16, "subtype": "success"}

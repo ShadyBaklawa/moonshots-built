@@ -4,11 +4,53 @@
     "date": "2026-10-17",
     "number": 303,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303",
-    "status": "error",
+    "status": "built",
     "attempts": 3,
     "found": "2026-10-20T04:54:31+00:00",
-    "updated": "2026-10-20T17:12:50+00:00",
-    "note": "extract failed: extract:flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303: success: Not logged in · Please run /login"
+    "updated": "2026-10-20T20:34:25+00:00",
+    "note": "extract failed: extract:flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303: success: Not logged in · Please run /login",
+    "prototypes": [
+      "ep303-rocket-roadster-risk-quote",
+      "ep303-cobra-effect-lab"
+    ],
+    "ideas": [
+      {
+        "title": "Rocket Roadster Risk Quote",
+        "score": 4.65,
+        "timestamp": "00:12:19"
+      },
+      {
+        "title": "Robo-Brain Freefall",
+        "score": 4.4,
+        "timestamp": "00:17:41"
+      },
+      {
+        "title": "Cobra Effect Lab",
+        "score": 4.2,
+        "timestamp": "00:40:29"
+      },
+      {
+        "title": "Prize Leverage Engine",
+        "score": 4.05,
+        "timestamp": "00:44:09"
+      },
+      {
+        "title": "Alignment Dial Room",
+        "score": 3.65,
+        "timestamp": "01:05:57"
+      },
+      {
+        "title": "Thousand-Dollar Life Builder",
+        "score": 3.55,
+        "timestamp": "01:27:29"
+      },
+      {
+        "title": "Habitable Worlds Scanner",
+        "score": 3.5,
+        "timestamp": "00:49:41"
+      }
+    ],
+    "summary": "The hosts react to Tesla's flying Roadster demo, then dig into a benchmark showing robot \"frontier model\" task costs collapsing 84% in two months (halving every ~3 weeks). XPRIZE CEO Anusha Ansari joins to discuss incentive-prize mechanics (62x leverage, Longitude Prize, Ansari XPRIZE) and new prizes (Habitable Worlds, organ biostasis). The back half pivots to how perverse incentives (cobra effect, Wells Fargo) explain AI misalignment, what curriculum/training data could instill \"aligned\" values, and how abundance and purpose will reshape work once AI/robots do more of \"the doing.\""
   },
   "openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302": {
     "title": "OpenAI Bulk-Solves 722 Math Problems, Anthropic’s Cruelty Policy, and Elon’s Quadrillion-Dollar SpaceX | EP #302",
