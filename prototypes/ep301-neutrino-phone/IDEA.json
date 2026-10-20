@@ -1,0 +1,23 @@
+{
+  "title": "Neutrino Phone",
+  "one_liner": "Compare light-speed latency through Earth's core versus around its surface between any two cities.",
+  "timestamp": "02:28:13",
+  "speaker": "Alex Wisner-Gross",
+  "context": "Wisner-Gross described wanting a neutrino-based communication link that shoots straight through the Earth, beating fiber or satellite paths that must follow the surface or orbit.",
+  "demo": "Visitor picks two cities from a preset list (NYC-London, Tokyo-NY, Sydney-London, etc.) or drops pins on a simple world map. The tool computes the great-circle surface distance (today's fiber/satellite path) versus the straight chord through the Earth, converts both to light-speed latency, and animates two beams racing — one curving over the globe, one punching straight through — showing the millisecond savings, with a clear label that this is a speculative physics concept from the episode, not deployed technology.",
+  "data_plan": "User input (city pairs) + bundled lat/long coordinates for ~20 major cities + basic geometry (great-circle vs chord distance) and speed of light constant, computed client-side.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 4,
+  "novelty": 5,
+  "related_existing": null,
+  "risks": "Must clearly label as a speculative thought experiment (neutrino detection/transmission at this scale doesn't exist); shouldn't imply the latency savings are achievable today.",
+  "score": 4.5,
+  "episode": {
+    "slug": "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301",
+    "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",
+    "number": 301,
+    "date": "2026-10-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301"
+  }
+}

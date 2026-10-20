@@ -1,0 +1,36 @@
+{
+  "slug": "ep301-neutrino-phone",
+  "title": "Neutrino Phone",
+  "one_liner": "Compare light-speed latency through Earth's core versus around its surface between any two cities.",
+  "headline": "Pick two cities and watch a neutrino beam racing straight through Earth's core beat a fiber signal curving over the surface — with exact light-speed math for both.",
+  "episode": {
+    "slug": "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301",
+    "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",
+    "number": 301,
+    "date": "2026-10-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301"
+  },
+  "timestamp": "02:28:13",
+  "idea_score": 4.5,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 8,
+    "wow": 7,
+    "ux": 8,
+    "code": 7,
+    "honesty": 9
+  },
+  "overall": 8.05,
+  "created": "2026-10-20T21:29:43+00:00",
+  "updated": "2026-10-20T21:29:43+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-20T21:29:43+00:00",
+      "overall": 8.05,
+      "summary": "A clean, self-contained physics toy that nails the core idea: real haversine/chord geometry, accurate light-speed latency, an animated cutaway race, and unusually thorough honesty framing (tag, disclaimer, README \"what's real\" section, footer credit). The one loose thread is a duplicated, unused `data/cities.json` file and a label (\"Through-core route\") that slightly overstates how close the straight-line path actually gets to the core for nearby city pairs."
+    }
+  ]
+}

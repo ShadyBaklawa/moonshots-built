@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neutrino Phone — a shortcut through the planet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scene" aria-hidden="true"></div>
+
+  <main>
+    <header class="intro">
+      <p class="tag">Speculative physics · not real technology</p>
+      <h1>Neutrino Phone</h1>
+      <p class="sub">What if a message didn't have to curve around the planet &mdash; it just went <em>through</em> it?</p>
+    </header>
+
+    <section class="controls" aria-label="Choose two cities">
+      <div class="field">
+        <label for="cityA">From</label>
+        <select id="cityA"></select>
+      </div>
+
+      <button id="swap" class="swap" title="Swap cities" aria-label="Swap cities">⇄</button>
+
+      <div class="field">
+        <label for="cityB">To</label>
+        <select id="cityB"></select>
+      </div>
+
+      <button id="fire" class="fire">Fire the beams</button>
+    </section>
+
+    <section class="stage" aria-label="Earth cross-section race animation">
+      <svg id="earth" viewBox="0 0 400 420" role="img" aria-label="Cross section of Earth showing surface arc path and straight through-core path between the two chosen cities">
+        <defs>
+          <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff2cf"/>
+            <stop offset="35%" stop-color="#ffb648"/>
+            <stop offset="62%" stop-color="#c05a2d"/>
+            <stop offset="80%" stop-color="#5a3a52"/>
+            <stop offset="100%" stop-color="#201333"/>
+          </radialGradient>
+          <linearGradient id="coreBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffd27a"/>
+            <stop offset="100%" stop-color="#ff5d5d"/>
+          </linearGradient>
+        </defs>
+
+        <circle class="globeFill" cx="200" cy="190" r="150"/>
+        <circle class="layer mantle" cx="200" cy="190" r="118"/>
+        <circle class="layer outerCore" cx="200" cy="190" r="78"/>
+        <circle class="layer innerCore" cx="200" cy="190" r="38"/>
+
+        <path id="arcPath" class="path surfacePath" fill="none"/>
+        <path id="chordPath" class="path corePath" fill="none"/>
+
+        <g id="pointA" class="cityPoint">
+          <circle r="5"/>
+          <text class="cityLabel" x="0" y="0"></text>
+        </g>
+        <g id="pointB" class="cityPoint">
+          <circle r="5"/>
+          <text class="cityLabel" x="0" y="0"></text>
+        </g>
+
+        <circle id="beamSurface" class="beam beamSurface" r="5"/>
+        <circle id="beamCore" class="beam beamCore" r="5"/>
+      </svg>
+
+      <div class="legend">
+        <p><span class="dot surfaceDot"></span> Fiber / satellite &mdash; follows the surface</p>
+        <p><span class="dot coreDot"></span> Neutrino beam &mdash; straight line through the core</p>
+      </div>
+    </section>
+
+    <section class="readout" aria-live="polite">
+      <div class="card">
+        <h2>Surface route</h2>
+        <p class="big" id="surfaceDist">—</p>
+        <p class="small">light-speed transit: <strong id="surfaceTime">—</strong></p>
+      </div>
+      <div class="card highlight">
+        <h2>Through-core route</h2>
+        <p class="big" id="coreDist">—</p>
+        <p class="small">light-speed transit: <strong id="coreTime">—</strong></p>
+      </div>
+      <div class="card">
+        <h2>Time saved</h2>
+        <p class="big" id="savedTime">—</p>
+        <p class="small" id="savedPct">—</p>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      <strong>Thought experiment, not a product.</strong> This assumes a neutrino beam could be aimed precisely enough
+      to punch straight through the Earth and be caught on the other side &mdash; detecting a handful of neutrinos at all
+      requires buildings full of equipment today, let alone a steerable point-to-point link. The animation is slowed
+      down roughly <span id="slowFactor">—</span>&times; so the race is visible; real transit times are listed above.
+      Distances and light-speed latency are computed exactly from the two cities' coordinates &mdash; everything else
+      about building this is speculation from the episode.
+    </p>
+
+    <footer class="credit">
+      Inspired by Moonshots #301, around 02:28:13. Fan-made prototype, not affiliated with the show.
+      <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301" target="_blank" rel="noopener noreferrer">Episode source</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
