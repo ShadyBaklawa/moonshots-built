@@ -1,0 +1,23 @@
+{
+  "title": "Rudeness Multiplier",
+  "one_liner": "Type a prompt and see a simulated 'performance score' comparing a polite vs. a rude version, based on the cited Penn State study.",
+  "timestamp": "00:05:31",
+  "speaker": "Peter Diamandis citing Sergey Brin / Penn State study",
+  "context": "A cited study found rude prompts scored 84.8% vs 80.8% for polite ones; Elon and Anthropic debated whether being cruel to AI 'works' but is ethically risky.",
+  "demo": "User types a prompt into two boxes (a polite version and a rude version, or an auto-generated rude rewrite). A heuristic scorer (keyword/tone based) returns a mock accuracy score for each, animates a bar race between them, and ends with a disclaimer card quoting Anthropic's new anti-cruelty policy and Dave's 'brusk beats abusive' counter-argument.",
+  "data_plan": "Bundled figures from the cited Penn State study (84.8% vs 80.8%) drive the scoring scale; the per-prompt score is a simulated heuristic (keyword/punctuation based), clearly labeled as illustrative, not a real model benchmark.",
+  "feasibility": 4,
+  "wow": 4,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Could be read as endorsing cruelty toward AI as effective; must foreground the hosts' ethical pushback and Dave's point that directness, not abuse, is what actually helps.",
+  "score": 4.0,
+  "episode": {
+    "slug": "openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302",
+    "title": "OpenAI Bulk-Solves 722 Math Problems, Anthropic’s Cruelty Policy, and Elon’s Quadrillion-Dollar SpaceX | EP #302",
+    "number": 302,
+    "date": "2026-10-15",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302"
+  }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rudeness Multiplier &mdash; Moonshots, Built</title>
+<meta name="description" content="Type a prompt, watch a polite vs. rude rewrite race on a simulated performance score inspired by a cited Penn State study." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="hero">
+      <p class="kicker">MOONSHOTS LAB &middot; EP #302</p>
+      <h1>The Rudeness Multiplier</h1>
+      <p class="sub">
+        A cited Penn State study found rude prompts scored
+        <strong>84.8%</strong> vs <strong>80.8%</strong> for polite ones.
+        Type anything below &mdash; we'll rewrite it both ways and race them
+        on a simulated scoreboard.
+      </p>
+    </header>
+
+    <section class="console" aria-labelledby="input-heading">
+      <h2 id="input-heading" class="visually-hidden">Enter a prompt</h2>
+      <div class="input-row">
+        <label for="prompt-input" class="input-label">Your prompt</label>
+        <textarea
+          id="prompt-input"
+          rows="2"
+          maxlength="240"
+          placeholder="e.g. write me a summary of this quarter's sales report"
+        ></textarea>
+        <div class="presets" id="presets" role="group" aria-label="Example prompts"></div>
+      </div>
+
+      <div class="actions">
+        <button id="run-btn" class="run-btn" type="button">Run the race &rarr;</button>
+        <span class="tag">Simulated heuristic scoring</span>
+      </div>
+    </section>
+
+    <section class="race-board" aria-labelledby="race-heading">
+      <h2 id="race-heading" class="visually-hidden">Score race</h2>
+
+      <div class="lane" data-lane="polite">
+        <div class="lane-head">
+          <span class="lane-badge polite-badge">POLITE</span>
+          <span class="lane-score" id="polite-score">0.0%</span>
+        </div>
+        <div class="track">
+          <div class="bar polite-bar" id="polite-bar"></div>
+        </div>
+        <p class="rewrite" id="polite-text">Rewritten prompt will appear here.</p>
+      </div>
+
+      <div class="lane" data-lane="rude">
+        <div class="lane-head">
+          <span class="lane-badge rude-badge">RUDE</span>
+          <span class="lane-score" id="rude-score">0.0%</span>
+        </div>
+        <div class="track">
+          <div class="bar rude-bar" id="rude-bar"></div>
+        </div>
+        <p class="rewrite" id="rude-text">Rewritten prompt will appear here.</p>
+      </div>
+
+      <p class="baseline-note">
+        Baseline figures (84.8% / 80.8%) are the real numbers cited on the podcast from a
+        Penn State study. The score you see per prompt is adjusted by a simple keyword/punctuation
+        heuristic &mdash; it is illustrative, not a measurement of any real AI model's accuracy.
+      </p>
+    </section>
+
+    <section class="verdict-card" id="verdict-card" aria-live="polite">
+      <h2>Before you start yelling at your AI&hellip;</h2>
+      <blockquote>
+        <p id="anthropic-quote"></p>
+        <cite>&mdash; Anthropic's cruelty policy, as discussed on the podcast</cite>
+      </blockquote>
+      <blockquote>
+        <p id="dave-quote"></p>
+        <cite>&mdash; Dave, co-host pushback</cite>
+      </blockquote>
+      <p class="disclaimer">
+        This page is a fan-made, illustrative demo. It does not prove rudeness improves AI
+        performance in general &mdash; it visualizes one cited study alongside the hosts' own
+        ethical pushback.
+      </p>
+    </section>
+  </main>
+
+  <footer class="credits">
+    Inspired by Moonshots EP #302, around 00:05:31. Fan-made prototype, not affiliated with the
+    show.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302" target="_blank" rel="noopener noreferrer">
+      Listen to the episode
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

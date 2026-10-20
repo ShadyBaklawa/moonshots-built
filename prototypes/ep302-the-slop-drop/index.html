@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Slop Drop — a bulk-math-solve simulator</title>
+<meta name="description" content="Watch a simulated AI bulk-solve 722 math problems, with a live meter of compute-hours, cost, and success rate.">
+<style>
+  :root{
+    --bg: #0a0d0b;
+    --panel: #11150f;
+    --panel-2: #161c15;
+    --border: #273125;
+    --text: #e7ece4;
+    --dim: #8a9484;
+    --green: #4fdc7a;
+    --amber: #f0b429;
+    --red: #e4604f;
+    --mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg: #f3f5f0;
+      --panel: #ffffff;
+      --panel-2: #eef1ea;
+      --border: #d6ddce;
+      --text: #1a2016;
+      --dim: #5a6354;
+      --green: #1f9c4d;
+      --amber: #96700a;
+      --red: #b43c2d;
+    }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    padding: 16px;
+    overflow-x: hidden;
+  }
+  a{color: var(--green);}
+  .wrap{
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  header.top{
+    margin-bottom: 18px;
+  }
+  .eyebrow{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--dim);
+    background: var(--panel-2);
+    white-space: nowrap;
+  }
+  .tag.sim{ color: var(--amber); border-color: var(--amber); }
+  h1{
+    font-size: 28px;
+    margin: 0 0 6px 0;
+    line-height: 1.15;
+  }
+  .sub{
+    color: var(--dim);
+    margin: 0;
+    font-size: 15px;
+    max-width: 640px;
+  }
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .main-grid{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  @media (max-width: 760px){
+    .main-grid{ grid-template-columns: 1fr; }
+  }
+  .grid-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .grid-head h2{ font-size: 15px; margin:0; color: var(--dim); font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase;}
+  .grid-head .count{ font-family: var(--mono); font-size: 13px; color: var(--text);}
+  #tiles{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+    grid-auto-rows: 10px;
+    gap: 2px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px;
+  }
+  .tile{
+    background: #2a3327;
+    border-radius: 1px;
+    transition: background-color 0.25s ease;
+  }
+  @media (prefers-color-scheme: light){
+    .tile{ background: #d7ddcc; }
+  }
+  .tile.solved{ background: var(--green); }
+  .tile.unsolved{ background: var(--red); opacity: 0.65; }
+  @media (prefers-reduced-motion: reduce){
+    .tile{ transition: none; }
+  }
+
+  .controls{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 14px;
+  }
+  button{
+    font-family: var(--sans);
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--panel-2);
+    color: var(--text);
+    padding: 10px 16px;
+    min-height: 40px;
+    cursor: pointer;
+  }
+  button:hover{ border-color: var(--green); }
+  button:focus-visible, .segbtn:focus-visible, .toggle button:focus-visible{
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+  }
+  button.primary{
+    background: var(--green);
+    color: #06220f;
+    border-color: var(--green);
+    font-weight: 600;
+  }
+  @media (prefers-color-scheme: light){
+    button.primary{ color: #fff; }
+  }
+  button:disabled{ opacity: 0.5; cursor: default; }
+  .seg{
+    display:flex;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .segbtn{
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--panel-2);
+    color: var(--dim);
+    border: none;
+    padding: 10px 12px;
+    min-height: 40px;
+    cursor: pointer;
+    border-right: 1px solid var(--border);
+  }
+  .segbtn:last-child{ border-right: none; }
+  .segbtn.active{ background: var(--amber); color: #241a02; font-weight: 700; }
+  @media (prefers-color-scheme: light){
+    .segbtn.active{ color: #fff; }
+  }
+
+  .meter{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .stat{
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .stat .label{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--dim);
+    margin-bottom: 4px;
+  }
+  .stat .value{
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .stat .value small{
+    font-size: 13px;
+    color: var(--dim);
+    font-weight: 400;
+  }
+  .bar-outer{
+    height: 8px;
+    background: var(--panel-2);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 1px solid var(--border);
+  }
+  .bar-inner{
+    height: 100%;
+    background: var(--amber);
+    width: 0%;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .bar-inner{ transition: width 0.1s linear; }
+  }
+
+  .status-line{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--dim);
+    margin-top: 8px;
+  }
+
+  h2.section-title{
+    font-size: 16px;
+    margin: 0 0 4px 0;
+  }
+  p.section-note{
+    color: var(--dim);
+    font-size: 13.5px;
+    margin: 0 0 14px 0;
+  }
+
+  .toggle{
+    display:flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .toggle button{
+    flex: 1;
+  }
+  .toggle button.active{
+    background: var(--amber);
+    color: #241a02;
+    border-color: var(--amber);
+    font-weight: 700;
+  }
+  @media (prefers-color-scheme: light){
+    .toggle button.active{ color: #fff; }
+  }
+
+  .timeline-bar{
+    height: 16px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  .timeline-fill{
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--amber));
+    width: 0%;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .timeline-fill{ transition: width 0.08s linear; }
+  }
+  .timeline-readout{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+  .timeline-readout .big{ font-size: 20px; font-weight: 700; }
+
+  .claim{
+    margin-top: 14px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--amber);
+    background: var(--panel-2);
+    border-radius: 0 8px 8px 0;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+  .claim b{ color: var(--amber); }
+
+  footer{
+    color: var(--dim);
+    font-size: 12.5px;
+    text-align: center;
+    padding: 20px 10px 6px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="eyebrow">
+      <span class="tag sim">Simulated data</span>
+      <span class="tag">722 problems · 1 GitHub drop</span>
+    </div>
+    <h1>The Slop Drop</h1>
+    <p class="sub">OpenAI once dropped 722 math solutions in a single GitHub release — each one chewing through roughly 3 hours of compute, with only 15–20% of attempts actually solved. Press run and watch it happen at whatever speed you can stomach.</p>
+  </header>
+
+  <div class="main-grid">
+    <div class="card">
+      <div class="grid-head">
+        <h2>722 attempted problems</h2>
+        <span class="count" id="gridCount">0 / 722 attempted</span>
+      </div>
+      <div id="tiles" aria-label="Grid of 722 math problems, tiles turn green when solved and red when unsolved"></div>
+      <div class="bar-outer"><div class="bar-inner" id="progressBar"></div></div>
+      <div class="controls">
+        <button class="primary" id="runBtn">▶ Run the drop</button>
+        <button id="resetBtn">Reset</button>
+        <div class="seg" role="group" aria-label="Playback speed">
+          <button class="segbtn" data-speed="1">1×</button>
+          <button class="segbtn active" data-speed="5">5×</button>
+          <button class="segbtn" data-speed="20">20×</button>
+        </div>
+      </div>
+      <div class="status-line" id="statusLine">Idle. Click run to start the simulated bulk-solve.</div>
+    </div>
+
+    <div class="card meter">
+      <div class="stat">
+        <div class="label">Elapsed compute</div>
+        <div class="value"><span id="hoursVal">0</span> <small>/ 2,166 hrs</small></div>
+      </div>
+      <div class="stat">
+        <div class="label">Estimated cost</div>
+        <div class="value">$<span id="costVal">0</span> <small>/ ~$24.0M</small></div>
+      </div>
+      <div class="stat">
+        <div class="label">Solved so far</div>
+        <div class="value"><span id="solvedVal">0</span> <small>/ 722 (<span id="pctVal">0</span>%)</small></div>
+      </div>
+      <div class="stat">
+        <div class="label">Attempted so far</div>
+        <div class="value"><span id="attemptedVal">0</span> <small>/ 722</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Human pace vs. AI pace</h2>
+    <p class="section-note">Same amount of "progress bar", two very different clocks underneath. Toggle to see which clock is running.</p>
+    <div class="toggle" role="group" aria-label="Choose timeline pace">
+      <button id="humanBtn" class="active">Human pace</button>
+      <button id="aiBtn">AI pace</button>
+    </div>
+    <div class="timeline-bar"><div class="timeline-fill" id="timelineFill"></div></div>
+    <div class="timeline-readout">
+      <span id="timelineLabel" class="big">Year 0 of 10</span>
+      <button id="timelinePlay">▶ Play timeline</button>
+    </div>
+    <div class="claim">
+      <b>As stated on the podcast:</b> this single drop was framed as roughly a decade of mathematical progress compressed into about two weeks of compute — while only solving 15–20% of what it attempted.
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Inspired by Moonshots EP #302, "OpenAI Bulk-Solves 722 Math Problems...", around 00:40:55.
+  Fan-made prototype, not affiliated with the show.
+  <br>
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302" target="_blank" rel="noopener">Listen to the episode ↗</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

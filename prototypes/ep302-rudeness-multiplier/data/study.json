@@ -1,0 +1,20 @@
+{
+  "source": "Penn State study, as cited on Moonshots EP #302 by Peter Diamandis (citing Sergey Brin)",
+  "baseline": {
+    "rude_score": 84.8,
+    "polite_score": 80.8,
+    "unit": "% simulated accuracy",
+    "note": "These two numbers are the real figures cited on the podcast. Everything else on this page is an illustrative heuristic built around them, not a real model benchmark."
+  },
+  "presets": [
+    "write me a summary of this quarter's sales report",
+    "fix the bug in my checkout flow",
+    "plan a 3 day itinerary for tokyo",
+    "explain how a neural network backpropagates",
+    "draft an email asking my landlord for a repair"
+  ],
+  "quotes": {
+    "anthropic": "Anthropic's new usage policy discourages abusive or cruel language toward its models, framing the assistant relationship as one worth treating with basic respect — as discussed on the podcast.",
+    "dave": "Dave's counter-point on the show: being brusque and direct can help, but that's different from being abusive — “brusque beats abusive.”"
+  }
+}

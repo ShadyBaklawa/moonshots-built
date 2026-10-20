@@ -1,0 +1,14 @@
+{
+  "note": "Figures are as stated on the Moonshots podcast (EP #302, ~00:40:55), not pulled from OpenAI's actual release.",
+  "total_problems": 722,
+  "hours_per_problem": 3,
+  "solve_rate_low": 0.15,
+  "solve_rate_high": 0.20,
+  "solve_rate_used": 0.17,
+  "cost_total_low": 20000000,
+  "cost_total_high": 30000000,
+  "cost_total_used": 24000000,
+  "human_pace_years": 10,
+  "ai_pace_days": 14,
+  "claim": "A decade of math progress compressed into about two weeks of compute, as stated on the podcast."
+}

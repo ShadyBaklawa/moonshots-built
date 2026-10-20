@@ -1,0 +1,23 @@
+{
+  "title": "The Slop Drop",
+  "one_liner": "Watch an AI 'bulk-solve' 722 math problems in real time, with a live meter of time, cost, and success rate.",
+  "timestamp": "00:40:55",
+  "speaker": "Peter Diamandis / Alex",
+  "context": "OpenAI released 722 math solutions in one GitHub drop, each costing ~3 hours of compute, with only 15-20% of attempted problems solved, sparking mathematician backlash.",
+  "demo": "A grid of 722 tiles represents unsolved problems; press play and watch tiles flip to 'solved' one by one at a pace the user can speed up, with running counters for elapsed compute-hours, estimated dollar cost, and % solved. A toggle lets the user compare 'human pace' (decades) vs 'AI pace' (two weeks) on a timeline.",
+  "data_plan": "Bundled dataset built from stated podcast figures (722 problems, ~3 hrs/problem, 15-20% solve rate, low-tens-of-millions cost estimate, 'decade of progress in a week' claim); grid-fill animation is simulated.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 3,
+  "related_existing": null,
+  "risks": "Must clearly label the solve animation as a stylized simulation using the podcast's stated figures, not a reproduction of OpenAI's actual released proofs.",
+  "score": 4.4,
+  "episode": {
+    "slug": "openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302",
+    "title": "OpenAI Bulk-Solves 722 Math Problems, Anthropic’s Cruelty Policy, and Elon’s Quadrillion-Dollar SpaceX | EP #302",
+    "number": 302,
+    "date": "2026-10-15",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "ep302-the-slop-drop",
+  "title": "The Slop Drop",
+  "one_liner": "Watch an AI 'bulk-solve' 722 math problems in real time, with a live meter of time, cost, and success rate.",
+  "headline": "Watch a 722-tile grid \"bulk-solve\" math problems live, with a running meter of compute-hours, cost, and solve rate — then flip a toggle to feel a decade of progress versus two weeks.",
+  "episode": {
+    "slug": "openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302",
+    "title": "OpenAI Bulk-Solves 722 Math Problems, Anthropic’s Cruelty Policy, and Elon’s Quadrillion-Dollar SpaceX | EP #302",
+    "number": 302,
+    "date": "2026-10-15",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/openai-bulk-solves-722-math-problems-anthropics-cruelty-policy-and-elons-quadrillion-dollar-spacex-ep-302"
+  },
+  "timestamp": "00:40:55",
+  "idea_score": 4.4,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 9,
+    "wow": 6,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 7.9,
+  "created": "2026-10-20T21:17:12+00:00",
+  "updated": "2026-10-20T21:17:12+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-20T21:17:12+00:00",
+      "overall": 7.9,
+      "summary": "A clean, self-contained simulator that closely tracks the episode's actual numbers (722 problems, 3 hrs/problem, 15–20% solve rate, ~$24M, decade-vs-two-weeks framing), with honest \"Simulated data\" labeling and a working run/pause/reset/speed control set. The human-vs-AI timeline toggle is a nice conceptual device but animates at the same real-world speed in both modes, slightly undercutting the dramatic time-compression it's meant to convey. No console errors, no external dependencies, clean mobile layout."
+    }
+  ]
+}
