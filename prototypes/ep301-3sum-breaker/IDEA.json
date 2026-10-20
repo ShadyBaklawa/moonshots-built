@@ -1,0 +1,23 @@
+{
+  "title": "3SUM Breaker",
+  "one_liner": "Watch why shaving an algorithm's exponent from 2.0 to 1.995 saves millions of years of compute at scale.",
+  "timestamp": "00:36:38",
+  "speaker": "Imad Mustak",
+  "context": "Mustak described an Anthropic model helping mathematicians push the classic 3SUM problem from quadratic (n^2) to subquadratic (n^1.995) time, a result thought impossible for decades.",
+  "demo": "Visitor drags a slider for input size n and sees two animated bars race: one computing in O(n^2) time, one in O(n^1.995), with a live countdown clock showing operations-per-second on a simulated computer. At large n the 'old' bar visibly stalls out for hypothetical years while the 'new' one finishes in seconds, with a side panel explaining the real 3SUM problem (finding three numbers that sum to zero) in plain language.",
+  "data_plan": "Simulated data: client-side computation of n^2 vs n^1.995 operation counts converted to estimated wall-clock time at a stated, clearly-labeled hypothetical operations-per-second rate.",
+  "feasibility": 4,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Must avoid implying the visualization is literally how the new algorithm works internally — it's a scale demonstration of exponent differences, not a reproduction of the proof.",
+  "score": 4.2,
+  "episode": {
+    "slug": "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301",
+    "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",
+    "number": 301,
+    "date": "2026-10-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301"
+  }
+}

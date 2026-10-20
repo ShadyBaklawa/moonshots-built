@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3SUM Breaker — a tiny exponent, a cosmic amount of saved time</title>
+<meta name="description" content="Drag the input-size dial and watch why trimming an algorithm's exponent from n² to n^1.995 compounds into millions of years of saved computer time at scale.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="kicker">MISSION CLOCK · COMPLEXITY LAB</p>
+    <h1>3SUM Breaker</h1>
+    <p class="one-liner">A 0.005 smaller exponent looks like a rounding error. At scale, it is millions of years of computer time.</p>
+    <span class="tag tag-sim">Simulated computation — no real hardware involved</span>
+  </header>
+
+  <main>
+
+    <section class="panel control-panel" aria-label="Input size control">
+      <label for="n-slider" class="control-label">Input size <code>n</code></label>
+      <input type="range" id="n-slider" min="3" max="15" step="0.02" value="13"
+             aria-describedby="n-readout n-hint">
+      <div class="n-readout" id="n-readout" aria-live="polite">n ≈ 1.00 × 10^13</div>
+      <p class="hint" id="n-hint">
+        <strong>Hypothetical</strong> input size — no real 3SUM dataset is this large. We push the
+        dial far past real-world use purely to show how a sliver of exponent compounds mathematically.
+      </p>
+      <div class="control-buttons">
+        <button id="run-race-btn" type="button">▶ Run the race again</button>
+        <button id="max-scale-btn" type="button">⤒ Jump to max scale</button>
+      </div>
+    </section>
+
+    <section class="panel race-panel" aria-label="Race visualization">
+      <div class="track">
+        <div class="track-head">
+          <span class="track-label old">Old way — O(n²)</span>
+          <span class="track-readout" id="readout-old">—</span>
+        </div>
+        <div class="bar-bg"><div class="bar bar-old" id="bar-old"></div></div>
+      </div>
+
+      <div class="track">
+        <div class="track-head">
+          <span class="track-label new">New way — O(n<sup>1.995</sup>)</span>
+          <span class="track-readout" id="readout-new">—</span>
+        </div>
+        <div class="bar-bg"><div class="bar bar-new" id="bar-new"></div></div>
+      </div>
+
+      <div class="tally-wrap" aria-live="polite">
+        <span class="tally-label">Time saved so far, ticking live as the race runs</span>
+        <span class="tally-value" id="tally-value">—</span>
+      </div>
+
+      <p class="assumption">
+        Assumes a <strong>simulated</strong> computer doing 5,000,000,000 operations/second
+        (roughly one modern CPU core). Bars race at the true relative speed of the two formulas,
+        compressed so you can watch it happen in a few seconds. The relative gap between the bars
+        stays small on purpose — the tally above is where the real payoff shows up.
+      </p>
+    </section>
+
+    <section class="panel stats-panel" aria-label="Computed estimates">
+      <div class="stat">
+        <div class="stat-label">Operations — old</div>
+        <div class="stat-value" id="ops-old">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Operations — new</div>
+        <div class="stat-value" id="ops-new">—</div>
+      </div>
+      <div class="stat stat-highlight">
+        <div class="stat-label">Time saved at this scale</div>
+        <div class="stat-value" id="time-saved">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Relative speedup</div>
+        <div class="stat-value" id="speedup">—</div>
+      </div>
+    </section>
+
+    <section class="panel explainer" aria-label="Background">
+      <h2>What is 3SUM, in plain language?</h2>
+      <p>
+        Hand an algorithm a big list of numbers and ask one question: do any three of them add up
+        to zero? That's 3SUM. It sounds small, but it's a load-bearing puzzle in computer science —
+        tons of other problems can be reshaped into a 3SUM question, so how fast you can solve 3SUM
+        puts a ceiling on how fast you can solve all of them.
+      </p>
+      <h2>Why a 0.005 exponent change is a big deal</h2>
+      <p>
+        For decades, the fastest known general approach needed roughly <code>n²</code> operations,
+        and plenty of researchers suspected that was as good as it could get. As discussed on the
+        podcast, Imad Mustak described an Anthropic model helping mathematicians find a way to push
+        that down to roughly <code>n<sup>1.995</sup></code> — the kind of exponent shave that was
+        thought impossible to find. The relative speedup from that alone is modest, often well
+        under 2×. The point isn't that it makes today's computers blaze through 3SUM instantly —
+        it's that nobody had found <em>any</em> way past the <code>n²</code> wall in a very long
+        time, and this cracked it open.
+      </p>
+      <p class="risk-note">
+        This page visualizes the math of <code>n²</code> vs <code>n<sup>1.995</sup></code> at
+        hypothetical scale — it is not a reproduction of how the real subquadratic algorithm
+        works internally, and it isn't a benchmark of any real computer.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="credits">
+    Inspired by
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301" target="_blank" rel="noopener">Moonshots #301</a>,
+    around 00:36:38. Fan-made prototype, not affiliated with the show.
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

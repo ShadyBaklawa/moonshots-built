@@ -1,0 +1,36 @@
+{
+  "slug": "ep301-3sum-breaker",
+  "title": "3SUM Breaker",
+  "one_liner": "Watch why shaving an algorithm's exponent from 2.0 to 1.995 saves millions of years of compute at scale.",
+  "headline": "Drag a slider to watch why a quadratic vs. n^1.995 3SUM algorithm race barely looks different — but saves millions of years once you read the numbers.",
+  "episode": {
+    "slug": "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301",
+    "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",
+    "number": 301,
+    "date": "2026-10-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301"
+  },
+  "timestamp": "00:36:38",
+  "idea_score": 4.2,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 6,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.15,
+  "created": "2026-10-20T21:42:06+00:00",
+  "updated": "2026-10-20T21:42:06+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-20T21:42:06+00:00",
+      "overall": 8.15,
+      "summary": "A tight, mathematically honest \"mission clock\" demo of the 3SUM exponent result from ep. 301: the race bars, operation counts, and time-saved tally are all internally consistent (verified the math by hand), clearly labeled as simulated, and the explainer directly addresses the idea's stated risk of implying this is a reproduction of the real algorithm. The one real weakness is that the bars themselves barely diverge — which is actually the honest outcome of a ~1.0005 exponent gap — so the \"race\" visual underdelivers on drama relative to the big numbers doing the real work."
+    }
+  ]
+}
