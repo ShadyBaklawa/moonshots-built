@@ -1,4 +1,56 @@
 {
+  "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304": {
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "date": "2026-10-21",
+    "number": 304,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "status": "built",
+    "attempts": 0,
+    "found": "2026-10-21T23:22:47+00:00",
+    "updated": "2026-10-21T23:45:29+00:00",
+    "prototypes": [
+      "ep304-satoshi-s-countdown",
+      "ep304-equity-cradle"
+    ],
+    "ideas": [
+      {
+        "title": "Satoshi's Countdown",
+        "score": 4.3,
+        "timestamp": "01:48:14"
+      },
+      {
+        "title": "Equity Cradle",
+        "score": 4.2,
+        "timestamp": "00:24:41"
+      },
+      {
+        "title": "Deficit Dial",
+        "score": 4.05,
+        "timestamp": "01:08:50"
+      },
+      {
+        "title": "The Diffusion Gap",
+        "score": 4.05,
+        "timestamp": "00:00:00"
+      },
+      {
+        "title": "Ivy Inc.",
+        "score": 4.0,
+        "timestamp": "01:50:39"
+      },
+      {
+        "title": "Narrative Bias Meter",
+        "score": 3.7,
+        "timestamp": "00:59:42"
+      },
+      {
+        "title": "Idea Avalanche",
+        "score": 3.55,
+        "timestamp": "01:25:26"
+      }
+    ],
+    "summary": "Chamath Palihapitiya joins the Moonshots crew to dissect Anthropic's ~$75-100B Public Benefit Fund, Elon's pledge to give one SpaceX share to every American kid, and a three-part Walter Isaacson/Elon interview on post-capitalism, superintelligence control, and fixing the national debt with AI and robots. The episode also covers Bill Gross's Idealab.ai (1.2M AI-generated business ideas), an alleged OpenAI corporate-espionage case, and closes with a rapid-fire \"Chamath hot seat\" on crypto, SPACs, chips, and where to put capital next."
+  },
   "flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303": {
     "title": "Flying Tesla Car, Robot Brains Halving in Cost Every 3 Weeks, and Why Incentives Decide AI Alignment | #303",
     "date": "2026-10-17",

@@ -29,3 +29,12 @@
 {"at": "2026-10-21T12:02:18+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.1975, "turns": 12, "subtype": "success"}
 {"at": "2026-10-21T12:09:11+00:00", "label": "upgrade:ep288-coffee-cup-horizon", "est_cost_usd": 1.1549, "turns": 46, "subtype": "success"}
 {"at": "2026-10-21T12:11:11+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.2268, "turns": 10, "subtype": "success"}
+{"at": "2026-10-21T23:26:09+00:00", "label": "extract:chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304", "est_cost_usd": 0.3627, "turns": 2, "subtype": "success"}
+{"at": "2026-10-21T23:30:00+00:00", "label": "build:ep304-satoshi-s-countdown", "est_cost_usd": 0.5343, "turns": 18, "subtype": "success"}
+{"at": "2026-10-21T23:31:45+00:00", "label": "review:ep304-satoshi-s-countdown", "est_cost_usd": 0.2582, "turns": 12, "subtype": "success"}
+{"at": "2026-10-21T23:33:17+00:00", "label": "build:ep304-satoshi-s-countdown:fix1", "est_cost_usd": 0.3552, "turns": 26, "subtype": "success"}
+{"at": "2026-10-21T23:34:29+00:00", "label": "review:ep304-satoshi-s-countdown", "est_cost_usd": 0.1797, "turns": 12, "subtype": "success"}
+{"at": "2026-10-21T23:38:05+00:00", "label": "build:ep304-equity-cradle", "est_cost_usd": 0.466, "turns": 20, "subtype": "success"}
+{"at": "2026-10-21T23:39:54+00:00", "label": "review:ep304-equity-cradle", "est_cost_usd": 0.2298, "turns": 14, "subtype": "success"}
+{"at": "2026-10-21T23:43:32+00:00", "label": "build:ep304-equity-cradle:fix1", "est_cost_usd": 0.6145, "turns": 36, "subtype": "success"}
+{"at": "2026-10-21T23:45:29+00:00", "label": "review:ep304-equity-cradle", "est_cost_usd": 0.2534, "turns": 14, "subtype": "success"}
