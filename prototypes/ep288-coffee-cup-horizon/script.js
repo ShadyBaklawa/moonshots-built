@@ -15,15 +15,20 @@
     note: document.getElementById("activeNote"),
     crossDate: document.getElementById("crossDate"),
     crossSub: document.getElementById("crossSub"),
+    yearlyCrossDate: document.getElementById("yearlyCrossDate"),
+    yearlyCrossSub: document.getElementById("yearlyCrossSub"),
     strip: document.getElementById("strip"),
+    heroChips: document.getElementById("heroChips"),
     svg: document.getElementById("chart"),
   };
 
   const layers = {
     grid: document.getElementById("gridLayer"),
     coffee: document.getElementById("coffeeLayer"),
+    yearly: document.getElementById("yearlyLayer"),
     curve: document.getElementById("curveLayer"),
     marker: document.getElementById("markerLayer"),
+    yearlyMarker: document.getElementById("yearlyMarkerLayer"),
     axis: document.getElementById("axisLayer"),
   };
 
@@ -91,6 +96,7 @@
       presets = [
         { id: "brown", label: "Noam Brown's claim", source: "as stated on the podcast", startCost: 300000, endCost: 20, years: 2, note: "$300K → $20 in 2 years." },
         { id: "mathresult", label: "This week's math result", source: "as stated on the podcast, projected", startCost: 3000000, years: null, note: "$3M, projected on Brown's curve." },
+        { id: "robotsubtask", label: "Robot task cost", source: "as stated on the podcast", startCost: 2.36, endCost: 0.38, years: 0.16667, note: "$2.36 → $0.38 in 2 months, halving roughly every 3 weeks." },
       ];
     }
     renderStrip();
@@ -205,13 +211,17 @@
 
   function render() {
     const { startCost, decline, coffee } = state;
+    const yearlyCoffee = coffee * 365;
     const tCrossRaw = yearsToCross(startCost, decline, coffee);
     const tCross = isFinite(tCrossRaw) ? Math.max(tCrossRaw, 0) : Infinity;
+    const tYearlyRaw = yearsToCross(startCost, decline, yearlyCoffee);
+    const tYearly = isFinite(tYearlyRaw) ? Math.max(tYearlyRaw, 0) : Infinity;
 
-    let tMax = isFinite(tCross) ? Math.max(tCross * 1.25, 1) : MAX_VIEW_YEARS;
+    const furthest = Math.max(isFinite(tCross) ? tCross : 0, isFinite(tYearly) ? tYearly : 0);
+    let tMax = furthest > 0 ? furthest * 1.25 : MAX_VIEW_YEARS;
     tMax = Math.min(Math.max(tMax, 1), MAX_VIEW_YEARS);
 
-    const yMax = startCost * 1.4;
+    const yMax = Math.max(startCost, yearlyCoffee) * 1.4;
     const yMin = Math.min(coffee, startCost) * 0.5;
     const logMax = Math.log10(yMax);
     const logMin = Math.log10(Math.max(yMin, 0.01));
@@ -227,9 +237,11 @@
     }
 
     drawGrid(logMin, logMax, tMax, X, Y);
+    drawYearlyLine(yearlyCoffee, Y, plotW);
     drawCoffeeLine(coffee, Y, plotW);
     drawCurve(startCost, decline, tMax, X, Y);
     drawMarker(tCross, coffee, tMax, X, Y);
+    drawYearlyMarker(tYearly, yearlyCoffee, tMax, X, Y);
 
     // readout
     if (startCost <= coffee) {
@@ -241,6 +253,17 @@
     } else {
       els.crossDate.textContent = formatDate(dateAfterYears(tCross));
       els.crossSub.textContent = `in about ${formatYears(tCross)}`;
+    }
+
+    if (startCost <= yearlyCoffee) {
+      els.yearlyCrossDate.textContent = "Already there";
+      els.yearlyCrossSub.textContent = `${formatMoney(startCost)} is already at or below ${formatMoney(yearlyCoffee)}`;
+    } else if (!isFinite(tYearly)) {
+      els.yearlyCrossDate.textContent = "Never, at this rate";
+      els.yearlyCrossSub.textContent = "Decline needs to be greater than 1× per year";
+    } else {
+      els.yearlyCrossDate.textContent = formatDate(dateAfterYears(tYearly));
+      els.yearlyCrossSub.textContent = `in about ${formatYears(tYearly)}`;
     }
   }
 
@@ -286,6 +309,27 @@
     const label = el("text", { class: "coffee-label", x: PAD.left + 6, y: y - 8, "text-anchor": "start" });
     label.textContent = `☕ cup of coffee — ${formatMoney(state.coffee)}`;
     layers.coffee.appendChild(label);
+  }
+
+  function drawYearlyLine(yearlyCoffee, Y, plotW) {
+    clearLayer(layers.yearly);
+    const y = Y(yearlyCoffee);
+    layers.yearly.appendChild(el("line", {
+      class: "yearly-line", x1: PAD.left, x2: VB_W - PAD.right, y1: y, y2: y,
+    }));
+    const label = el("text", { class: "yearly-label", x: VB_W - PAD.right - 6, y: y - 8, "text-anchor": "end" });
+    label.textContent = `📅 a year of daily coffees — ${formatMoney(yearlyCoffee)}`;
+    layers.yearly.appendChild(label);
+  }
+
+  function drawYearlyMarker(tYearly, yearlyCoffee, tMax, X, Y) {
+    clearLayer(layers.yearlyMarker);
+    if (!isFinite(tYearly) || tYearly > tMax + 0.0001) return;
+    const x = X(tYearly), y = Y(yearlyCoffee);
+    layers.yearlyMarker.appendChild(el("line", {
+      class: "yearly-cross-guide", x1: x, x2: x, y1: y, y2: VB_H - PAD.bottom,
+    }));
+    layers.yearlyMarker.appendChild(el("circle", { class: "yearly-cross-dot", cx: x, cy: y, r: 6 }));
   }
 
   function drawCurve(startCost, decline, tMax, X, Y) {
@@ -348,10 +392,35 @@
     if (math) {
       cards.push(cardFor("This week's math result", "podcast + projected", math.startCost, brownFactor, false));
     }
+    const robot = getPreset("robotsubtask");
+    if (robot) {
+      const rFactor = Math.pow(robot.startCost / robot.endCost, 1 / robot.years);
+      cards.push(cardFor("Robot task cost (Ep 303)", "as stated on the podcast", robot.startCost, rFactor, false));
+    }
     cards.push(cardFor("Your scenario", "live", state.startCost, state.decline, true));
 
     els.strip.innerHTML = "";
     cards.forEach((c) => els.strip.appendChild(c));
+
+    renderHeroChips();
+  }
+
+  function renderHeroChips() {
+    const chips = [];
+    [getPreset("brown"), getPreset("mathresult"), getPreset("robotsubtask")].forEach((p) => {
+      if (!p) return;
+      const decline = p.endCost ? Math.pow(p.startCost / p.endCost, 1 / p.years) : brownFactor;
+      const t = yearsToCross(p.startCost, decline, state.coffee);
+      const text = p.startCost <= state.coffee
+        ? "already there"
+        : (!isFinite(t) ? "never" : formatDate(dateAfterYears(t)));
+      const chip = document.createElement("span");
+      chip.className = "hero-chip";
+      chip.innerHTML = `<strong>${p.label}</strong> ${text}`;
+      chips.push(chip);
+    });
+    els.heroChips.innerHTML = "";
+    chips.forEach((c) => els.heroChips.appendChild(c));
   }
 
   function cardFor(name, tag, startCost, decline, isLive) {

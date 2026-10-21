@@ -9,6 +9,7 @@
   --amber-bright: #f6b35c;
   --latte: #a9714a;
   --good: #8fbf7a;
+  --sky: #7fb2d9;
   --radius: 14px;
 }
 
@@ -87,11 +88,58 @@ html, body {
 }
 
 .tagline {
-  margin: 0;
+  margin: 0 0 10px;
   color: var(--cream-dim);
   font-size: 15px;
   max-width: 46ch;
 }
+
+/* ---------- Hero quick-compare ---------- */
+
+.hero-compare {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-compare-label {
+  font-size: 12px;
+  color: var(--cream-dim);
+  letter-spacing: 0.2px;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--roast-600);
+  border: 1px solid rgba(243,227,199,0.15);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  color: var(--cream-dim);
+  white-space: nowrap;
+}
+
+.hero-chip strong {
+  color: var(--amber-bright);
+  font-weight: 700;
+}
+
+.hero-compare-more {
+  font-size: 12.5px;
+  color: var(--amber-bright);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.hero-compare-more:focus-visible { outline: 2px solid var(--amber-bright); outline-offset: 2px; }
 
 /* ---------- Layout ---------- */
 
@@ -160,6 +208,11 @@ html, body {
   color: var(--cream-dim);
   margin-bottom: 6px;
   line-height: 1.3;
+}
+
+.label-hint {
+  opacity: 0.75;
+  font-size: 11.5px;
 }
 
 .field-row {
@@ -260,6 +313,20 @@ input[type="range"]:focus-visible { outline: 2px solid var(--amber-bright); }
   color: var(--good);
 }
 
+.readout-secondary {
+  padding-top: 8px;
+  margin-top: 4px;
+  border-top: 1px dashed rgba(243,227,199,0.12);
+  width: 100%;
+}
+
+.readout-value-sub {
+  font-size: clamp(18px, 3vw, 22px);
+  color: var(--sky);
+}
+
+.readout-secondary .readout-sub { color: var(--sky); opacity: 0.85; }
+
 .chart-wrap { width: 100%; }
 
 #chart { width: 100%; height: auto; display: block; }
@@ -270,6 +337,11 @@ input[type="range"]:focus-visible { outline: 2px solid var(--amber-bright); }
 
 .coffee-line { stroke: var(--cream); stroke-width: 2; stroke-dasharray: 6 6; opacity: 0.75; }
 .coffee-label { fill: var(--cream); font-size: 13px; font-weight: 700; }
+
+.yearly-line { stroke: var(--sky); stroke-width: 2; stroke-dasharray: 3 7; opacity: 0.7; }
+.yearly-label { fill: var(--sky); font-size: 13px; font-weight: 700; }
+.yearly-cross-dot { fill: var(--sky); stroke: var(--roast-900); stroke-width: 2; }
+.yearly-cross-guide { stroke: var(--sky); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.7; }
 
 .cost-curve {
   fill: none;
@@ -303,11 +375,17 @@ input[type="range"]:focus-visible { outline: 2px solid var(--amber-bright); }
 
 .strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
+  .strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
   .strip {
     grid-template-columns: 1fr;
   }
