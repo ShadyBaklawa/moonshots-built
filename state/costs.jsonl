@@ -26,3 +26,6 @@
 {"at": "2026-10-20T21:38:25+00:00", "label": "review:ep301-3sum-breaker", "est_cost_usd": 0.2594, "turns": 13, "subtype": "success"}
 {"at": "2026-10-20T21:40:37+00:00", "label": "build:ep301-3sum-breaker:fix1", "est_cost_usd": 0.3697, "turns": 21, "subtype": "success"}
 {"at": "2026-10-20T21:42:06+00:00", "label": "review:ep301-3sum-breaker", "est_cost_usd": 0.1617, "turns": 10, "subtype": "success"}
+{"at": "2026-10-21T12:02:18+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.1975, "turns": 12, "subtype": "success"}
+{"at": "2026-10-21T12:09:11+00:00", "label": "upgrade:ep288-coffee-cup-horizon", "est_cost_usd": 1.1549, "turns": 46, "subtype": "success"}
+{"at": "2026-10-21T12:11:11+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.2268, "turns": 10, "subtype": "success"}
