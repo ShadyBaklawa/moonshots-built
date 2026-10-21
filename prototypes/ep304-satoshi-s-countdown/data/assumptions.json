@@ -1,0 +1,12 @@
+{
+  "note": "Every number below is a deliberately simplified, labeled-fictional model for a dramatization. None of this is a real cryptographic estimate.",
+  "classical_keyspace_bits": 256,
+  "quantum_keyspace_bits": 128,
+  "quantum_note": "Grover's algorithm gives a real quadratic speedup against brute-force search (256 -> 128 effective bits). The dramatization is pretending a quantum computer at that scale exists, not the math itself.",
+  "expected_attempts_fraction": 0.5,
+  "expected_attempts_note": "Brute force is expected to succeed after searching about half the keyspace on average.",
+  "baseline_ops_log2_per_second": 70,
+  "baseline_note": "Starting 'AI compute' is pinned near the order of magnitude of the entire Bitcoin network's current hash rate (~10^21 H/s), used purely as an illustrative anchor so the slider has a relatable starting line.",
+  "growth_model": "compute(t) = baseline * 2^(t / doubling_period); cumulative attempts = integral of compute(t) from 0 to crack time",
+  "reality_check": "At today's baseline compute with zero growth, brute-forcing SHA-256 would take on the order of 10^38 times the current age of the universe. Real SHA-256 brute force is considered infeasible for any foreseeable computer."
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Satoshi's Countdown — a fictional AI-vs-SHA-256 race</title>
+<meta name="description" content="A dramatized, clearly-labeled simulation imagining a self-improving AI racing to crack SHA-256 and drain Satoshi's genesis wallet." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="disclaimer" role="note">
+  ⚠ DRAMATIZED FICTION, NOT A SECURITY ANALYSIS — brute-forcing SHA-256 is considered infeasible for any
+  real or foreseeable computer. Every number here is a simulated, labeled, made-up model.
+</div>
+
+<main>
+  <header class="hero">
+    <h1>SATOSHI'S COUNTDOWN</h1>
+    <p class="one-liner">
+      Race a simulated, self-improving AI against SHA-256 to see when it could theoretically
+      crack and drain the original Bitcoin wallet.
+    </p>
+    <p class="attribution">
+      Inspired by a claim Chamath Palihapitiya made on Moonshots EP #304 — that recursive AI
+      self-improvement could one day be pointed at breaking SHA-256 itself.
+    </p>
+  </header>
+
+  <section class="vault" aria-label="Simulated vault status">
+    <div class="wallet-readout">
+      <div class="wallet-id">GENESIS VAULT <span class="tag">fictional</span></div>
+      <div class="balance" id="balance">₿ 50.00000000</div>
+      <div class="status locked" id="status">LOCKED</div>
+    </div>
+
+    <div class="track-wrap">
+      <div class="track-labels">
+        <span>2⁰</span>
+        <span id="trackMid">2¹²⁸ quantum</span>
+        <span>2²⁵⁶ classical</span>
+      </div>
+      <div class="track" id="track">
+        <div class="quantum-line" id="quantumLine" title="Quantum (Grover's) target: 2^128"></div>
+        <div class="fill" id="fill"></div>
+      </div>
+      <div class="progress-readout" id="progressReadout">Press RUN to start the race.</div>
+    </div>
+  </section>
+
+  <section class="controls" aria-label="Simulation controls">
+    <div class="control-row">
+      <div class="control-label-row">
+        <label for="doubling">AI compute doubling period</label>
+        <span class="value-pill" id="doublingVal">90 days</span>
+      </div>
+      <input type="range" id="doubling" min="1" max="730" step="1" value="90" />
+      <div class="hint">Lower = a faster, more dramatic recursive self-improvement takeoff.</div>
+    </div>
+
+    <div class="control-row toggle-row">
+      <span class="toggle-label">Classical</span>
+      <button id="quantumToggle" class="toggle" type="button" aria-pressed="false" aria-label="Toggle quantum-assisted mode">
+        <span class="knob"></span>
+      </button>
+      <span class="toggle-label">Quantum-assisted (Grover's algorithm)</span>
+    </div>
+
+    <button id="runBtn" class="run-btn" type="button">▶ RUN SIMULATION</button>
+  </section>
+
+  <section class="readout-panel" aria-label="Results">
+    <div class="stat">
+      <span class="stat-label">Dramatized crack estimate</span>
+      <span class="stat-value" id="crackEstimate">—</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Effective keyspace target</span>
+      <span class="stat-value" id="keyspaceVal">2²⁵⁶ (classical)</span>
+    </div>
+    <div class="stat reality-check">
+      <span class="stat-label">Reality check</span>
+      <span class="stat-value small" id="realityCheck">loading…</span>
+    </div>
+    <details class="assumptions">
+      <summary>Model assumptions (simulated — click to inspect the made-up numbers)</summary>
+      <div id="assumptionsBody">Loading model assumptions…</div>
+    </details>
+  </section>
+
+  <footer class="footer">
+    Inspired by Moonshots EP #304, around 01:48:14. Fan-made prototype, not affiliated with the
+    show. <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304" target="_blank" rel="noopener noreferrer">Watch the episode</a>.
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

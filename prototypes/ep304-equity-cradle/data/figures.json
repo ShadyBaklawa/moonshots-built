@@ -1,0 +1,42 @@
+{
+  "kids_count": 72000000,
+  "total_gift_usd": 10500000000,
+  "spacex_gift_per_kid_usd": 146,
+  "spacex_share_price_usd": 1408,
+  "dell_gift_per_kid_usd": 250,
+  "birth_dividend_usd": 2000,
+  "assets": [
+    {
+      "id": "spacex",
+      "label": "SpaceX fractional share",
+      "principal": 146,
+      "blurb": "Elon pledged a ~$146 SpaceX stake (about a tenth of one $1,408 share) to every American kid via a Trump account."
+    },
+    {
+      "id": "dividend",
+      "label": "Birth dividend",
+      "principal": 2000,
+      "blurb": "Chamath proposed a locked $2,000 cash dividend at birth instead, left to compound untouched."
+    }
+  ],
+  "growth_presets": [
+    {
+      "id": "conservative",
+      "label": "S&P 500 average",
+      "rate": 0.07,
+      "note": "as stated on the podcast as the sober baseline comparison"
+    },
+    {
+      "id": "bullish",
+      "label": "Elon's bullish SpaceX case",
+      "rate": 0.20,
+      "note": "illustrative scenario floated on the episode, not a forecast"
+    },
+    {
+      "id": "moonshot",
+      "label": "Chamath's \"orders of magnitude\" bet",
+      "rate": 0.45,
+      "note": "speculative framing from the episode — definitely not financial advice"
+    }
+  ]
+}
