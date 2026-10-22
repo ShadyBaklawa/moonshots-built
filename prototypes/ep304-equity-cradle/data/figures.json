@@ -2,15 +2,15 @@
   "kids_count": 72000000,
   "total_gift_usd": 10500000000,
   "spacex_gift_per_kid_usd": 146,
-  "spacex_share_price_usd": 1408,
+  "spacex_share_price_usd": 146,
   "dell_gift_per_kid_usd": 250,
   "birth_dividend_usd": 2000,
   "assets": [
     {
       "id": "spacex",
-      "label": "SpaceX fractional share",
+      "label": "One SpaceX share",
       "principal": 146,
-      "blurb": "Elon pledged a ~$146 SpaceX stake (about a tenth of one $1,408 share) to every American kid via a Trump account."
+      "blurb": "Elon pledged one full SpaceX share (about $146 when he announced it) to every American kid, likely via the new Trump Accounts."
     },
     {
       "id": "dividend",

@@ -5,12 +5,12 @@
     kids_count: 72000000,
     total_gift_usd: 10500000000,
     spacex_gift_per_kid_usd: 146,
-    spacex_share_price_usd: 1408,
+    spacex_share_price_usd: 146,
     dell_gift_per_kid_usd: 250,
     birth_dividend_usd: 2000,
     assets: [
-      { id: "spacex", label: "SpaceX fractional share", principal: 146,
-        blurb: "Elon pledged a ~$146 SpaceX stake (about a tenth of one $1,408 share) to every American kid via a Trump account." },
+      { id: "spacex", label: "One SpaceX share", principal: 146,
+        blurb: "Elon pledged one full SpaceX share (about $146 when he announced it) to every American kid, likely via the new Trump Accounts." },
       { id: "dividend", label: "Birth dividend", principal: 2000,
         blurb: "Chamath proposed a locked $2,000 cash dividend at birth instead, left to compound untouched." }
     ],
@@ -150,8 +150,8 @@
     const totalB = (f.total_gift_usd / 1e9).toFixed(1);
     els.factsList.innerHTML = "";
     const items = [
-      `Elon pledged roughly $${f.spacex_gift_per_kid_usd} of SpaceX stock to each of ${kidsM} million American kids — about $${totalB}B total.`,
-      `A full SpaceX share was valued around $${f.spacex_share_price_usd.toLocaleString()}, so each kid's gift is a sliver of one share.`,
+      `Elon pledged one SpaceX share to each of ${kidsM} million American kids — about $${totalB}B total.`,
+      `One SpaceX share was worth about $${f.spacex_share_price_usd.toLocaleString()} when he announced it, so that's each kid's starting stake.`,
       `Chamath countered with a simpler idea: lock a $${f.birth_dividend_usd.toLocaleString()} cash dividend at birth instead of stock.`,
       `Michael Dell floated a $${f.dell_gift_per_kid_usd}/kid version too — the hosts debated who should fund it and whether kids would just cash out.`
     ];
