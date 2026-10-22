@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equity Cradle — compound a kid's first dollar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<header class="hero">
+  <h1>Equity Cradle</h1>
+  <p class="tagline">Give a newborn one dollar of equity. Watch what holding it to retirement is actually worth — and what selling early throws away.</p>
+</header>
+
+<main>
+  <section class="panel controls" aria-label="Simulation controls">
+    <div class="field">
+      <label for="birthYear">Birth year</label>
+      <div class="field-row">
+        <input type="range" id="birthYear" min="1970" max="2026" value="2026" step="1">
+        <output id="birthYearOut">2026</output>
+      </div>
+      <p class="hint" id="birthYearHint"></p>
+    </div>
+
+    <div class="field">
+      <span class="field-label">Starting asset</span>
+      <div class="segmented" id="assetToggle" role="radiogroup" aria-label="Starting asset">
+        <button type="button" data-asset="spacex" class="seg-btn active" role="radio" aria-checked="true">🚀 SpaceX share<br><small>$146</small></button>
+        <button type="button" data-asset="dividend" class="seg-btn" role="radio" aria-checked="false">🍼 Birth dividend<br><small>$2,000</small></button>
+      </div>
+      <p class="asset-blurb" id="assetBlurb"></p>
+    </div>
+
+    <div class="field">
+      <span class="field-label">Growth rate</span>
+      <div class="presets" id="presetGroup"></div>
+      <div class="field-row">
+        <input type="range" id="rateSlider" min="1" max="60" value="20" step="1">
+        <output id="rateOut">20%/yr</output>
+      </div>
+      <p class="hint">Illustrative only — not financial advice. Real returns are never this smooth.</p>
+    </div>
+
+    <div class="field">
+      <span class="field-label">Age they sell</span>
+      <div class="field-row">
+        <input type="range" id="sellAge" min="0" max="65" value="18" step="1">
+        <output id="sellAgeOut">18</output>
+      </div>
+    </div>
+
+    <button type="button" id="sellBtn" class="sell-btn">💸 Sell now at this age</button>
+    <button type="button" id="resetBtn" class="reset-btn">Hold instead</button>
+  </section>
+
+  <section class="panel chart-panel" aria-label="Compound growth chart">
+    <canvas id="chart" width="900" height="480" role="img" aria-label="Chart of compounding value from birth to age 65"></canvas>
+    <div class="chart-legend">
+      <span class="legend-item"><i class="dot held"></i>Held to 65</span>
+      <span class="legend-item"><i class="dot sold"></i>Sold early, reinvested at 5%/yr</span>
+      <span class="legend-item"><i class="dot forfeit"></i>Forfeited growth</span>
+    </div>
+    <p class="hint chart-hint">Simulated: cash from an early sale is assumed to go into a modest 5%/yr account, not sit at $0 growth — still far short of the equity scenarios above.</p>
+  </section>
+
+  <section class="panel results" aria-label="Results">
+    <div class="stat">
+      <span class="stat-label">Value if held to age 65 <span class="stat-year" id="heldYearLabel"></span></span>
+      <span class="stat-value" id="heldValue">$0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Cash received if sold at age <span id="sellAgeLabel">18</span> <span class="stat-year" id="sellYearLabel"></span></span>
+      <span class="stat-value" id="soldValue">$0</span>
+    </div>
+    <div class="stat forfeit-stat">
+      <span class="stat-label">Forfeited by selling early</span>
+      <span class="stat-value" id="forfeitValue">$0</span>
+      <span class="stat-sub" id="forfeitMultiple"></span>
+    </div>
+  </section>
+
+  <section class="panel facts" aria-label="Podcast figures">
+    <h2>From the episode <span class="tag">as stated on the podcast</span></h2>
+    <ul id="factsList"></ul>
+  </section>
+</main>
+
+<footer>
+  Inspired by Moonshots EP #304, "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids", around 00:24:41.
+  Fan-made prototype, not affiliated with the show.
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304" target="_blank" rel="noopener">Listen to the episode</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

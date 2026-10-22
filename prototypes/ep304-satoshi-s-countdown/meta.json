@@ -1,0 +1,36 @@
+{
+  "slug": "ep304-satoshi-s-countdown",
+  "title": "Satoshi's Countdown",
+  "one_liner": "Race a simulated self-improving AI against SHA-256 to see when it could theoretically crack and drain the original Bitcoin wallet.",
+  "headline": "Set how fast a fictional AI doubles its compute, toggle quantum-assisted mode, and watch it race across SHA-256's keyspace to \"drain\" Satoshi's genesis wallet.",
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  },
+  "timestamp": "01:48:14",
+  "idea_score": 4.3,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-10-21T23:34:29+00:00",
+  "updated": "2026-10-21T23:34:29+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-21T23:34:29+00:00",
+      "overall": 8.35,
+      "summary": "A tight, honest execution of a risky idea: the disclaimer banner, reality-check panel, and inspectable model-assumptions JSON do real work to prevent misinformation, and the underlying crack-time math is internally consistent (verified the formula reproduces the displayed \"~40.1 years\" at default settings). Every interactive element in the demo spec — doubling slider, fixed keyspace bar, animated race, classical/quantum toggle — is present and functions correctly on both desktop and mobile with no console errors."
+    }
+  ]
+}

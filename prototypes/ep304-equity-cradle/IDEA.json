@@ -1,0 +1,23 @@
+{
+  "title": "Equity Cradle",
+  "one_liner": "Simulate a kid's SpaceX share or birth dividend compounding to age 65, and what they lose by selling early.",
+  "timestamp": "00:24:41",
+  "speaker": "Chamath Palihapitiya",
+  "context": "Elon pledged one SpaceX share (~$146) to every American kid via Trump accounts; Chamath proposed a locked $2,000 birth dividend, and hosts debated kids holding versus dumping shares.",
+  "demo": "Visitor picks a birth year and an asset (SpaceX fractional share at $146 or a $2,000 birth dividend), sets a growth-rate slider with presets from the episode's figures, and watches an animated compound-growth chart run to age 65. A 'sell now' button shows exactly how much future value gets forfeited versus holding.",
+  "data_plan": "Bundled podcast figures (72M kids, $10.5B total gift, $146/kid, SpaceX share price $1,408, Dell gift of $250/kid) plus user input and a simulated compound-growth curve.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 4,
+  "novelty": 3,
+  "related_existing": null,
+  "risks": "Growth-rate presets (e.g. 'orders of magnitude bigger than Earth's economy') are speculative; must be labeled as illustrative, not financial advice.",
+  "score": 4.2,
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  }
+}

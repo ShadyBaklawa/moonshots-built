@@ -1,0 +1,23 @@
+{
+  "title": "Satoshi's Countdown",
+  "one_liner": "Race a simulated self-improving AI against SHA-256 to see when it could theoretically crack and drain the original Bitcoin wallet.",
+  "timestamp": "01:48:14",
+  "speaker": "Chamath Palihapitiya",
+  "context": "Chamath argued crypto is capped because recursive AI self-improvement could eventually be pointed at breaking SHA-256 to drain Satoshi's original wallet, then short Bitcoin.",
+  "demo": "Visitor sets an 'AI compute doubling rate' slider next to a fixed 2^256 keyspace bar; an animated progress bar races toward 'wallet drained,' with a readout translating the slider into a dramatized crack-year estimate, plus a toggle comparing classical versus hypothetical quantum-assisted rates.",
+  "data_plan": "Simulated, clearly labeled log-scale model of compute growth versus keyspace size; no real cryptographic claims.",
+  "feasibility": 4,
+  "wow": 5,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Must disclaim this is dramatized fiction, not a real cryptographic timeline — brute-forcing SHA-256 is considered infeasible for any foreseeable computer; mislabeling could spread misinformation.",
+  "score": 4.3,
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  }
+}

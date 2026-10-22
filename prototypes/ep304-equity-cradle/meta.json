@@ -1,0 +1,36 @@
+{
+  "slug": "ep304-equity-cradle",
+  "title": "Equity Cradle",
+  "one_liner": "Simulate a kid's SpaceX share or birth dividend compounding to age 65, and what they lose by selling early.",
+  "headline": "Pick a kid's $146 SpaceX share or $2,000 birth dividend, set a growth-rate preset from the episode, and hit \"Sell now\" to watch exactly how much future value gets vaporized versus holding to 65.",
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  },
+  "timestamp": "00:24:41",
+  "idea_score": 4.2,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.1,
+  "created": "2026-10-21T23:45:29+00:00",
+  "updated": "2026-10-21T23:45:29+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-21T23:45:29+00:00",
+      "overall": 8.1,
+      "summary": "A tight, on-theme compound-growth visualizer that fully delivers the demo spec from the episode: birth year, asset choice, episode-sourced growth presets, animated log-scale chart, and a sell-vs-hold forfeiture stat. The prior review's blocking defect (a dead birth-year slider) has been properly fixed — it now drives calendar-year labels and a live \"today\" marker — and the forfeited-growth comparison was made more honest by reinvesting sold cash at 5%/yr instead of assuming it sits at $0. No new blocking issues found; remaining gaps are polish-level."
+    }
+  ]
+}
