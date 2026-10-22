@@ -105,6 +105,31 @@ def test_extract_with_fake_claude(sandbox):
     assert json.loads(log[-1])["label"].startswith("extract:")
 
 
+def test_check_figures_only_verifies_words_in_transcript():
+    from pipeline.extract import check_figures
+    transcript = ("[00:24:41] He's giving one SpaceX share, about $146, to every kid.\n"
+                  "[00:24:50] That's 72 million kids, roughly $10.5 billion.")
+    figs = check_figures([
+        {"value": "$146", "meaning": "one share", "timestamp": "00:24:41",
+         "said": "one SpaceX share, about $146"},
+        {"value": "72 million", "meaning": "kids", "timestamp": "00:24:50",
+         "said": "That's  72 MILLION kids"},                      # case/spacing tolerant
+        {"value": "$1,408", "meaning": "share price", "timestamp": "00:24:41",
+         "said": "a share costs $1,408"},                          # never said
+        {"value": "$146", "meaning": "spans a timestamp", "timestamp": "00:24:41",
+         "said": "every kid. 00:24:50 That's"},                   # timestamps aren't speech
+        {"value": "x", "meaning": "empty quote", "timestamp": "", "said": ""},
+        {"value": "$14", "meaning": "partial number", "timestamp": "00:24:41",
+         "said": "share, about $14"},                              # must not match $146
+        {"value": "$146", "meaning": "too short to check", "timestamp": "00:24:41",
+         "said": "$146"},
+        {"value": "$10.5 billion", "meaning": "total", "timestamp": "00:24:50",
+         "said": "roughly $10.5 billion."},                        # decimal kept, full stop not
+    ], transcript)
+    assert [f["verified"] for f in figs] == [True, True, False, False, False, False, False, True]
+    assert figs[0]["value"] == "$146"                              # original fields kept
+
+
 def test_review_gate(monkeypatch):
     from pipeline import config
     from pipeline.review import overall, passed

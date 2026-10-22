@@ -20,6 +20,20 @@ show this to the podcast hosts without embarrassment" and 10 is rare:
 - `honesty`: simulated or illustrative data is labeled, podcast figures are attributed, no
   real-company branding, no copied transcript text, footer credit present.
 
+Number check (do this before scoring): list every number the UI, data files and README
+present as real, and match each one to an entry in the `figures` list of `IDEA.json` with
+`"verified": true`. Also check the numbers against each other (e.g. per-person amount ×
+people ≈ total, "a tenth of X" really is a tenth). Each of these is a `must_fix` and caps
+`honesty` at 4:
+- a number presented as real that is not a verified figure and not a simple, labeled
+  calculation from verified figures;
+- a figure shown with a different meaning than in `figures` (e.g. a whole share described as
+  a fraction of a share);
+- a number, prediction or quote attributed to a named person who is not listed as saying it;
+- numbers that contradict each other.
+If `IDEA.json` has no `figures` list, flag any specific real-world number you cannot confirm
+from `IDEA.json` itself as an improvement instead.
+
 Then:
 - `must_fix`: concrete defects that block publishing (empty if none). Be specific: file,
   element, what's wrong, what to change.

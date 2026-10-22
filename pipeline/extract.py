@@ -1,6 +1,7 @@
 """Transcript -> ranked, buildable ideas."""
 from __future__ import annotations
 
+import re
 import tempfile
 from pathlib import Path
 from string import Template
@@ -25,6 +26,19 @@ IDEA_FIELDS = {
     "novelty": _SCORE,
     "related_existing": {"type": ["string", "null"]},
     "risks": {"type": "string"},
+    "figures": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "value": {"type": "string"},
+                "meaning": {"type": "string"},
+                "timestamp": {"type": "string"},
+                "said": {"type": "string"},
+            },
+            "required": ["value", "meaning", "timestamp", "said"],
+        },
+    },
 }
 SCHEMA = {
     "type": "object",
@@ -44,6 +58,28 @@ def score(idea: dict) -> float:
     return round(sum(float(idea.get(k, 0)) * w for k, w in WEIGHTS.items()), 2)
 
 
+def _norm(text: str) -> str:
+    text = re.sub(r"[^a-z0-9$%.]+", " ", text.lower())
+    text = re.sub(r"(?<!\d)\.|\.(?!\d)", " ", text)  # keep decimal points, drop full stops
+    return " ".join(text.split())
+
+
+def check_figures(figures: list[dict], transcript: str) -> list[dict]:
+    """Mark each figure verified only if its quoted words really occur in the transcript.
+
+    The scout can misremember or invent numbers; downstream agents only see IDEA.json, so
+    this is the one place a figure can be checked against what was actually said.
+    """
+    spoken = re.sub(r"\[\d{1,2}:\d{2}:\d{2}\]", " ", transcript)  # drop [HH:MM:SS] markers
+    haystack = f" {_norm(spoken)} "
+    out = []
+    for f in figures:
+        said = _norm(f.get("said", ""))
+        ok = len(said.split()) >= 3 and f" {said} " in haystack  # whole words only
+        out.append({**f, "verified": ok})
+    return out
+
+
 def existing_summary() -> tuple[str, set[str]]:
     rows, slugs = [], set()
     for d, meta in all_prototypes():
@@ -60,7 +96,9 @@ def extract_ideas(ep: EpisodeDetail) -> dict:
         res = run_claude(prompt, cwd=Path(tmp), label=f"extract:{ep.slug}", schema=SCHEMA,
                          tools="", stdin=ep.transcript_text(), max_turns=4)
     data = res.structured or {"episode_summary": "", "ideas": []}
+    transcript = ep.transcript_text()
     for idea in data["ideas"]:
+        idea["figures"] = check_figures(idea.get("figures", []), transcript)
         idea["score"] = score(idea)
     data["ideas"].sort(key=lambda i: i["score"], reverse=True)
     return data

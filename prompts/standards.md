@@ -17,15 +17,24 @@ discussed on the Moonshots podcast. It is published on a public gallery that the
 3. **Honest.** Anything simulated, synthetic, or illustrative is labeled visibly in the UI
    (e.g. a "Simulated data" tag next to the chart). Numbers quoted from the podcast are labeled
    "as stated on the podcast". Never present fake data as real measurements.
-4. **Original.** Invent original product names, logos and copy. Never use the branding, logo or
+4. **Accurate numbers.** Every number presented as real (from the podcast or the world) must
+   come from the `figures` list in `IDEA.json` with `"verified": true`, shown with the same
+   meaning. Never invent, estimate or adjust a figure to make others fit; never attribute a
+   number, prediction or quote to a named person unless that figure lists them as saying it.
+   A number calculated from listed figures is fine if the calculation is simple and the UI
+   says it is derived. Anything else (scenario sliders, example rates) must be labeled
+   "illustrative" and must not carry a real person's name. If a figure you need is missing or
+   unverified, leave it out or make it a clearly labeled illustrative input. If `IDEA.json`
+   has no `figures` list (older prototypes), do not add new real-world numbers.
+5. **Original.** Invent original product names, logos and copy. Never use the branding, logo or
    name of a real company or person as the product, never imitate a real site, and never copy
    transcript text: paraphrase, with at most one short quote under 15 words.
-5. **No harmful scope.** No real-money trading or payments, no medical diagnosis or dosing
+6. **No harmful scope.** No real-money trading or payments, no medical diagnosis or dosing
    advice, no scraping of third-party sites, no collection of personal data.
-6. **Phone-ready.** Usable at 390 px wide with no horizontal scrolling, readable type
+7. **Phone-ready.** Usable at 390 px wide with no horizontal scrolling, readable type
    (≥ 15 px body), touch targets ≥ 40 px, visible keyboard focus, `prefers-reduced-motion`
    respected, and light/dark both legible.
-7. **Clean console.** No uncaught errors or console errors on load or on first interactions.
+8. **Clean console.** No uncaught errors or console errors on load or on first interactions.
 
 ## What good looks like
 - Within 5 seconds a visitor understands the idea and can *do* something: drag a slider, run

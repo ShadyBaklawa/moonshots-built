@@ -39,5 +39,20 @@ For each idea:
 - `related_existing`: the slug of an existing prototype this idea substantially extends or
   updates (e.g. the episode revisits the same topic with new numbers), else null.
 - `risks`: anything that could make it misleading or problematic, else "".
+- `figures`: every number the prototype would present as real (prices, counts, totals,
+  percentages, dates, growth rates attributed to someone). One entry per number:
+  - `value`: the number as it should be shown, e.g. "$146" or "72 million".
+  - `meaning`: what it is, e.g. "value of one SpaceX share at the time of the pledge".
+  - `timestamp`: where it is said (HH:MM:SS).
+  - `said`: the exact words from that transcript line containing the number, copied
+    character for character, 3–10 words. This is checked automatically against the
+    transcript; a figure whose words cannot be found is marked unverified and the builder
+    will not use it.
+
+  Only list numbers that are actually said in the transcript. Never compute, estimate or
+  "fill in" a number to make others fit, and never attribute a number to a person who did not
+  say it. Check the figures against each other (e.g. per-person amount × people ≈ total); if
+  they conflict, say so in `risks` instead of picking one silently. `context`, `demo` and
+  `data_plan` must not mention any number that is not in `figures`.
 
 Be a harsh scorer: a 5 should be rare. Also give a 2–3 sentence `episode_summary`.
