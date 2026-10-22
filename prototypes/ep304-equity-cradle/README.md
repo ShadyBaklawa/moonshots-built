@@ -2,14 +2,14 @@
 
 ## What it is
 A compound-growth playground for the "give every kid a stake at birth" idea. Pick a
-starting asset — a ~$146 SpaceX fractional share or a $2,000 locked birth dividend — set
+starting asset — one SpaceX share (~$146) or a $2,000 locked birth dividend — set
 a growth-rate preset, then drag an "age they sell" slider and hit **Sell now** to see
 exactly how much future value gets forfeited by cashing out early versus holding to 65.
 
 ## Origin
 From Moonshots EP #304, "Chamath: AGI Is Here, Anthropic's $100B Giveaway, Elon's SpaceX
-Shares for 72M Kids," around 00:24:41. Elon pledged roughly one SpaceX share (~$146
-worth) to every American kid via a Trump account; Chamath countered with a proposal for
+Shares for 72M Kids," around 00:24:41. Elon pledged one SpaceX share (~$146
+at the time) to every American kid, likely via the new Trump Accounts; Chamath countered with a proposal for
 a simpler, locked $2,000 cash dividend at birth. The hosts debated whether kids would
 actually hold the stake or dump it immediately.
 
@@ -22,8 +22,8 @@ actually hold the stake or dump it immediately.
 5. Click **Hold instead** to reset and compare a different scenario.
 
 ## Real vs simulated
-- **Real (as stated on the podcast):** the $146/kid SpaceX gift figure, the ~$1,408
-  reference share price, the $2,000 birth-dividend proposal, the 72M kids / $10.5B total
+- **Real (as stated on the podcast):** one SpaceX share per kid at about $146 (the
+  share price when the pledge was made), the $2,000 birth-dividend proposal, the 72M kids / $10.5B total
   gift figures, and the $250/kid Dell comparison — all shown in the "From the episode"
   panel.
 - **Simulated:** the compound-growth curve itself. Growth-rate presets (7% historical
@@ -36,7 +36,7 @@ actually hold the stake or dump it immediately.
 - Let users compare both assets side by side on the same chart.
 - Add a toggle for the reinvestment rate on sold cash (currently a fixed 5%/yr default)
   so visitors can test more/less optimistic opportunity-cost scenarios.
-- Pull a live SpaceX secondary-market valuation (if a keyless public source exists) to
+- Pull a live SpaceX (SPCX) quote (if a keyless public source exists) to
   update the reference share price instead of a static bundled figure.
 - Add arrow-key navigation to the starting-asset radio group for full keyboard parity
   with native radio buttons.
