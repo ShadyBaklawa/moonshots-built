@@ -14,10 +14,10 @@ if schema and "ideas" in schema.get("properties", {}):
          "timestamp": "00:12:05", "speaker": "", "context": "A slider for battery cost.",
          "demo": "A world map with a slider.", "data_plan": "Bundled illustrative data.",
          "feasibility": 5, "wow": 4, "fidelity": 5, "novelty": 3, "related_existing": None,
-         "risks": ""},
+         "risks": "", "figures": []},
         {"title": "Weak Idea", "one_liner": "Meh.", "timestamp": "00:00:31", "speaker": "",
          "context": "", "demo": "", "data_plan": "", "feasibility": 2, "wow": 2, "fidelity": 2,
-         "novelty": 1, "related_existing": None, "risks": ""}]}
+         "novelty": 1, "related_existing": None, "risks": "", "figures": []}]}
 elif schema:
     structured = {"scores": {k: 8 for k in ["works", "fidelity", "wow", "ux", "code", "honesty"]},
                   "must_fix": [], "improvements": ["x"], "verdict": "pass",
