@@ -1,0 +1,3 @@
+# Security fixes allowed inside the 7-day cooldown (see CLAUDE.md "Dependencies").
+# certifi 2026.10.18+ drops "emSign ECC Root CA - G3", whose intermediates were compromised (eMudhra, 17 Oct 2026).
+certifi==2026.10.19

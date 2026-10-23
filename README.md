@@ -88,7 +88,7 @@ it's a fan project, not affiliated with the show.
 ## Local commands
 
 ```bash
-pip install -r requirements.txt && python -m playwright install chromium
+pip install --require-hashes -r requirements.lock && python -m playwright install chromium
 npm i -g @anthropic-ai/claude-code              # needs CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY
 
 python -m pipeline detect                       # what's new (no AI)
@@ -99,4 +99,5 @@ python -m pipeline upgrade [slug]
 python scripts/smoke.py prototypes/<slug>       # browser smoke test
 python -m pipeline gallery && python -m http.server -d site
 python -m pytest -q
+scripts/lock.sh                                 # after editing requirements.txt (needs uv)
 ```

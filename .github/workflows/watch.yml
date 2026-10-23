@@ -34,8 +34,9 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: requirements.lock
 
-      - run: pip install -r requirements.txt
+      - run: pip install --require-hashes -r requirements.lock
 
       - name: Detect new episodes
         id: detect
@@ -45,7 +46,7 @@ jobs:
         if: steps.detect.outputs.new == 'true' || inputs.episode_url != ''
         run: |
           python -m playwright install --with-deps chromium
-          npm install -g @anthropic-ai/claude-code
+          npm install -g @anthropic-ai/claude-code --before="$(date -u -d '7 days ago' +%F)"   # 7-day cooldown (CLAUDE.md "Dependencies")
 
       - name: Build, test and review prototypes
         id: build
