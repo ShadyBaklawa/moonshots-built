@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crew Gap Calculator — Livewire Bench</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+
+  <header class="hero">
+    <p class="brand">LIVEWIRE BENCH</p>
+    <h1>Crew Gap Calculator</h1>
+    <p class="sub">For data center developers and EPC contractors: enter your build and crew, and see
+      which months you'll be short licensed electricians before it costs you the energization date.</p>
+  </header>
+
+  <section class="context-strip" aria-label="Why this matters">
+    <p class="context-line">
+      <span class="quote-tag">as stated on the podcast</span>
+      Chamath Palihapitiya expects a massive compute shortage
+      <strong>&ldquo;in the next three or four years&rdquo;</strong> — and labor, not just power, is one of the
+      bottlenecks. <span class="who">— Chamath Palihapitiya, 00:44:07</span>
+    </p>
+  </section>
+
+  <main class="layout">
+
+    <section class="panel inputs" aria-label="Your project">
+      <h2>Your build</h2>
+
+      <label class="field">
+        <span>Facility size (critical IT load, MW)</span>
+        <input type="number" id="sizeMW" min="1" max="500" step="1" value="40">
+      </label>
+
+      <label class="field">
+        <span>Target energization date</span>
+        <input type="date" id="targetDate">
+      </label>
+
+      <label class="field">
+        <span>Region</span>
+        <select id="region">
+          <option value="tight">Hot market (N. Virginia, Phoenix, Dallas-ish)</option>
+          <option value="mid" selected>Average market</option>
+          <option value="loose">Deep bench / rural union hall</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Licensed electricians already committed</span>
+        <input type="number" id="committed" min="0" max="2000" step="1" value="10">
+      </label>
+
+      <p class="note" id="monthsNote"></p>
+
+      <details class="assumptions">
+        <summary>Staffing assumptions (yours to edit)</summary>
+        <p class="assume-intro">Every ratio below is an editable estimate, not an episode figure or an
+          industry benchmark. Change any of them and the plan recalculates.</p>
+
+        <label class="field small">
+          <span>Peak electricians per MW — rough-in</span>
+          <input type="number" id="ratioRough" min="0" max="10" step="0.1" value="0.8">
+        </label>
+        <label class="field small">
+          <span>Peak electricians per MW — switchgear &amp; MV</span>
+          <input type="number" id="ratioSwitch" min="0" max="10" step="0.1" value="1.3">
+        </label>
+        <label class="field small">
+          <span>Peak electricians per MW — commissioning</span>
+          <input type="number" id="ratioComm" min="0" max="10" step="0.1" value="0.5">
+        </label>
+        <label class="field small">
+          <span>Share of peak need typically available in-region</span>
+          <input type="number" id="localAvail" min="0" max="1" step="0.05" value="0.6">
+        </label>
+      </details>
+    </section>
+
+    <section class="panel results" aria-label="Results">
+      <h2>Monthly electrician demand</h2>
+      <div class="chart-wrap">
+        <div id="chartScroll" class="chart-scroll">
+          <svg id="chart" role="img" aria-label="Electricians needed per month by phase, versus crew committed"></svg>
+        </div>
+        <ul class="legend">
+          <li><span class="swatch rough"></span>Rough-in</li>
+          <li><span class="swatch switch"></span>Switchgear &amp; MV</li>
+          <li><span class="swatch comm"></span>Commissioning</li>
+          <li><span class="swatch line"></span>Crew committed</li>
+          <li><span class="swatch gap"></span>Shortfall</li>
+        </ul>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <span class="card-label">Peak headcount needed</span>
+          <span class="card-value" id="peakNeed">—</span>
+        </div>
+        <div class="card warn">
+          <span class="card-label">Peak shortfall</span>
+          <span class="card-value" id="peakGap">—</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Months with a gap</span>
+          <span class="card-value" id="gapMonths">—</span>
+        </div>
+      </div>
+
+      <div id="riskBanner" class="risk-banner"></div>
+
+      <div class="table-wrap">
+        <table id="breakdown">
+          <thead>
+            <tr><th>Month</th><th>Rough-in</th><th>Switchgear</th><th>Commissioning</th><th>Needed</th><th>Committed</th><th>Gap</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <button id="exportBtn" type="button">Export job description for the peak gap</button>
+      <p class="export-note">Downloads a plain-text draft. Edit it before posting — it's a starting point, not a
+        legal or compliance review.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Inspired by Moonshots EP 304, around 00:44:07. Fan-made prototype, not affiliated with the show.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304" target="_blank" rel="noopener">Episode source</a>
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

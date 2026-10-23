@@ -1,0 +1,57 @@
+{
+  "title": "Livewire Bench",
+  "one_liner": "A niche recruiting agency that finds licensed master and journeyman electricians for data center and solar builds.",
+  "timestamp": "00:44:07",
+  "speaker": "Chamath Palihapitiya",
+  "context": "Chamath says that even with power assets in hand, builds stall on funding, supply chain and skilled labor. Licensed master electricians are scarce and expensive, and you can't just hire off Craigslist.",
+  "customer": "Mid-size data center developers, EPC contractors and C&I solar installers in the US who are short on licensed electrical crews",
+  "problem": "Projects slip and liquidated-damages risk builds up when a site can't find licensed electricians and foremen. General staffing firms don't screen for data-center-grade experience such as medium voltage, switchgear and liquid cooling.",
+  "revenue_model": "Contingency placement fee of about 15–20% of first-year salary per permanent hire, or a markup of about $15–25 per hour on contract crews (estimate)",
+  "why_now": "Chamath expects a massive compute shortage within three to four years. Builders can't get capacity online, labor is one of the bottlenecks he names, and Dave calls the buildout the opportunity of the decade.",
+  "first_steps": [
+    "Call 10 EPC or data center project managers and ask what an unfilled electrician seat costs them per week",
+    "Build a shortlist of 50 licensed electricians from public state license lookups and union and trade-school networks in one hot region",
+    "Post one paid 'data center electrician' job ad and measure how many qualified applicants come in within 7 days"
+  ],
+  "cost_to_start": "About 2–3 weeks and under $1,500 (estimate) for a job-board budget, a simple site and LinkedIn Recruiter Lite",
+  "competition": "Large construction staffing firms and union hiring halls already exist; few, if any, specialise in data center electrical work",
+  "risks": "Union rules may route hiring through halls. Candidate supply is the bottleneck, so the agency faces the same scarcity it sells against. Long sales cycles with big EPCs. Some states regulate staffing agencies.",
+  "money": 4,
+  "ease": 3,
+  "speed": 4,
+  "evidence": 4,
+  "tool": {
+    "title": "Crew Gap Calculator",
+    "one_liner": "Estimate how many licensed electricians a data center build needs per phase and where staffing will slip the schedule.",
+    "demo": "A developer enters facility size in MW, target energization date, region and crew already committed. The page returns an estimated electrician headcount by month (rough-in, switchgear, commissioning), the size of the peak shortfall and a schedule-risk warning. It can also export a ready-to-post job description. Every staffing ratio is a visible, editable assumption.",
+    "data_plan": "Customer's own project inputs plus clearly labeled, editable default staffing ratios (my estimates, not episode figures)",
+    "feasibility": 4
+  },
+  "figures": [
+    {
+      "value": "three or four years",
+      "meaning": "Chamath's horizon for a massive compute shortage",
+      "timestamp": "00:44:07",
+      "said": "compute shortage in the next three or four years",
+      "verified": true
+    },
+    {
+      "value": "100 gigawatts",
+      "meaning": "Dave's estimate of total power needed for AI by 2030",
+      "timestamp": "00:49:10",
+      "said": "about 100 gigawatts total by 2030",
+      "verified": true
+    }
+  ],
+  "score": 3.85,
+  "slug": "ep304-livewire-bench",
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  },
+  "tool_slug": "ep304-crew-gap-calculator",
+  "created": "2026-10-23T21:11:21+00:00"
+}

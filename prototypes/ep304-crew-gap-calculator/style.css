@@ -1,0 +1,253 @@
+:root {
+  --ink: #0e1a2b;
+  --paper: #0b1726;
+  --panel: #102033;
+  --line: #2a4a66;
+  --amber: #ffb400;
+  --amber-dim: #a87a1f;
+  --text: #e8eef5;
+  --text-dim: #9fb3c8;
+  --rough: #4fb0ce;
+  --switch: #ffb400;
+  --comm: #7cd17c;
+  --gap-color: #ff5d5d;
+  --card-bg: #0d1d30;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --ink: #eef2f6;
+    --paper: #f4f7fa;
+    --panel: #ffffff;
+    --line: #c7d3dd;
+    --amber: #b5750a;
+    --amber-dim: #8a5a06;
+    --text: #15202b;
+    --text-dim: #45586a;
+    --rough: #0f7ba3;
+    --switch: #b5750a;
+    --comm: #2c8a4a;
+    --gap-color: #c73232;
+    --card-bg: #f0f4f8;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+
+.sheet {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px 16px 40px;
+}
+
+a { color: var(--amber); }
+
+h1, h2 { font-family: "Courier New", monospace; letter-spacing: 0.02em; margin: 0; }
+
+.hero {
+  padding: 20px 18px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+}
+.brand {
+  margin: 0 0 6px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--amber);
+}
+.hero h1 { font-size: clamp(24px, 5vw, 34px); color: var(--text); }
+.hero .sub {
+  margin: 10px 0 0;
+  color: var(--text-dim);
+  font-size: 16px;
+  max-width: 640px;
+}
+
+.context-strip {
+  background: var(--card-bg);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+.context-line { margin: 0; font-size: 15px; color: var(--text-dim); line-height: 1.5; }
+.context-line strong { color: var(--text); }
+.quote-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--amber);
+  color: #1a1203;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.who { display: block; font-size: 13px; margin-top: 4px; color: var(--text-dim); }
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 14px;
+}
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  min-width: 0;
+}
+.panel h2 {
+  font-size: 15px;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 12px;
+}
+.field span {
+  display: block;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+.field input, .field select {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  font-size: 16px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.field.small input { min-height: 40px; }
+.field input:focus, .field select:focus, button:focus, summary:focus {
+  outline: 3px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.note { font-size: 13px; color: var(--text-dim); margin: 2px 0 14px; min-height: 18px; }
+
+.assumptions {
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
+}
+.assumptions summary {
+  cursor: pointer;
+  color: var(--amber);
+  font-size: 14px;
+  padding: 6px 2px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.assume-intro { font-size: 13px; color: var(--text-dim); margin: 6px 0 12px; }
+
+.chart-wrap { margin-bottom: 10px; }
+.chart-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--card-bg); }
+#chart { display: block; height: 240px; }
+
+.legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  padding: 10px 2px 0;
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.legend li { display: flex; align-items: center; gap: 6px; }
+.swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+.swatch.rough { background: var(--rough); }
+.swatch.switch { background: var(--switch); }
+.swatch.comm { background: var(--comm); }
+.swatch.line { background: none; border-top: 3px dashed var(--text); height: 0; width: 16px; }
+.swatch.gap { background: var(--gap-color); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+@media (max-width: 500px) {
+  .cards { grid-template-columns: 1fr; }
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.card.warn { border-color: var(--gap-color); }
+.card-label { display: block; font-size: 12px; color: var(--text-dim); }
+.card-value { display: block; font-size: 22px; font-weight: 700; margin-top: 2px; }
+
+.risk-banner {
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid var(--line);
+}
+.risk-banner.ok { border-color: var(--comm); color: var(--comm); }
+.risk-banner.moderate { border-color: var(--switch); color: var(--switch); }
+.risk-banner.high { border-color: var(--gap-color); color: var(--gap-color); }
+
+.table-wrap { overflow-x: auto; margin-bottom: 16px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 13px; }
+th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text-dim); font-weight: 600; }
+tr.gap-row td { color: var(--gap-color); font-weight: 600; }
+
+button#exportBtn {
+  width: 100%;
+  min-height: 46px;
+  background: var(--amber);
+  color: #1a1203;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+button#exportBtn:hover { background: var(--amber-dim); color: #fff; }
+.export-note { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+
+.foot {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}

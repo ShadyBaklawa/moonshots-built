@@ -1,0 +1,10 @@
+{
+  "debt_2025_trillion": 40,
+  "debt_growth_last_year_trillion": 2.44,
+  "debt_growth_per_day_billion": 6.5,
+  "interest_per_day_billion": 3,
+  "gdp_2030_anthropic_trillion": 44,
+  "historic_gdp_growth_pct": [2, 3],
+  "gdp_2025_trillion_illustrative_baseline": 30,
+  "source": "Moonshots EP #304, Peter Diamandis, timestamp 01:08:24-01:09:37. Verified: debt_2025_trillion, debt_growth_last_year_trillion, debt_growth_per_day_billion, interest_per_day_billion, gdp_2030_anthropic_trillion, historic_gdp_growth_pct. gdp_2025_trillion_illustrative_baseline is NOT stated on the podcast; it is an assumed starting point so the demo's GDP path reaches the verified $44T-by-2030 figure. These figures are mirrored as constants in app.js, which is what the page actually renders from."
+}
