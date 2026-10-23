@@ -1,14 +1,18 @@
 # Moonshots, Built
 
-Pipeline that turns ideas from new Moonshots podcast episodes into reviewed static prototypes.
+Pipeline that turns new Moonshots podcast episodes into business briefs and reviewed static prototypes.
 
 ## Layout
 - `pipeline/`: Python package (`python -m pipeline <cmd>`): `feed` (podscripts parsing),
-  `extract` (idea scout + ranking), `build` (builder agent + fix loop), `verify` (Playwright
+  `extract` (scout: business opportunities + demo ideas), `opportunity` (brief ranking and
+  storage), `build` (builder agent + fix loop), `verify` (Playwright
   smoke test), `review` (independent reviewer), `upgrade`, `gallery`, `cli`.
 - `prompts/`: agent prompts. `standards.md` is appended to every builder/reviewer session.
-- `prototypes/<slug>/`: one folder per prototype. `meta.json` and `IDEA.json` are written by
-  the pipeline only; `.review/` is scratch (gitignored).
+- `prototypes/<slug>/`: one folder per prototype (`kind` in `meta.json`: `tool` for a business
+  opportunity's working tool, `demo` for a fun demo). `meta.json` and `IDEA.json` are written
+  by the pipeline only; `.review/` is scratch (gitignored).
+- `opportunities/<slug>.json`: business briefs written by the scout (`pipeline/opportunity.py`
+  ranks and stores them; the gallery renders them). Written by the pipeline only.
 - `state/`: committed JSON state (episodes seen, upgrade queue, cost log).
 - `scripts/ship.sh`: commits state to main and opens the PR. `scripts/smoke.py`: smoke test.
 

@@ -1,4 +1,4 @@
-"""Transcript -> ranked, buildable ideas."""
+"""Transcript -> ranked business opportunities and buildable demo ideas."""
 from __future__ import annotations
 
 import re
@@ -9,9 +9,24 @@ from string import Template
 from . import config
 from .feed import EpisodeDetail
 from .llm import run_claude
+from .opportunity import existing_summary as existing_briefs
+from .opportunity import score as opportunity_score
 from .state import all_prototypes
 
 _SCORE = {"type": "integer", "minimum": 1, "maximum": 5}
+FIGURES = {
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "value": {"type": "string"},
+            "meaning": {"type": "string"},
+            "timestamp": {"type": "string"},
+            "said": {"type": "string"},
+        },
+        "required": ["value", "meaning", "timestamp", "said"],
+    },
+}
 IDEA_FIELDS = {
     "title": {"type": "string"},
     "one_liner": {"type": "string"},
@@ -26,30 +41,51 @@ IDEA_FIELDS = {
     "novelty": _SCORE,
     "related_existing": {"type": ["string", "null"]},
     "risks": {"type": "string"},
-    "figures": {
-        "type": "array",
-        "items": {
-            "type": "object",
-            "properties": {
-                "value": {"type": "string"},
-                "meaning": {"type": "string"},
-                "timestamp": {"type": "string"},
-                "said": {"type": "string"},
-            },
-            "required": ["value", "meaning", "timestamp", "said"],
-        },
-    },
+    "figures": FIGURES,
 }
+TOOL_FIELDS = {
+    "title": {"type": "string"},
+    "one_liner": {"type": "string"},
+    "demo": {"type": "string"},
+    "data_plan": {"type": "string"},
+    "feasibility": _SCORE,
+}
+OPPORTUNITY_FIELDS = {
+    "title": {"type": "string"},
+    "one_liner": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "speaker": {"type": "string"},
+    "context": {"type": "string"},
+    "customer": {"type": "string"},
+    "problem": {"type": "string"},
+    "revenue_model": {"type": "string"},
+    "why_now": {"type": "string"},
+    "first_steps": {"type": "array", "items": {"type": "string"}},
+    "cost_to_start": {"type": "string"},
+    "competition": {"type": "string"},
+    "risks": {"type": "string"},
+    "money": _SCORE,
+    "ease": _SCORE,
+    "speed": _SCORE,
+    "evidence": _SCORE,
+    "tool": {"type": "object", "properties": TOOL_FIELDS, "required": list(TOOL_FIELDS)},
+    "figures": FIGURES,
+}
+
+
+def _list_of(fields: dict) -> dict:
+    return {"type": "array",
+            "items": {"type": "object", "properties": fields, "required": list(fields)}}
+
+
 SCHEMA = {
     "type": "object",
     "properties": {
         "episode_summary": {"type": "string"},
-        "ideas": {
-            "type": "array",
-            "items": {"type": "object", "properties": IDEA_FIELDS, "required": list(IDEA_FIELDS)},
-        },
+        "opportunities": _list_of(OPPORTUNITY_FIELDS),
+        "ideas": _list_of(IDEA_FIELDS),
     },
-    "required": ["episode_summary", "ideas"],
+    "required": ["episode_summary", "opportunities", "ideas"],
 }
 WEIGHTS = {"feasibility": 0.35, "wow": 0.30, "fidelity": 0.20, "novelty": 0.15}
 
@@ -91,16 +127,21 @@ def existing_summary() -> tuple[str, set[str]]:
 def extract_ideas(ep: EpisodeDetail) -> dict:
     existing, _ = existing_summary()
     prompt = Template((config.PROMPTS / "extract.md").read_text()).safe_substitute(
-        title=ep.title, date=ep.date, url=ep.url, existing=existing)
+        title=ep.title, date=ep.date, url=ep.url, existing=existing,
+        existing_briefs=existing_briefs())
     with tempfile.TemporaryDirectory() as tmp:  # empty dir: nothing to read even by accident
         res = run_claude(prompt, cwd=Path(tmp), label=f"extract:{ep.slug}", schema=SCHEMA,
-                         tools="", stdin=ep.transcript_text(), max_turns=4)
-    data = res.structured or {"episode_summary": "", "ideas": []}
+                         tools="", stdin=ep.transcript_text(), max_turns=4,
+                         model=config.SCOUT_MODEL)
+    data = res.structured or {}
+    data.setdefault("episode_summary", "")
     transcript = ep.transcript_text()
-    for idea in data["ideas"]:
-        idea["figures"] = check_figures(idea.get("figures", []), transcript)
-        idea["score"] = score(idea)
-    data["ideas"].sort(key=lambda i: i["score"], reverse=True)
+    for kind, scorer in (("ideas", score), ("opportunities", opportunity_score)):
+        items = data.setdefault(kind, [])
+        for item in items:
+            item["figures"] = check_figures(item.get("figures", []), transcript)
+            item["score"] = scorer(item)
+        items.sort(key=lambda i: i["score"], reverse=True)
     return data
 
 

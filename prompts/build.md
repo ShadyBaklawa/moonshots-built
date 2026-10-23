@@ -7,6 +7,7 @@ $idea
 
 ## Source episode
 $episode
+$kind_notes
 
 ## How to work
 1. Read `IDEA.json`. Decide the single centerpiece interaction that makes the idea click in

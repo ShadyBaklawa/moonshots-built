@@ -71,9 +71,12 @@ def build_prototype(idea: dict, episode: dict) -> dict:
     spec = {**idea, "episode": episode}
     (proto / "IDEA.json").write_text(json.dumps(spec, indent=2, ensure_ascii=False))
 
+    kind = idea.get("kind", "demo")
+    kind_notes = (config.PROMPTS / "tool.md").read_text() if kind == "tool" else ""
     prompt = Template((config.PROMPTS / "build.md").read_text()).safe_substitute(
         slug=slug, idea=json.dumps(idea, indent=2, ensure_ascii=False),
-        episode=json.dumps(episode, indent=2, ensure_ascii=False), smoke=SMOKE)
+        episode=json.dumps(episode, indent=2, ensure_ascii=False), smoke=SMOKE,
+        kind_notes=kind_notes)
     result = {"slug": slug, "title": idea["title"], "passed": False, "error": None}
     cost = 0.0
     try:
@@ -94,6 +97,7 @@ def build_prototype(idea: dict, episode: dict) -> dict:
 
     write_meta(proto, {
         "slug": slug,
+        "kind": kind,
         "title": idea["title"],
         "one_liner": idea["one_liner"],
         "headline": rv.get("headline") or idea["one_liner"],
