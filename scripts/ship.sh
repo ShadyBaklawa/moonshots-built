@@ -38,7 +38,9 @@ fi
 git commit -q -m "feat(prototypes): $TITLE"
 git push -q -f origin "$BRANCH"
 
-if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
+# Only an open PR is updated in place. `gh pr view <branch>` also finds merged and closed PRs,
+# so a re-run of an episode whose PR was already merged would otherwise edit that old PR.
+if [ "$(gh pr view "$BRANCH" --json state --jq .state 2>/dev/null)" = "OPEN" ]; then
   gh pr edit "$BRANCH" --title "$TITLE" --body-file out/pr-body.md
 else
   args=(--base "$BASE" --head "$BRANCH" --title "$TITLE" --body-file out/pr-body.md)
