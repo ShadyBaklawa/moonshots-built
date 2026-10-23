@@ -45,3 +45,14 @@
 {"at": "2026-10-23T21:06:53+00:00", "label": "review:ep304-denominator-dash", "est_cost_usd": 0.337, "turns": 15, "subtype": "success"}
 {"at": "2026-10-23T21:09:46+00:00", "label": "build:ep304-denominator-dash:fix1", "est_cost_usd": 0.5341, "turns": 29, "subtype": "success"}
 {"at": "2026-10-23T21:11:21+00:00", "label": "review:ep304-denominator-dash", "est_cost_usd": 0.1833, "turns": 11, "subtype": "success"}
+{"at": "2026-10-23T23:12:37+00:00", "label": "extract:spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305", "est_cost_usd": 0.6722, "turns": 2, "subtype": "success"}
+{"at": "2026-10-23T23:32:30+00:00", "label": "build:ep305-stack-exposure-checker", "est_cost_usd": 2.0454, "turns": 1, "subtype": "success"}
+{"at": "2026-10-23T23:37:20+00:00", "label": "review:ep305-stack-exposure-checker", "est_cost_usd": 0.7156, "turns": 18, "subtype": "success"}
+{"at": "2026-10-23T23:40:15+00:00", "label": "build:ep305-stack-exposure-checker:fix1", "est_cost_usd": 0.6271, "turns": 32, "subtype": "success"}
+{"at": "2026-10-23T23:42:11+00:00", "label": "review:ep305-stack-exposure-checker", "est_cost_usd": 0.3927, "turns": 13, "subtype": "success"}
+{"at": "2026-10-23T23:42:59+00:00", "label": "build:ep305-stack-exposure-checker:fix2", "est_cost_usd": 0.1504, "turns": 12, "subtype": "success"}
+{"at": "2026-10-23T23:44:47+00:00", "label": "review:ep305-stack-exposure-checker", "est_cost_usd": 0.4175, "turns": 14, "subtype": "success"}
+{"at": "2026-10-23T23:51:47+00:00", "label": "build:ep305-philosopher-s-reactor", "est_cost_usd": 0.9968, "turns": 43, "subtype": "success"}
+{"at": "2026-10-23T23:54:08+00:00", "label": "review:ep305-philosopher-s-reactor", "est_cost_usd": 0.3032, "turns": 15, "subtype": "success"}
+{"at": "2026-10-23T23:55:09+00:00", "label": "build:ep305-philosopher-s-reactor:fix1", "est_cost_usd": 0.2155, "turns": 16, "subtype": "success"}
+{"at": "2026-10-23T23:56:09+00:00", "label": "review:ep305-philosopher-s-reactor", "est_cost_usd": 0.1763, "turns": 10, "subtype": "success"}

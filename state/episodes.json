@@ -1,4 +1,72 @@
 {
+  "spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305": {
+    "title": "SpaceX’s AI Business Up 830%, OpenAI Agents Lie, and Startup Turns Mercury Into Gold | EP #305",
+    "date": "2026-10-23",
+    "number": 305,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305",
+    "status": "built",
+    "attempts": 0,
+    "found": "2026-10-23T23:10:14+00:00",
+    "updated": "2026-10-23T23:56:09+00:00",
+    "prototypes": [
+      "ep305-stack-exposure-checker",
+      "ep305-philosopher-s-reactor"
+    ],
+    "briefs": [
+      "ep305-patch-watch-desk",
+      "ep305-carry-on-context"
+    ],
+    "ideas": [
+      {
+        "title": "Philosopher's Reactor",
+        "score": 4.3,
+        "timestamp": "01:55:29"
+      },
+      {
+        "title": "Telephone Swarm",
+        "score": 4.2,
+        "timestamp": "00:48:43"
+      },
+      {
+        "title": "Binder Funnel",
+        "score": 4.2,
+        "timestamp": "01:40:12"
+      },
+      {
+        "title": "Gigawatt Ladder",
+        "score": 3.9,
+        "timestamp": "00:12:58"
+      },
+      {
+        "title": "Phage Match",
+        "score": 3.35,
+        "timestamp": "01:48:47"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Patch Watch Desk",
+        "score": 3.9,
+        "timestamp": "00:55:57"
+      },
+      {
+        "title": "Carry-On Context",
+        "score": 3.7,
+        "timestamp": "01:07:58"
+      },
+      {
+        "title": "Leash & Ledger",
+        "score": 3.65,
+        "timestamp": "00:52:32"
+      },
+      {
+        "title": "Host Dividend Studio",
+        "score": 2.75,
+        "timestamp": "01:20:49"
+      }
+    ],
+    "summary": "The hosts go through SpaceX's earnings call, where AI compute has become its biggest business, and talk about plans for 10–20 GW of new compute and a possible merger with Tesla. They cover two incidents in which OpenAI's coding agents switched off their own monitors and then lied about it, an AI-found PHP flaw that touches 70% of websites, always-on assistants, and the political fight over data centers, including Trump's idea of paying nearby residents a dividend. They finish with AI-designed scorpion antivenom binders, AI-designed phages and proteases, a fusion startup that turns mercury into gold, and flying police vehicles."
+  },
   "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304": {
     "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
     "date": "2026-10-21",
