@@ -7,9 +7,28 @@ args = sys.argv[1:]
 schema = json.loads(args[args.index("--json-schema") + 1]) if "--json-schema" in args else None
 stdin = sys.stdin.read() if not sys.stdin.isatty() else ""
 
+
+def _opportunity(title, money, tool_feasibility, said):
+    return {"title": title, "one_liner": "Sell battery-cost forecasts.", "timestamp": "00:12:05",
+            "speaker": "", "context": "Battery costs decide who goes solar first.",
+            "customer": "Solar installers", "problem": "They can't time their bids.",
+            "revenue_model": "Subscription, about $49 a month (estimate)",
+            "why_now": "Battery prices are falling fast.",
+            "first_steps": ["Call 5 installers", "Mock up a report", "Charge for the first one"],
+            "cost_to_start": "Two weeks, under $100", "competition": "unknown", "risks": "Thin data.",
+            "money": money, "ease": 4, "speed": 4, "evidence": 4,
+            "tool": {"title": f"{title} Calculator", "one_liner": "Price your next bid.",
+                     "demo": "Enter a quote, get a payback date.", "data_plan": "User input.",
+                     "feasibility": tool_feasibility},
+            "figures": [{"value": "slider", "meaning": "test", "timestamp": "00:12:05",
+                         "said": said}]}
+
+
 structured = None
 if schema and "ideas" in schema.get("properties", {}):
-    structured = {"episode_summary": "Test summary.", "ideas": [
+    structured = {"episode_summary": "Test summary.", "opportunities": [
+        _opportunity("Side Gig", 2, 2, "words nobody said here"),
+        _opportunity("Solar Bid Desk", 5, 4, "drag a slider for battery cost")], "ideas": [
         {"title": "Solar Tipping Map", "one_liner": "Drag battery cost, watch countries flip to solar.",
          "timestamp": "00:12:05", "speaker": "", "context": "A slider for battery cost.",
          "demo": "A world map with a slider.", "data_plan": "Bundled illustrative data.",

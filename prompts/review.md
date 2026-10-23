@@ -20,6 +20,11 @@ show this to the podcast hosts without embarrassment" and 10 is rare:
 - `honesty`: simulated or illustrative data is labeled, podcast figures are attributed, no
   real-company branding, no copied transcript text, footer credit present.
 
+If `IDEA.json` has `"kind": "tool"`, this is a working tool for the business described in
+`opportunity`: score `wow` as usefulness (would that customer use it to get the job done, and
+come back?) and `fidelity` against the opportunity. A tool that presents canned or simulated
+output as the customer's answer is a `must_fix`.
+
 Number check (do this before scoring): list every number the UI, data files and README
 present as real, and match each one to an entry in the `figures` list of `IDEA.json` with
 `"verified": true`. Also check the numbers against each other (e.g. per-person amount ×

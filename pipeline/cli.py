@@ -68,16 +68,41 @@ def cmd_detect(_args) -> int:
     return 0
 
 
-def _pr_body(ep, results: list[dict], upgrades: list[dict], summary: str) -> str:
+def _brief_lines(b: dict, tool: dict | None) -> list[str]:
+    steps = [f"{i}. {s}" for i, s in enumerate(b.get("first_steps", []), 1)]
+    if tool is None:
+        tool_line = "not built (no tool idea was realistic enough)"
+    elif not tool.get("slug"):
+        tool_line = f"{tool['title']}, build failed"
+    else:
+        tool_line = f"{tool['title']}, " + ("✓ passed review" if tool["passed"] else "✗ draft")
+    return [f"### 💡 {b['title']}: {b['one_liner']}",
+            f"Money {b['money']}/5 · Ease {b['ease']}/5 · Speed {b['speed']}/5 · "
+            f"Evidence {b['evidence']}/5 · from {b['timestamp']}", "",
+            f"- **Who pays:** {b['customer']}", f"- **Problem:** {b['problem']}",
+            f"- **How it earns:** {b['revenue_model']}", f"- **Why now:** {b['why_now']}",
+            f"- **Cost to start:** {b['cost_to_start']}", f"- **Risks:** {b['risks']}",
+            f"- **Working tool:** {tool_line}", "", "First steps:", *steps, ""]
+
+
+def _pr_body(ep, results: list[dict], upgrades: list[dict], summary: str,
+             briefs: list[dict] = (), tools: dict | None = None) -> str:
     repo = os.getenv("GITHUB_REPOSITORY", "")
     branch = f"episode/{ep.slug}"
     lines = [f"**Episode:** [{ep.title}]({ep.url}) ({ep.date})", "", f"> {summary}", ""]
+    if briefs:
+        lines += ["## Business opportunities", ""]
+        for b in briefs:
+            lines += _brief_lines(b, (tools or {}).get(b["title"]))
+    if results:
+        lines += ["## Prototypes", ""]
     for r in results:
+        label = "🛠 Tool" if r.get("kind") == "tool" else "🎈 Demo"
         if not r.get("slug"):
-            lines += [f"### ✗ {r['title']}", f"Build failed: {r.get('error')}", ""]
+            lines += [f"### ✗ {label}: {r['title']}", f"Build failed: {r.get('error')}", ""]
             continue
         mark = "✓ ready to publish" if r["passed"] else "✗ draft (did not pass review)"
-        lines += [f"### {r['title']} — {mark}",
+        lines += [f"### {label}: {r['title']} — {mark}",
                   f"Review **{r.get('overall', 0):.1f}/10** · smoke test "
                   f"{'passed' if r.get('smoke_ok') else 'failed'} · est. cost ${r.get('est_cost_usd', 0)}",
                   "", r.get("summary", "")]
@@ -90,8 +115,9 @@ def _pr_body(ep, results: list[dict], upgrades: list[dict], summary: str) -> str
     if upgrades:
         lines += ["### Queued as upgrades (topic revisited)"] + [
             f"- `{u['related_existing']}` ← {u['title']}: {u['one_liner']}" for u in upgrades]
-    lines += ["", "Merge to publish the ready prototypes to the gallery. Drafts stay hidden "
-                  "until they pass review (re-run with `@claude` or fix by hand)."]
+    lines += ["", "Merge to publish the business briefs and the ready prototypes to the "
+                  "gallery. Drafts stay hidden until they pass review (re-run with `@claude` or "
+                  "fix by hand)."]
     return "\n".join(lines)
 
 
@@ -99,6 +125,8 @@ def cmd_run(args) -> int:
     from .build import build_prototype
     from .extract import existing_summary, extract_ideas, select
     from .feed import fetch_episode
+    from .opportunity import pick_tools, save_brief, tool_idea
+    from .opportunity import select as select_briefs
 
     eps = state.load_episodes()
     if args.episode_url:
@@ -143,23 +171,34 @@ def cmd_run(args) -> int:
                               reason=f"{idea['one_liner']} ({idea['context']})", episode=slug)
 
     info = _ep_info(ep)
-    results = [build_prototype(idea, info) for idea in to_build]
+    briefs = select_briefs(data["opportunities"])
+    results, tools = [], {}
+    for b in pick_tools(briefs):  # tools first: they matter most if the run is cut short
+        tools[b["title"]] = {**build_prototype(tool_idea(b), info), "kind": "tool"}
+        results.append(tools[b["title"]])
+    results += [{**build_prototype(idea, info), "kind": "demo"} for idea in to_build]
     built = [r["slug"] for r in results if r.get("slug")]
+    brief_slugs = [save_brief(b, info, tools.get(b["title"], {}).get("slug")) for b in briefs]
     state.update_episode(
-        slug, status="built", prototypes=built,
+        slug, status="built", prototypes=built, briefs=brief_slugs,
         ideas=[{"title": i["title"], "score": i["score"], "timestamp": i["timestamp"]}
                for i in data["ideas"]],
+        opportunities=[{"title": o["title"], "score": o["score"], "timestamp": o["timestamp"]}
+                       for o in data["opportunities"]],
         summary=data.get("episode_summary", ""))
 
     any_ready = any(r.get("passed") for r in results)
-    out = {"action": "pr" if built else "state", "branch": f"episode/{slug}",
-           "title": f"Prototypes: {ep.title[:90]}", "paths": [f"prototypes/{s}" for s in built],
-           "draft": not any_ready, "all_ready": bool(built) and all(r.get("passed") for r in results),
-           "body": _pr_body(ep, results, to_upgrade, data.get("episode_summary", "")),
-           "results": results}
+    paths = [f"prototypes/{s}" for s in built] + [f"opportunities/{s}.json" for s in brief_slugs]
+    out = {"action": "pr" if paths else "state", "branch": f"episode/{slug}",
+           "title": f"Briefs and prototypes: {ep.title[:80]}", "paths": paths,
+           "draft": not (any_ready or brief_slugs),
+           "all_ready": bool(paths) and all(r.get("passed") for r in results),
+           "body": _pr_body(ep, results, to_upgrade, data.get("episode_summary", ""),
+                            briefs, tools),
+           "results": results, "briefs": brief_slugs}
     _write_out("run.json", out)
     ready = [r["title"] for r in results if r.get("passed")]
-    telegram(f"Moonshots, Built: {ep.title}\n"
+    telegram(f"Moonshots, Built: {ep.title}\n{len(brief_slugs)} business briefs. "
              f"{len(ready)}/{len(results)} prototypes passed review: {', '.join(ready) or 'none'}")
     print(json.dumps({k: out[k] for k in ("action", "branch", "draft", "all_ready")}, indent=2))
     return 0

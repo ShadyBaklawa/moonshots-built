@@ -9,7 +9,7 @@ on:
         description: "Build this podscripts episode URL now (optional)"
         required: false
       max_ideas:
-        description: "Prototypes to build for the episode (default 2)"
+        description: "Fun demos to build for the episode (default 1)"
         required: false
 
 concurrency:
@@ -57,7 +57,10 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MODEL: ${{ vars.MODEL }}
+          SCOUT_MODEL: ${{ vars.SCOUT_MODEL }}
           MAX_IDEAS: ${{ vars.MAX_IDEAS }}
+          MAX_BRIEFS: ${{ vars.MAX_BRIEFS }}
+          MAX_TOOLS: ${{ vars.MAX_TOOLS }}
           PASS_SCORE: ${{ vars.PASS_SCORE }}
           EPISODE_URL: ${{ inputs.episode_url }}
           MAX_IDEAS_INPUT: ${{ inputs.max_ideas }}

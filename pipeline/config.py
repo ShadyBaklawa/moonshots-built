@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PROTOTYPES = ROOT / "prototypes"
+OPPORTUNITIES = ROOT / "opportunities"
 STATE_DIR = ROOT / "state"
 PROMPTS = ROOT / "prompts"
 SITE = ROOT / "site"
@@ -24,14 +25,18 @@ USER_AGENT = _env("USER_AGENT", "Mozilla/5.0 (compatible; moonshots-built/1.0; +
 CLAUDE_BIN = _env("CLAUDE_BIN", "claude")
 MODEL = _env("MODEL", "claude-sonnet-5")
 REVIEW_MODEL = _env("REVIEW_MODEL", MODEL)
+SCOUT_MODEL = _env("SCOUT_MODEL", "claude-opus-5-5")  # reads the transcript, writes the briefs
 BUILD_MAX_TURNS = int(_env("BUILD_MAX_TURNS", "90"))
 REVIEW_MAX_TURNS = int(_env("REVIEW_MAX_TURNS", "25"))
 AGENT_TIMEOUT_S = int(_env("AGENT_TIMEOUT_S", "2700"))  # 45 min per agent call
 MAX_BUDGET_USD = _env("MAX_BUDGET_USD", "")  # only enforced when using an API key
 
 # Selection
-MAX_IDEAS = int(_env("MAX_IDEAS", "2"))          # prototypes built per episode
+MAX_IDEAS = int(_env("MAX_IDEAS", "1"))          # fun demos built per episode
 MIN_IDEA_SCORE = float(_env("MIN_IDEA_SCORE", "3.6"))  # 1-5 scale
+MAX_BRIEFS = int(_env("MAX_BRIEFS", "2"))        # business briefs published per episode
+MAX_TOOLS = int(_env("MAX_TOOLS", "1"))          # working tools built for the best briefs
+MIN_OPPORTUNITY_SCORE = float(_env("MIN_OPPORTUNITY_SCORE", "3.0"))  # 1-5 scale
 BOOTSTRAP_LATEST = int(_env("BOOTSTRAP_LATEST", "1"))  # on first run, build only the newest N episodes
 
 # Review gate

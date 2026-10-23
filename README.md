@@ -1,20 +1,26 @@
 # Moonshots, Built
 
-After every new episode of the Moonshots podcast, this repo reads the transcript, picks the
-most buildable ideas, has an AI agent turn them into working browser prototypes, tests and
-reviews them, and opens a pull request. Merge the PR and the prototypes go live on a public
-gallery. Once a week it also goes back and upgrades the weakest published prototype.
+After every new episode of the Moonshots podcast, this repo reads the transcript and finds
+the business opportunities in it: who would pay, how it earns, why now and how to start this
+week. The best ones get a written brief and a working tool built for them, and the most fun
+idea becomes an interactive demo. Everything is tested and reviewed, then a pull request
+opens. Merge the PR and it goes live on a public gallery. Once a week it also goes back and
+upgrades the weakest published prototype.
 
 ```
- every 2h          new episode?                 per idea (top 2)                    you
+ every 2h          new episode?           per tool and demo (1 + 1)                 you
 ┌────────┐   ┌──────────────────┐   ┌───────────────────────────────────┐   ┌──────────────┐
 │ watch  │──▶│ fetch transcript │──▶│ build ─▶ smoke test ─▶ review     │──▶│ PR on GitHub │
-│ (cron) │   │ extract + rank   │   │   ▲                      │ fix ×2 │   │ merge = live │
+│ (cron) │   │ briefs + ideas   │   │   ▲                      │ fix ×2 │   │ merge = live │
 └────────┘   └──────────────────┘   │   └──────────────────────┘        │   └──────┬───────┘
                                     └───────────────────────────────────┘          ▼
  weekly: re-review → upgrade → keep only if the score went up → PR          gallery (Pages)
 ```
 
+- **Scout**: Claude Opus reads the whole transcript and writes up to two business briefs
+  (customer, problem, pricing estimate, first steps, risks) plus fun demo ideas. Every number
+  it quotes from the episode is checked against the transcript; briefs live in
+  `opportunities/` and show on the gallery.
 - **Builder**: a headless Claude Code session confined to `prototypes/<slug>/`, following
   [`prompts/standards.md`](prompts/standards.md): static, zero-setup, honest labels, phone-ready.
 - **Smoke test**: headless Chromium loads the page at desktop and phone sizes, clicks
@@ -61,8 +67,11 @@ bigger` on any prototype PR (see `.github/workflows/claude.yml`).
 
 | Variable | Default | What it does |
 | --- | --- | --- |
-| `MODEL` | `claude-sonnet-5` | Model for scout, builder and reviewer |
-| `MAX_IDEAS` | `2` | Prototypes built per episode |
+| `SCOUT_MODEL` | `claude-opus-5-5` | Model that reads the transcript and writes the briefs |
+| `MODEL` | `claude-sonnet-5` | Model for builder and reviewer |
+| `MAX_BRIEFS` | `2` | Business briefs published per episode |
+| `MAX_TOOLS` | `1` | Working tools built for the best briefs |
+| `MAX_IDEAS` | `1` | Fun demos built per episode |
 | `PASS_SCORE` | `7.0` | Minimum weighted review score to publish |
 | `AUTO_PUBLISH` | unset | `true` = merge passing PRs without you |
 | `PUBLISH_REPO` | unset | Separate public repo for the gallery |

@@ -15,6 +15,7 @@ def sandbox(tmp_path, monkeypatch):
     """Point every state/prototype path at a temp dir and use the fake claude binary."""
     from pipeline import config, llm, state
     monkeypatch.setattr(config, "PROTOTYPES", tmp_path / "prototypes")
+    monkeypatch.setattr(config, "OPPORTUNITIES", tmp_path / "opportunities")
     monkeypatch.setattr(config, "STATE_DIR", tmp_path / "state")
     monkeypatch.setattr(config, "OUT", tmp_path / "out")
     monkeypatch.setattr(config, "SITE", tmp_path / "site")
@@ -101,6 +102,10 @@ def test_extract_with_fake_claude(sandbox):
     data = extract_ideas(ep)
     assert data["ideas"][0]["title"] == "Solar Tipping Map"
     assert data["ideas"][0]["score"] > data["ideas"][1]["score"]
+    opps = data["opportunities"]
+    assert [o["title"] for o in opps] == ["Solar Bid Desk", "Side Gig"]   # ranked by score
+    assert opps[0]["score"] == 4.35 and opps[0]["figures"][0]["verified"]
+    assert not opps[1]["figures"][0]["verified"]                        # quote never said
     log = (sandbox / "state" / "costs.jsonl").read_text().strip().splitlines()
     assert json.loads(log[-1])["label"].startswith("extract:")
 
@@ -128,6 +133,98 @@ def test_check_figures_only_verifies_words_in_transcript():
     ], transcript)
     assert [f["verified"] for f in figs] == [True, True, False, False, False, False, False, True]
     assert figs[0]["value"] == "$146"                              # original fields kept
+
+
+def _opp(title, money=4, ease=4, speed=4, evidence=4, tool_feasibility=4):
+    return {"title": title, "one_liner": f"{title} does a thing", "timestamp": "00:41:10",
+            "speaker": "Guest", "context": "They said so.", "customer": "Clinics <b>",
+            "problem": "Slow intake.", "revenue_model": "About $49 a month (estimate)",
+            "why_now": "AI got cheap.", "first_steps": ["One", "Two", "Three"],
+            "cost_to_start": "A week", "competition": "unknown", "risks": "Churn.",
+            "money": money, "ease": ease, "speed": speed, "evidence": evidence,
+            "tool": {"title": f"{title} Tool", "one_liner": "Does the job.", "demo": "In, out.",
+                     "data_plan": "User input.", "feasibility": tool_feasibility},
+            "figures": [{"value": "$146", "meaning": "real", "timestamp": "00:41:10",
+                         "said": "x", "verified": True},
+                        {"value": "$1,408", "meaning": "made up", "timestamp": "00:41:11",
+                         "said": "y", "verified": False}]}
+
+
+EP = {"slug": "ep-304", "title": "Ep title", "number": 304, "date": "2026-10-21",
+      "url": "https://example.com/ep"}
+
+
+def test_opportunity_select_and_tools(sandbox):
+    from pipeline import opportunity as o
+    assert o.score(_opp("A", money=5, ease=3, speed=4, evidence=4)) == 4.20
+    o.save_brief(_opp("Old News"), EP)                                    # written up last week
+    opps = [_opp("Weak", money=1, ease=2, speed=2, evidence=2), _opp("Mid", money=3),
+            _opp("Best", money=5, tool_feasibility=2), _opp("old news", money=5),
+            _opp("Mid ", money=3)]
+    briefs = o.select(opps, max_briefs=2, min_score=3.0)
+    assert [b["title"] for b in briefs] == ["Best", "Mid"]   # weak cut, repeat + duplicate skipped
+    assert [b["title"] for b in o.pick_tools(briefs, max_tools=1)] == ["Mid"]  # Best's tool too hard
+    idea = o.tool_idea(briefs[1])
+    assert idea["kind"] == "tool" and idea["title"] == "Mid Tool"
+    assert idea["opportunity"]["customer"] == "Clinics <b>" and idea["related_existing"] is None
+    assert len(idea["figures"]) == 2                        # builder rules decide what is usable
+
+
+def test_save_brief_unique_slugs(sandbox):
+    from pipeline import opportunity as o
+    assert o.save_brief(_opp("Clinic Copilot"), EP, tool_slug="ep304-tool") == "ep304-clinic-copilot"
+    assert o.save_brief(_opp("Clinic Copilot"), EP) == "ep304-clinic-copilot-2"
+    b = json.loads((sandbox / "opportunities" / "ep304-clinic-copilot.json").read_text())
+    assert b["tool_slug"] == "ep304-tool" and b["episode"]["number"] == 304 and b["score"] == 4.0
+    assert "Clinic Copilot" in o.existing_summary()
+
+
+def test_pr_body_lists_briefs_and_kinds():
+    from types import SimpleNamespace
+    from pipeline.cli import _pr_body
+    ep = SimpleNamespace(slug="ep-304", title="Ep title", url="https://example.com/ep",
+                         date="2026-10-21")
+    tool = {"slug": "ep304-mid-tool", "title": "Mid Tool", "passed": True, "kind": "tool",
+            "overall": 8.1, "smoke_ok": True, "est_cost_usd": 0.5, "summary": "Useful."}
+    demo = {"slug": None, "title": "Fun", "kind": "demo", "error": "timed out"}
+    body = _pr_body(ep, [tool, demo], [], "Summary.", [_opp("Mid"), _opp("Best")],
+                    {"Mid": tool})
+    assert body.index("## Business opportunities") < body.index("## Prototypes")
+    assert "**Who pays:** Clinics <b>" in body and "1. One" in body
+    assert "Mid Tool, ✓ passed review" in body and "not built" in body   # Best got no tool
+    assert "🛠 Tool: Mid Tool" in body and "✗ 🎈 Demo: Fun" in body
+
+
+def test_run_builds_tool_and_demo_and_saves_briefs(sandbox, monkeypatch):
+    from types import SimpleNamespace
+    from pipeline import build, cli, config, feed, state
+    ep = feed.parse_episode((FIX / "episode.html").read_text(),
+                            "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/x-ep-300")
+    monkeypatch.setattr(feed, "fetch_episode", lambda url: ep)
+    monkeypatch.setattr(config, "MIN_SEGMENTS", 1)              # the fixture is 4 lines long
+    built = []
+
+    def fake_build(idea, episode):
+        slug = f"ep300-{len(built)}"
+        built.append((idea.get("kind", "demo"), idea["title"]))
+        return {"slug": slug, "title": idea["title"], "passed": True, "overall": 8.0,
+                "smoke_ok": True, "est_cost_usd": 0.1, "summary": "ok", "must_fix": []}
+    monkeypatch.setattr(build, "build_prototype", fake_build)
+    cli.cmd_run(SimpleNamespace(episode_url=ep.url, max_ideas=0))
+    # two briefs; only the best has a buildable tool, built first, then one fun demo
+    assert built == [("tool", "Solar Bid Desk Calculator"), ("demo", "Solar Tipping Map")]
+    out = json.loads((sandbox / "out" / "run.json").read_text())
+    assert out["action"] == "pr" and not out["draft"]
+    assert out["paths"] == ["prototypes/ep300-0", "prototypes/ep300-1",
+                            "opportunities/ep300-solar-bid-desk.json",
+                            "opportunities/ep300-side-gig.json"]
+    brief = json.loads((sandbox / "opportunities" / "ep300-solar-bid-desk.json").read_text())
+    assert brief["tool_slug"] == "ep300-0" and brief["figures"][0]["verified"]
+    side = json.loads((sandbox / "opportunities" / "ep300-side-gig.json").read_text())
+    assert side["tool_slug"] is None and not side["figures"][0]["verified"]
+    assert "## Business opportunities" in out["body"] and "🛠 Tool: Solar Bid Desk" in out["body"]
+    assert state.load_episodes()["x-ep-300"]["briefs"] == ["ep300-solar-bid-desk",
+                                                          "ep300-side-gig"]
 
 
 def test_review_gate(monkeypatch):
@@ -175,6 +272,36 @@ def test_gallery_only_ready_and_escaped(sandbox):
     assert not (site / "p" / "ep300-one" / "meta.json").exists()
     assert json.loads((site / "feed.json").read_text())[0]["slug"] == "ep300-one"
     assert ">v2<" in html
+
+
+def test_gallery_briefs(sandbox):
+    from pipeline import opportunity as o
+    from pipeline.gallery import build_site
+    tool = _fake_proto(sandbox, "ep304-mid-tool", ep_date="2026-10-21")
+    m = json.loads((tool / "meta.json").read_text()); m["kind"] = "tool"
+    (tool / "meta.json").write_text(json.dumps(m))
+    _fake_proto(sandbox, "ep304-draft-tool", status="draft", ep_date="2026-10-21")
+    o.save_brief(_opp("Mid <script>"), EP, tool_slug="ep304-mid-tool")
+    o.save_brief(_opp("Drafty"), EP, tool_slug="ep304-draft-tool")
+    (sandbox / "opportunities" / "evil.json").write_text(json.dumps({"slug": "../../x", "title": "Evil"}))
+    site = build_site()
+    html = (site / "index.html").read_text()
+    assert "Business opportunities" in html and "Mid &lt;script&gt;" in html and "<script>" not in html
+    assert "Evil" not in html and not (site.parent / "x").exists()        # unsafe slug skipped
+    assert html.count("Working tool") == 1                                # only the ready tool
+    assert '<span class="tool">Tool</span>' in html                       # badge on the tool row
+    page = (site / "o" / "ep304-mid-script" / "index.html").read_text()
+    assert 'href="../../p/ep304-mid-tool/"' in page and "Clinics &lt;b&gt;" in page
+    assert "$146" in page and "$1,408" not in page                        # unverified never shown
+    assert "Try the working tool" not in (site / "o" / "ep304-drafty" / "index.html").read_text()
+
+
+def test_gallery_briefs_without_prototypes(sandbox):
+    from pipeline import opportunity as o
+    from pipeline.gallery import build_site
+    o.save_brief(_opp("Solo"), EP)
+    html = (build_site() / "index.html").read_text()
+    assert "Solo" in html and "No prototypes are published yet" not in html
 
 
 def test_gallery_empty_state(sandbox):
