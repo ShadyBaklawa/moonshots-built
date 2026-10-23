@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Philosopher's Reactor — Moonshots, Built</title>
+<meta name="description" content="A toy fusion reactor whose mercury-lined walls make gold alongside electricity. An interactive demo inspired by Moonshots EP #305." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scene">
+    <header class="hero">
+      <p class="eyebrow">Moonshots, Built · fan prototype</p>
+      <h1>The Philosopher's Reactor</h1>
+      <p class="sub">A fusion plant whose mercury-lined walls make gold alongside electricity — at least, that's the claim.</p>
+      <p class="claim-tag">A San Francisco startup says it turned mercury into gold, beating CERN's transmutation record by <strong>a factor of 10</strong>. <span class="src">as stated on the podcast · 01:54:54</span></p>
+    </header>
+
+    <main>
+      <section class="reactor-panel" aria-label="Reactor animation">
+        <div class="reactor-frame">
+          <div class="reactor-chamber" id="chamber">
+            <svg id="reactorSvg" viewBox="0 0 400 260" role="img" aria-label="Animated neutron striking a mercury atom, which transmutes into gold">
+              <defs>
+                <radialGradient id="mercuryGrad" cx="40%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#e8ecef"/>
+                  <stop offset="60%" stop-color="#9aa6ad"/>
+                  <stop offset="100%" stop-color="#5c6670"/>
+                </radialGradient>
+                <radialGradient id="goldGrad" cx="40%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#fff3c4"/>
+                  <stop offset="55%" stop-color="#e3b23c"/>
+                  <stop offset="100%" stop-color="#9c6b0f"/>
+                </radialGradient>
+                <radialGradient id="flashGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#fff8e1" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#fff8e1" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <!-- orbit rings -->
+              <ellipse cx="200" cy="140" rx="90" ry="34" class="orbit" />
+              <ellipse cx="200" cy="140" rx="60" ry="55" class="orbit orbit2" />
+
+              <!-- nucleus: mercury -> gold -->
+              <g id="nucleus">
+                <circle id="nucleusCore" cx="200" cy="140" r="30" fill="url(#mercuryGrad)" />
+                <text id="nucleusLabel" x="200" y="145" text-anchor="middle" class="nucleus-label">Hg</text>
+              </g>
+
+              <!-- flash burst -->
+              <circle id="flash" cx="200" cy="140" r="4" fill="url(#flashGrad)" opacity="0" />
+
+              <!-- neutron projectile -->
+              <g id="neutron">
+                <circle cx="0" cy="0" r="7" class="neutron-core" />
+                <circle cx="0" cy="0" r="12" class="neutron-halo" />
+              </g>
+
+              <!-- product label -->
+              <text id="resultTag" x="200" y="60" text-anchor="middle" class="result-tag" opacity="0">Au — gold!</text>
+            </svg>
+          </div>
+          <p class="reactor-caption">A neutron strikes a mercury-198 nucleus, which the startup claims knocks it down to stable gold-197. <span class="tag-sim">Simplified animation, not a physically exact reaction</span></p>
+        </div>
+
+        <div class="controls">
+          <div class="control">
+            <div class="control-head">
+              <label for="gw">Reactor scale</label>
+              <output id="gwOut">1.0 GW</output>
+            </div>
+            <input type="range" id="gw" min="0.1" max="10" step="0.1" value="1" />
+            <p class="control-hint">Drag to size up the plant. Higher gigawatts, faster gold.</p>
+          </div>
+
+          <div class="control">
+            <div class="control-head">
+              <label for="plants">Plants built worldwide</label>
+              <output id="plantsOut">1 plant</output>
+            </div>
+            <input type="range" id="plants" min="1" max="50" step="1" value="1" />
+            <p class="control-hint">Illustrative "what if this scaled" scenario, not a real roadmap.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="counters" aria-label="Output counters">
+        <div class="counter-card">
+          <p class="counter-label">Simulated year</p>
+          <p class="counter-value" id="yearOut">1</p>
+          <p class="counter-sub">years pass faster as you scale up — not tied to a real clock</p>
+        </div>
+        <div class="counter-card">
+          <p class="counter-label">Gold this plant has made</p>
+          <p class="counter-value" id="tonsOut">0.00 t</p>
+          <p class="counter-sub"><span id="barsOut">0</span> standard 400&nbsp;oz bars</p>
+        </div>
+        <div class="counter-card">
+          <p class="counter-label">Basis</p>
+          <p class="counter-value small">~2 t / GW / yr</p>
+          <p class="counter-sub">company's 2025 paper estimate <span class="src">as stated on the podcast · 01:55:29</span></p>
+        </div>
+      </section>
+
+      <div class="rack-wrap" aria-label="Gold bar counter filling over time">
+        <div class="rack" id="rack"></div>
+      </div>
+
+      <section class="conflict-note">
+        <p>⚠️ Later in the same conversation, Salim restates the yield as <strong>"two and a half tons"</strong> <span class="src">as stated on the podcast · 02:00:36</span> — that conflicts with the paper's two-ton figure above. This demo uses the paper's number; nothing here is independently confirmed.</p>
+      </section>
+
+      <section class="revenue-panel">
+        <h2>Gold revenue vs. electricity revenue</h2>
+        <p class="panel-hint">Type in your own prices — the defaults below are just starting points, not live market data. These are simple multiplications of your numbers against the reactor scale above — illustrative, not investment advice.</p>
+        <div class="revenue-inputs">
+          <div class="field">
+            <label for="goldPrice">Gold price ($ / troy oz), e.g.</label>
+            <input type="number" id="goldPrice" min="0" step="10" value="2650" inputmode="decimal" />
+          </div>
+          <div class="field">
+            <label for="elecPrice">Electricity price (¢ / kWh), e.g.</label>
+            <input type="number" id="elecPrice" min="0" step="0.5" value="8" inputmode="decimal" />
+          </div>
+        </div>
+        <div class="revenue-bars" id="revenueBars">
+          <div class="rbar">
+            <div class="rbar-track"><div class="rbar-fill gold" id="goldFill" style="width:0%"></div></div>
+            <div class="rbar-labels"><span>Gold / yr</span><strong id="goldRevOut">$0</strong></div>
+          </div>
+          <div class="rbar">
+            <div class="rbar-track"><div class="rbar-fill elec" id="elecFill" style="width:0%"></div></div>
+            <div class="rbar-labels"><span>Electricity / yr</span><strong id="elecRevOut">$0</strong></div>
+          </div>
+        </div>
+        <p class="panel-footnote">Electricity assumes the plant runs at full output, all year (illustrative — real plants don't run 24/7 at 100%). Gold revenue uses your price × this plant's simulated yearly output.</p>
+      </section>
+
+      <section class="scarcity-panel">
+        <h2>Gold-bug meter</h2>
+        <p class="panel-hint">Illustrative scale only, not a market forecast, if <span id="plantsEcho">1</span> of these plants existed:</p>
+        <div class="meter-track">
+          <div class="meter-fill" id="meterFill"></div>
+        </div>
+        <div class="meter-marks">
+          <span>barely a rounding error</span>
+          <span>notable new source</span>
+          <span>rivals a top mining nation</span>
+        </div>
+        <p class="meter-readout" id="meterReadout">~2.0 tons/yr worldwide from this scenario</p>
+      </section>
+
+      <aside class="history-panel">
+        <h2>An old story: when "precious" metals get cheap</h2>
+        <p>Aluminum was once so hard to refine that it was treated as a precious metal on par with silver — a status symbol rather than something you'd find in a kitchen drawer.</p>
+        <p>Then a cheap electrolytic refining process arrived in the late 1800s, production scaled, and aluminum went from precious curiosity to the stuff of soda cans within a few decades. If mercury-to-gold transmutation ever became cheap and scalable, gold could in principle face a similar derating — that's the "gold bug" worry the meter above is gesturing at. <span class="tag-sim">General historical analogy, not a figure from this episode — not independently sourced here</span></p>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>Inspired by Moonshots EP #305, around 01:55:29. Fan-made prototype, not affiliated with the show. <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305" target="_blank" rel="noopener">Listen to the episode</a>.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

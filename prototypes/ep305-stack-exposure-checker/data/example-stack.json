@@ -1,0 +1,2385 @@
+{
+  "generated_at": "2026-10-23",
+  "php_version": "7.2.24",
+  "packages": [
+    {
+      "name": "phpmailer/phpmailer",
+      "version": "5.2.16",
+      "vulns": [
+        {
+          "id": "GHSA-4pc3-96mx-wwc8",
+          "summary": "Remote code execution in PHPMailer",
+          "aliases": [
+            "CVE-2016-10045"
+          ],
+          "database_specific": {
+            "severity": "CRITICAL"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.0.0"
+                    },
+                    {
+                      "fixed": "5.2.20"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-4pc3-96mx-wwc8"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-10045"
+            },
+            {
+              "type": "WEB",
+              "url": "https://developer.joomla.org/security-centre/668-20161205-phpmailer-security-advisory.html"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-4x5h-cr29-fhp6",
+          "summary": "Local file disclosure in PHPMailer",
+          "aliases": [
+            "CVE-2017-5223"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.0.0"
+                    },
+                    {
+                      "fixed": "5.2.22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-4x5h-cr29-fhp6"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5223"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/phpmailer/phpmailer/CVE-2017-5223.yaml"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-58mj-pw57-4vm2",
+          "summary": "Cross-site scripting in PHPMailer",
+          "aliases": [
+            "CVE-2017-11503"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.0.0"
+                    },
+                    {
+                      "fixed": "5.2.24"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-58mj-pw57-4vm2"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-11503"
+            },
+            {
+              "type": "WEB",
+              "url": "https://cxsecurity.com/issue/WLB-2017060181"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-5f37-gxvh-23v6",
+          "summary": "Remote code execution in PHPMailer",
+          "aliases": [
+            "CVE-2016-10033"
+          ],
+          "database_specific": {
+            "severity": "CRITICAL"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.0.0"
+                    },
+                    {
+                      "fixed": "5.2.18"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-5f37-gxvh-23v6"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-10033"
+            },
+            {
+              "type": "WEB",
+              "url": "https://www.exploit-db.com/exploits/42221"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-77mr-wc79-m8j3",
+          "summary": "PHPMailer untrusted code may be run from an overridden address validator",
+          "aliases": [
+            "BIT-phpmailer-2021-3603",
+            "CVE-2021-3603"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.5.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-77mr-wc79-m8j3"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3603"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/commit/45f3c18dc6a2de1cb1bf49b9b249a9ee36a5f7f3"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-7q44-r25x-wm4q",
+          "summary": "Remote Code Execution vulnerability in PHPMailer 6.4.1 running on Windows",
+          "aliases": [
+            "BIT-phpmailer-2021-34551",
+            "CVE-2021-34551"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.5.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-7q44-r25x-wm4q"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-34551"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/commit/acd264bf17ff4ac5c915f0d4226dce8a9ea70bc3"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-7w4p-72j7-v7c2",
+          "summary": "Phar object injection in PHPMailer",
+          "aliases": [
+            "CVE-2018-19296"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.0.0"
+                    },
+                    {
+                      "fixed": "5.2.27"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "6.0.0"
+                    },
+                    {
+                      "fixed": "6.0.6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-7w4p-72j7-v7c2"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-19296"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/phpmailer/phpmailer/CVE-2018-19296.yaml"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-f7hx-fqxw-rvvj",
+          "summary": "Insufficient output escaping of attachment names in PHPMailer",
+          "aliases": [
+            "BIT-phpmailer-2020-13625",
+            "CVE-2020-13625"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "phpmailer/phpmailer"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.1.6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/security/advisories/GHSA-f7hx-fqxw-rvvj"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-13625"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/PHPMailer/PHPMailer/commit/c2796cb1cb99d7717290b48c4e6f32cb6c60b7b3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "symfony/http-kernel",
+      "version": "4.4.0",
+      "vulns": [
+        {
+          "id": "GHSA-754h-5r27-7x3r",
+          "summary": "RCE in Symfony",
+          "aliases": [
+            "BIT-symfony-2020-15094",
+            "CVE-2020-15094"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "symfony/http-kernel"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "4.3.0"
+                    },
+                    {
+                      "fixed": "4.4.13"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "symfony/http-kernel"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.0.0"
+                    },
+                    {
+                      "fixed": "5.1.5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/symfony/symfony/security/advisories/GHSA-754h-5r27-7x3r"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-15094"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/symfony/symfony/commit/d9910e0b33a2e0f993abff41c6fbc86951b66d78"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-h7vf-5wrv-9fhv",
+          "summary": "Symfony storing cookie headers in HttpCache",
+          "aliases": [
+            "BIT-symfony-2022-24894",
+            "CVE-2022-24894"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "symfony/http-kernel"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "2.0.0"
+                    },
+                    {
+                      "fixed": "4.4.50"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "symfony/http-kernel"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.0.0"
+                    },
+                    {
+                      "fixed": "5.4.20"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "symfony/http-kernel"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "6.0.0"
+                    },
+                    {
+                      "fixed": "6.0.20"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "symfony/http-kernel"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "6.1.0"
+                    },
+                    {
+                      "fixed": "6.1.12"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "symfony/http-kernel"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "6.2.0"
+                    },
+                    {
+                      "fixed": "6.2.6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/symfony/symfony/security/advisories/GHSA-h7vf-5wrv-9fhv"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-24894"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/symfony/symfony/commit/d2f6322af9444ac5cd1ef3ac6f280dbef7f9d1fb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "laravel/framework",
+      "version": "5.5.0",
+      "vulns": [
+        {
+          "id": "GHSA-44pg-c29v-hp6r",
+          "summary": "Laravel Guard bypass in Eloquent models",
+          "aliases": [],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.5.0"
+                    },
+                    {
+                      "last_affected": "5.5.49"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "6.0.0"
+                    },
+                    {
+                      "fixed": "6.18.34"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "7.0.0"
+                    },
+                    {
+                      "fixed": "7.23.2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://blog.laravel.com/security-release-laravel-61834-7232"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2020-08-06-1.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/laravel/framework"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-4mg9-vhxq-vm7j",
+          "summary": "SQL Server LIMIT / OFFSET SQL Injection in laravel/framework and illuminate/database",
+          "aliases": [],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "8.0.0"
+                    },
+                    {
+                      "fixed": "8.40.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.20.26"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-4mg9-vhxq-vm7j"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/laravel/framework"
+            },
+            {
+              "type": "WEB",
+              "url": "https://packagist.org/packages/illuminate/database"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-5vg9-5847-vvmq",
+          "summary": "Laravel Framework: CRLF injection in default email rule ",
+          "aliases": [
+            "CVE-2026-48019"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "13.0.0"
+                    },
+                    {
+                      "fixed": "13.10.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "12.60.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-5vg9-5847-vvmq"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/laravel/framework"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-66hf-2p6w-jqfw",
+          "summary": "Laravel Framework XSS in Blade templating engine",
+          "aliases": [
+            "CVE-2021-43808"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.20.42"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "7.0.0"
+                    },
+                    {
+                      "fixed": "7.30.6"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "8.0.0"
+                    },
+                    {
+                      "fixed": "8.75.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-66hf-2p6w-jqfw"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-43808"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/pull/39906"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-6jvx-8ch9-j2jr",
+          "summary": "Laravel Cookie serialization vulnerability",
+          "aliases": [],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.5.0"
+                    },
+                    {
+                      "fixed": "5.6.30"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2018-08-08-1.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/laravel/framework"
+            },
+            {
+              "type": "WEB",
+              "url": "https://laravel.com/docs/5.6/upgrade#upgrade-5.6.30"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-7852-w36x-6mf6",
+          "summary": "Laravel Encrypter Component Potential Decryption Failure Leading to Unintended Behavior",
+          "aliases": [],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "5.5.40"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.6.0"
+                    },
+                    {
+                      "fixed": "5.6.15"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/commit/28e53f23a76206fb130e9a54eb95aa3f010e79c9"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/commit/886d261df0854426b4662b7ed5db6a1c575a4279"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2018-03-30-1.yaml"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-78fx-h6xr-vch4",
+          "summary": "Laravel has a File Validation Bypass",
+          "aliases": [
+            "BIT-laravel-2025-27515",
+            "CVE-2025-27515"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "12.0.0"
+                    },
+                    {
+                      "fixed": "12.1.1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "11.0.0"
+                    },
+                    {
+                      "fixed": "11.44.1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "10.48.29"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-78fx-h6xr-vch4"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27515"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/commit/2d133034fefddfb047838f4caca3687a3ba811a5"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-c2v7-j5gq-wcq4",
+          "summary": "Laravel Sensitive Data Exposure",
+          "aliases": [
+            "CVE-2017-14775"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "5.5.10"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-14775"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/pull/21320"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/illuminate/auth/CVE-2017-14775.yaml"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-crmm-hgp2-wgrp",
+          "summary": "Laravel Framework: Temporary Signed URL Path Confusion",
+          "aliases": [],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "13.0.0"
+                    },
+                    {
+                      "fixed": "13.12.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "12.61.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-crmm-hgp2-wgrp"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/pull/60137"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/pull/60230"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-f9x3-7vq9-cph6",
+          "summary": "Laravel TokenGuard authentication bypass through non-string API credentials",
+          "aliases": [
+            "CVE-2026-114509"
+          ],
+          "database_specific": {
+            "severity": "CRITICAL"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "13.0.0"
+                    },
+                    {
+                      "fixed": "13.29.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "12.68.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-f9x3-7vq9-cph6"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114509"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/commit/8dbb08bccac1be095dba4a9d259a419620f1e8a5"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-gv7v-rgg6-548h",
+          "summary": "Laravel environment manipulation via query string",
+          "aliases": [
+            "BIT-laravel-2024-52301",
+            "CVE-2024-52301"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.20.45"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "7.0.0"
+                    },
+                    {
+                      "fixed": "7.30.7"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "8.0.0"
+                    },
+                    {
+                      "fixed": "8.83.28"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "9.0.0"
+                    },
+                    {
+                      "fixed": "9.52.17"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "10.0.0"
+                    },
+                    {
+                      "fixed": "10.48.23"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "11.0.0"
+                    },
+                    {
+                      "fixed": "11.31.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-gv7v-rgg6-548h"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-52301"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/CVE-2024-52301.yaml"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-jh5r-qr3c-85q8",
+          "summary": "Laravel: XSS in Debug Page Information",
+          "aliases": [
+            "CVE-2026-102279"
+          ],
+          "database_specific": {
+            "severity": "LOW"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "12.69.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "13.0.0"
+                    },
+                    {
+                      "fixed": "13.30.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-jh5r-qr3c-85q8"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102279"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/pull/61381"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-qm5c-m76r-2hfr",
+          "summary": "Laravel RCE vulnerability in \"cookie\" session driver",
+          "aliases": [],
+          "database_specific": {
+            "severity": "CRITICAL"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "4.1.0"
+                    },
+                    {
+                      "fixed": "6.18.31"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "7.0.0"
+                    },
+                    {
+                      "fixed": "7.22.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://blog.laravel.com/laravel-cookie-security-releases"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/laravel/framework/2020-07-27-1.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/laravel/framework"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-qvqm-h22r-4cp9",
+          "summary": "Laravel Framework RCE Vulnerability",
+          "aliases": [
+            "CVE-2018-15133"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "last_affected": "5.5.40"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "5.6.0"
+                    },
+                    {
+                      "fixed": "5.6.30"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-15133"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/commit/d84cf988ed5d4661a4bf1fdcb08f5073835083a0"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/kozmic/laravel-poc-CVE-2018-15133"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-w2pm-r78h-4m7v",
+          "summary": "OS Command Injection in Laravel Framework",
+          "aliases": [
+            "CVE-2020-19316"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "5.8.17"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-19316"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/commit/44c3feb604944599ad1c782a9942981c3991fa31"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/laravel/framework"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-w68r-5p45-5rqp",
+          "summary": "Improper Input Validation in Laravel",
+          "aliases": [
+            "BIT-laravel-2020-24941",
+            "CVE-2020-24941"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.18.35"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "7.0.0"
+                    },
+                    {
+                      "fixed": "7.24.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-24941"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/commit/897d107775737a958dbd0b2f3ea37877c7526371"
+            },
+            {
+              "type": "WEB",
+              "url": "https://blog.laravel.com/security-release-laravel-61835-7240"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-x7p5-p2c9-phvg",
+          "summary": "Unexpected database bindings",
+          "aliases": [],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "6.20.14"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "7.0.0"
+                    },
+                    {
+                      "fixed": "7.30.4"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "laravel/framework"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "8.0.0"
+                    },
+                    {
+                      "fixed": "8.24.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/laravel/framework/security/advisories/GHSA-x7p5-p2c9-phvg"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://github.com/advisories/GHSA-3p32-j457-pg5x"
+            },
+            {
+              "type": "WEB",
+              "url": "https://packagist.org/packages/illuminate/database"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "twig/twig",
+      "version": "1.38.0",
+      "vulns": [
+        {
+          "id": "GHSA-4j38-f5cw-54h7",
+          "summary": "Twig: The `spaceless` filter implicitly marks its output as safe",
+          "aliases": [
+            "CVE-2026-46628"
+          ],
+          "database_specific": {
+            "severity": "LOW"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.26.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-4j38-f5cw-54h7"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-46628.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-529h-vh3j-85hq",
+          "summary": "Twig: Sandbox filter, tag and function allow-list bypass when sandbox state changes between renders for a cached `Template`",
+          "aliases": [
+            "CVE-2026-49981"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.27.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-529h-vh3j-85hq"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/releases/tag/v3.27.0"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-52m2-vc4m-jj33",
+          "summary": "Twig may load a template outside a configured directory when using the filesystem loader",
+          "aliases": [
+            "BIT-drupal-2022-39261",
+            "CVE-2022-39261",
+            "DRUPAL-CORE-2022-016"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "1.0.0"
+                    },
+                    {
+                      "fixed": "1.44.7"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "2.0.0"
+                    },
+                    {
+                      "fixed": "2.15.3"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "3.0.0"
+                    },
+                    {
+                      "fixed": "3.4.3"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-52m2-vc4m-jj33"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-39261"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/commit/35f3035c5deb0041da7b84daf02dea074ddc7a0b"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-5v5v-ww74-355v",
+          "summary": "Twig: Sandbox `__toString()` policy bypass via dynamic mapping keys",
+          "aliases": [
+            "CVE-2026-48806"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.27.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-5v5v-ww74-355v"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-48806.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-6377-hfv9-hqf6",
+          "summary": "Twig has unguarded calls to `__toString()` when nesting an object into an array",
+          "aliases": [
+            "CVE-2024-51754"
+          ],
+          "database_specific": {
+            "severity": "LOW"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.11.2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "3.12"
+                    },
+                    {
+                      "fixed": "3.14.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-6377-hfv9-hqf6"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-51754"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/commit/2bb8c2460a2c519c498df9b643d5277117155a73"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-6j75-5wfj-gh66",
+          "summary": "Twig has a possible sandbox bypass",
+          "aliases": [
+            "CVE-2024-45411"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "1.0.0"
+                    },
+                    {
+                      "fixed": "1.44.8"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "2.0.0"
+                    },
+                    {
+                      "fixed": "2.16.1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "3.12.0"
+                    },
+                    {
+                      "fixed": "3.14.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "3.0.0"
+                    },
+                    {
+                      "fixed": "3.11.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-6j75-5wfj-gh66"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-45411"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/commit/11f68e2aeb526bfaf638e30d4420d8a710f3f7c6"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-7fxw-r6jv-74c8",
+          "summary": "Twig: `{% sandbox %}{% include %}` skips checkSecurity() on cached templates (incomplete fix for CVE-2024-45411)",
+          "aliases": [
+            "CVE-2026-46638"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.26.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-7fxw-r6jv-74c8"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-46638.yaml"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://github.com/advisories/GHSA-6j75-5wfj-gh66"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-7p85-w9px-jpjp",
+          "summary": "Twig: PHP code injection via `{% use %}` template name",
+          "aliases": [
+            "CVE-2026-46633"
+          ],
+          "database_specific": {
+            "severity": "CRITICAL"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.26.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-7p85-w9px-jpjp"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-46633.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-8x9c-rmqh-456c",
+          "summary": "Twig: Sandbox `__toString()` policy bypass via `Traversable` in `join` and `replace` filters",
+          "aliases": [
+            "CVE-2026-48807"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.27.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-8x9c-rmqh-456c"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-48807.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-h8vq-8gpg-mhcg",
+          "summary": "Twig: Sandbox property allowlist bypass via the `column` filter under `SourcePolicyInterface`",
+          "aliases": [
+            "CVE-2026-48808"
+          ],
+          "database_specific": {
+            "severity": "MODERATE"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.27.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-h8vq-8gpg-mhcg"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-48808.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-jjxq-ff2g-95vh",
+          "summary": "Twig has unguarded calls to `__isset()` and to array-accesses when the sandbox is enabled",
+          "aliases": [
+            "CVE-2024-51755"
+          ],
+          "database_specific": {
+            "severity": "LOW"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.11.2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "3.12"
+                    },
+                    {
+                      "fixed": "3.14.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-jjxq-ff2g-95vh"
+            },
+            {
+              "type": "ADVISORY",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-51755"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/commit/831c148e786178e5f2fde9db67266be3bf241c21"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-p42q-9prx-q5wq",
+          "summary": "Twig: Sandbox state regression in deprecated internal wrappers in `src/Resources/core.php`",
+          "aliases": [
+            "CVE-2026-48805"
+          ],
+          "database_specific": {
+            "severity": "LOW"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.27.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-p42q-9prx-q5wq"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-48805.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-pr2w-4gpj-cpq4",
+          "summary": "Twig: Sandbox: multiple `__toString()` policy bypasses via unguarded string coercion points",
+          "aliases": [
+            "CVE-2026-47732"
+          ],
+          "database_specific": {
+            "severity": "HIGH"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.26.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-pr2w-4gpj-cpq4"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-47732.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        },
+        {
+          "id": "GHSA-vcc8-phrv-43wj",
+          "summary": "Twig: Sandbox property allowlist bypass via the `column` filter (array_column on objects)",
+          "aliases": [
+            "CVE-2026-46635"
+          ],
+          "database_specific": {
+            "severity": "LOW"
+          },
+          "affected": [
+            {
+              "package": {
+                "name": "twig/twig"
+              },
+              "ranges": [
+                {
+                  "events": [
+                    {
+                      "introduced": "0"
+                    },
+                    {
+                      "fixed": "3.26.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "type": "WEB",
+              "url": "https://github.com/twigphp/Twig/security/advisories/GHSA-vcc8-phrv-43wj"
+            },
+            {
+              "type": "WEB",
+              "url": "https://github.com/FriendsOfPHP/security-advisories/blob/master/twig/twig/CVE-2026-46635.yaml"
+            },
+            {
+              "type": "PACKAGE",
+              "url": "https://github.com/twigphp/Twig"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "monolog/monolog",
+      "version": "1.23.0",
+      "vulns": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "ep305-stack-exposure-checker",
+  "kind": "tool",
+  "title": "Stack Exposure Checker",
+  "one_liner": "Paste your PHP version and composer.lock to see end-of-life status and known vulnerabilities.",
+  "headline": "Paste a PHP version and composer.lock, get a live, prioritized vulnerability report with a client-ready summary you can copy into an email.",
+  "episode": {
+    "slug": "spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305",
+    "title": "SpaceX’s AI Business Up 830%, OpenAI Agents Lie, and Startup Turns Mercury Into Gold | EP #305",
+    "number": 305,
+    "date": "2026-10-23",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305"
+  },
+  "timestamp": "00:55:57",
+  "idea_score": 3.9,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 8,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.55,
+  "created": "2026-10-23T23:44:47+00:00",
+  "updated": "2026-10-23T23:44:47+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-23T23:44:47+00:00",
+      "overall": 8.55,
+      "summary": "A genuinely working tool: it queries endoflife.date and OSV.dev live from the browser, correctly maps OSV's affected-range data to the installed version (verified the fixed-version extraction logic against the bundled example data by hand), and only shows canned output when explicitly in \"cached example\" mode with a one-click live refresh. Figures are attributed correctly and the UI/README never present simulated data as real. Minor polish gaps (an unused CSS class, a slightly ambiguous empty-state message) keep it from a 9, but this is close to publish-ready."
+    }
+  ]
+}

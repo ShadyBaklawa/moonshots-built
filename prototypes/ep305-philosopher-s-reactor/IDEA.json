@@ -1,0 +1,46 @@
+{
+  "title": "Philosopher's Reactor",
+  "one_liner": "Run a toy fusion plant whose mercury-lined walls make gold alongside electricity.",
+  "timestamp": "01:55:29",
+  "speaker": "Peter Diamandis, Alex Wissner-Gross",
+  "context": "A San Francisco fusion startup claims it turned mercury into stable gold, beating CERN's record. Its paper estimated about two tons of gold a year per gigawatt plant, and Alex framed this as the dawn of femtotech.",
+  "demo": "Visitors see an animated neutron bombarding mercury nuclei that turn into gold, then scale up a plant with a gigawatt slider and watch a gold-bar counter fill year by year. They type in a gold price to see the gold revenue next to an electricity revenue they enter, and a 'gold bug' meter shows what happens to scarcity as more plants are added. A side panel tells the aluminum-utensils story as a historical parallel.",
+  "data_plan": "Bundled figures from the podcast, with gold price and electricity value entered by the user. The nuclear animation is a labeled simplification.",
+  "feasibility": 4,
+  "wow": 5,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "The company's claims aren't independently confirmed, and the two-tons figure is a paper estimate. Salim later says 'two and a half tons,' which conflicts with that estimate. Nothing in the demo should read as gold investment advice.",
+  "figures": [
+    {
+      "value": "a factor of 10",
+      "meaning": "margin by which the startup claims it beat CERN's transmutation record",
+      "timestamp": "01:54:54",
+      "said": "beating CERN's record by a factor of 10",
+      "verified": true
+    },
+    {
+      "value": "about two tons",
+      "meaning": "estimated gold per year per gigawatt-scale plant, from the company's 2025 paper",
+      "timestamp": "01:55:29",
+      "said": "about two tons of gold per year per gigawatt",
+      "verified": true
+    },
+    {
+      "value": "two and a half tons",
+      "meaning": "Salim's restatement of the gold yield (conflicts with the paper's two tons)",
+      "timestamp": "02:00:36",
+      "said": "that's two and a half tons of gold is a lot",
+      "verified": true
+    }
+  ],
+  "score": 4.3,
+  "episode": {
+    "slug": "spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305",
+    "title": "SpaceX’s AI Business Up 830%, OpenAI Agents Lie, and Startup Turns Mercury Into Gold | EP #305",
+    "number": 305,
+    "date": "2026-10-23",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305"
+  }
+}

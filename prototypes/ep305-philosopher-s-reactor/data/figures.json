@@ -1,0 +1,24 @@
+{
+  "source_episode": "SpaceX's AI Business Up 830%, OpenAI Agents Lie, and Startup Turns Mercury Into Gold | EP #305",
+  "episode_url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305",
+  "figures": [
+    {
+      "value": "a factor of 10",
+      "meaning": "margin by which the startup claims it beat CERN's transmutation record",
+      "timestamp": "01:54:54",
+      "said": "beating CERN's record by a factor of 10"
+    },
+    {
+      "value": "about two tons",
+      "meaning": "estimated gold per year per gigawatt-scale plant, from the company's 2025 paper",
+      "timestamp": "01:55:29",
+      "said": "about two tons of gold per year per gigawatt"
+    },
+    {
+      "value": "two and a half tons",
+      "meaning": "Salim's restatement of the gold yield (conflicts with the paper's two tons)",
+      "timestamp": "02:00:36",
+      "said": "that's two and a half tons of gold is a lot"
+    }
+  ]
+}
