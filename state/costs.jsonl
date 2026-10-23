@@ -38,3 +38,10 @@
 {"at": "2026-10-21T23:39:54+00:00", "label": "review:ep304-equity-cradle", "est_cost_usd": 0.2298, "turns": 14, "subtype": "success"}
 {"at": "2026-10-21T23:43:32+00:00", "label": "build:ep304-equity-cradle:fix1", "est_cost_usd": 0.6145, "turns": 36, "subtype": "success"}
 {"at": "2026-10-21T23:45:29+00:00", "label": "review:ep304-equity-cradle", "est_cost_usd": 0.2534, "turns": 14, "subtype": "success"}
+{"at": "2026-10-23T20:54:47+00:00", "label": "extract:chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304", "est_cost_usd": 0.5876, "turns": 2, "subtype": "success"}
+{"at": "2026-10-23T20:58:50+00:00", "label": "build:ep304-crew-gap-calculator", "est_cost_usd": 0.5855, "turns": 21, "subtype": "success"}
+{"at": "2026-10-23T20:59:59+00:00", "label": "review:ep304-crew-gap-calculator", "est_cost_usd": 0.2116, "turns": 10, "subtype": "success"}
+{"at": "2026-10-23T21:04:20+00:00", "label": "build:ep304-denominator-dash", "est_cost_usd": 0.5502, "turns": 24, "subtype": "success"}
+{"at": "2026-10-23T21:06:53+00:00", "label": "review:ep304-denominator-dash", "est_cost_usd": 0.337, "turns": 15, "subtype": "success"}
+{"at": "2026-10-23T21:09:46+00:00", "label": "build:ep304-denominator-dash:fix1", "est_cost_usd": 0.5341, "turns": 29, "subtype": "success"}
+{"at": "2026-10-23T21:11:21+00:00", "label": "review:ep304-denominator-dash", "est_cost_usd": 0.1833, "turns": 11, "subtype": "success"}

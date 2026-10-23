@@ -7,49 +7,60 @@
     "status": "built",
     "attempts": 0,
     "found": "2026-10-21T23:22:47+00:00",
-    "updated": "2026-10-21T23:45:29+00:00",
+    "updated": "2026-10-23T21:11:21+00:00",
     "prototypes": [
-      "ep304-satoshi-s-countdown",
-      "ep304-equity-cradle"
+      "ep304-crew-gap-calculator",
+      "ep304-denominator-dash"
     ],
     "ideas": [
       {
-        "title": "Satoshi's Countdown",
-        "score": 4.3,
-        "timestamp": "01:48:14"
+        "title": "Denominator Dash",
+        "score": 4.4,
+        "timestamp": "01:09:37"
       },
       {
-        "title": "Equity Cradle",
-        "score": 4.2,
-        "timestamp": "00:24:41"
+        "title": "The Benefit Ratchet",
+        "score": 4.1,
+        "timestamp": "00:05:26"
       },
       {
-        "title": "Deficit Dial",
-        "score": 4.05,
-        "timestamp": "01:08:50"
-      },
-      {
-        "title": "The Diffusion Gap",
-        "score": 4.05,
-        "timestamp": "00:00:00"
-      },
-      {
-        "title": "Ivy Inc.",
+        "title": "Gigawatt Gap",
         "score": 4.0,
-        "timestamp": "01:50:39"
+        "timestamp": "00:42:15"
       },
       {
-        "title": "Narrative Bias Meter",
+        "title": "Watt Wallet",
         "score": 3.7,
-        "timestamp": "00:59:42"
-      },
-      {
-        "title": "Idea Avalanche",
-        "score": 3.55,
-        "timestamp": "01:25:26"
+        "timestamp": "00:33:27"
       }
     ],
-    "summary": "Chamath Palihapitiya joins the Moonshots crew to dissect Anthropic's ~$75-100B Public Benefit Fund, Elon's pledge to give one SpaceX share to every American kid, and a three-part Walter Isaacson/Elon interview on post-capitalism, superintelligence control, and fixing the national debt with AI and robots. The episode also covers Bill Gross's Idealab.ai (1.2M AI-generated business ideas), an alleged OpenAI corporate-espionage case, and closes with a rapid-fire \"Chamath hot seat\" on crypto, SPACs, chips, and where to put capital next."
+    "summary": "Chamath Palihapitiya joins the Moonshots crew. They discuss Anthropic's Public Benefit Fund, Elon's pledge to give one SpaceX share to every American kid through Trump accounts, and Elon's claim that money will turn into watts and tonnage. Chamath argues AGI is already here but can't spread because power, permits, co-op politics and a shortage of licensed electricians are holding back the buildout. The episode also covers the $40T national debt and AI-driven GDP growth, Bill Gross's free bank of AI-generated business ideas, an alleged spy at OpenAI, and a hot seat on crypto, SPACs for universities and owning cash flow.",
+    "briefs": [
+      "ep304-livewire-bench",
+      "ep304-week-one-founder-sprint"
+    ],
+    "opportunities": [
+      {
+        "title": "Livewire Bench",
+        "score": 3.85,
+        "timestamp": "00:44:07"
+      },
+      {
+        "title": "Week-One Founder Sprint",
+        "score": 3.45,
+        "timestamp": "01:27:43"
+      },
+      {
+        "title": "Gridline Dossier",
+        "score": 3.25,
+        "timestamp": "00:47:43"
+      },
+      {
+        "title": "First Share Club",
+        "score": 3.2,
+        "timestamp": "00:27:01"
+      }
+    ]
   },
   "flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303": {
     "title": "Flying Tesla Car, Robot Brains Halving in Cost Every 3 Weeks, and Why Incentives Decide AI Alignment | #303",
