@@ -1,0 +1,168 @@
+{
+  "generated_at": "2026-10-23T15:34:46+00:00",
+  "source": "https://endoflife.date/php",
+  "releases": [
+    {
+      "cycle": "8.5",
+      "releaseDate": "2025-11-20",
+      "eoasFrom": "2027-12-31",
+      "isEoas": false,
+      "eolFrom": "2029-12-31",
+      "isEol": false,
+      "latest": "8.5.12"
+    },
+    {
+      "cycle": "8.4",
+      "releaseDate": "2024-11-21",
+      "eoasFrom": "2026-12-31",
+      "isEoas": false,
+      "eolFrom": "2028-12-31",
+      "isEol": false,
+      "latest": "8.4.27"
+    },
+    {
+      "cycle": "8.3",
+      "releaseDate": "2023-11-23",
+      "eoasFrom": "2025-12-31",
+      "isEoas": true,
+      "eolFrom": "2027-12-31",
+      "isEol": false,
+      "latest": "8.3.36"
+    },
+    {
+      "cycle": "8.2",
+      "releaseDate": "2022-12-08",
+      "eoasFrom": "2024-12-31",
+      "isEoas": true,
+      "eolFrom": "2026-12-31",
+      "isEol": false,
+      "latest": "8.2.35"
+    },
+    {
+      "cycle": "8.1",
+      "releaseDate": "2021-11-25",
+      "eoasFrom": "2023-11-25",
+      "isEoas": true,
+      "eolFrom": "2025-12-31",
+      "isEol": true,
+      "latest": "8.1.34"
+    },
+    {
+      "cycle": "8.0",
+      "releaseDate": "2020-11-26",
+      "eoasFrom": "2022-11-26",
+      "isEoas": true,
+      "eolFrom": "2023-11-26",
+      "isEol": true,
+      "latest": "8.0.30"
+    },
+    {
+      "cycle": "7.4",
+      "releaseDate": "2019-11-28",
+      "eoasFrom": "2021-11-28",
+      "isEoas": true,
+      "eolFrom": "2022-11-28",
+      "isEol": true,
+      "latest": "7.4.33"
+    },
+    {
+      "cycle": "7.3",
+      "releaseDate": "2018-12-06",
+      "eoasFrom": "2020-12-06",
+      "isEoas": true,
+      "eolFrom": "2021-12-06",
+      "isEol": true,
+      "latest": "7.3.33"
+    },
+    {
+      "cycle": "7.2",
+      "releaseDate": "2017-11-30",
+      "eoasFrom": "2019-11-30",
+      "isEoas": true,
+      "eolFrom": "2020-11-30",
+      "isEol": true,
+      "latest": "7.2.34"
+    },
+    {
+      "cycle": "7.1",
+      "releaseDate": "2016-12-01",
+      "eoasFrom": "2018-12-01",
+      "isEoas": true,
+      "eolFrom": "2019-12-01",
+      "isEol": true,
+      "latest": "7.1.33"
+    },
+    {
+      "cycle": "7.0",
+      "releaseDate": "2015-12-03",
+      "eoasFrom": "2018-01-04",
+      "isEoas": true,
+      "eolFrom": "2019-01-10",
+      "isEol": true,
+      "latest": "7.0.33"
+    },
+    {
+      "cycle": "5.6",
+      "releaseDate": "2014-08-28",
+      "eoasFrom": "2017-01-19",
+      "isEoas": true,
+      "eolFrom": "2018-12-31",
+      "isEol": true,
+      "latest": "5.6.40"
+    },
+    {
+      "cycle": "5.5",
+      "releaseDate": "2013-06-20",
+      "eoasFrom": "2015-07-10",
+      "isEoas": true,
+      "eolFrom": "2016-07-21",
+      "isEol": true,
+      "latest": "5.5.38"
+    },
+    {
+      "cycle": "5.4",
+      "releaseDate": "2012-03-01",
+      "eoasFrom": "2014-09-14",
+      "isEoas": true,
+      "eolFrom": "2015-09-14",
+      "isEol": true,
+      "latest": "5.4.45"
+    },
+    {
+      "cycle": "5.3",
+      "releaseDate": "2009-06-30",
+      "eoasFrom": "2011-06-30",
+      "isEoas": true,
+      "eolFrom": "2014-08-14",
+      "isEol": true,
+      "latest": "5.3.29"
+    },
+    {
+      "cycle": "5.2",
+      "releaseDate": "2006-11-02",
+      "eoasFrom": "2008-11-02",
+      "isEoas": true,
+      "eolFrom": "2011-01-06",
+      "isEol": true,
+      "latest": "5.2.17"
+    },
+    {
+      "cycle": "5.1",
+      "releaseDate": "2005-11-24",
+      "eoasFrom": "2006-08-24",
+      "isEoas": true,
+      "eolFrom": "2006-08-24",
+      "isEol": true,
+      "latest": "5.1.6"
+    },
+    {
+      "cycle": "5.0",
+      "releaseDate": "2004-07-13",
+      "eoasFrom": "2005-09-05",
+      "isEoas": true,
+      "eolFrom": "2005-09-05",
+      "isEol": true,
+      "latest": "5.0.5"
+    }
+  ]
+}

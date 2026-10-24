@@ -1,0 +1,42 @@
+{
+  "title": "Carry-On Context",
+  "one_liner": "A service that builds and maintains a portable 'who I am' memory file usable across every AI assistant.",
+  "timestamp": "01:07:58",
+  "speaker": "Salim Ismail",
+  "context": "Salim asks each AI model to extract what it knows about him into structured markdown, so his identity and projects travel across models. Dave notes that personal context creates heavy switching friction.",
+  "customer": "Consultants, founders and executives who use two or more AI assistants daily (personal tier), and small consultancies that want shared workflow context files (team tier)",
+  "problem": "Every assistant knows a different slice of you, and switching or adding one means starting from zero. The memory you've built is locked into a single vendor.",
+  "revenue_model": "One-time setup of about $150–$500 per person, a $19 a month refresh subscription, or team packages of about $2,000 (estimate)",
+  "why_now": "Several always-on assistants launched within weeks of each other, and users don't know which one to commit to. Owning portable context hedges the bet.",
+  "first_steps": [
+    "Write and test the extraction prompt set on 3 assistants yourself and publish the merged-file template",
+    "Run 5 paid setups at a low intro price for founders in your network",
+    "Turn the merge step into the free web tool and gather emails for a refresh subscription"
+  ],
+  "cost_to_start": "About 1 week and near $0",
+  "competition": "Assistants have built-in memory features and some note-taking tools offer AI profiles, but cross-vendor portable files are still mostly DIY",
+  "risks": "Vendors may ship import/export or standard memory formats. Privacy concerns about handling clients' personal context. A low-price product that's easy to copy.",
+  "money": 2,
+  "ease": 5,
+  "speed": 5,
+  "evidence": 4,
+  "tool": {
+    "title": "Memory Merge Kit",
+    "one_liner": "Generates extraction prompts for each assistant and merges the answers into one clean context file.",
+    "demo": "The user picks the assistants they use and copies the tailored extraction prompts. They paste each assistant's answer back in, and the page dedupes and merges them into a structured markdown file (identity, preferences, active projects, do/don't rules) that can be downloaded. Everything stays in the browser. An optional API key improves the merging, and example mode uses sample answers.",
+    "data_plan": "Customer's own pasted text, processed locally. Optional LLM call with a key the visitor pastes in.",
+    "feasibility": 5
+  },
+  "figures": [],
+  "score": 3.7,
+  "slug": "ep305-carry-on-context",
+  "episode": {
+    "slug": "spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305",
+    "title": "SpaceX’s AI Business Up 830%, OpenAI Agents Lie, and Startup Turns Mercury Into Gold | EP #305",
+    "number": 305,
+    "date": "2026-10-23",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305"
+  },
+  "tool_slug": null,
+  "created": "2026-10-23T23:56:09+00:00"
+}

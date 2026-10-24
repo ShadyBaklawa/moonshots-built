@@ -1,0 +1,64 @@
+{
+  "title": "Patch Watch Desk",
+  "one_liner": "Monitoring and patching for small-business PHP/WordPress sites during the coming wave of AI-found vulnerabilities.",
+  "timestamp": "00:55:57",
+  "speaker": "Peter Diamandis",
+  "context": "AI-assisted researchers found decade-old critical PHP flaws that allowed takeover without a password. OpenAI warned that similar findings will rise sharply, and Alex cited Linux kernel developers expecting an 18-month onslaught.",
+  "customer": "Freelance web designers and small agencies maintaining 10–100 WordPress/PHP client sites, plus local businesses running their own WordPress",
+  "problem": "When critical flaws drop weekly, small site owners can't tell which of their sites run vulnerable PHP versions or packages, and they patch late or never.",
+  "revenue_model": "About $15–$40 per site per month for monitoring plus emergency patching, or about $299 a month per agency for up to 25 sites (estimate)",
+  "why_now": "AI vulnerability discovery is surfacing old bugs in legacy code faster than volunteers and small owners can react. The hosts expect the volume to grow sharply over the next 18 months.",
+  "first_steps": [
+    "Build the free exposure checker and post it in WordPress freelancer communities",
+    "Manually audit 10 agency portfolios for free in exchange for testimonials",
+    "Package a 'critical CVE within 48 hours' patch guarantee and sell it to the first 3 agencies"
+  ],
+  "cost_to_start": "About 2 weeks and under $300; patching work is labour you can partly automate with AI coding tools",
+  "competition": "Managed WordPress hosts and security plugins already cover parts of this. An agency-focused, AI-assisted patch service is a narrower niche.",
+  "risks": "Hosting companies may auto-patch for free. Liability if a patched site breaks. The wave of findings may be shorter than predicted.",
+  "money": 3,
+  "ease": 4,
+  "speed": 5,
+  "evidence": 4,
+  "tool": {
+    "title": "Stack Exposure Checker",
+    "one_liner": "Paste your PHP version and composer.lock to see end-of-life status and known vulnerabilities.",
+    "demo": "The user pastes a PHP version and the contents of composer.lock or a package list. The page checks the PHP branch's support and end-of-life dates and queries known vulnerabilities for each package and version. It returns a prioritized table (critical first) with fixed-in versions and a client-ready summary the agency can send. Example mode loads a sample outdated stack.",
+    "data_plan": "Customer's own input. Keyless public APIs: endoflife.date for PHP support dates and the OSV.dev vulnerability query API for packages (Packagist ecosystem).",
+    "feasibility": 4
+  },
+  "figures": [
+    {
+      "value": "70%",
+      "meaning": "share of all websites the hosts say run on PHP",
+      "timestamp": "00:55:57",
+      "said": "It runs 70% of all websites, including WordPress",
+      "verified": true
+    },
+    {
+      "value": "18 months",
+      "meaning": "period over which Linux kernel developers reportedly expect an onslaught of vulnerability discoveries",
+      "timestamp": "00:58:28",
+      "said": "18 months is what the Linux kernel folks think",
+      "verified": true
+    },
+    {
+      "value": "a billion dollars",
+      "meaning": "subsidized access to OpenAI's cyber defense AI for under-resourced organizations",
+      "timestamp": "00:55:57",
+      "said": "committing a billion dollars in subsidized access",
+      "verified": true
+    }
+  ],
+  "score": 3.9,
+  "slug": "ep305-patch-watch-desk",
+  "episode": {
+    "slug": "spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305",
+    "title": "SpaceX’s AI Business Up 830%, OpenAI Agents Lie, and Startup Turns Mercury Into Gold | EP #305",
+    "number": 305,
+    "date": "2026-10-23",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305"
+  },
+  "tool_slug": "ep305-stack-exposure-checker",
+  "created": "2026-10-23T23:56:09+00:00"
+}

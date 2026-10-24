@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stack Exposure Checker — PHP &amp; composer.lock vulnerability scan</title>
+<meta name="description" content="Paste your PHP version and composer.lock to see end-of-life status and known vulnerabilities, prioritized for action.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">▣</span>
+      <span class="brand-name">Stack Exposure Checker</span>
+    </div>
+    <p class="brand-tag">For web agencies and freelancers who keep WordPress/PHP sites alive — paste what a client is running, see exactly what's exposed.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="panel intro-panel">
+    <p class="intro-line">
+      Decade-old PHP flaws are being rediscovered fast — AI-assisted researchers recently turned up critical,
+      password-free takeover bugs in code that's been running for years. This checks one stack against two live,
+      public databases: <strong>endoflife.date</strong> for PHP support status and <strong>OSV.dev</strong> for
+      known vulnerabilities in your Composer packages.
+    </p>
+  </section>
+
+  <section class="panel form-panel">
+    <form id="scan-form">
+      <div class="field">
+        <label for="php-version">PHP version this site runs</label>
+        <input id="php-version" name="php-version" type="text" inputmode="text" autocomplete="off"
+               placeholder="e.g. 8.1.29" aria-describedby="php-version-hint">
+        <p class="hint" id="php-version-hint">From <code>php -v</code>, your host's control panel, or <code>phpinfo()</code>.</p>
+      </div>
+
+      <div class="field">
+        <label for="stack-input">composer.lock contents, or a plain package list</label>
+        <textarea id="stack-input" name="stack-input" rows="9" spellcheck="false"
+          placeholder='Paste the full composer.lock JSON, or one package per line like:
+symfony/http-kernel 4.4.0
+phpmailer/phpmailer 5.2.16'></textarea>
+        <p class="hint">Nothing is uploaded anywhere except the two public lookup services below — your own browser talks to them directly.</p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" id="scan-btn">Scan my stack</button>
+        <button type="button" class="btn btn-ghost" id="example-btn">Load example outdated stack</button>
+      </div>
+      <p class="status-line" id="status-line" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="panel results-panel" id="results-panel" hidden>
+
+    <div class="example-mode-bar" id="example-mode-bar" hidden>
+      <span id="example-mode-text"></span>
+      <button type="button" class="btn btn-ghost btn-small" id="refresh-live-btn">Refresh with live data</button>
+    </div>
+
+    <div class="php-banner" id="php-banner"></div>
+
+    <div class="summary-bar" id="summary-bar"></div>
+
+    <div class="table-wrap">
+      <table class="findings-table" id="findings-table">
+        <thead>
+          <tr>
+            <th scope="col">Severity</th>
+            <th scope="col">Package</th>
+            <th scope="col">Installed</th>
+            <th scope="col">Fixed in</th>
+            <th scope="col">Finding</th>
+          </tr>
+        </thead>
+        <tbody id="findings-body"></tbody>
+      </table>
+      <button type="button" class="btn btn-ghost btn-small" id="show-more-btn" hidden></button>
+    </div>
+
+    <div class="clean-note" id="clean-note" hidden>No known vulnerabilities found in the packages you listed. Keep checking — this changes weekly.</div>
+
+    <div class="summary-block">
+      <div class="summary-head">
+        <h2>Client-ready summary</h2>
+        <button type="button" class="btn btn-ghost btn-small" id="copy-btn">Copy to clipboard</button>
+      </div>
+      <pre id="summary-text" class="summary-text"></pre>
+    </div>
+
+    <div class="cta-block">
+      <p>
+        Scanning one stack is free. Watching 25 of them every week, filing the tickets, and applying the fixes
+        is the job — that's what <strong>Patch Watch Desk</strong> is for.
+      </p>
+    </div>
+  </section>
+
+  <section class="panel sources-panel">
+    <h2>How this works</h2>
+    <ul>
+      <li><strong>PHP support status</strong> — live lookup against <a href="https://endoflife.date/php" target="_blank" rel="noopener">endoflife.date</a>. If that lookup fails, a bundled snapshot (dated <span id="eol-fallback-date"></span>) is used and clearly marked.</li>
+      <li><strong>Package vulnerabilities</strong> — live query against <a href="https://osv.dev" target="_blank" rel="noopener">OSV.dev</a> for each package in the Packagist ecosystem. This always needs a live connection; there is no offline substitute for your own packages.</li>
+      <li><strong>Example mode</strong> — instantly renders a real, previously-captured result set for a known outdated stack, so you see output in well under a second with no live request. A "Refresh with live data" button re-runs the same stack against OSV.dev right now, if you want to confirm it's still current.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305" target="_blank" rel="noopener">Moonshots EP #305</a>, around 00:55:57. Fan-made prototype, not affiliated with the show.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
