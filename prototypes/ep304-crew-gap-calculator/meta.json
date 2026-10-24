@@ -1,0 +1,37 @@
+{
+  "slug": "ep304-crew-gap-calculator",
+  "kind": "tool",
+  "title": "Crew Gap Calculator",
+  "one_liner": "Estimate how many licensed electricians a data center build needs per phase and where staffing will slip the schedule.",
+  "headline": "Enter your data center's size, target energization date and committed crew to see a month-by-month electrician shortfall chart and download a draft job post for the worst gap.",
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  },
+  "timestamp": "00:44:07",
+  "idea_score": 3.85,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-10-23T20:59:59+00:00",
+  "updated": "2026-10-23T20:59:59+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-23T20:59:59+00:00",
+      "overall": 8.35,
+      "summary": "A clean, fully self-contained staffing calculator that genuinely computes its output from the user's own inputs and editable assumptions — nothing canned. It closely matches both the episode moment and the pitched \"Livewire Bench\" opportunity, with internally consistent math (verified the ramp model, peak values, and job-description export all line up), labeled assumptions, and a correctly attributed single podcast quote. Solid, publishable work with only minor polish items left."
+    }
+  ]
+}

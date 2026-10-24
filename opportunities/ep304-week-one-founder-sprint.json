@@ -1,0 +1,64 @@
+{
+  "title": "Week-One Founder Sprint",
+  "one_liner": "A done-with-you service that turns a free AI-generated business idea into a validated test within seven days.",
+  "timestamp": "01:27:43",
+  "speaker": "Chamath Palihapitiya",
+  "context": "After Bill Gross's free bank of AI business ideas launches, Chamath says ideas are worth little and execution is everything. Salim says lost young people can use the list as a starting point.",
+  "customer": "Career changers, recent grads and corporate employees with a side project who have picked an idea but never launched",
+  "problem": "Ideas are now free and plentiful, but most people stall before the first customer conversation, landing page or paid test.",
+  "revenue_model": "Fixed-price sprint, about $300–$900 per founder (estimate), plus an optional monthly accountability tier around $99 (estimate)",
+  "why_now": "Free idea databases are flooding people with options, and the hosts say startup costs have fallen from millions to a few thousand dollars, so execution help is now the scarce part.",
+  "first_steps": [
+    "Run one free sprint for a friend and document the before/after",
+    "Post the case study in startup and career-change communities with a 5-seat paid beta",
+    "Build a reusable kit: interview script, landing page template, $50 ad test"
+  ],
+  "cost_to_start": "About 1 week and under $200 (estimate) for a landing page and templates",
+  "competition": "Startup coaches, accelerators and validation courses are plentiful; a fixed-week, productised sprint is less common",
+  "risks": "Low willingness to pay among undecided people. Outcomes depend on the founder's effort. Easy for others to copy.",
+  "money": 2,
+  "ease": 5,
+  "speed": 5,
+  "evidence": 3,
+  "tool": {
+    "title": "Idea Triage Board",
+    "one_liner": "Score your shortlist of business ideas and get a concrete seven-day test plan for the winner.",
+    "demo": "The user pastes 3–10 ideas and rates each on interest, access to customers, starting cost and speed to first dollar. The page ranks them and generates a day-by-day validation plan for the top idea, including interview questions and a landing-page headline. With a pasted AI key it drafts the copy; example mode uses templates.",
+    "data_plan": "User input; optional AI through a visitor-pasted key; template example mode without a key",
+    "feasibility": 5
+  },
+  "figures": [
+    {
+      "value": "1.2 million",
+      "meaning": "number of free AI-generated ideas Peter cites when questioning Chamath",
+      "timestamp": "01:27:07",
+      "said": "Does a free list of 1.2 million ideas help?",
+      "verified": true
+    },
+    {
+      "value": "$50,000",
+      "meaning": "cited cost to launch a tech startup ten years ago",
+      "timestamp": "01:27:07",
+      "said": "10 years ago, it was about $50,000",
+      "verified": true
+    },
+    {
+      "value": "$5 million",
+      "meaning": "cited cost to launch a tech startup in 2000",
+      "timestamp": "01:26:42",
+      "said": "back in 2000, it was about $5 million",
+      "verified": true
+    }
+  ],
+  "score": 3.45,
+  "slug": "ep304-week-one-founder-sprint",
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  },
+  "tool_slug": null,
+  "created": "2026-10-23T21:11:21+00:00"
+}

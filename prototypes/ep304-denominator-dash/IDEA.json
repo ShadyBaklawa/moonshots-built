@@ -1,0 +1,67 @@
+{
+  "title": "Denominator Dash",
+  "one_liner": "Race the $40T national debt against AI-boosted GDP growth and watch debt-to-GDP rise or collapse.",
+  "timestamp": "01:09:37",
+  "speaker": "Peter Diamandis",
+  "context": "Elon says only AI and robots can solve the debt. Peter cites $40T in debt, and Jack Clark's projection that GDP grows from $30T to $44T by 2030 against a historic 2–3% per year.",
+  "demo": "Visitors set a GDP growth slider (2–3% historic vs about 10% per year in the AI case), plus yearly debt growth and a healthcare cost cut. An animated chart races debt against GDP through 2040 and shows the debt-to-GDP ratio as a gauge. Preset buttons load 'historic', 'Anthropic projection' and 'Elon bull case'.",
+  "data_plan": "Bundled episode figures (debt, yearly increase, GDP today and 2030); all future paths are clearly labeled simulations driven by the sliders",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 3,
+  "related_existing": null,
+  "risks": "Simplified model with no interest-rate dynamics. Must be labeled illustrative, not a forecast. $2.44T per year works out to about $6.7B a day, slightly above the $6.5B a day stated.",
+  "figures": [
+    {
+      "value": "$40 trillion",
+      "meaning": "US national debt as of October 5",
+      "timestamp": "01:08:24",
+      "said": "the national debt was about $40 trillion",
+      "verified": true
+    },
+    {
+      "value": "$2.44 trillion",
+      "meaning": "debt growth in the past year",
+      "timestamp": "01:08:24",
+      "said": "It grew $2.44 trillion in the past year alone",
+      "verified": true
+    },
+    {
+      "value": "$6.5 billion",
+      "meaning": "daily debt increase",
+      "timestamp": "01:08:50",
+      "said": "About $6.5 billion a day",
+      "verified": true
+    },
+    {
+      "value": "$3 billion",
+      "meaning": "daily interest paid",
+      "timestamp": "01:08:50",
+      "said": "We're paying $3 billion a day just in interest",
+      "verified": true
+    },
+    {
+      "value": "$44 trillion",
+      "meaning": "Anthropic model projection of US GDP by 2030",
+      "timestamp": "01:09:37",
+      "said": "project US GDP could reach $44 trillion by 2030",
+      "verified": true
+    },
+    {
+      "value": "2 to 3%",
+      "meaning": "historic average US yearly growth",
+      "timestamp": "01:09:37",
+      "said": "the U.S. has averaged 2 to 3% per year",
+      "verified": true
+    }
+  ],
+  "score": 4.4,
+  "episode": {
+    "slug": "chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304",
+    "title": "Chamath: AGI Is Here, Anthropic’s $100B Giveaway, Elon’s SpaceX Shares for 72M Kids | EP #304",
+    "number": 304,
+    "date": "2026-10-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304"
+  }
+}

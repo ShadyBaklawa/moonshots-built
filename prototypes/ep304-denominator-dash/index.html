@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Denominator Dash — debt vs. GDP race</title>
+<meta name="description" content="Race the US national debt against AI-boosted GDP growth and watch the debt-to-GDP ratio rise or collapse.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="hero">
+  <p class="kicker">MOONSHOTS, BUILT &middot; EP #304</p>
+  <h1>Denominator Dash</h1>
+  <p class="tagline">Race the $40 trillion national debt against AI&#8209;boosted GDP growth, and watch the debt&#8209;to&#8209;GDP ratio rise&hellip; or collapse.</p>
+
+  <div class="stat-strip" role="list" aria-label="Verified figures from the podcast">
+    <div class="stat" role="listitem">
+      <span class="stat-value">$40T</span>
+      <span class="stat-label">national debt, Oct 2025</span>
+    </div>
+    <div class="stat" role="listitem">
+      <span class="stat-value">+$2.44T</span>
+      <span class="stat-label">debt growth, past year</span>
+    </div>
+    <div class="stat" role="listitem">
+      <span class="stat-value">$6.5B</span>
+      <span class="stat-label">debt added per day</span>
+    </div>
+    <div class="stat" role="listitem">
+      <span class="stat-value">$3B</span>
+      <span class="stat-label">interest paid per day</span>
+    </div>
+    <div class="stat" role="listitem">
+      <span class="stat-value">$44T</span>
+      <span class="stat-label">GDP by 2030, Anthropic model</span>
+    </div>
+  </div>
+  <p class="verified-note">All figures above: as stated on the podcast by Peter Diamandis, 01:08&ndash;01:09. <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304" target="_blank" rel="noopener">source transcript</a>.</p>
+  <p class="baseline-note">The race below starts from an <strong>illustrative $30T 2025 GDP baseline</strong> (not a figure from the podcast) chosen so the Anthropic preset's path lands on the verified $44T&#8209;by&#8209;2030 figure above.</p>
+</header>
+
+<main>
+
+  <section class="controls" aria-label="Race controls">
+    <div class="presets" role="group" aria-label="Scenario presets">
+      <button type="button" class="preset-btn" data-preset="historic">Historic</button>
+      <button type="button" class="preset-btn" data-preset="anthropic">Anthropic Projection</button>
+      <button type="button" class="preset-btn" data-preset="elon">Elon Bull Case</button>
+    </div>
+
+    <div class="slider-row">
+      <label for="gdpGrowth">
+        <span class="slider-label-text">GDP growth / year</span>
+        <span class="slider-value" id="gdpGrowthVal">2.5%</span>
+      </label>
+      <input type="range" id="gdpGrowth" min="2" max="10" step="0.1" value="2.5">
+      <p class="slider-hint">Historic average: 2&ndash;3%/yr, as stated on the podcast. The 8&ndash;10%/yr AI-case presets below are illustrative, derived from an assumed $30T 2025 baseline against the verified $44T&#8209;by&#8209;2030 figure &mdash; not separately quoted.</p>
+    </div>
+
+    <div class="slider-row">
+      <label for="debtGrowth">
+        <span class="slider-label-text">Debt growth / year</span>
+        <span class="slider-value" id="debtGrowthVal">$2.44T</span>
+      </label>
+      <input type="range" id="debtGrowth" min="1" max="5" step="0.01" value="2.44">
+      <p class="slider-hint">$2.44T/yr is the actual figure stated for the past year.</p>
+    </div>
+
+    <div class="slider-row">
+      <label for="healthcareCut">
+        <span class="slider-label-text">Illustrative healthcare cost cut</span>
+        <span class="slider-value" id="healthcareCutVal">0%</span>
+      </label>
+      <input type="range" id="healthcareCut" min="0" max="30" step="1" value="0">
+      <p class="slider-hint">Simulated lever only &mdash; not a figure from the episode. Trims the debt growth rate.</p>
+    </div>
+
+    <button type="button" class="replay-btn" id="replayBtn">&#9654; Replay the race</button>
+  </section>
+
+  <section class="race" aria-label="Debt vs GDP race">
+    <div class="chart-wrap">
+      <canvas id="raceChart" role="img" aria-label="Line chart racing national debt against GDP from 2025 to 2040"></canvas>
+      <div class="year-badge"><span id="yearLabel">2025</span></div>
+    </div>
+
+    <div class="readouts">
+      <div class="readout debt">
+        <span class="readout-label">Debt</span>
+        <span class="readout-value" id="debtVal">$40.0T</span>
+      </div>
+      <div class="readout gdp">
+        <span class="readout-label">GDP</span>
+        <span class="readout-value" id="gdpVal">$30.0T</span>
+      </div>
+    </div>
+
+    <div class="gauge-wrap">
+      <svg id="gauge" viewBox="0 0 200 120" aria-hidden="true">
+        <path d="M 10 110 A 90 90 0 0 1 190 110" fill="none" stroke="#1d2535" stroke-width="18" stroke-linecap="round"></path>
+        <path id="gaugeArc" d="M 10 110 A 90 90 0 0 1 190 110" fill="none" stroke-width="18" stroke-linecap="round"></path>
+        <line id="needle" x1="100" y1="110" x2="100" y2="35" stroke="#f5f7fb" stroke-width="4" stroke-linecap="round"></line>
+        <circle cx="100" cy="110" r="7" fill="#f5f7fb"></circle>
+      </svg>
+      <div class="gauge-label">
+        <span class="gauge-value" id="ratioVal">133%</span>
+        <span class="gauge-caption">debt&#8209;to&#8209;GDP ratio</span>
+      </div>
+    </div>
+  </section>
+
+  <p class="sim-banner">Simulated data &mdash; everything past 2025 is a projection driven by the sliders above, not a forecast. Model: debt grows by a fixed $/year; GDP compounds at the chosen annual rate. No interest&#8209;rate dynamics.</p>
+
+</main>
+
+<footer>
+  <p>Inspired by Moonshots EP #304, around 01:09:37. Fan-made prototype, not affiliated with the show.
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304" target="_blank" rel="noopener">Listen to the episode</a>.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>
