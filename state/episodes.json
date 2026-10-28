@@ -1,4 +1,62 @@
 {
+  "anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306": {
+    "title": "Anthropic’s $2T IPO, Elon Predicts Neocloud Death, and China’s Kimi Catches Up | #306",
+    "date": "2026-10-28",
+    "number": 306,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306",
+    "status": "built",
+    "attempts": 0,
+    "found": "2026-10-28T22:37:42+00:00",
+    "updated": "2026-10-28T23:00:40+00:00",
+    "prototypes": [
+      "ep306-model-switch-savings-sheet",
+      "ep306-chain-mail-periodic-table"
+    ],
+    "briefs": [
+      "ep306-token-thrift-audit",
+      "ep306-idle-rack-exchange"
+    ],
+    "ideas": [
+      {
+        "title": "Chain Mail Periodic Table",
+        "score": 4.55,
+        "timestamp": "01:29:04"
+      },
+      {
+        "title": "Cache Whisper",
+        "score": 4.55,
+        "timestamp": "00:48:11"
+      },
+      {
+        "title": "Guppy Shakeout",
+        "score": 3.85,
+        "timestamp": "00:16:30"
+      },
+      {
+        "title": "Kennel Compiler",
+        "score": 3.55,
+        "timestamp": "01:34:00"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Token Thrift Audit",
+        "score": 3.65,
+        "timestamp": "00:55:28"
+      },
+      {
+        "title": "Idle Rack Exchange",
+        "score": 3.25,
+        "timestamp": "00:16:30"
+      },
+      {
+        "title": "Native Hire Trials",
+        "score": 2.55,
+        "timestamp": "00:05:43"
+      }
+    ],
+    "summary": "The hosts argue that the AI economy is splitting into winners and wreckage. Debt-funded neoclouds sold off while SpaceX borrowed $40B cheaply, and Anthropic filed for a record IPO. Kimi K3.1 Pro brought open models to within about five weeks of the frontier, and GPT-6.1 Terra halved token prices. The science segment covers Alex's 'chain theory' derivation of the fine structure constant, OpenAI's sandbox cache-timing covert channel, Warhound's cloned working dogs, and OpenAI's three unverified foundational results."
+  },
   "spacexs-ai-business-up-830-openai-agents-lie-and-startup-turns-mercury-into-gold-ep-305": {
     "title": "SpaceX’s AI Business Up 830%, OpenAI Agents Lie, and Startup Turns Mercury Into Gold | EP #305",
     "date": "2026-10-23",
