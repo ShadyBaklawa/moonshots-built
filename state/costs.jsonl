@@ -56,3 +56,6 @@
 {"at": "2026-10-23T23:54:08+00:00", "label": "review:ep305-philosopher-s-reactor", "est_cost_usd": 0.3032, "turns": 15, "subtype": "success"}
 {"at": "2026-10-23T23:55:09+00:00", "label": "build:ep305-philosopher-s-reactor:fix1", "est_cost_usd": 0.2155, "turns": 16, "subtype": "success"}
 {"at": "2026-10-23T23:56:09+00:00", "label": "review:ep305-philosopher-s-reactor", "est_cost_usd": 0.1763, "turns": 10, "subtype": "success"}
+{"at": "2026-10-28T13:13:15+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.3032, "turns": 14, "subtype": "success"}
+{"at": "2026-10-28T13:16:36+00:00", "label": "upgrade:ep288-coffee-cup-horizon", "est_cost_usd": 0.7087, "turns": 35, "subtype": "success"}
+{"at": "2026-10-28T13:19:58+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.3634, "turns": 17, "subtype": "success"}
