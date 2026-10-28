@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chain Mail Periodic Table</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="links-bg" aria-hidden="true"></div>
+
+  <header class="page-header">
+    <h1>⛓ Chain Mail Periodic Table</h1>
+    <p class="subtitle">Qudit-pair link types, mapped to forces &mdash; from Alex Wissner-Gross's "chain theory"</p>
+  </header>
+
+  <div class="banner" role="note">
+    <strong>Not peer-reviewed.</strong> Chain theory is one researcher's new, speculative framework &mdash;
+    it has not been through peer review. The qudit-pair &rarr; force mappings and the alpha formula below are
+    transcribed from a spoken podcast explanation, so the transcribed formula may differ from whatever Alex's
+    published version actually says. Nothing here should be read as an established result in physics.
+  </div>
+
+  <main class="layout">
+    <section class="grid-section" aria-labelledby="grid-heading">
+      <h2 id="grid-heading">Qudit-pair link grid</h2>
+      <p class="hint">Each cell is a maximally-entangled pair of finite quantum systems with dimensions <em>d&#8321;</em> &times; <em>d&#8322;</em>. Click a cell to see what Alex assigns it to.</p>
+
+      <div class="legend">
+        <span class="legend-item"><span class="swatch assigned"></span> force assigned</span>
+        <span class="legend-item"><span class="swatch unassigned"></span> not specified in episode</span>
+        <span class="legend-item"><span class="swatch dark-chip"></span> product &ge; 8: bound&#8209;entanglement possible</span>
+      </div>
+
+      <div class="grid-wrap">
+        <div class="qgrid" id="qgrid" role="grid" aria-label="Qudit dimension pair grid"></div>
+      </div>
+
+      <div class="cell-detail" id="cellDetail" aria-live="polite">
+        <p class="placeholder">Click any cell above to see its link type.</p>
+      </div>
+    </section>
+
+    <aside class="formula-panel" aria-labelledby="formula-heading">
+      <h2 id="formula-heading">Evaluating the spoken &alpha;&#8315;&sup1; formula</h2>
+      <p class="hint">Alex's spoken formula at 01:44:59, computed exactly &mdash; term by term &mdash; in your browser.</p>
+
+      <div class="formula-display">
+        <span class="frac">
+          <span class="frac-top">79 + 48&radic;2 + 42&radic;3 + 3&radic;6</span>
+          <span class="frac-bottom">24&middot;36&sup2;</span>
+        </span>
+      </div>
+
+      <table class="term-table" id="termTable" aria-label="Formula terms">
+        <thead>
+          <tr><th>Term</th><th>Value</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <dl class="result-list" id="resultList"></dl>
+
+      <div class="digit-match" id="digitMatch">
+        <h3>Digit-by-digit match</h3>
+        <div class="digit-rows" id="digitRows"></div>
+        <p class="match-summary" id="matchSummary"></p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="page-footer">
+    Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306" target="_blank" rel="noopener">Moonshots #306</a>,
+    around 01:29:04. Fan-made prototype, not affiliated with the show.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

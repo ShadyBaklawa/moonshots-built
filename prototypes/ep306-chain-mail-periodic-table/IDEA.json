@@ -1,0 +1,74 @@
+{
+  "title": "Chain Mail Periodic Table",
+  "one_liner": "Explore qudit-pair link types mapped to forces, and evaluate the spoken alpha formula against the measured value.",
+  "timestamp": "01:29:04",
+  "speaker": "Alex Wissner-Gross",
+  "context": "Alex described chain theory: the world is made of maximally entangled pairs of finite quantum systems. Each pair of dimensions maps to a force (2-2 spacetime, 3-2 electromagnetism, 3-3 strong, 4-2 weak, 4-3 Yukawa, 4-4 Higgs). Pairs with a dimension product of eight or more allow undistillable 'dark' states.",
+  "demo": "Visitors see a grid of qudit dimensions 2–6 on each axis. Clicking a cell shows the force Alex assigned to it, or 'unassigned/speculative'. Cells with a product of 8 or more get a 'bound-entanglement possible' shading as dark-sector candidates. A side panel evaluates the spoken formula (79 + 48√2 + 42√3 + 3√6)/(24·36²) step by step and shows its inverse next to the quoted 137.035999… value with the digit-by-digit match highlighted.",
+  "data_plan": "A bundled table of the mappings and formula as stated on the podcast. All arithmetic is computed in-browser. Clearly labelled as one researcher's new, unreviewed theory.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "The theory isn't peer-reviewed. Evaluating the formula exactly as transcribed gives about 0.0073006 (inverse about 137.0), not a 10-digit match with 1/137.035999. The transcript may have garbled it, so the page must show the computed mismatch honestly rather than claim agreement. Mappings above 4-4 are not from the episode.",
+  "figures": [
+    {
+      "value": "137.035999…",
+      "meaning": "Inverse fine structure constant value quoted in the explainer",
+      "timestamp": "01:10:59",
+      "said": "137.035999-99-189, which he says falls out",
+      "verified": true
+    },
+    {
+      "value": "10 digits",
+      "meaning": "Claimed match precision",
+      "timestamp": "01:10:59",
+      "said": "most precisely measured numbers in all of science to 10 digits",
+      "verified": true
+    },
+    {
+      "value": "18 words",
+      "meaning": "Length of chain theory's single axiom",
+      "timestamp": "01:13:06",
+      "said": "so its one and only axiom is 18 words long",
+      "verified": true
+    },
+    {
+      "value": "79, 48, 42, 3, 24, 36",
+      "meaning": "Integers in the spoken alpha expression",
+      "timestamp": "01:44:59",
+      "said": "it's 79 plus 48 times a square root of two",
+      "verified": true
+    },
+    {
+      "value": "eight",
+      "meaning": "Dimension product threshold for undistillable states (Horodecki et al.)",
+      "timestamp": "01:28:21",
+      "said": "the product of the two dimensions is greater than are equal to eight",
+      "verified": true
+    },
+    {
+      "value": "18 free parameters",
+      "meaning": "Standard model free parameters per Alex",
+      "timestamp": "01:21:23",
+      "said": "18 free parameters that right now are total mysteries",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Clicking the 3×2 cell shows 'electromagnetism' and clicking 4×4 shows 'Higgs', and every cell with a dimension product of 8 or more is visibly shaded as 'bound entanglement possible'",
+    "The formula panel shows each term's numeric value, the sum, the denominator 31104, the result and its inverse, plus the number of matching digits against 137.035999",
+    "A visible banner says the theory is new and not peer-reviewed, and notes that the transcribed formula may differ from the published one",
+    "Cells without a podcast-stated mapping are labelled 'not specified in episode'",
+    "On a phone the grid shrinks to fit the width and the panel moves below it"
+  ],
+  "score": 4.55,
+  "episode": {
+    "slug": "anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306",
+    "title": "Anthropic’s $2T IPO, Elon Predicts Neocloud Death, and China’s Kimi Catches Up | #306",
+    "number": 306,
+    "date": "2026-10-28",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306"
+  }
+}

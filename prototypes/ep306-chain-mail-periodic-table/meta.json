@@ -1,0 +1,37 @@
+{
+  "slug": "ep306-chain-mail-periodic-table",
+  "kind": "demo",
+  "title": "Chain Mail Periodic Table",
+  "one_liner": "Explore qudit-pair link types mapped to forces, and evaluate the spoken alpha formula against the measured value.",
+  "headline": "Click any qudit-dimension pair to see which fundamental force Alex Wissner-Gross's \"chain theory\" assigns it, then watch his spoken alpha formula get computed live and checked digit-by-digit against the real measured constant.",
+  "episode": {
+    "slug": "anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306",
+    "title": "Anthropic’s $2T IPO, Elon Predicts Neocloud Death, and China’s Kimi Catches Up | #306",
+    "number": 306,
+    "date": "2026-10-28",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306"
+  },
+  "timestamp": "01:29:04",
+  "idea_score": 4.55,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-10-28T23:00:40+00:00",
+  "updated": "2026-10-28T23:00:40+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-28T23:00:40+00:00",
+      "overall": 8.35,
+      "summary": "A tight, self-contained prototype that faithfully reproduces the episode's force-mapping grid and runs the spoken inverse-alpha formula through real in-browser arithmetic rather than hard-coding an answer — and it reports the honest result (a 9-digit match) instead of overclaiming. Verified against the code and screenshots: every acceptance criterion holds, all displayed numbers trace to verified IDEA.json figures or simple labeled calculations, and the mobile layout collapses cleanly with no overflow. Minor polish items remain (button-face wording, an unused JSON field, incomplete ARIA grid roles) but nothing blocks publishing."
+    }
+  ]
+}

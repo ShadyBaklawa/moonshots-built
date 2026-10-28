@@ -1,0 +1,99 @@
+{
+  "title": "Idle Rack Exchange",
+  "one_liner": "A brokerage that matches AI startups needing short-term GPUs with small providers sitting on underused capacity.",
+  "timestamp": "00:16:30",
+  "speaker": "Peter Diamandis (quoting Chamath and Elon Musk)",
+  "context": "Neocloud stocks sold off after debt worries. Chamath warned that much compute will sit partly stranded in 2027, and Elon predicted death and consolidation for about 200 neoclouds that can't get debt financing.",
+  "customer": "Second-tier GPU cloud operators and colocation owners with unsold hours (they pay commission), plus AI startups and university labs that need 1–12 weeks of capacity",
+  "problem": "Small, leveraged providers need cash flow from idle GPUs to service expensive debt. Small buyers can't easily find or vet short-term capacity outside the big clouds' pricing.",
+  "revenue_model": "5–10% commission on brokered contracts, paid by the provider, plus a $500 sourcing fee for buyer requests (estimate)",
+  "why_now": "The episode describes a credit squeeze on neoclouds borrowing at around 15% while giants borrow at 8%. That pushes smaller operators to monetize idle capacity quickly, even at a discount.",
+  "first_steps": [
+    "Build a list of 30 small GPU providers and email them asking for their unsold-capacity rate sheets",
+    "Post one 'capacity wanted' request on behalf of a real buyer in an AI founder community and see how many providers respond",
+    "Publish a free weekly 'spot GPU price sheet' newsletter built from the quotes you collect"
+  ],
+  "cost_to_start": "About 2–3 weeks of outreach and under $300 for a landing page and email tooling (estimate)",
+  "competition": "GPU marketplaces and aggregators already exist, and the big clouds offer spot capacity; a high-touch broker for distressed small operators may be less crowded",
+  "risks": "The hosts disagree: Dave and Jensen say compute is sold out for years, while Chamath predicts stranded compute, so the glut may never arrive. Providers may cut out the broker after the first match. Contract and reliability disputes land on the broker's reputation.",
+  "money": 3,
+  "ease": 3,
+  "speed": 3,
+  "evidence": 4,
+  "tool": {
+    "title": "True GPU-Hour Calculator",
+    "one_liner": "Normalize messy GPU quotes into one comparable effective cost per GPU-hour.",
+    "demo": "The buyer pastes or enters several quotes (GPU type, hourly or monthly price, minimum term, upfront deposit, storage and egress fees, expected utilization). The tool computes the effective cost per useful GPU-hour and the total cost for the buyer's planned job size, then ranks the quotes. A provider can also switch to 'seller view' to see what discount still beats leaving the hardware idle at their debt cost.",
+    "data_plan": "Entirely the user's own quote and job inputs. The episode's 8% vs 15% borrowing rates appear only as labelled example presets in seller view.",
+    "feasibility": 5,
+    "acceptance": [
+      "Entering three quotes with different terms and fees for a 2,000 GPU-hour job ranks them by effective cost per useful GPU-hour and shows each total",
+      "Lowering expected utilization from 90% to 60% visibly raises the effective cost of every quote and can reorder the ranking",
+      "Seller view with a debt rate of 15% shows the break-even discount, and the 8%/15% presets are labelled as figures quoted on Moonshots #306",
+      "Quotes persist in localStorage after a page reload and can be cleared with one button",
+      "On a phone-width screen each quote renders as a card and the ranking stays readable"
+    ]
+  },
+  "figures": [
+    {
+      "value": "200",
+      "meaning": "Number of neoclouds Elon predicted will see 'guppy-level death'",
+      "timestamp": "00:16:30",
+      "said": "the 200 neoclods are going to see guppy-level death",
+      "verified": true
+    },
+    {
+      "value": "$51 billion",
+      "meaning": "CoreWeave debt that triggered the sell-off",
+      "timestamp": "00:16:30",
+      "said": "Corweaves $51 billion in debt",
+      "verified": true
+    },
+    {
+      "value": "30 percent",
+      "meaning": "Share price drop for CoreWeave and Nebius this month",
+      "timestamp": "00:15:54",
+      "said": "Corweave and Nebius were down 30 percent",
+      "verified": true
+    },
+    {
+      "value": "8%",
+      "meaning": "Rate Elon borrows at, per Dave",
+      "timestamp": "00:18:41",
+      "said": "Elon is borrowing at 8%",
+      "verified": true
+    },
+    {
+      "value": "15%",
+      "meaning": "Rate other neoclouds reportedly borrow at, per Dave",
+      "timestamp": "00:18:41",
+      "said": "these other guys are all borrowing at 15%",
+      "verified": true
+    },
+    {
+      "value": "2027",
+      "meaning": "Year Chamath expects stranded or idle compute",
+      "timestamp": "00:16:30",
+      "said": "compute sitting in inventory in 2027",
+      "verified": true
+    },
+    {
+      "value": "two years",
+      "meaning": "Wait for an Nvidia chip, per Jensen as quoted by Peter (conflicts with the stranded-compute thesis)",
+      "timestamp": "00:25:16",
+      "said": "you can't buy an Nvidia chip for two years",
+      "verified": true
+    }
+  ],
+  "score": 3.25,
+  "slug": "ep306-idle-rack-exchange",
+  "episode": {
+    "slug": "anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306",
+    "title": "Anthropic’s $2T IPO, Elon Predicts Neocloud Death, and China’s Kimi Catches Up | #306",
+    "number": 306,
+    "date": "2026-10-28",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306"
+  },
+  "tool_slug": null,
+  "created": "2026-10-28T23:00:40+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Model Switch Savings Sheet",
+  "one_liner": "Paste your monthly token usage per workload and see the cost on each candidate model, plus where prices are heading.",
+  "timestamp": "00:55:28",
+  "speaker": "Peter Diamandis / Salim Ismail",
+  "context": "Kimi K3.1 Pro scored near the top of the intelligence index at a much lower token price. GPT-6.1 Terra came in at under half the old price. Salim noted the price-performance halving time has shrunk to roughly seven weeks.",
+  "demo": "The customer enters each workload (name, input tokens per month, output tokens per month, minimum quality tier) and edits a price table pre-filled with the episode's Kimi price, adding any others they choose. The page computes monthly cost per model, the cheapest model that meets each quality tier, and total savings. It also projects 6- and 12-month costs under a user-adjustable halving period (default from the episode). Results export as a CSV and a printable one-page report.",
+  "data_plan": "The customer's own usage numbers and their own price entries. The episode's Kimi K3.1 Pro price ($2/$10 per million tokens) and the 53-day halving figure are pre-filled defaults and labelled as episode-sourced. No API calls.",
+  "feasibility": 5,
+  "risks": "Gateways may add automatic routing that commoditizes this. Clients may resist sending prompts to Chinese open-weight hosts for data-residency reasons. Savings claims depend on quality evals the client trusts. Prices change so fast that reports go stale.",
+  "figures": [
+    {
+      "value": "$2 / $10",
+      "meaning": "Kimi K3.1 Pro price per million input / output tokens",
+      "timestamp": "00:55:28",
+      "said": "$2 per million tokens in, $10 out",
+      "verified": true
+    },
+    {
+      "value": "55",
+      "meaning": "Kimi K3.1 Pro score on the Artificial Analysis intelligence index (fourth in the world)",
+      "timestamp": "00:55:28",
+      "said": "On artificial analysis intelligence index, Kimi scored 55",
+      "verified": true
+    },
+    {
+      "value": "about five weeks",
+      "meaning": "Gap between Kimi and the US frontier, per Rames Nam",
+      "timestamp": "00:56:04",
+      "said": "Kimmy is now about five weeks behind the U.S. frontier",
+      "verified": true
+    },
+    {
+      "value": "less than half",
+      "meaning": "GPT-6.1 Terra price relative to the previous Terra model",
+      "timestamp": "01:04:19",
+      "said": "less than half the price of the previous Terra model",
+      "verified": true
+    },
+    {
+      "value": "53 days",
+      "meaning": "Time between GPT Astra and Terra for a 50% token price drop, per Salim",
+      "timestamp": "01:07:12",
+      "said": "53 days for a 50% drop in the token price",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Entering a workload of 100M input and 20M output tokens per month shows the monthly cost for every model row in the price table, and the cheapest qualifying model is highlighted",
+    "Changing any price cell or the halving-period field immediately updates the per-model costs, the savings total and the 12-month projection chart",
+    "Pre-filled Kimi prices and the 53-day default carry a visible 'from Moonshots #306, verify current pricing' label",
+    "Clicking 'Export' downloads a CSV with one row per workload-model pair",
+    "At 375px width the workload table and results stack vertically with no horizontal scroll"
+  ],
+  "related_existing": null,
+  "score": 3.65,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Token Thrift Audit",
+    "one_liner": "A fixed-fee audit that moves a startup's AI workloads to cheaper, good-enough models and re-checks them every quarter.",
+    "customer": "Seed to Series B SaaS startups and agencies in the US/UK spending roughly $3k–$50k a month on LLM APIs (estimate)",
+    "problem": "Teams pick one frontier model at launch and never revisit it, even as near-equal models arrive at a fraction of the price every few weeks. Nobody on the team owns re-benchmarking and switching.",
+    "revenue_model": "Fixed-fee audit at about $1,500 per company plus an optional $300/month re-check retainer, or 20% of the first year's verified savings (estimate)",
+    "why_now": "The episode says open models are now about five weeks behind the frontier and token prices are halving in under two months, so a stale model choice gets expensive fast."
+  },
+  "episode": {
+    "slug": "anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306",
+    "title": "Anthropic’s $2T IPO, Elon Predicts Neocloud Death, and China’s Kimi Catches Up | #306",
+    "number": 306,
+    "date": "2026-10-28",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306"
+  }
+}
