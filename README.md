@@ -20,14 +20,16 @@ upgrades the weakest published prototype.
 - **Scout**: Claude Opus reads the whole transcript and writes up to two business briefs
   (customer, problem, pricing estimate, first steps, risks) plus fun demo ideas. Every number
   it quotes from the episode is checked against the transcript; briefs live in
-  `opportunities/` and show on the gallery.
+  `opportunities/` and show on the gallery. Each tool and demo idea comes with 3–5
+  "done means" lines (`acceptance` in `IDEA.json`): what the finished page must visibly do.
 - **Builder**: a headless Claude Code session confined to `prototypes/<slug>/`, following
   [`prompts/standards.md`](prompts/standards.md): static, zero-setup, honest labels, phone-ready.
 - **Smoke test**: headless Chromium loads the page at desktop and phone sizes, clicks
   controls, and fails on console errors, failed requests, missing files or horizontal overflow.
 - **Reviewer**: a *separate* Claude session that didn't build the thing scores it on six axes
-  (works, fidelity, wow, UX, code, honesty) from the code and screenshots. Below 7/10, or any
-  blocking issue, sends it back to the builder; after two fix rounds it stays a draft.
+  (works, fidelity, wow, UX, code, honesty) from the code and screenshots, and marks every
+  "done means" line pass or fail (the PR lists them). Below 7/10, any blocking issue or any
+  failed line sends it back to the builder; after two fix rounds it stays a draft.
 - **Upgrades**: a newer episode that revisits a topic queues an update for that prototype;
   otherwise the lowest-scoring one gets a turn. The upgrade is thrown away unless the fresh
   review score beats the old one.

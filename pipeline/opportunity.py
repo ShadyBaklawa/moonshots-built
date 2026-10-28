@@ -59,7 +59,8 @@ def tool_idea(opp: dict) -> dict:
             "speaker": opp.get("speaker", ""), "context": opp["context"], "demo": t["demo"],
             "data_plan": t["data_plan"], "feasibility": t["feasibility"],
             "risks": opp.get("risks", ""), "figures": opp.get("figures", []),
-            "related_existing": None, "score": opp.get("score", score(opp)), "kind": "tool",
+            "acceptance": t.get("acceptance", []), "related_existing": None,
+            "score": opp.get("score", score(opp)), "kind": "tool",
             "opportunity": {k: opp.get(k, "") for k in BRIEF_KEYS}}
 
 

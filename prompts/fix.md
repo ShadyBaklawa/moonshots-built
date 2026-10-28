@@ -7,6 +7,9 @@ $must_fix
 ## Smoke test problems
 $problems
 
+## "Done means" lines that fail (blocking)
+$acceptance_failed
+
 ## Worth improving if it fits
 $improvements
 

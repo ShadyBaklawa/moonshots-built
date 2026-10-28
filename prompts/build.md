@@ -9,6 +9,11 @@ $idea
 $episode
 $kind_notes
 
+## Done means
+The finished prototype must make every one of these true. An independent reviewer checks each
+line as pass or fail, and it is not published until all pass:
+$acceptance
+
 ## How to work
 1. Read `IDEA.json`. Decide the single centerpiece interaction that makes the idea click in
    five seconds, and a visual direction that fits the subject (not a generic dashboard).
@@ -23,4 +28,5 @@ $kind_notes
    the Read tool and fix anything that looks broken, cramped or unfinished.
 4. Write `README.md` (sections: what it is, origin, how to use, real vs simulated, v2
    ideas, `## Changelog` with a `v1` entry).
-5. Finish with a two-sentence summary of what you built. Do not create `meta.json`.
+5. Check each "Done means" line against the page yourself and fix any that don't hold.
+6. Finish with a two-sentence summary of what you built. Do not create `meta.json`.

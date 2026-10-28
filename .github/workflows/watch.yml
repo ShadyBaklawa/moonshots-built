@@ -42,6 +42,13 @@ jobs:
         id: detect
         run: python -m pipeline detect
 
+      # Exact Node with the Brotli decoder fix (CVE-2026-111497): npm runs on it and the
+      # builder agent may run `node`. Claude Code itself is a native binary.
+      - uses: actions/setup-node@v7
+        if: steps.detect.outputs.new == 'true' || inputs.episode_url != ''
+        with:
+          node-version: "24.22.1"
+
       - name: Install browser and Claude Code
         if: steps.detect.outputs.new == 'true' || inputs.episode_url != ''
         run: |

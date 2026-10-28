@@ -33,6 +33,12 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.lock
 
+      # Exact Node with the Brotli decoder fix (CVE-2026-111497): npm runs on it and the
+      # builder agent may run `node`. Claude Code itself is a native binary.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24.22.1"
+
       - name: Install tools
         run: |
           pip install --require-hashes -r requirements.lock

@@ -59,6 +59,7 @@ For each opportunity:
   - `data_plan`: where its data comes from: the customer's own input, a named keyless public
     API, or figures from the episode.
   - `feasibility` (1–5): can one agent build a genuinely useful version in about two hours?
+  - `acceptance`: see "Done means" below.
 - `figures`: see "Numbers" below.
 
 ## Job 2: `ideas` for fun demos
@@ -90,6 +91,7 @@ For each idea:
   updates (e.g. the episode revisits the same topic with new numbers), else null.
 - `risks`: anything that could make it misleading or problematic, else "".
 - `figures`: see "Numbers" below.
+- `acceptance`: see "Done means" below.
 
 ## Numbers (`figures`, in both lists)
 List every number from the episode that the brief or prototype would present as real
@@ -108,5 +110,15 @@ Check the figures against each other (e.g. per-person amount × people ≈ total
 conflict, say so in `risks` instead of picking one silently. No other field may present a
 number as coming from the episode unless it is in `figures`; your own estimates (prices,
 costs, market sizes) must say "estimate".
+
+## Done means (`acceptance`, for every idea and every `tool`)
+Write 3–5 acceptance lines: what the finished prototype must visibly do. The builder works
+until they all hold, and the independent reviewer marks each one pass or fail from the page,
+its code and its screenshots. Each line is one concrete behaviour a visitor can check, with
+the input and the result, e.g. "Dragging the battery-cost slider recolours the map and updates
+the count of countries that flipped" or "With no API key, example mode fills every section of
+the plan and labels it as an example". Put the centerpiece interaction first, then honesty
+(labels on simulated data) and the phone layout where they matter. No vague lines ("looks
+polished", "is engaging") and none that can only be checked with a real API key.
 
 Be a harsh scorer: a 5 should be rare. Also give a 2–3 sentence `episode_summary`.
