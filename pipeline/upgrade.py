@@ -73,7 +73,7 @@ def upgrade(slug: str | None = None) -> dict | None:
     result = {"slug": proto.name, "title": meta.get("title"), "accepted": accepted,
               "from_version": version, "to_version": version + 1,
               "baseline": baseline, "overall": rv["overall"], "summary": rv["summary"],
-              "reasons": reasons}
+              "reasons": reasons, "acceptance": rv.get("acceptance", [])}
     if not accepted:
         print(f"[upgrade] rejected {proto.name}: {baseline} -> {rv['overall']} "
               f"(passed={rv['passed']}); restoring", flush=True)

@@ -106,6 +106,9 @@ def test_extract_with_fake_claude(sandbox):
     assert [o["title"] for o in opps] == ["Solar Bid Desk", "Side Gig"]   # ranked by score
     assert opps[0]["score"] == 4.35 and opps[0]["figures"][0]["verified"]
     assert not opps[1]["figures"][0]["verified"]                        # quote never said
+    assert data["ideas"][0]["acceptance"] == [f"Line {i}" for i in range(1, 6)]   # capped at 5
+    assert opps[0]["tool"]["acceptance"] == ["Entering a quote shows a payback date",
+                                             "Works at phone width"]  # blank and repeat dropped
     log = (sandbox / "state" / "costs.jsonl").read_text().strip().splitlines()
     assert json.loads(log[-1])["label"].startswith("extract:")
 
@@ -143,7 +146,8 @@ def _opp(title, money=4, ease=4, speed=4, evidence=4, tool_feasibility=4):
             "cost_to_start": "A week", "competition": "unknown", "risks": "Churn.",
             "money": money, "ease": ease, "speed": speed, "evidence": evidence,
             "tool": {"title": f"{title} Tool", "one_liner": "Does the job.", "demo": "In, out.",
-                     "data_plan": "User input.", "feasibility": tool_feasibility},
+                     "data_plan": "User input.", "feasibility": tool_feasibility,
+                     "acceptance": ["Typing a clinic size shows a monthly price"]},
             "figures": [{"value": "$146", "meaning": "real", "timestamp": "00:41:10",
                          "said": "x", "verified": True},
                         {"value": "$1,408", "meaning": "made up", "timestamp": "00:41:11",
@@ -168,6 +172,7 @@ def test_opportunity_select_and_tools(sandbox):
     assert idea["kind"] == "tool" and idea["title"] == "Mid Tool"
     assert idea["opportunity"]["customer"] == "Clinics <b>" and idea["related_existing"] is None
     assert len(idea["figures"]) == 2                        # builder rules decide what is usable
+    assert idea["acceptance"] == ["Typing a clinic size shows a monthly price"]
 
 
 def test_save_brief_unique_slugs(sandbox):
@@ -185,7 +190,10 @@ def test_pr_body_lists_briefs_and_kinds():
     ep = SimpleNamespace(slug="ep-304", title="Ep title", url="https://example.com/ep",
                          date="2026-10-21")
     tool = {"slug": "ep304-mid-tool", "title": "Mid Tool", "passed": True, "kind": "tool",
-            "overall": 8.1, "smoke_ok": True, "est_cost_usd": 0.5, "summary": "Useful."}
+            "overall": 8.1, "smoke_ok": True, "est_cost_usd": 0.5, "summary": "Useful.",
+            "acceptance": [{"criterion": "Shows a price", "pass": True, "evidence": "app.js"},
+                           {"criterion": "Fits a phone", "pass": False,
+                            "evidence": "table overflows at 390px"}]}
     demo = {"slug": None, "title": "Fun", "kind": "demo", "error": "timed out"}
     body = _pr_body(ep, [tool, demo], [], "Summary.", [_opp("Mid"), _opp("Best")],
                     {"Mid": tool})
@@ -193,6 +201,8 @@ def test_pr_body_lists_briefs_and_kinds():
     assert "**Who pays:** Clinics <b>" in body and "1. One" in body
     assert "Mid Tool, ✓ passed review" in body and "not built" in body   # Best got no tool
     assert "🛠 Tool: Mid Tool" in body and "✗ 🎈 Demo: Fun" in body
+    assert "\n\nDone means (1/2 met):\n- ✓ Shows a price\n" in body
+    assert "- ✗ Fits a phone (table overflows at 390px)" in body
 
 
 def test_run_builds_tool_and_demo_and_saves_briefs(sandbox, monkeypatch):
@@ -239,6 +249,40 @@ def test_review_gate(monkeypatch):
     assert not passed({**good, "must_fix": ["broken button"]}, {"ok": True})
     assert not passed({**good, "scores": {**good["scores"], "honesty": 5}}, {"ok": True})
     assert not passed({**good, "verdict": "fix"}, {"ok": True})
+    line = {"criterion": "Slider recolours the map", "pass": True, "evidence": "app.js"}
+    assert passed({**good, "acceptance": [line]}, {"ok": True})
+    assert not passed({**good, "acceptance": [line, {**line, "pass": False}]}, {"ok": True})
+
+
+def test_match_acceptance_by_text_then_order():
+    from pipeline.review import NOT_CHECKED, match_acceptance
+    got = [{"criterion": "Bee line.", "pass": True, "evidence": "e-b"},
+           {"criterion": "  A ", "pass": True, "evidence": "e-a"},
+           {"criterion": "reworded c", "pass": True, "evidence": "e-c"},
+           "junk", {"criterion": "bee LINE", "pass": True, "evidence": "repeat"}]
+    rows = match_acceptance(["a", "Bee line", "c", "d"], got)
+    assert [r["criterion"] for r in rows] == ["a", "Bee line", "c", "d"]   # IDEA.json order, text
+    assert [r["evidence"] for r in rows] == ["e-a", "e-b", "e-c", NOT_CHECKED]  # repeat ignored
+    assert [r["pass"] for r in rows] == [True, True, True, False]
+    assert match_acceptance(["a", "Bee line"], got[:1])[0] == {"criterion": "a", "pass": False,
+                                                         "evidence": NOT_CHECKED}
+    assert match_acceptance(["x"], [{"criterion": "x", "pass": "yes"}])[0]["pass"] is False
+    assert match_acceptance([], got) == []                             # old prototypes: no gate
+
+
+def test_review_checks_every_acceptance_line(sandbox):
+    from pipeline.review import NOT_CHECKED, review
+    proto = sandbox / "prototypes" / "ep300-map"
+    (proto / ".review").mkdir(parents=True)
+    lines = ["Slider recolours the map", "Shows a FAIL banner", "SKIP me: phone layout"]
+    (proto / "IDEA.json").write_text(json.dumps({"title": "Map", "acceptance": lines}))
+    rv = review(proto, {"ok": True, "problems": [], "views": {}})
+    assert [a["criterion"] for a in rv["acceptance"]] == lines
+    assert [a["pass"] for a in rv["acceptance"]] == [True, False, False]
+    assert rv["acceptance"][2]["evidence"] == NOT_CHECKED                # reviewer skipped it
+    assert not rv["passed"]                                              # despite verdict "pass"
+    saved = json.loads((proto / ".review" / "review.json").read_text())
+    assert saved["acceptance"] == rv["acceptance"]
 
 
 def _fake_proto(root: Path, slug: str, status="ready", ep_date="2026-10-10", version=1):

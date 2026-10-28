@@ -39,6 +39,13 @@ people ≈ total, "a tenth of X" really is a tenth). Each of these is a `must_fi
 If `IDEA.json` has no `figures` list, flag any specific real-world number you cannot confirm
 from `IDEA.json` itself as an improvement instead.
 
+Acceptance check: `acceptance` in `IDEA.json` lists what the builder was told "done" means.
+Return one entry per line, in the same order: the line as `criterion`, `pass` (true only if
+the page really does it: follow the code path, then match it with the smoke test results and
+screenshots) and a short `evidence` (file and element, or what a screenshot shows). A line you
+cannot confirm is a fail. Failed lines block publishing on their own, so don't repeat them in
+`must_fix`. If `IDEA.json` has no `acceptance` list, return an empty `acceptance` array.
+
 Then:
 - `must_fix`: concrete defects that block publishing (empty if none). Be specific: file,
   element, what's wrong, what to change.

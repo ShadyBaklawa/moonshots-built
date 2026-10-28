@@ -27,6 +27,8 @@ FIGURES = {
         "required": ["value", "meaning", "timestamp", "said"],
     },
 }
+ACCEPTANCE = {"type": "array", "items": {"type": "string"}}
+MAX_ACCEPTANCE = 5
 IDEA_FIELDS = {
     "title": {"type": "string"},
     "one_liner": {"type": "string"},
@@ -42,6 +44,7 @@ IDEA_FIELDS = {
     "related_existing": {"type": ["string", "null"]},
     "risks": {"type": "string"},
     "figures": FIGURES,
+    "acceptance": ACCEPTANCE,
 }
 TOOL_FIELDS = {
     "title": {"type": "string"},
@@ -49,6 +52,7 @@ TOOL_FIELDS = {
     "demo": {"type": "string"},
     "data_plan": {"type": "string"},
     "feasibility": _SCORE,
+    "acceptance": ACCEPTANCE,
 }
 OPPORTUNITY_FIELDS = {
     "title": {"type": "string"},
@@ -116,6 +120,16 @@ def check_figures(figures: list[dict], transcript: str) -> list[dict]:
     return out
 
 
+def clean_acceptance(items) -> list[str]:
+    """The scout's acceptance lines: trimmed, no blanks or repeats, at most MAX_ACCEPTANCE."""
+    out = []
+    for x in items if isinstance(items, list) else []:
+        line = " ".join(str(x).split())
+        if line and line.lower() not in {o.lower() for o in out}:
+            out.append(line)
+    return out[:MAX_ACCEPTANCE]
+
+
 def existing_summary() -> tuple[str, set[str]]:
     rows, slugs = [], set()
     for d, meta in all_prototypes():
@@ -141,6 +155,9 @@ def extract_ideas(ep: EpisodeDetail) -> dict:
         for item in items:
             item["figures"] = check_figures(item.get("figures", []), transcript)
             item["score"] = scorer(item)
+            target = item.get("tool") if kind == "opportunities" else item
+            if isinstance(target, dict):
+                target["acceptance"] = clean_acceptance(target.get("acceptance"))
         items.sort(key=lambda i: i["score"], reverse=True)
     return data
 

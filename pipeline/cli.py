@@ -85,6 +85,16 @@ def _brief_lines(b: dict, tool: dict | None) -> list[str]:
             f"- **Working tool:** {tool_line}", "", "First steps:", *steps, ""]
 
 
+def _acceptance_lines(acc: list[dict]) -> list[str]:
+    """The reviewer's pass/fail for each "done means" line, for the PR body."""
+    if not acc:
+        return []
+    met = sum(1 for a in acc if a.get("pass"))
+    return ["", f"Done means ({met}/{len(acc)} met):"] + [
+        f"- ✓ {a['criterion']}" if a.get("pass") else f"- ✗ {a['criterion']} ({a.get('evidence', '')})"
+        for a in acc]
+
+
 def _pr_body(ep, results: list[dict], upgrades: list[dict], summary: str,
              briefs: list[dict] = (), tools: dict | None = None) -> str:
     repo = os.getenv("GITHUB_REPOSITORY", "")
@@ -106,6 +116,7 @@ def _pr_body(ep, results: list[dict], upgrades: list[dict], summary: str,
                   f"Review **{r.get('overall', 0):.1f}/10** · smoke test "
                   f"{'passed' if r.get('smoke_ok') else 'failed'} · est. cost ${r.get('est_cost_usd', 0)}",
                   "", r.get("summary", "")]
+        lines += _acceptance_lines(r.get("acceptance", []))
         if r.get("must_fix"):
             lines += ["", "Blocking issues:"] + [f"- {x}" for x in r["must_fix"]]
         if repo:
@@ -232,8 +243,9 @@ def cmd_upgrade(args) -> int:
         return 0
     body = (f"**{res['title']}** v{res['from_version']} → v{res['to_version']}\n\n"
             f"Review {res['baseline']:.1f} → **{res['overall']:.1f}**/10\n\n{res['summary']}\n\n"
-            "Why:\n" + "\n".join(f"- {r}" for r in res["reasons"]) +
-            "\n\nMerge to publish the new version.")
+            + "\n".join(["Why:", *[f"- {r}" for r in res["reasons"]],
+                         *_acceptance_lines(res.get("acceptance", []))])
+            + "\n\nMerge to publish the new version.")
     _write_out("upgrade.json", {
         "action": "pr", "branch": f"upgrade/{res['slug']}-v{res['to_version']}",
         "title": f"Upgrade: {res['title']} v{res['to_version']}",
