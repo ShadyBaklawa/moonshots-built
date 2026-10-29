@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Switch Savings Sheet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+
+  <header class="masthead">
+    <h1>Model Switch Savings Sheet</h1>
+    <p class="subhead">For founders and ops leads paying for LLM APIs: enter what each workload sends to a model, and see which model is cheapest for the quality bar you need &mdash; today and twelve months from now.</p>
+  </header>
+
+  <section class="panel" aria-labelledby="workloads-h">
+    <div class="panel-head">
+      <h2 id="workloads-h">1. Your workloads</h2>
+      <p class="hint">One row per thing you run through a model each month. Tokens are in millions (e.g. 100 = 100,000,000).</p>
+    </div>
+    <div class="table-wrap">
+      <table id="workloadTable" class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Workload</th>
+            <th scope="col">Input tokens / mo (M)</th>
+            <th scope="col">Output tokens / mo (M)</th>
+            <th scope="col">Min. quality tier</th>
+            <th scope="col"><span class="sr-only">Remove</span></th>
+          </tr>
+        </thead>
+        <tbody id="workloadBody"></tbody>
+      </table>
+    </div>
+    <button type="button" class="btn-add" id="addWorkload">+ Add workload</button>
+  </section>
+
+  <section class="panel" aria-labelledby="prices-h">
+    <div class="panel-head">
+      <h2 id="prices-h">2. Candidate model prices</h2>
+      <p class="hint">Edit any cell. Mark the model you're on today as "Current" so savings can be measured against it. Add rows for any model you want to compare &mdash; prices are per million tokens.</p>
+    </div>
+    <div class="table-wrap">
+      <table id="priceTable" class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Input $ / M tok</th>
+            <th scope="col">Output $ / M tok</th>
+            <th scope="col">Quality tier</th>
+            <th scope="col">Current?</th>
+            <th scope="col"><span class="sr-only">Remove</span></th>
+          </tr>
+        </thead>
+        <tbody id="priceBody"></tbody>
+      </table>
+    </div>
+    <button type="button" class="btn-add" id="addModel">+ Add model</button>
+  </section>
+
+  <section class="panel" aria-labelledby="halving-h">
+    <div class="panel-head">
+      <h2 id="halving-h">3. Price trend assumption</h2>
+    </div>
+    <label class="halving-row" for="halvingInput">
+      Token-price halving period
+      <span class="episode-badge">from Moonshots #306, verify current pricing</span>
+    </label>
+    <div class="halving-control">
+      <input type="number" id="halvingInput" min="1" step="1" value="53">
+      <span>days for the cheapest-available price to drop 50%</span>
+    </div>
+  </section>
+
+  <section class="panel results-panel" aria-labelledby="results-h">
+    <div class="panel-head">
+      <h2 id="results-h">4. Monthly cost by model</h2>
+      <p class="hint">Cheapest model that still meets each workload's quality tier is marked <span class="pill pill-win">cheapest qualifying</span>.</p>
+    </div>
+    <div class="table-wrap">
+      <table id="resultsTable" class="data-table results-table">
+        <thead id="resultsHead"></thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
+
+    <div class="totals" id="totals"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="projection-h">
+    <div class="panel-head">
+      <h2 id="projection-h">5. 12-month cost projection</h2>
+      <p class="hint illustrative-tag">Illustrative projection &mdash; assumes the cheapest qualifying price keeps halving at the rate set above. Not a forecast of any specific model.</p>
+    </div>
+    <div class="chart-wrap">
+      <svg id="chart" viewBox="0 0 640 300" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="chartTitle"></svg>
+      <div id="chartLegend" class="chart-legend"></div>
+    </div>
+  </section>
+
+  <section class="panel actions-panel">
+    <button type="button" class="btn-primary" id="exportCsv">Export CSV</button>
+    <button type="button" class="btn-secondary" id="printReport">Print one-page report</button>
+  </section>
+
+  <footer class="moonshots-footer">
+    Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306" target="_blank" rel="noopener">Moonshots #306</a>, around 00:55:28. Fan-made prototype, not affiliated with the show.
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

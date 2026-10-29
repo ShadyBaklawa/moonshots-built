@@ -1,0 +1,30 @@
+{
+  "dimensions": [2, 3, 4, 5, 6],
+  "dark_sector_threshold": 8,
+  "forces": {
+    "2-2": { "name": "Spacetime", "note": "Alex's mapping, as stated on the podcast" },
+    "2-3": { "name": "Electromagnetism", "note": "Alex's mapping, as stated on the podcast" },
+    "3-3": { "name": "Strong", "note": "Alex's mapping, as stated on the podcast" },
+    "2-4": { "name": "Weak", "note": "Alex's mapping, as stated on the podcast" },
+    "3-4": { "name": "Yukawa", "note": "Alex's mapping, as stated on the podcast" },
+    "4-4": { "name": "Higgs", "note": "Alex's mapping, as stated on the podcast" }
+  },
+  "formula": {
+    "terms": [
+      { "coefficient": 79, "radicand": null },
+      { "coefficient": 48, "radicand": 2 },
+      { "coefficient": 42, "radicand": 3 },
+      { "coefficient": 3, "radicand": 6 }
+    ],
+    "denominator_factors": [24, 36],
+    "denominator_exponents": [1, 2],
+    "quoted_inverse_alpha": "137.035999"
+  },
+  "source": {
+    "speaker": "Alex Wissner-Gross",
+    "episode": "Moonshots #306",
+    "timestamp_mapping": "01:29:04",
+    "timestamp_formula": "01:44:59",
+    "timestamp_quote": "01:10:59"
+  }
+}

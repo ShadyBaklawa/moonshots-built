@@ -1,0 +1,37 @@
+{
+  "slug": "ep306-model-switch-savings-sheet",
+  "kind": "tool",
+  "title": "Model Switch Savings Sheet",
+  "one_liner": "Paste your monthly token usage per workload and see the cost on each candidate model, plus where prices are heading.",
+  "headline": "Enter your LLM workloads and a price table (pre-filled with the episode's Kimi pricing) to see the cheapest model that clears your quality bar today, your savings, and a 12-month cost projection.",
+  "episode": {
+    "slug": "anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306",
+    "title": "Anthropic’s $2T IPO, Elon Predicts Neocloud Death, and China’s Kimi Catches Up | #306",
+    "number": 306,
+    "date": "2026-10-28",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306"
+  },
+  "timestamp": "00:55:28",
+  "idea_score": 3.65,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 8,
+    "wow": 8,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.1,
+  "created": "2026-10-28T22:50:24+00:00",
+  "updated": "2026-10-28T22:50:24+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-10-28T22:50:24+00:00",
+      "overall": 8.1,
+      "summary": "A genuinely useful, well-built cost calculator: the math checks out exactly (verified $400 vs $2,700 monthly, $27,600/yr savings, and the halving-decay chart values all reconcile), episode figures and illustrative/example data are clearly and consistently labeled, and the mobile/accessibility handling (stacked tables, 40px targets, aria-labels, focus rings) is solid. Code is clean, self-contained, and has no dead code or unpinned dependencies. This is close to a model prototype for the \"tool\" kind — a founder could plausibly reuse it quarterly as the opportunity brief describes."
+    }
+  ]
+}
