@@ -15,6 +15,7 @@ import httpx
 from bs4 import BeautifulSoup
 
 from . import config
+from .sanitize import sanitize_for_llm
 
 DATE_RE = re.compile(r"Episode Date:\s*([A-Z][a-z]+ \d{1,2}, \d{4})")
 TS_RE = re.compile(r"Starting point is (\d{1,2}:\d{2}:\d{2})")
@@ -35,6 +36,7 @@ class Episode:
 class EpisodeDetail(Episode):
     description: str = ""
     segments: list[tuple[str, str]] = field(default_factory=list)  # (HH:MM:SS, text)
+    hidden_chars: int = 0  # invisible characters stripped from the page (P17)
 
     def transcript_text(self) -> str:
         return "\n".join(f"[{ts}] {txt}" for ts, txt in self.segments)
@@ -72,7 +74,7 @@ def parse_listing(html: str, base_url: str = config.PODCAST_URL) -> list[Episode
         m = DATE_RE.search(node or "")
         if not m:
             continue
-        title = " ".join(a.get_text(" ", strip=True).split())
+        title = " ".join(sanitize_for_llm(a.get_text(" ", strip=True))[0].split())
         out.append(Episode(slug=slug, url=url, title=title, date=_parse_date(m.group(1)),
                            number=episode_number(title)))
         seen.add(slug)
@@ -84,16 +86,16 @@ def parse_episode(html: str, url: str) -> EpisodeDetail:
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
     h1 = soup.find("h1")
-    raw_title = h1.get_text(" ", strip=True) if h1 else slug_from_url(url)
+    raw_title = sanitize_for_llm(h1.get_text(" ", strip=True) if h1 else slug_from_url(url))[0]
     title = re.sub(r"^Moonshots with Peter Diamandis\s*-\s*", "", raw_title).strip()
-    text = soup.get_text("\n", strip=True)
+    text, hidden = sanitize_for_llm(soup.get_text("\n", strip=True))
     m = DATE_RE.search(text)
     ep_date = _parse_date(m.group(1)) if m else date.today().isoformat()
 
     desc = ""
     h3 = soup.find("h3")
     if h3:
-        desc = " ".join(h3.get_text(" ", strip=True).split())[:2000]
+        desc = " ".join(sanitize_for_llm(h3.get_text(" ", strip=True))[0].split())[:2000]
 
     body = text
     for marker in END_MARKERS:
@@ -111,7 +113,8 @@ def parse_episode(html: str, url: str) -> EpisodeDetail:
         if seg:
             segments.append((ts, seg))
     return EpisodeDetail(slug=slug_from_url(url), url=url, title=title, date=ep_date,
-                         number=episode_number(title), description=desc, segments=segments)
+                         number=episode_number(title), description=desc, segments=segments,
+                         hidden_chars=hidden)
 
 
 def _get(url: str, retries: int = 4) -> str:

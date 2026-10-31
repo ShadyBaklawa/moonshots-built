@@ -100,6 +100,10 @@ def _pr_body(ep, results: list[dict], upgrades: list[dict], summary: str,
     repo = os.getenv("GITHUB_REPOSITORY", "")
     branch = f"episode/{ep.slug}"
     lines = [f"**Episode:** [{ep.title}]({ep.url}) ({ep.date})", "", f"> {summary}", ""]
+    hidden = getattr(ep, "hidden_chars", 0)
+    if hidden:
+        lines += [f"⚠️ Removed {hidden} invisible characters from the transcript page before the "
+                  "scout read it (possible hidden instructions). Check the briefs with extra care.", ""]
     if briefs:
         lines += ["## Business opportunities", ""]
         for b in briefs:
@@ -154,6 +158,9 @@ def cmd_run(args) -> int:
     rec = eps[slug]
 
     ep = fetch_episode(rec["url"])
+    if ep.hidden_chars:
+        print(f"WARN {slug}: removed {ep.hidden_chars} invisible characters from the transcript "
+              "page (possible hidden instructions)", flush=True)
     if len(ep.segments) < config.MIN_SEGMENTS:
         attempts = rec.get("attempts", 0) + 1
         status = "waiting" if attempts < config.MAX_WAIT_ATTEMPTS else "failed"
