@@ -1,7 +1,8 @@
 """Episode discovery and transcript fetching from podscripts.co.
 
-The parser is deliberately text-based (h3 links + "Episode Date:" + "Starting point is HH:MM:SS"
-markers) so small markup changes on the site don't break it.
+The parser is deliberately text-based (h3 links + "Episode Date:" + "Starting point is <time>"
+markers, or bare timestamp lines as a fallback) so small markup changes on the site don't break
+it. Timestamps come out as HH:MM:SS whatever form the page uses.
 """
 from __future__ import annotations
 
@@ -18,8 +19,10 @@ from . import config
 from .sanitize import sanitize_for_llm
 
 DATE_RE = re.compile(r"Episode Date:\s*([A-Z][a-z]+ \d{1,2}, \d{4})")
-TS_RE = re.compile(r"Starting point is (\d{1,2}:\d{2}:\d{2})")
-NUM_RE = re.compile(r"(?:\bEP|\bEp)\.?\s*#?\s*(\d{2,4})\b|#\s*(\d{2,4})\b")
+_TS = r"\d{1,2}:\d{2}(?::\d{2})?"  # HH:MM:SS, H:MM:SS or MM:SS
+TS_RE = re.compile(rf"Starting point is ({_TS})")
+BARE_TS_RE = re.compile(rf"^({_TS})$", re.M)  # a timestamp alone on its line, if the marker goes
+NUM_RE = re.compile(r"(?:\bEP|\bEp)\.?\s*#?\s*(\d{2,4})\b|#\s*x?(\d{2,4})\b")
 END_MARKERS = ("There aren't comments yet", "There aren’t comments yet", "© PodScripts")
 
 
@@ -81,6 +84,13 @@ def parse_listing(html: str, base_url: str = config.PODCAST_URL) -> list[Episode
     return out
 
 
+def _hhmmss(ts: str) -> str:
+    """Normalise MM:SS and H:MM:SS to HH:MM:SS, the form the rest of the pipeline expects."""
+    nums = [int(x) for x in ts.split(":")]
+    h, m, sec = ([0] + nums) if len(nums) == 2 else nums
+    return f"{h:02d}:{m:02d}:{sec:02d}"
+
+
 def parse_episode(html: str, url: str) -> EpisodeDetail:
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "noscript"]):
@@ -103,12 +113,12 @@ def parse_episode(html: str, url: str) -> EpisodeDetail:
         if i != -1:
             body = body[:i]
     parts = TS_RE.split(body)
+    if len(parts) < 3:  # no "Starting point is" markers: fall back to the visible timestamps
+        parts = BARE_TS_RE.split(body)
     # parts = [preamble, ts1, text1, ts2, text2, ...]
     segments: list[tuple[str, str]] = []
     for i in range(1, len(parts) - 1, 2):
-        ts = parts[i]
-        if len(ts.split(":")[0]) == 1:
-            ts = "0" + ts
+        ts = _hhmmss(parts[i])
         seg = " ".join(parts[i + 1].split())
         if seg:
             segments.append((ts, seg))

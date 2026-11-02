@@ -68,6 +68,25 @@ def test_sanitize_for_llm():
     assert sanitize_for_llm(None) == ("", 0)
 
 
+FIXTURE_TIMES = ("00:00:00", "00:00:31", "00:12:05", "01:02:44")
+
+
+@pytest.mark.parametrize("new_times,marker", [
+    (("00:00", "00:31", "12:05", "1:02:44"), True),    # "Starting point is MM:SS" / H:MM:SS
+    (("00:00", "00:31", "12:05", "1:02:44"), False),   # no marker, only the visible times
+    (FIXTURE_TIMES, False),                            # no marker, HH:MM:SS times
+])
+def test_parse_episode_timestamp_formats(new_times, marker):
+    from pipeline.feed import parse_episode
+    html = (FIX / "episode.html").read_text()
+    for old, new in zip(FIXTURE_TIMES, new_times):
+        html = html.replace(f"Starting point is {old}", f"Starting point is {new}" if marker else new)
+    ep = parse_episode(html, "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/x-ep-300")
+    assert [ts for ts, _ in ep.segments] == list(FIXTURE_TIMES)   # always HH:MM:SS
+    assert ep.segments[2][1].startswith("Imagine a tool where you drag a slider")
+    assert "comments" not in ep.segments[-1][1]
+
+
 def test_parse_episode_strips_hidden_text():
     from types import SimpleNamespace
     from pipeline.cli import _pr_body
@@ -87,6 +106,7 @@ def test_parse_episode_strips_hidden_text():
 
 @pytest.mark.parametrize("title,num", [
     ("GPT-6 Astra Saturates ARC-AGI-3 | EP #286", 286), ("Ask the Mates | MOONSHOTS AMA #289", 289),
+    ("Making Sense of This Week's AI Market Crashes | #x307", 307),
     ("OpenAI Pauses Training | EP#282", 282), ("Urgent Update | Ep. 272", 272),
     ("Martine Rothblatt: Growing Organs by 2030", None), ("Kimi K3 Released w/ Emad", None)])
 def test_episode_number(title, num):
