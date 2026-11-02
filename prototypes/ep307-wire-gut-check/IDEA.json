@@ -1,0 +1,65 @@
+{
+  "title": "Wire Gut-Check",
+  "one_liner": "Paste a payment request and get a red-flag score plus a callback script to verify it.",
+  "timestamp": "00:02:20",
+  "speaker": "Peter Diamandis / Emad Mostaque",
+  "context": "A record crypto theft started with a single engineer's compromised machine and was over in minutes. Emad brings up the Bangladesh SWIFT fraud and calls from his mother asking for money, and predicts more sophisticated human-targeted attacks.",
+  "demo": "A finance clerk pastes the text of an email, chat or call notes asking for a payment. The page highlights red flags it finds (urgency, secrecy, changed bank details, a new channel, the sender's authority) and gives a risk score with a word-for-word callback script that uses a number already on file. With a pasted AI key it adds a free-form analysis. Example mode loads three sample requests.",
+  "data_plan": "The customer's own pasted text, checked by a bundled rules list of fraud indicators. Optional AI analysis only through a key the visitor pastes in.",
+  "feasibility": 5,
+  "risks": "Drills need explicit written consent from the client so they aren't deceptive, and voice cloning has to be done legally. Buyers may see it as optional until they get hit, and big awareness-training suites could bundle a similar feature.",
+  "figures": [
+    {
+      "value": "$6.3 billion",
+      "meaning": "amount stolen from the exchange after one engineer's machine was compromised",
+      "timestamp": "00:02:20",
+      "said": "and stole $6.3 billion. That's insane.",
+      "verified": true
+    },
+    {
+      "value": "20 minutes",
+      "meaning": "how long the theft took",
+      "timestamp": "00:02:20",
+      "said": "Yeah, in 20 minutes. In 20 minutes.",
+      "verified": true
+    },
+    {
+      "value": "$3 billion",
+      "meaning": "portion of the stolen funds reportedly frozen",
+      "timestamp": "00:02:58",
+      "said": "And apparently $3 billion has been frozen",
+      "verified": true
+    },
+    {
+      "value": "$100 million",
+      "meaning": "amount Bangladesh lost through an impersonation fraud over SWIFT",
+      "timestamp": "00:03:18",
+      "said": "Bangladesh lost $100 million via Macau",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Pasting the bundled 'CEO urgent wire' example highlights at least 3 phrases in the text and shows a risk score with the matched rule listed next to each phrase",
+    "Every result shows a callback script telling the user to call a number already on file, not one taken from the message",
+    "With no API key, example mode runs all three samples and labels them as examples",
+    "On a 390px-wide screen the input box, score and script stack vertically without horizontal scrolling"
+  ],
+  "related_existing": null,
+  "score": 3.65,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Callback Drill Co.",
+    "one_liner": "Runs fake urgent-payment and voice-clone drills on small finance teams, then installs a simple callback-verification habit.",
+    "customer": "Owners and finance leads at US/UK companies with 10–200 employees that send wires or ACH payments (accounting firms, property managers, distributors)",
+    "problem": "One rushed employee approving a faked urgent payment or a 'new bank details' email can lose six or seven figures. AI voice cloning makes the fake CEO call believable, and most small teams have no written verification step.",
+    "revenue_model": "$1,500 setup (policy plus first drill) and then about $250/month for quarterly drills and a short report (estimate)",
+    "why_now": "The episode says the human, not the technology, was the weak link in the largest crypto theft in history. It also predicts more sophisticated voice-spoofing attacks as AI improves."
+  },
+  "episode": {
+    "slug": "making-sense-of-this-weeks-ai-market-crashes-x307",
+    "title": "Making Sense of This Week’s AI Market Crashes | #x307",
+    "number": 307,
+    "date": "2026-11-02",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/making-sense-of-this-weeks-ai-market-crashes-x307"
+  }
+}
