@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wire Gut-Check — spot the red flags before you pay</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">&#128272;</span>
+      <h1>Wire Gut-Check</h1>
+    </div>
+    <p class="tagline">For the person who approves payments: paste the email, chat or call notes asking for one. Get the red flags, a risk score and a script to verify it before any money moves.</p>
+  </header>
+
+  <main>
+    <section class="panel input-panel" aria-labelledby="input-heading">
+      <h2 id="input-heading">1. Paste the request</h2>
+
+      <div class="examples">
+        <span class="examples-label">Try an example:</span>
+        <div class="example-buttons" id="example-buttons"></div>
+      </div>
+
+      <label for="request-text" class="field-label">Email, chat or call notes asking for a payment</label>
+      <textarea id="request-text" rows="9" placeholder="Paste the text here, e.g. &quot;Hi, this is urgent, please wire the new vendor using the updated bank details below before end of day...&quot;"></textarea>
+
+      <div class="input-row">
+        <label for="name-on-file" class="field-label small">Who should the script tell you to call? <span class="optional">(optional — a name, not a number from this message)</span></label>
+        <input type="text" id="name-on-file" placeholder="e.g. Maria, our CFO">
+      </div>
+
+      <div class="actions">
+        <button id="analyze-btn" class="btn primary">Check this request</button>
+        <button id="clear-btn" class="btn ghost">Clear</button>
+      </div>
+    </section>
+
+    <section class="panel results-panel" id="results-panel" aria-labelledby="results-heading" hidden>
+      <h2 id="results-heading">2. What we found</h2>
+      <div class="example-badge" id="example-badge" hidden></div>
+
+      <div class="score-block">
+        <div class="gauge" id="gauge" role="img" aria-label="Risk score">
+          <div class="gauge-track">
+            <div class="gauge-marker" id="gauge-marker"></div>
+          </div>
+          <div class="gauge-zones"><span>Low</span><span>Medium</span><span>High</span></div>
+        </div>
+        <div class="score-readout">
+          <span class="score-number" id="score-number">0</span>
+          <span class="score-max">/100</span>
+          <span class="score-level" id="score-level">Low risk</span>
+        </div>
+      </div>
+
+      <h3>Highlighted text</h3>
+      <div class="highlighted-text" id="highlighted-text" aria-label="Pasted text with red flags highlighted"></div>
+
+      <h3>Matched rules</h3>
+      <ul class="matched-list" id="matched-list"></ul>
+      <p class="no-matches" id="no-matches" hidden>No red flags from our rules list — still verify any new payment instructions out of caution.</p>
+
+      <h3>Callback script</h3>
+      <p class="script-note">Read this before you send anything. It always points you to a number you already trust — never one taken from the message.</p>
+      <pre class="script-box" id="script-box"></pre>
+      <button class="btn ghost" id="copy-script-btn" type="button">Copy script</button>
+
+      <details class="ai-section">
+        <summary>Add free-form AI analysis (optional, uses your own API key)</summary>
+        <p class="ai-help">Your key is only used in this browser tab for this one request — it is never saved or sent anywhere else. Leave it blank and everything above still works.</p>
+        <label for="api-key" class="field-label small">Anthropic API key</label>
+        <input type="password" id="api-key" placeholder="sk-ant-...">
+        <button class="btn ghost" id="ai-btn" type="button">Get AI analysis</button>
+        <p class="ai-status" id="ai-status" aria-live="polite"></p>
+        <pre class="ai-result" id="ai-result" hidden></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Inspired by Moonshots #307, "Making Sense of This Week's AI Market Crashes", around 00:02:20. Fan-made prototype, not affiliated with the show. <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/making-sense-of-this-weeks-ai-market-crashes-x307" target="_blank" rel="noopener">Episode source</a>.</p>
+  </footer>
+</div>
+
+<script src="data/rules.js"></script>
+<script src="data/samples.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

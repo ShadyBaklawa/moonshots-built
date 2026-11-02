@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markup Matryoshka — the margins stacked inside one AI token</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <h1>Markup Matryoshka</h1>
+      <p class="subtitle">Peel back the stacked margins inside one AI token — from the foundry, to the chipmaker, to the AI lab.</p>
+    </header>
+
+    <div class="illustration-banner" role="note">
+      <strong>Illustrative toy model.</strong> The three margins below are quoted on the episode (sourced). The cost base, the chip-cost share, and the way prices stack layer‑on‑layer are simplified assumptions for this demo &mdash; not a real pricing model. Real companies sit on different cost bases, and chips are only one part of what it costs a lab to serve a token.
+    </div>
+
+    <main class="stage">
+      <section class="doll-panel" aria-label="Nested margin visualization">
+        <svg id="rings" viewBox="0 0 360 360" role="img" aria-labelledby="ringsTitle ringsDesc">
+          <title id="ringsTitle">Nested price rings</title>
+          <desc id="ringsDesc">Concentric rings showing manufacturing cost at the center, then the foundry, chipmaker and AI lab price added on top.</desc>
+          <g id="ringsGroup"></g>
+        </svg>
+        <div class="price-readout">
+          <span class="price-label">Illustrative token price</span>
+          <span class="price-value" id="tokenPrice" aria-live="polite">$0.00</span>
+          <span class="price-unit">per unit, toy-model units</span>
+        </div>
+        <div class="legend" id="legend" aria-hidden="true"></div>
+      </section>
+
+      <section class="controls-panel">
+        <div class="integrate-row">
+          <button type="button" id="integrateBtn" class="btn-primary">⚡ Merge Foundry + Chipmaker</button>
+          <button type="button" id="resetBtn" class="btn-ghost">↺ Reset</button>
+        </div>
+        <div class="ledger" id="ledger" aria-live="polite"></div>
+
+        <div class="sliders">
+          <fieldset class="slider-group margin-group">
+            <legend>Margins quoted on the episode</legend>
+
+            <div class="slider-row">
+              <label for="foundryMargin">Foundry margin <span class="pct" id="foundryMarginVal">50%</span></label>
+              <input type="range" id="foundryMargin" min="0" max="95" value="50" step="1">
+              <p class="source">As stated on the podcast (02:12:34): &ldquo;that's on TSM operating at 50% margin&rdquo;</p>
+              <p class="source merged-note" id="foundryMergedNote" hidden>Merged into the chipmaker &mdash; now transfers at cost, no separate markup.</p>
+            </div>
+
+            <div class="slider-row" id="chipMarginRow">
+              <label for="chipMargin">Chipmaker margin <span class="pct" id="chipMarginVal">83%</span></label>
+              <input type="range" id="chipMargin" min="0" max="95" value="83" step="1">
+              <p class="source">As stated on the podcast (02:12:34): &ldquo;NVIDIA is operating the chips at 80, 85% margin&rdquo;</p>
+              <p class="source merged-note" id="chipMergedNote" hidden>Merged into the AI lab &mdash; now transfers at cost, no separate markup.</p>
+            </div>
+
+            <div class="slider-row" id="labMarginRow">
+              <label for="labMargin">AI lab margin <span class="pct" id="labMarginVal">83%</span></label>
+              <input type="range" id="labMargin" min="0" max="95" value="83" step="1">
+              <p class="source">As stated on the podcast (02:12:34): &ldquo;they're operating at 80, 85% margin&rdquo;</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="slider-group assumption-group">
+            <legend>Simulated assumptions</legend>
+
+            <div class="slider-row">
+              <label for="costBase">Manufacturing cost base <span class="pct" id="costBaseVal">$1.00</span></label>
+              <input type="range" id="costBase" min="10" max="500" value="100" step="5">
+              <p class="source">Simulated assumption &mdash; adjustable toy-model cost, not a real figure.</p>
+            </div>
+
+            <div class="slider-row">
+              <label for="chipShare">Chips' share of the lab's serving cost <span class="pct" id="chipShareVal">60%</span></label>
+              <input type="range" id="chipShare" min="10" max="100" value="60" step="5">
+              <p class="source">Simulated assumption &mdash; the rest of a lab's cost (power, staff, datacenters) isn't chips.</p>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="breakdown" aria-label="Manufacturing versus markup share of the final price">
+          <h2>Where the price goes</h2>
+          <div class="bar" role="img" aria-label="Share of final price from manufacturing versus markup and overhead">
+            <div class="bar-manufacturing" id="barManufacturing"></div>
+            <div class="bar-markup" id="barMarkup"></div>
+          </div>
+          <div class="bar-legend">
+            <span><i class="swatch swatch-manufacturing"></i>Manufacturing <b id="manufacturingPct">0%</b></span>
+            <span><i class="swatch swatch-markup"></i>Markup &amp; overhead <b id="markupPct">0%</b></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Inspired by Moonshots #x307, &ldquo;Making Sense of This Week's AI Market Crashes&rdquo;, around 02:12:34. Fan-made prototype, not affiliated with the show.
+        <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/making-sense-of-this-weeks-ai-market-crashes-x307" target="_blank" rel="noopener">Episode source</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

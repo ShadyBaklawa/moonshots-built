@@ -1,0 +1,56 @@
+{
+  "title": "Swap-Safe Governance Kit",
+  "one_liner": "Sets up model-agnostic AI policies, permission rules and decision logs so a company can change AI vendors without losing compliance.",
+  "timestamp": "02:02:23",
+  "speaker": "Salim Ismail",
+  "context": "A listener asks how to keep security restrictions, decision records and compliance when switching AI models. Salim says those records should belong to the organization, not the model, and should be enforced through machine-readable policies.",
+  "customer": "Mid-size companies (50–1,000 staff) in regulated-adjacent fields such as insurance brokers, healthcare admin vendors and fintech SaaS that use two or more AI vendors",
+  "problem": "Prompts, guardrails, access rules and audit logs are scattered inside each vendor's tools. Switching to a cheaper or better model means rebuilding them, and records of AI-assisted decisions can get lost.",
+  "revenue_model": "Fixed-fee project of about $5,000–$12,000, then about $500/month to keep policies and the log schema current (estimate)",
+  "why_now": "Frontier models are leapfrogging each other every week or two, and a new model is reported 23% cheaper than a rival. Companies will switch more often and need governance that moves with them.",
+  "first_steps": [
+    "Draft a sample policy schema (YAML) covering data classes, allowed models and logging rules",
+    "Interview 5 ops or compliance leads about where their AI rules and logs live today",
+    "Offer a paid 'portability audit' to the 2 most interested"
+  ],
+  "cost_to_start": "2–3 weeks and under $200",
+  "competition": "AI governance platforms and GRC software vendors are moving in. Small consultancies offer AI policy writing, but usually not tied to vendor portability.",
+  "risks": "Enterprise GRC tools may absorb this, and buyers may see it as consulting fluff. Mistakes come close to legal or compliance advice, so the work has to stay technical and not be legal advice.",
+  "money": 3,
+  "ease": 3,
+  "speed": 3,
+  "evidence": 4,
+  "tool": {
+    "title": "Model Swap Readiness Scorecard",
+    "one_liner": "Answer questions about where your AI rules and records live and get a portability score with a gap list.",
+    "demo": "An ops lead lists their AI tools and checks off where prompts, guardrails, access permissions and output logs are stored (inside the vendor's tool or in company-owned systems). The page gives a 0–100 portability score, a ranked list of gaps with fixes, and a downloadable starter policy file in YAML that names no specific model.",
+    "data_plan": "The customer's own answers, scored with bundled rules. No external data.",
+    "feasibility": 5,
+    "acceptance": [
+      "Marking 'audit logs stored only in vendor dashboard' lowers the score and adds that gap to the top of the fix list",
+      "Clicking Export downloads a YAML file that includes the tools and data classes the user entered",
+      "A pre-filled example company shows a full score and gap list, labeled as an example",
+      "The layout works at 390px width with the questions in a single column"
+    ]
+  },
+  "figures": [
+    {
+      "value": "23%",
+      "meaning": "how much cheaper the new Google model was reported to be than a rival frontier model",
+      "timestamp": "00:16:41",
+      "said": "carbon's come in 23% cheaper than Opus",
+      "verified": true
+    }
+  ],
+  "score": 3.25,
+  "slug": "ep307-swap-safe-governance-kit",
+  "episode": {
+    "slug": "making-sense-of-this-weeks-ai-market-crashes-x307",
+    "title": "Making Sense of This Week’s AI Market Crashes | #x307",
+    "number": 307,
+    "date": "2026-11-02",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/making-sense-of-this-weeks-ai-market-crashes-x307"
+  },
+  "tool_slug": null,
+  "created": "2026-11-02T04:57:16+00:00"
+}

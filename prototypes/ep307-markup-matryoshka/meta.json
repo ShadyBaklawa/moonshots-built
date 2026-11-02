@@ -1,0 +1,37 @@
+{
+  "slug": "ep307-markup-matryoshka",
+  "kind": "demo",
+  "title": "Markup Matryoshka",
+  "one_liner": "Peel back the stacked margins inside one AI token, from the foundry to the chipmaker to the AI lab.",
+  "headline": "Drag each margin slider — or click to vertically integrate — and watch the nested rings and the token price compress in real time.",
+  "episode": {
+    "slug": "making-sense-of-this-weeks-ai-market-crashes-x307",
+    "title": "Making Sense of This Week’s AI Market Crashes | #x307",
+    "number": 307,
+    "date": "2026-11-02",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/making-sense-of-this-weeks-ai-market-crashes-x307"
+  },
+  "timestamp": "02:12:34",
+  "idea_score": 4.55,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 8,
+    "wow": 6,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 7.95,
+  "created": "2026-11-02T04:57:16+00:00",
+  "updated": "2026-11-02T04:57:16+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-02T04:57:16+00:00",
+      "overall": 7.95,
+      "summary": "A clean, well-labeled toy model that genuinely embodies Dave Blundin's stacked-margin argument: the math is correct and internally consistent (verified by hand against both screenshots), the three sourced figures match IDEA.json exactly with inline quotes and timestamps, and simulated inputs are clearly separated from podcast-sourced ones. It's solid rather than spectacular — the rings are plain circles rather than anything visually evocative of actual nested dolls — but it works cleanly, is honest about its simplifications, and is ready to publish as-is."
+    }
+  ]
+}

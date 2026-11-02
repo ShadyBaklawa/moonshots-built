@@ -1,0 +1,52 @@
+{
+  "title": "Markup Matryoshka",
+  "one_liner": "Peel back the stacked margins inside one AI token, from the foundry to the chipmaker to the AI lab.",
+  "timestamp": "02:12:34",
+  "speaker": "Dave Blundin",
+  "context": "Dave argues that a token's price stacks a lab margin of about 80–85% on a chipmaker margin of about 80–85% on a foundry margin of about 50%. He predicts vertical integration will squeeze these layers.",
+  "demo": "Nested dolls or rings show the foundry, chip and lab layers, with a slider for each layer's margin. Visitors drag the sliders or click 'vertically integrate' to merge layers and see the illustrative token price shrink. A side panel shows the share of the final price that comes from manufacturing versus markup.",
+  "data_plan": "Margin figures as stated on the podcast as defaults. The cost base and the share of token cost from chips are user-adjustable and labeled as simulated assumptions.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Gross margins at different companies sit on different cost bases, and chips are only part of what serving a token costs, so simple stacking overstates the effect. The page needs a clear 'illustrative toy model' label.",
+  "figures": [
+    {
+      "value": "80–85%",
+      "meaning": "margin the AI lab is said to operate at, per its S-1",
+      "timestamp": "02:12:34",
+      "said": "they're operating at 80, 85% margin",
+      "verified": true
+    },
+    {
+      "value": "80–85%",
+      "meaning": "chipmaker margin on AI chips",
+      "timestamp": "02:12:34",
+      "said": "NVIDIA is operating the chips at 80, 85% margin",
+      "verified": true
+    },
+    {
+      "value": "50%",
+      "meaning": "foundry margin",
+      "timestamp": "02:12:34",
+      "said": "that's on TSM operating at 50% margin",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Dragging the lab margin slider from 85% to 20% visibly shrinks the outer ring and lowers the displayed token price",
+    "Clicking 'vertically integrate' merges two layers and shows the before/after price",
+    "A visible label says the cost base and stacking are a simplified illustration",
+    "Defaults load with the margins quoted on the episode, each with its source label"
+  ],
+  "score": 4.55,
+  "episode": {
+    "slug": "making-sense-of-this-weeks-ai-market-crashes-x307",
+    "title": "Making Sense of This Week’s AI Market Crashes | #x307",
+    "number": 307,
+    "date": "2026-11-02",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/making-sense-of-this-weeks-ai-market-crashes-x307"
+  }
+}
