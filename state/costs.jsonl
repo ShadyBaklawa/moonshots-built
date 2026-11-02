@@ -66,3 +66,8 @@
 {"at": "2026-10-28T22:50:24+00:00", "label": "review:ep306-model-switch-savings-sheet", "est_cost_usd": 0.1929, "turns": 12, "subtype": "success"}
 {"at": "2026-10-28T22:58:33+00:00", "label": "build:ep306-chain-mail-periodic-table", "est_cost_usd": 1.0163, "turns": 41, "subtype": "success"}
 {"at": "2026-10-28T23:00:40+00:00", "label": "review:ep306-chain-mail-periodic-table", "est_cost_usd": 0.1937, "turns": 11, "subtype": "success"}
+{"at": "2026-11-02T04:43:17+00:00", "label": "extract:making-sense-of-this-weeks-ai-market-crashes-x307", "est_cost_usd": 0.7039, "turns": 2, "subtype": "success"}
+{"at": "2026-11-02T04:48:29+00:00", "label": "build:ep307-wire-gut-check", "est_cost_usd": 0.7603, "turns": 32, "subtype": "success"}
+{"at": "2026-11-02T04:50:22+00:00", "label": "review:ep307-wire-gut-check", "est_cost_usd": 0.2941, "turns": 16, "subtype": "success"}
+{"at": "2026-11-02T04:55:32+00:00", "label": "build:ep307-markup-matryoshka", "est_cost_usd": 0.6168, "turns": 24, "subtype": "success"}
+{"at": "2026-11-02T04:57:16+00:00", "label": "review:ep307-markup-matryoshka", "est_cost_usd": 0.228, "turns": 12, "subtype": "success"}

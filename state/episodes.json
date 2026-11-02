@@ -1,14 +1,62 @@
 {
   "making-sense-of-this-weeks-ai-market-crashes-x307": {
     "title": "Making Sense of This Week’s AI Market Crashes | #x307",
-    "date": "2026-10-31",
-    "number": null,
+    "date": "2026-11-02",
+    "number": 307,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/making-sense-of-this-weeks-ai-market-crashes-x307",
-    "status": "waiting",
+    "status": "built",
     "attempts": 2,
     "found": "2026-11-01T23:38:02+00:00",
     "note": "transcript has 0 segments",
-    "updated": "2026-11-02T03:55:42+00:00"
+    "updated": "2026-11-02T04:57:16+00:00",
+    "prototypes": [
+      "ep307-wire-gut-check",
+      "ep307-markup-matryoshka"
+    ],
+    "briefs": [
+      "ep307-callback-drill-co",
+      "ep307-swap-safe-governance-kit"
+    ],
+    "ideas": [
+      {
+        "title": "Markup Matryoshka",
+        "score": 4.55,
+        "timestamp": "02:12:34"
+      },
+      {
+        "title": "Fleet Takeover Calculator",
+        "score": 4.2,
+        "timestamp": "01:31:20"
+      },
+      {
+        "title": "Robot Flood Gauge",
+        "score": 4.2,
+        "timestamp": "01:13:22"
+      },
+      {
+        "title": "The Gap Year",
+        "score": 3.55,
+        "timestamp": "00:21:50"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Callback Drill Co.",
+        "score": 3.65,
+        "timestamp": "00:02:20"
+      },
+      {
+        "title": "Swap-Safe Governance Kit",
+        "score": 3.25,
+        "timestamp": "02:02:23"
+      },
+      {
+        "title": "Fleet Stretch Service",
+        "score": 3.05,
+        "timestamp": "00:44:58"
+      }
+    ],
+    "summary": "The hosts go through a rough week for AI stocks. Alphabet had its worst day ever even though revenue grew, cloud doubled and the Gemini app passed a billion users. Intel fell sharply, and RAM shortages pushed up device prices. They also cover a $6.3B crypto theft that started with one engineer's compromised machine, the Genie 4 world model, Sam Altman's idea of self-replicating data centers, the Optimus production line, robotaxi cost per mile, union pushback in Cambridge, falling CS and MBA enrollment, and the stack of margins built into what a token costs."
   },
   "anthropics-2t-ipo-elon-predicts-neocloud-death-and-chinas-kimi-catches-up-306": {
     "title": "Anthropic’s $2T IPO, Elon Predicts Neocloud Death, and China’s Kimi Catches Up | #306",
