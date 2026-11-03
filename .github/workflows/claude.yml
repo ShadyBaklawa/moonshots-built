@@ -44,4 +44,5 @@ jobs:
             --model claude-sonnet-5
             --max-turns 60
             --append-system-prompt-file prompts/standards.md
+            --settings .claude/hooks/loop_breaker.settings.json
             --allowedTools "Bash(python3 scripts/smoke.py *),Bash(python scripts/smoke.py *),Bash(ls *)"

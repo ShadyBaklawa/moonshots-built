@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import shlex
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
@@ -29,6 +30,18 @@ class ClaudeResult:
 
 
 COST_LOG = config.STATE_DIR / "costs.jsonl"
+LOOP_BREAKER = config.ROOT / ".claude" / "hooks" / "loop_breaker.py"
+
+
+def hook_settings() -> str:
+    """Settings JSON for --settings: the P20 loop breaker as a PreToolUse hook on every tool.
+
+    Absolute path, because sessions run inside prototype or temp folders where the repo's
+    .claude/ isn't found. If the script is missing the guard skips it, so it never blocks.
+    """
+    f = shlex.quote(str(LOOP_BREAKER))
+    cmd = f"[ ! -f {f} ] || python3 {f}"
+    return json.dumps({"hooks": {"PreToolUse": [{"matcher": "*", "hooks": [{"type": "command", "command": cmd}]}]}})
 
 
 def run_claude(
@@ -60,6 +73,7 @@ def run_claude(
         "--permission-prompts", "none",
         "--no-session-persistence",
         "--disallowedTools", "mcp__*",
+        "--settings", hook_settings(),
     ]
     if tools is not None:
         args += ["--tools", tools]
