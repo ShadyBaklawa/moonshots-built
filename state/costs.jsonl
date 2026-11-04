@@ -71,3 +71,8 @@
 {"at": "2026-11-02T04:50:22+00:00", "label": "review:ep307-wire-gut-check", "est_cost_usd": 0.2941, "turns": 16, "subtype": "success"}
 {"at": "2026-11-02T04:55:32+00:00", "label": "build:ep307-markup-matryoshka", "est_cost_usd": 0.6168, "turns": 24, "subtype": "success"}
 {"at": "2026-11-02T04:57:16+00:00", "label": "review:ep307-markup-matryoshka", "est_cost_usd": 0.228, "turns": 12, "subtype": "success"}
+{"at": "2026-11-04T14:44:17+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.3074, "turns": 12, "subtype": "success"}
+{"at": "2026-11-04T14:51:13+00:00", "label": "upgrade:ep288-coffee-cup-horizon", "est_cost_usd": 1.2503, "turns": 43, "subtype": "success"}
+{"at": "2026-11-04T14:53:08+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.2571, "turns": 11, "subtype": "success"}
+{"at": "2026-11-04T14:56:11+00:00", "label": "upgrade:ep288-coffee-cup-horizon:fix1", "est_cost_usd": 0.6981, "turns": 43, "subtype": "success"}
+{"at": "2026-11-04T14:57:24+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.2078, "turns": 11, "subtype": "success"}
