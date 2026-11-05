@@ -446,3 +446,54 @@ def test_verify_real_browser(tmp_path):
     assert not rep["ok"]
     text = " ".join(rep["problems"])
     assert "kaput" in text and "overflow" in text and "README.md" in text and "nope" in text
+
+
+# --- loop breaker hook (playbook P20) ---
+
+def _hook(event, tmp_path):
+    import subprocess
+    env = dict(os.environ, TMPDIR=str(tmp_path))
+    script = ROOT / ".claude" / "hooks" / "loop_breaker.py"
+    return subprocess.run([sys.executable, str(script)], input=json.dumps(event) if isinstance(event, dict) else event,
+                          capture_output=True, text=True, env=env)
+
+
+def test_loop_breaker_blocks_third_identical_call(tmp_path):
+    ev = {"session_id": "s1", "tool_name": "Bash", "tool_input": {"command": "npm test"}}
+    assert [_hook(dict(ev, tool_use_id=f"t{i}"), tmp_path).returncode for i in range(3)] == [0, 0, 2]
+    assert "different approach" in _hook(dict(ev, tool_use_id="t3"), tmp_path).stderr
+
+
+def test_loop_breaker_ignores_the_changing_description(tmp_path):
+    # Real Claude Code input: same command, description rewritten each time.
+    evs = [{"session_id": "s5", "tool_name": "Bash", "tool_use_id": f"t{i}",
+            "tool_input": {"command": "echo ping", "description": f"Print ping (run {i} of 3)"}} for i in (1, 2, 3)]
+    assert [_hook(e, tmp_path).returncode for e in evs] == [0, 0, 2]
+
+
+def test_loop_breaker_resets_on_a_different_call_and_per_session(tmp_path):
+    a = {"session_id": "s2", "tool_name": "Bash", "tool_input": {"command": "ls"}}
+    b = {"session_id": "s2", "tool_name": "Read", "tool_input": {"file_path": "x"}}
+    codes = [_hook(e, tmp_path).returncode for e in (a, a, b, a, a)]
+    assert codes == [0, 0, 0, 0, 0]
+    other = dict(a, session_id="s3")
+    assert _hook(other, tmp_path).returncode == 0  # a new session starts clean
+
+
+def test_loop_breaker_counts_a_doubly_registered_call_once(tmp_path):
+    ev = {"session_id": "s4", "tool_name": "Bash", "tool_input": {"command": "ls"}}
+    codes = [_hook(dict(ev, tool_use_id=i), tmp_path).returncode for i in ("t1", "t1", "t2", "t2")]
+    assert codes == [0, 0, 0, 0]
+
+
+def test_loop_breaker_never_blocks_on_bad_input(tmp_path):
+    assert _hook("not json", tmp_path).returncode == 0
+    assert _hook("", tmp_path).returncode == 0
+
+
+def test_run_claude_passes_the_hook_settings(sandbox):
+    from pipeline import llm
+    s = json.loads(llm.hook_settings())
+    cmd = s["hooks"]["PreToolUse"][0]["hooks"][0]["command"]
+    assert str(llm.LOOP_BREAKER) in cmd and cmd.startswith("[ ! -f ")
+    assert llm.LOOP_BREAKER.exists()
