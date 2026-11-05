@@ -76,3 +76,8 @@
 {"at": "2026-11-04T14:53:08+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.2571, "turns": 11, "subtype": "success"}
 {"at": "2026-11-04T14:56:11+00:00", "label": "upgrade:ep288-coffee-cup-horizon:fix1", "est_cost_usd": 0.6981, "turns": 43, "subtype": "success"}
 {"at": "2026-11-04T14:57:24+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.2078, "turns": 11, "subtype": "success"}
+{"at": "2026-11-05T01:01:39+00:00", "label": "extract:big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308", "est_cost_usd": 0.9576, "turns": 3, "subtype": "success"}
+{"at": "2026-11-05T01:16:43+00:00", "label": "build:ep308-rubric-forge", "est_cost_usd": 0.9451, "turns": 1, "subtype": "success"}
+{"at": "2026-11-05T01:18:21+00:00", "label": "review:ep308-rubric-forge", "est_cost_usd": 0.2908, "turns": 19, "subtype": "success"}
+{"at": "2026-11-05T01:29:37+00:00", "label": "build:ep308-meltdown-monday", "est_cost_usd": 0.6725, "turns": 32, "subtype": "success"}
+{"at": "2026-11-05T01:32:57+00:00", "label": "review:ep308-meltdown-monday", "est_cost_usd": 0.3577, "turns": 17, "subtype": "success"}

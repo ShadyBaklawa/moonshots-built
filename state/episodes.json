@@ -1,4 +1,72 @@
 {
+  "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308": {
+    "title": "Big Tech’s $3T AI Bet, Claude Writes 90% of Anthropic’s Code, AIs Editing AI Brains | EP #308",
+    "date": "2026-11-05",
+    "number": 308,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
+    "status": "built",
+    "attempts": 0,
+    "found": "2026-11-05T00:54:41+00:00",
+    "updated": "2026-11-05T01:32:57+00:00",
+    "prototypes": [
+      "ep308-rubric-forge",
+      "ep308-meltdown-monday"
+    ],
+    "briefs": [
+      "ep308-yardstick-works",
+      "ep308-coldline-lockdown"
+    ],
+    "ideas": [
+      {
+        "title": "Meltdown Monday",
+        "score": 4.35,
+        "timestamp": "01:14:29"
+      },
+      {
+        "title": "Ten Apollos",
+        "score": 3.9,
+        "timestamp": "00:17:50"
+      },
+      {
+        "title": "Saturation Clock",
+        "score": 3.9,
+        "timestamp": "00:38:12"
+      },
+      {
+        "title": "Friday Workforce",
+        "score": 3.9,
+        "timestamp": "00:55:15"
+      },
+      {
+        "title": "Weight Surgeon",
+        "score": 3.8,
+        "timestamp": "01:02:26"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Yardstick Works",
+        "score": 3.9,
+        "timestamp": "00:35:55"
+      },
+      {
+        "title": "Coldline Lockdown",
+        "score": 3.75,
+        "timestamp": "01:14:29"
+      },
+      {
+        "title": "Shelf-to-Sold",
+        "score": 3.7,
+        "timestamp": "00:48:27"
+      },
+      {
+        "title": "Leverage Ledger",
+        "score": 3.15,
+        "timestamp": "00:37:49"
+      }
+    ],
+    "summary": "The hosts look at Big Tech's more than $3 trillion in AI build-out commitments and why lenders are getting nervous about them. They compare two new benchmarks: on GDPX, AIs working alone on expert jobs top out at 12%, while OpenAI's own LifeVal has them finishing about 80% of everyday errands. They also cover Anthropic's filing (Claude writes over 90% of its code, and internal AI spend now exceeds payroll), an MIT paper where an AI fixed another model by editing its weights directly, and hackers who switched on defrost mode in grocery-store freezers across Europe. A science and space segment and listener questions close the show."
+  },
   "making-sense-of-this-weeks-ai-market-crashes-x307": {
     "title": "Making Sense of This Week’s AI Market Crashes | #x307",
     "date": "2026-11-02",

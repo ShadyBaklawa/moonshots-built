@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "prototype": "ep288-coffee-cup-horizon",
+    "reason": "Convert a day's AI token spend into 'human worker equivalents' and project it a year ahead. (Dave says one engineer burned half a billion tokens, about $5,000, in a day. At roughly a dollar per worker-day equivalent, that's about 5,000 people, and costs fall 10x a year, so it becomes 50,000 next year.)",
+    "episode": "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
+    "added": "2026-11-05T01:01:39+00:00"
+  }
+]
