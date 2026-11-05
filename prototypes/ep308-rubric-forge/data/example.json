@@ -1,0 +1,66 @@
+{
+  "label": "Insurance claims — example benchmark",
+  "models": ["Model A", "Model B", "Model C"],
+  "tasks": [
+    {
+      "task": "Summarize a 12-page claims file into a 1-paragraph adjuster brief",
+      "criteria": "Covers claimant name, incident date, requested amount, and any red flags, in under 150 words",
+      "weight": 4,
+      "scores": ["partial", "pass", "fail"]
+    },
+    {
+      "task": "Decide if a water-damage claim needs a special investigations unit referral",
+      "criteria": "Flags claims over $25k, or with prior claims in the last 12 months, and cites the trigger",
+      "weight": 5,
+      "scores": ["pass", "partial", "fail"]
+    },
+    {
+      "task": "Draft a denial letter citing the specific policy exclusion",
+      "criteria": "Cites the exact clause number and explains the reason in plain language, no legal jargon",
+      "weight": 5,
+      "scores": ["fail", "partial", "fail"]
+    },
+    {
+      "task": "Calculate the depreciated value of a damaged roof from its age and replacement cost",
+      "criteria": "Applies the correct depreciation schedule and shows the formula used",
+      "weight": 3,
+      "scores": ["pass", "pass", "partial"]
+    },
+    {
+      "task": "Flag duplicate claims submitted under different claim numbers",
+      "criteria": "Matches on policyholder, date, and loss description with no false positives",
+      "weight": 4,
+      "scores": ["partial", "fail", "fail"]
+    },
+    {
+      "task": "Extract all named parties and their roles from a subrogation demand letter",
+      "criteria": "Lists every party with the correct role: claimant, defendant, insurer, or attorney",
+      "weight": 2,
+      "scores": ["pass", "pass", "pass"]
+    },
+    {
+      "task": "Explain in 3 bullets why a claim was paid at actual cash value instead of replacement cost",
+      "criteria": "References the specific policy section and the depreciation reasoning",
+      "weight": 3,
+      "scores": ["partial", "partial", "fail"]
+    },
+    {
+      "task": "Check a repair estimate for line items outside a given price guide range",
+      "criteria": "Lists every line item more than 15% outside the guide price, with the guide price shown",
+      "weight": 4,
+      "scores": ["fail", "partial", "fail"]
+    },
+    {
+      "task": "Draft a follow-up email requesting missing documentation from a claimant",
+      "criteria": "Lists exactly which documents are missing and gives a clear deadline",
+      "weight": 2,
+      "scores": ["pass", "pass", "partial"]
+    },
+    {
+      "task": "Summarize the key terms of a multi-page subrogation agreement in 5 bullets",
+      "criteria": "Includes the recovery amount, split percentage, and effective date",
+      "weight": 3,
+      "scores": ["partial", "fail", "fail"]
+    }
+  ]
+}

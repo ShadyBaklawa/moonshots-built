@@ -1,0 +1,78 @@
+{
+  "title": "Coldline Lockdown",
+  "one_liner": "Audits and locks down internet-reachable refrigeration controllers for independent grocers and food businesses.",
+  "timestamp": "01:14:29",
+  "speaker": "Peter Diamandis",
+  "context": "Hackers took over remotely managed supermarket fridges and freezers across Europe, switched them into defrost mode and spoiled the food. Authorities told operators to take the controllers off the open internet. Alex says legacy industrial control systems are being neglected.",
+  "customer": "Independent grocers, small supermarket chains, convenience-store groups and restaurant groups in Europe and the US whose refrigeration is run by remote-access controllers",
+  "problem": "Their fridge and freezer controllers were installed by a refrigeration contractor and are often reachable from the internet with default logins. One overnight attack can destroy stock, and nobody on staff knows the setup.",
+  "revenue_model": "Per-site hardening visit or remote audit, about $600–$1,500 per store, then about $40 a month per store for alert monitoring and quarterly re-checks (estimate)",
+  "why_now": "The episode describes a second wave of attacks across eight countries after hundreds of French stores were hit. Authorities have now told operators to act, and the hosts say AI makes attacks cheaper while defence still needs humans.",
+  "first_steps": [
+    "Write a one-page 'is your freezer controller on the internet?' checklist and send it to 20 local grocers",
+    "Partner with one refrigeration contractor who can take on remote-access changes on site",
+    "Run two free audits in exchange for a written case study"
+  ],
+  "cost_to_start": "About 2 weeks and under $1,000 (checklist, insurance check, contractor partnership)",
+  "competition": "OT/ICS security firms serve large utilities and manufacturers; refrigeration contractors offer remote monitoring but rarely security hardening for small shops",
+  "risks": "Touching controllers without the installer's involvement could void warranties or spoil stock. It needs proper written authorization from each owner. Large chains will buy from established security firms.",
+  "money": 3,
+  "ease": 3,
+  "speed": 4,
+  "evidence": 5,
+  "tool": {
+    "title": "Freezer Door Check",
+    "one_liner": "A questionnaire that scores how exposed a store's refrigeration controls are and prints a fix list.",
+    "demo": "The store owner answers about 15 questions (who installed the controllers, is there a cloud or remote app, default password changed, VPN, alarms on high temperature, who gets the alarm at 3am). The page outputs an exposure score, a ranked fix list with plain-language steps, and a printable sheet to hand to their refrigeration contractor. They can also paste a CSV temperature log and see flagged sudden rises that look like a forced defrost.",
+    "data_plan": "Customer's own answers and their own temperature-log CSV. Incident figures from the episode are shown as context only.",
+    "feasibility": 5,
+    "acceptance": [
+      "Answering 'default password unchanged' and 'no high-temp alarm' raises the exposure score and puts those two fixes at the top of the list",
+      "Pasting a sample CSV with a jump from -18°C to 10°C within an hour highlights that row as a suspected forced defrost",
+      "A 'Print for contractor' button produces a clean one-page checklist view",
+      "The episode incident figures appear in a sourced 'What happened' box labelled as reported on the podcast",
+      "The questionnaire is usable on a 390px-wide phone screen"
+    ]
+  },
+  "figures": [
+    {
+      "value": "55°C",
+      "meaning": "Highest temperature the hackers set the fridges to",
+      "timestamp": "01:14:00",
+      "said": "cranked up the temperature to as high as 55 degrees Celsius",
+      "verified": true
+    },
+    {
+      "value": "eight countries",
+      "meaning": "Countries hit in the second wave",
+      "timestamp": "01:14:29",
+      "said": "it hit stores in eight countries",
+      "verified": true
+    },
+    {
+      "value": "about 100,000 euros",
+      "meaning": "Cost of the spoiled food in Belgium",
+      "timestamp": "01:14:29",
+      "said": "the spoiled food was about 100,000 euros",
+      "verified": true
+    },
+    {
+      "value": "more than 500",
+      "meaning": "French stores hit in the first wave",
+      "timestamp": "01:14:29",
+      "said": "hit more than 500 stores across France",
+      "verified": true
+    }
+  ],
+  "score": 3.75,
+  "slug": "ep308-coldline-lockdown",
+  "episode": {
+    "slug": "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
+    "title": "Big Tech’s $3T AI Bet, Claude Writes 90% of Anthropic’s Code, AIs Editing AI Brains | EP #308",
+    "number": 308,
+    "date": "2026-11-05",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308"
+  },
+  "tool_slug": null,
+  "created": "2026-11-05T01:32:57+00:00"
+}

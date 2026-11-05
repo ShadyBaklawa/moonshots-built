@@ -1,0 +1,37 @@
+{
+  "slug": "ep308-meltdown-monday",
+  "kind": "demo",
+  "title": "Meltdown Monday",
+  "one_liner": "Defend a chain of supermarket freezers from overnight remote defrost attacks before the ice cream melts.",
+  "headline": "Spend a €2,000 budget to defend 20 supermarket freezers from a simulated overnight hacking spree, then compare your losses to the real Belgian and French incidents.",
+  "episode": {
+    "slug": "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
+    "title": "Big Tech’s $3T AI Bet, Claude Writes 90% of Anthropic’s Code, AIs Editing AI Brains | EP #308",
+    "number": 308,
+    "date": "2026-11-05",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308"
+  },
+  "timestamp": "01:14:29",
+  "idea_score": 4.35,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 7,
+    "fidelity": 8,
+    "wow": 7,
+    "ux": 6,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 7.35,
+  "created": "2026-11-05T01:32:57+00:00",
+  "updated": "2026-11-05T01:32:57+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-05T01:32:57+00:00",
+      "overall": 7.35,
+      "summary": "A tight, well-scoped budget-defense game that matches the podcast idea closely: four named defenses with distinct mechanics, live thermometers and euro-loss counters per store, and an honest recap sourced to verified podcast figures. Code is clean vanilla JS with no dependencies, console errors, or stray branding, and mobile fits cleanly, though the alarm defense is accidentally the dominant (cheapest, fully-blocking) choice and small UI text could use a size bump on dense mobile screens."
+    }
+  ]
+}
