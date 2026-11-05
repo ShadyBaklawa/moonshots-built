@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rubric Forge — build a benchmark for your real work</title>
+<meta name="description" content="Paste your real tasks, get a scored benchmark spec and a side-by-side model scoring sheet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="title-row">
+    <span class="anvil" aria-hidden="true">&#9874;</span>
+    <h1>Rubric Forge</h1>
+  </div>
+  <p class="tagline">For teams rolling out AI who need to know which model actually does <em>their</em> work — not a generic leaderboard. Paste your tasks, get a scored benchmark.</p>
+  <span id="example-badge" class="badge hidden">Example data — insurance claims</span>
+</header>
+
+<section class="context-panel">
+  <p>On the podcast, Alex Wissner-Gross described a 206-task company benchmark called GDPX, built with 14 specialist partners — and said the best AI model scored just 12% on it. <span class="cite">As stated on the podcast, EP #308, 00:30:40.</span></p>
+</section>
+
+<main>
+
+  <section id="input-section" class="panel">
+    <h2><span class="step">1</span> Your tasks</h2>
+    <p class="hint">Paste 5–30 tasks you actually do, one per line. Add <code>| what good looks like</code> after a line if you want to pre-fill its pass criteria.</p>
+    <textarea id="task-input" rows="8" spellcheck="false" placeholder="Summarize a 12-page claims file into a 1-paragraph brief | covers claimant, incident date, amount, red flags
+Decide if a water-damage claim needs SIU referral | flags claims over $25k or prior claims in 12 months"></textarea>
+    <div class="row">
+      <button id="build-btn" class="btn primary">Build benchmark spec &rarr;</button>
+      <button id="example-btn" class="btn">Load example (insurance claims)</button>
+      <button id="clear-btn" class="btn ghost">Clear everything</button>
+    </div>
+    <details id="ai-details">
+      <summary>Optional: draft missing pass criteria with AI (bring your own key)</summary>
+      <div class="row">
+        <input id="api-key" type="password" placeholder="sk-ant-... (used only in this tab, never saved)" autocomplete="off" spellcheck="false">
+        <button id="draft-btn" class="btn">Draft missing criteria</button>
+      </div>
+      <p id="ai-status" class="hint" role="status"></p>
+    </details>
+  </section>
+
+  <section id="spec-section" class="panel hidden">
+    <h2><span class="step">2</span> Benchmark spec</h2>
+    <p class="hint">Edit each pass criteria and weight (1&ndash;5 &mdash; how much this task matters).</p>
+    <div class="table-scroll">
+      <table id="spec-table">
+        <thead><tr><th class="col-task">Task</th><th class="col-criteria">Pass criteria &mdash; what "good" looks like</th><th class="col-weight">Weight</th><th class="col-del"></th></tr></thead>
+        <tbody id="spec-body"></tbody>
+      </table>
+    </div>
+    <button id="add-task-btn" class="btn ghost">+ Add task</button>
+  </section>
+
+  <section id="models-section" class="panel hidden">
+    <h2><span class="step">3</span> Models to compare</h2>
+    <p class="hint">Name up to 4 models or agents you're testing.</p>
+    <div class="row" id="model-inputs"></div>
+    <div class="row">
+      <button id="add-model-btn" class="btn ghost">+ Add model</button>
+      <button id="remove-model-btn" class="btn ghost">&minus; Remove model</button>
+    </div>
+  </section>
+
+  <section id="score-section" class="panel hidden">
+    <h2><span class="step">4</span> Score sheet</h2>
+    <p class="hint">Click a cell to cycle Pass &rarr; Partial &rarr; Fail &rarr; clear. Scores update the bars right away.</p>
+    <div id="score-bars"></div>
+    <div class="table-scroll">
+      <table id="score-table">
+        <thead><tr id="score-head"><th class="col-task">Task</th></tr></thead>
+        <tbody id="score-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="export-section" class="panel hidden">
+    <h2><span class="step">5</span> Export</h2>
+    <p class="hint">Download the spec and scores to share or archive.</p>
+    <div class="row">
+      <button id="export-json-btn" class="btn primary">Export JSON</button>
+      <button id="export-csv-btn" class="btn primary">Export CSV</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Inspired by Moonshots EP #308, around 00:35:55. Fan-made prototype, not affiliated with the show.
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308" target="_blank" rel="noopener">Listen to the episode</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

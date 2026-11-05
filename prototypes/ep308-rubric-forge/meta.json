@@ -1,0 +1,37 @@
+{
+  "slug": "ep308-rubric-forge",
+  "kind": "tool",
+  "title": "Rubric Forge",
+  "one_liner": "Turns a list of your real work tasks into a scored benchmark spec and a side-by-side scoring sheet.",
+  "headline": "Paste the tasks your team actually does, get an editable weighted benchmark spec and a click-to-score grid comparing up to four AI models, exportable as JSON or CSV.",
+  "episode": {
+    "slug": "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
+    "title": "Big Tech’s $3T AI Bet, Claude Writes 90% of Anthropic’s Code, AIs Editing AI Brains | EP #308",
+    "number": 308,
+    "date": "2026-11-05",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308"
+  },
+  "timestamp": "00:35:55",
+  "idea_score": 3.9,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.1,
+  "created": "2026-11-05T01:18:21+00:00",
+  "updated": "2026-11-05T01:18:21+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-05T01:18:21+00:00",
+      "overall": 8.1,
+      "summary": "Rubric Forge is a tight, faithful build of the episode's \"build a benchmark for your real work\" pitch and a genuinely usable version of the Yardstick Works opportunity: paste tasks, get an editable spec table, score models pass/partial/fail, watch weighted bars update live, and export. All five acceptance criteria check out against the code and the manual-check screenshots, the three podcast figures are verified and correctly attributed, and the example/illustrative data is clearly badged throughout. No dead buttons, no console errors, no external dependencies at all — a solid, publishable prototype."
+    }
+  ]
+}

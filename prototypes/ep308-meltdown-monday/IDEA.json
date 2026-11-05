@@ -1,0 +1,60 @@
+{
+  "title": "Meltdown Monday",
+  "one_liner": "Defend a chain of supermarket freezers from overnight remote defrost attacks before the ice cream melts.",
+  "timestamp": "01:14:29",
+  "speaker": "Peter Diamandis",
+  "context": "Hackers remotely switched European supermarket freezers into defrost mode overnight, pushing temperatures up to 55°C across eight countries after an earlier wave in France. Controllers were sitting on the open internet.",
+  "demo": "A night-time map shows 20 stores with live freezer thermometers. Simulated attacks hit internet-exposed controllers and temperatures climb. The visitor spends a limited budget on fixes (change default password, VPN, high-temp alarm, take offline) and watches spoiled-stock euros pile up for stores left exposed. At the end, a recap compares their losses with the real Belgian figure.",
+  "data_plan": "Simulated attack timing and store data, clearly labelled. Real incident figures from the podcast appear in a sourced recap.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Must not teach attack techniques. Keep defenses generic and attacks abstract.",
+  "figures": [
+    {
+      "value": "55°C",
+      "meaning": "Highest temperature set by the attackers",
+      "timestamp": "01:14:00",
+      "said": "cranked up the temperature to as high as 55 degrees Celsius",
+      "verified": true
+    },
+    {
+      "value": "eight countries",
+      "meaning": "Countries hit in the second wave",
+      "timestamp": "01:14:29",
+      "said": "it hit stores in eight countries",
+      "verified": true
+    },
+    {
+      "value": "about 100,000 euros",
+      "meaning": "Spoiled food cost in Belgium",
+      "timestamp": "01:14:29",
+      "said": "the spoiled food was about 100,000 euros",
+      "verified": true
+    },
+    {
+      "value": "more than 500",
+      "meaning": "French stores hit three weeks earlier",
+      "timestamp": "01:14:29",
+      "said": "hit more than 500 stores across France",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Clicking 'Add VPN' on a store stops simulated attacks from raising its freezer temperature for the rest of the night",
+    "Unprotected attacked stores show their thermometer climbing and a growing euro-loss counter",
+    "The end-of-night recap shows total losses next to the sourced Belgian and French figures",
+    "A visible label marks the stores and attacks as simulated",
+    "The map and controls fit a 390px-wide phone screen"
+  ],
+  "score": 4.35,
+  "episode": {
+    "slug": "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
+    "title": "Big Tech’s $3T AI Bet, Claude Writes 90% of Anthropic’s Code, AIs Editing AI Brains | EP #308",
+    "number": 308,
+    "date": "2026-11-05",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308"
+  }
+}

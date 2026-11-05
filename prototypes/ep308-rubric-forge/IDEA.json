@@ -1,0 +1,59 @@
+{
+  "title": "Rubric Forge",
+  "one_liner": "Turns a list of your real work tasks into a scored benchmark spec and a side-by-side scoring sheet.",
+  "timestamp": "00:35:55",
+  "speaker": "Alex Wissner-Gross / Peter Diamandis",
+  "context": "Alex and Peter say that if you want AI to optimize something you care about, you should build a benchmark for it. Dave adds that you don't need to be an expert, just find the experts and define success. Salim wants internal company benchmarks too.",
+  "demo": "The customer pastes 5–30 tasks they actually do, one per line, with a short 'what good looks like' note for each. The page builds a benchmark spec (task, inputs, pass criteria, weight), a blank scoring grid for up to four models, and a weighted total once they enter pass/partial/fail for each cell. With a pasted API key it can draft pass criteria; example mode ships a filled insurance-claims set.",
+  "data_plan": "Customer's own task list and scores. Optional AI drafting with a visitor-supplied key. A bundled example set is labelled as an example.",
+  "feasibility": 4,
+  "risks": "Clients' data sensitivity limits what can be run on third-party models. Scoring open-ended work is hard to make reliable. Large eval vendors may move down-market.",
+  "figures": [
+    {
+      "value": "206",
+      "meaning": "Number of tasks in the GDPX benchmark",
+      "timestamp": "00:30:40",
+      "said": "There are 206 tasks across 11 high-value fields",
+      "verified": true
+    },
+    {
+      "value": "14",
+      "meaning": "Specialist partners who helped build GDPX",
+      "timestamp": "00:30:40",
+      "said": "built it with 14 specialist partners",
+      "verified": true
+    },
+    {
+      "value": "12%",
+      "meaning": "Top GDPX score (Opus 5.5)",
+      "timestamp": "00:30:40",
+      "said": "even the best models only scored 12%",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Pasting 10 tasks one per line creates 10 rows in the spec table, each with editable pass-criteria and weight fields",
+    "Entering pass/partial/fail for each model in the grid updates a weighted score bar for each model immediately",
+    "With no API key, 'Load example' fills an insurance-claims benchmark and shows a visible 'Example data' badge",
+    "An 'Export' button downloads the spec and scores as a JSON or CSV file",
+    "On a 390px-wide screen the scoring grid scrolls sideways without the page breaking"
+  ],
+  "related_existing": null,
+  "score": 3.9,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Yardstick Works",
+    "one_liner": "Builds a private benchmark of a company's real tasks so it can pick AI models and track progress.",
+    "customer": "Mid-size companies (50–500 staff) in legal, finance, insurance and operations-heavy fields that are rolling out AI agents, plus vertical SaaS vendors that want a public eval for their niche",
+    "problem": "Public leaderboards don't measure their own work: on GDPX, finance and legal tasks scored near zero. So they can't tell which model or agent to trust with their workflows, or whether a new release really helps.",
+    "revenue_model": "Fixed-fee eval build, about $8k–$20k per suite, plus a re-run retainer of about $1.5k a month that re-scores every new model release (estimate)",
+    "why_now": "New models ship very often, the hosts say most eval suites copy human job titles rather than real work, and they call well-built benchmarks scarce and valuable."
+  },
+  "episode": {
+    "slug": "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
+    "title": "Big Tech’s $3T AI Bet, Claude Writes 90% of Anthropic’s Code, AIs Editing AI Brains | EP #308",
+    "number": 308,
+    "date": "2026-11-05",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308"
+  }
+}

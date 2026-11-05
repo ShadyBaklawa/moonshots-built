@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meltdown Monday — defend the freezers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+
+<header class="topbar">
+  <h1>Meltdown Monday</h1>
+  <p class="tagline">Defend a chain of supermarket freezers from overnight remote defrost attacks.</p>
+  <span class="sim-badge">⚠ All stores, attacks and prices on this page are simulated</span>
+</header>
+
+<section class="hud" aria-label="Night status">
+  <div class="hud-item">
+    <span class="hud-label">Time</span>
+    <span class="hud-value" id="clock">22:00</span>
+  </div>
+  <div class="hud-item">
+    <span class="hud-label">Budget left</span>
+    <span class="hud-value" id="budget">€0</span>
+  </div>
+  <div class="hud-item">
+    <span class="hud-label">Stock lost</span>
+    <span class="hud-value loss" id="totalLoss">€0</span>
+  </div>
+  <div class="hud-item">
+    <span class="hud-label">Stores safe</span>
+    <span class="hud-value" id="safeCount">0 / 0</span>
+  </div>
+</section>
+
+<main id="mapGrid" class="map-grid" aria-label="Store map"></main>
+
+<div id="startOverlay" class="overlay">
+  <div class="overlay-card">
+    <h2>Night shift, 22:00–06:00</h2>
+    <p>Twenty stores. Their freezer controllers sit on the open internet, just like the real
+      chain hit by remote defrost attacks. You have a budget of
+      <strong id="startBudget">€2,000</strong> to defend them before the attacks start.</p>
+    <p class="fine">This is a simulation inspired by a real incident described on a podcast —
+      see the footer for the source. No attack techniques are shown or explained.</p>
+    <button id="startBtn" class="primary-btn">Start the night</button>
+  </div>
+</div>
+
+<div id="endOverlay" class="overlay hidden">
+  <div class="overlay-card">
+    <h2>06:00 — stores reopen</h2>
+    <p>Your stock losses tonight:</p>
+    <p class="big-number" id="endLoss">€0</p>
+    <div class="recap-compare">
+      <div class="recap-row">
+        <span>Your losses</span>
+        <strong id="recapYou">€0</strong>
+      </div>
+      <div class="recap-row">
+        <span>Real Belgian incident <small>(as stated on the podcast)</small></span>
+        <strong>≈ €100,000</strong>
+      </div>
+      <div class="recap-row">
+        <span>Real French wave, 3 weeks earlier <small>(as stated on the podcast)</small></span>
+        <strong>500+ stores hit</strong>
+      </div>
+      <div class="recap-row">
+        <span>Peak attacker temperature, real incident <small>(as stated on the podcast)</small></span>
+        <strong>55°C</strong>
+      </div>
+    </div>
+    <button id="restartBtn" class="primary-btn">Play again</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Inspired by Moonshots EP #308, around 01:14:29. Fan-made prototype, not affiliated with the
+    show. <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308" target="_blank" rel="noopener">Episode source</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

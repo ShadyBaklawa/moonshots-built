@@ -1,0 +1,25 @@
+{
+  "note": "Simulated store list for the Meltdown Monday prototype. Names, locations and attack timing are fictional and not real store or chain data.",
+  "stores": [
+    { "name": "Northgate FreshMart", "town": "Dunmere" },
+    { "name": "Harbor Grocer", "town": "Dunmere" },
+    { "name": "Willow Lane Foods", "town": "Dunmere" },
+    { "name": "Ridgefield Pantry", "town": "Aldcross" },
+    { "name": "Clover & Co.", "town": "Aldcross" },
+    { "name": "Birchwood Market", "town": "Aldcross" },
+    { "name": "Maple Row Grocer", "town": "Penhallow" },
+    { "name": "Old Mill Foods", "town": "Penhallow" },
+    { "name": "Stonegate Supermarket", "town": "Penhallow" },
+    { "name": "Ferry Point Foods", "town": "Brackwell" },
+    { "name": "Elmhurst Grocer", "town": "Brackwell" },
+    { "name": "Westfield Pantry", "town": "Brackwell" },
+    { "name": "Thistledown Market", "town": "Garrow" },
+    { "name": "Copper Beech Foods", "town": "Garrow" },
+    { "name": "Lakeside Grocer", "town": "Garrow" },
+    { "name": "Hollow Creek Market", "town": "Ashby" },
+    { "name": "Fieldstone Pantry", "town": "Ashby" },
+    { "name": "Riverside Grocer", "town": "Ashby" },
+    { "name": "Granary Row Foods", "town": "Millbrook" },
+    { "name": "Cinderpath Market", "town": "Millbrook" }
+  ]
+}
