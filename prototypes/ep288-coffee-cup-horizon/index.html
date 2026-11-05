@@ -14,13 +14,13 @@
       <span class="steam s1"></span>
       <span class="steam s2"></span>
       <span class="steam s3"></span>
-      <span class="cup">☕</span>
+      <span class="cup" id="heroCupGlyph">☕</span>
     </div>
     <div class="hero-text">
       <h1>Coffee Cup Horizon</h1>
-      <p class="tagline">Enter what an AI feat costs today. Watch the price fall until it's cheaper than your coffee.</p>
-      <div class="hero-compare" aria-label="Quick comparison of podcast scenarios against your coffee price">
-        <span class="hero-compare-label">Quick compare, at today's coffee price:</span>
+      <p class="tagline">Enter what an AI feat costs today. Watch the price fall until it's cheaper than your coffee — or swap the horizon for kWh or kg.</p>
+      <div class="hero-compare" aria-label="Quick comparison of podcast scenarios against your horizon price">
+        <span class="hero-compare-label">Quick compare, at today's horizon price:</span>
         <div class="hero-chips" id="heroChips"></div>
         <a class="hero-compare-more" href="#stripPanel">See full comparison ↓</a>
       </div>
@@ -37,11 +37,7 @@
         </button>
         <button class="preset-btn" data-preset="mathresult" type="button">
           <span class="preset-name">This week's math result</span>
-          <span class="preset-sub">$3M, same curve</span>
-        </button>
-        <button class="preset-btn" data-preset="robotsubtask" type="button">
-          <span class="preset-name">Robot task cost (Ep 303)</span>
-          <span class="preset-sub">$2.36 → $0.38 in 2 mo</span>
+          <span class="preset-sub">$3M, projected on Brown's curve</span>
         </button>
         <button class="preset-btn is-active" data-preset="custom" type="button">
           <span class="preset-name">Custom</span>
@@ -69,26 +65,34 @@
       </div>
 
       <div class="field">
-        <label for="coffee">Price of a cup of coffee <span class="label-hint">(one per day, year-round, for the second line)</span></label>
+        <label for="coffee"><span id="priceLabelText">Price of a cup of coffee</span> <span class="label-hint">(one per day, year-round, for the second line)</span></label>
+        <div class="unit-pills" role="group" aria-label="Horizon unit">
+          <button class="unit-btn is-active" data-unit="coffee" type="button" title="Coffee — as on the podcast (Ep 288)">☕ Coffee</button>
+          <button class="unit-btn" data-unit="kwh" type="button" title="kWh — illustrative extension">⚡ kWh</button>
+          <button class="unit-btn" data-unit="kg" type="button" title="kg — illustrative extension">⚖️ kg</button>
+        </div>
         <div class="field-row">
           <span class="unit">$</span>
           <input type="number" id="coffee" min="0.5" step="0.5" value="5">
         </div>
-        <input type="range" id="coffeeSlider" min="0.5" max="15" step="0.5" value="5" aria-label="Coffee price slider">
+        <input type="range" id="coffeeSlider" min="0.5" max="15" step="0.5" value="5" aria-label="Horizon price slider">
+        <p class="unit-caption" id="unitCaption">As discussed on the podcast (Ep 288): priced against a daily coffee.</p>
       </div>
 
       <p class="note" id="activeNote">Pick a preset above, or set your own starting cost and yearly decline rate.</p>
+      <button class="share-btn" id="shareBtn" type="button">🔗 Copy link to this scenario</button>
     </section>
 
     <section class="panel chart-panel" aria-label="Cost curve">
       <div class="chart-head">
+        <p class="projected-badge" id="projectedBadge" hidden>⚠ Projected rate — not a quoted decline</p>
         <div class="readout">
-          <span class="readout-label">Crosses the coffee line</span>
+          <span class="readout-label" id="crossLabel">Crosses the coffee line</span>
           <span class="readout-value" id="crossDate">—</span>
           <span class="readout-sub" id="crossSub"></span>
         </div>
         <div class="readout readout-secondary">
-          <span class="readout-label">Crosses a year of daily coffees</span>
+          <span class="readout-label" id="yearlyCrossLabel">Crosses a year of daily coffees</span>
           <span class="readout-value readout-value-sub" id="yearlyCrossDate">—</span>
           <span class="readout-sub" id="yearlyCrossSub"></span>
         </div>
@@ -116,16 +120,19 @@
 
   <footer class="footer">
     <p>
-      Figures from Noam Brown's claim, "this week's math result," and the robot task cost are <strong>as stated on the podcast</strong> —
-      illustrative claims, not audited data. Everything else is your own input, run through transparent exponential math.
+      Noam Brown's $300K→$20 claim is <strong>as stated on the podcast</strong>, though the exact starting figure
+      ("hundreds of thousands of dollars") is an illustrative instantiation. "This week's math result" uses a
+      podcast-cited "multi-million-dollar" figure (shown as $3M) with its decline rate <strong>projected</strong> from
+      Brown's curve, not a quoted rate. The kWh and kg horizon units are fully illustrative. Everything else is your
+      own input, run through transparent exponential math.
     </p>
     <p>
       Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/should-we-slow-down-ai-progress-moonshots-288" target="_blank" rel="noopener">Moonshots #288: Should we slow down AI progress?</a>,
       around 00:58:55. Fan-made prototype, not affiliated with the show.
     </p>
     <p>
-      The robot task figures are from a later episode revisiting this idea, Moonshots #303, where Imad cites a benchmark
-      showing that cost halving roughly every three weeks.
+      The kWh/kg horizon units are a generic illustrative extension of the same coffee-price idea — pricing the
+      curve against a different everyday unit — and aren't tied to any podcast claim or figure.
     </p>
   </footer>
 

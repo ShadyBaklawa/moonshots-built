@@ -1,15 +1,16 @@
 # Coffee Cup Horizon
 
-A log-scale cost curve that falls toward a dashed "cup of coffee" line. Pick a claim quoted on the
-show, or type in your own cost and yearly decline rate, and watch an animated line show you the
-exact month the price undercuts your coffee.
+A log-scale cost curve that falls toward a dashed horizon line — a cup of coffee by default, or
+a kWh of electricity, or a kg of mass. Pick a claim quoted on the show, or type in your own cost
+and yearly decline rate, and watch an animated line show you the exact month the price undercuts
+your horizon.
 
 ## What it is
 
-Enter what an AI feat costs today, how fast that cost falls each year, and what a cup of coffee
-costs. The chart plots an exponential decay curve on a log scale and marks the date the curve
-crosses below your coffee line — and below a year of daily coffees. A comparison strip and a
-set of "quick compare" chips up top show three podcast-quoted scenarios and your own live
+Enter what an AI feat costs today, how fast that cost falls each year, and the price of your
+chosen horizon unit. The chart plots an exponential decay curve on a log scale and marks the date
+the curve crosses below that line — and below a year of daily purchases of it. A comparison strip
+and a set of "quick compare" chips up top show the podcast-quoted scenarios and your own live
 scenario side by side.
 
 ## Origin
@@ -19,53 +20,80 @@ around 00:58:55. Peter Diamandis, citing Noam Brown, discusses how a frontier AI
 "hundreds of thousands of dollars" became doable for about $20 within roughly two years, and
 projects that same curve onto a multi-million-dollar math result discussed the same week.
 
-A later episode, Moonshots #303 ("Flying Tesla, car-robot brains, halving in cost every 3 weeks,
-and why incentives decide AI alignment"), revisits the idea: Imad cites a benchmark showing the
-cost for a frontier model to complete a robot subtask fell from $2.36 to about $0.38 in two
-months — an 84% drop he frames as roughly halving every three weeks. That figure is now a third
-preset here.
+The kWh and kg horizon-unit options are a generic illustrative extension of that same idea —
+pricing the curve against a different everyday unit instead of coffee — and aren't tied to any
+podcast claim, figure, or named person.
 
 ## How to use
 
-1. Pick a preset pill ("Noam Brown's claim," "This week's math result," or "Robot task cost (Ep
-   303)") to load the figures quoted on the podcast, or leave "Custom" selected and type your own
-   numbers.
-2. Adjust **starting cost**, **yearly decline** (the curve divides the cost by this factor every
-   year), and **price of a cup of coffee** with the number fields or sliders.
-3. Watch the amber line animate down the log-scale chart and read the crossing date for both the
-   single-coffee line and the dotted "year of daily coffees" line at the top of the chart panel.
-4. Check the **quick compare** chips right under the headline for an instant read on all three
-   podcast scenarios at your current coffee price, or follow "See full comparison" down to the
-   **Side by side** strip for the full cards.
+1. Pick a preset pill ("Noam Brown's claim" or "This week's math result") to load the figures
+   quoted on the podcast, or leave "Custom" selected and type your own numbers.
+2. Adjust **starting cost** and **yearly decline** (the curve divides the cost by this factor
+   every year) with the number fields or sliders.
+3. Pick a horizon unit — ☕ Coffee, ⚡ kWh, or ⚖️ kg — and set its price. Watch the amber line
+   animate down the log-scale chart and read the crossing date for both the single-unit line and
+   the dotted "year of daily purchases" line at the top of the chart panel.
+4. Check the **quick compare** chips right under the headline for an instant read on both podcast
+   scenarios at your current horizon price, or follow "See full comparison" down to the **Side by
+   side** strip for the full cards.
 
 ## Real vs. simulated
 
-- **From the podcast, labeled as such:** the $300,000 → $20-in-2-years figure (Noam Brown's claim),
-  the ~$3,000,000 starting cost for "this week's math result," and the $2.36 → $0.38-in-2-months
-  robot task figure from episode 303 — all bundled in `data/presets.json`. The math result's
-  decline rate is explicitly a *projection* using Brown's curve, not a number stated on the show.
-- **Everything else is your input:** starting cost, decline rate, and coffee price you type or
+- **From the podcast, labeled as such:** the $20 end-point and the "roughly two years" of Noam
+  Brown's claim are as stated. The actual quote for the starting cost is "hundreds of thousands
+  of dollars" — the $300K figure shown is an illustrative instantiation of that range, labeled as
+  such in the UI and `data/presets.json`. "This week's math result" similarly instantiates a
+  "multi-million-dollar" quote as $3M; its decline rate is explicitly a *projection* using
+  Brown's curve, not a number stated on the show, and the chart shows a "Projected rate" badge
+  whenever that preset is active so the chart alone doesn't imply otherwise.
+- **Illustrative, generic:** the kWh and kg horizon units and their default prices are not from
+  the podcast — they're a generic extension of the coffee-price idea, with no claim to a real
+  kWh or kg price and no attribution to any episode or person.
+- **Everything else is your input:** starting cost, decline rate, and horizon price you type or
   drag are plain exponential math (`cost(t) = startCost / decline^t`) computed live in the
-  browser, including the "year of daily coffees" line (coffee price × 365). No external data, no
+  browser, including the "year of daily purchases" line (price × 365). No external data, no
   backend, no tracking.
 
 ## v2 ideas
 
-- Let visitors save/share a scenario via a URL query string.
 - Pull in a live inflation-adjusted coffee price instead of a fixed default.
-- Let visitors toggle the second reference line between a few preset "baskets" (a year of
-  coffees, a month of groceries, a laptop) instead of only the coffee multiple.
+- Let visitors pick from more illustrative horizon baskets (a month of groceries, a laptop).
 
 ## Changelog
 
+### v4
+- Removed an incorrect reference to a second, unrelated episode (Moonshots #304) and its
+  dollar figures and named-person attributions from the footer and README — those claims
+  weren't in this prototype's brief and couldn't be verified, so the kWh/kg horizon units are
+  now described as a generic illustrative extension of the coffee-price idea with no episode
+  or person cited.
+- Raised caption, note, and footer text to the 15px body-text floor for readability.
+- Tightened the "This week's math result" preset's chip/card copy to say "projected on Brown's
+  curve" instead of the vaguer "same curve," matching the on-chart "Projected rate" badge.
+- Added a "Copy link to this scenario" button that encodes startCost, decline, coffee price,
+  and horizon unit into the URL's query string, so a scenario can be shared and reloaded.
+
+### v3
+- Added a horizon-unit toggle (☕ coffee / ⚡ kWh / ⚖️ kg) as an illustrative extension of the
+  original coffee-price idea.
+- Fixed a singular/plural bug in the crossing-date readout ("1 months" → "1 month").
+- Reworded the two dollar-figure presets so the UI and data file make clear the exact starting
+  costs ($300K, $3M) are illustrative instantiations of the vaguer phrases actually used on the
+  podcast ("hundreds of thousands," "multi-million-dollar"), not quoted numbers.
+- Added an on-chart "Projected rate" badge when the math-result preset is active, so a visitor
+  reading only the chart — not the sidebar note or README — isn't misled into thinking its
+  decline rate was stated on the show.
+- Removed the Episode 303 robot-task preset to tighten fidelity back to the Episode 288 brief;
+  the comparison strip and hero chips are back to the two directly-sourced scenarios.
+
 ### v2
-- Added a third podcast-cited preset, "Robot task cost (Ep 303)," pulling in the newer episode's
+- Added a third podcast-cited preset, "Robot task cost (Ep 303)," pulling in a newer episode's
   figure that a robot subtask's cost fell 84% in two months — already cheaper than a cup of
-  coffee today.
+  coffee today. (Removed in v3; see above.)
 - Added a second, dotted reference line and readout for "a year of daily coffees" (coffee price
   × 365), so the chart tells two crossing stories instead of one.
-- Added "quick compare" chips in the hero so all three podcast scenarios are visible, and the
-  full comparison strip discoverable, without scrolling.
+- Added "quick compare" chips in the hero so podcast scenarios are visible, and the full
+  comparison strip discoverable, without scrolling.
 - Accessibility: added explicit `aria-label`s to the three range sliders, and aligned the
   yearly-decline slider's minimum with its number field (both now floor at 1.01).
 

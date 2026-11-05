@@ -4,6 +4,24 @@
   const YEAR_MS = 365.25 * 24 * 3600 * 1000;
   const MAX_VIEW_YEARS = 12;
 
+  const UNITS = {
+    coffee: {
+      id: "coffee", icon: "☕", noun: "cup of coffee", plural: "coffees",
+      default: 5, min: 0.5, max: 15, step: 0.5,
+      caption: "As discussed on the podcast (Ep 288): priced against a daily coffee.",
+    },
+    kwh: {
+      id: "kwh", icon: "⚡", noun: "kWh of electricity", plural: "kWh",
+      default: 0.15, min: 0.01, max: 1, step: 0.01,
+      caption: "Illustrative extension: the same curve, priced against a kWh of electricity instead of coffee.",
+    },
+    kg: {
+      id: "kg", icon: "⚖️", noun: "kg of mass", plural: "kg",
+      default: 2, min: 0.1, max: 20, step: 0.1,
+      caption: "Illustrative extension: the same curve, priced against a kg of mass instead of coffee.",
+    },
+  };
+
   const els = {
     startCost: document.getElementById("startCost"),
     startCostSlider: document.getElementById("startCostSlider"),
@@ -11,15 +29,23 @@
     declineSlider: document.getElementById("declineSlider"),
     coffee: document.getElementById("coffee"),
     coffeeSlider: document.getElementById("coffeeSlider"),
+    unitBtns: Array.from(document.querySelectorAll(".unit-btn")),
+    unitLabel: document.getElementById("priceLabelText"),
+    unitCaption: document.getElementById("unitCaption"),
     presetBtns: Array.from(document.querySelectorAll(".preset-btn")),
     note: document.getElementById("activeNote"),
+    projectedBadge: document.getElementById("projectedBadge"),
+    crossLabel: document.getElementById("crossLabel"),
     crossDate: document.getElementById("crossDate"),
     crossSub: document.getElementById("crossSub"),
+    yearlyCrossLabel: document.getElementById("yearlyCrossLabel"),
     yearlyCrossDate: document.getElementById("yearlyCrossDate"),
     yearlyCrossSub: document.getElementById("yearlyCrossSub"),
     strip: document.getElementById("strip"),
     heroChips: document.getElementById("heroChips"),
+    heroCup: document.getElementById("heroCupGlyph"),
     svg: document.getElementById("chart"),
+    shareBtn: document.getElementById("shareBtn"),
   };
 
   const layers = {
@@ -40,7 +66,9 @@
   const state = {
     startCost: 300000,
     decline: brownFactor,
+    unit: "coffee",
     coffee: 5,
+    isProjected: false,
   };
 
   // ---------- math ----------
@@ -76,11 +104,18 @@
 
   function formatYears(y) {
     if (y < 0.08) return "almost immediately";
-    if (y < 1) return Math.round(y * 12) + " months";
+    if (y < 1) {
+      const months = Math.round(y * 12);
+      return months + (months === 1 ? " month" : " months");
+    }
     const years = Math.floor(y);
     const months = Math.round((y - years) * 12);
     if (months === 0) return years + (years === 1 ? " year" : " years");
     return years + "y " + months + "mo";
+  }
+
+  function unitOf() {
+    return UNITS[state.unit];
   }
 
   // ---------- presets ----------
@@ -94,9 +129,8 @@
     } catch (e) {
       // bundled fallback already set via defaults above
       presets = [
-        { id: "brown", label: "Noam Brown's claim", source: "as stated on the podcast", startCost: 300000, endCost: 20, years: 2, note: "$300K → $20 in 2 years." },
-        { id: "mathresult", label: "This week's math result", source: "as stated on the podcast, projected", startCost: 3000000, years: null, note: "$3M, projected on Brown's curve." },
-        { id: "robotsubtask", label: "Robot task cost", source: "as stated on the podcast", startCost: 2.36, endCost: 0.38, years: 0.16667, note: "$2.36 → $0.38 in 2 months, halving roughly every 3 weeks." },
+        { id: "brown", label: "Noam Brown's claim", source: "as stated on the podcast", startCost: 300000, endCost: 20, years: 2, note: "$300K → $20 in 2 years (illustrative instantiation)." },
+        { id: "mathresult", label: "This week's math result", source: "illustrative, projected", startCost: 3000000, years: null, note: "$3M, projected on Brown's curve.", isProjected: true },
       ];
     }
     renderStrip();
@@ -112,19 +146,27 @@
     els.presetBtns.forEach((b) => b.classList.toggle("is-active", b.dataset.preset === id));
   }
 
+  function updateProjectedBadge() {
+    els.projectedBadge.hidden = !state.isProjected;
+  }
+
   function applyPreset(id) {
     if (id === "custom") {
       setActivePreset("custom");
+      state.isProjected = false;
       els.note.textContent = "Your own numbers — adjust the sliders to explore any scenario.";
+      updateProjectedBadge();
       return;
     }
     const p = getPreset(id);
     if (!p) return;
     state.startCost = p.startCost;
     state.decline = p.years ? Math.pow(p.startCost / p.endCost, 1 / p.years) : brownFactor;
+    state.isProjected = !!p.isProjected;
     syncInputsFromState();
     setActivePreset(id);
     els.note.textContent = `${p.note} (${p.source})`;
+    updateProjectedBadge();
     render();
   }
 
@@ -139,7 +181,9 @@
 
   function onManualEdit() {
     setActivePreset("custom");
+    state.isProjected = false;
     els.note.textContent = "Your own numbers — adjust the sliders to explore any scenario.";
+    updateProjectedBadge();
   }
 
   function clampNum(v, min, fallback) {
@@ -175,22 +219,43 @@
   });
 
   els.coffee.addEventListener("input", () => {
-    state.coffee = clampNum(els.coffee.value, 0.5, state.coffee);
+    state.coffee = clampNum(els.coffee.value, unitOf().min, state.coffee);
     els.coffeeSlider.value = state.coffee;
-    onManualEdit();
     render();
     renderStrip();
   });
   els.coffeeSlider.addEventListener("input", () => {
     state.coffee = parseFloat(els.coffeeSlider.value);
     els.coffee.value = trimNum(state.coffee);
-    onManualEdit();
     render();
     renderStrip();
   });
 
   els.presetBtns.forEach((btn) => {
     btn.addEventListener("click", () => applyPreset(btn.dataset.preset));
+  });
+
+  function applyUnit(id) {
+    const u = UNITS[id];
+    if (!u) return;
+    state.unit = id;
+    state.coffee = u.default;
+    els.coffee.min = u.min;
+    els.coffee.step = u.step;
+    els.coffeeSlider.min = u.min;
+    els.coffeeSlider.max = u.max;
+    els.coffeeSlider.step = u.step;
+    syncInputsFromState();
+    els.unitLabel.textContent = `Price of a ${u.noun}`;
+    els.unitCaption.textContent = u.caption;
+    if (els.heroCup) els.heroCup.textContent = u.icon;
+    els.unitBtns.forEach((b) => b.classList.toggle("is-active", b.dataset.unit === id));
+    render();
+    renderStrip();
+  }
+
+  els.unitBtns.forEach((btn) => {
+    btn.addEventListener("click", () => applyUnit(btn.dataset.unit));
   });
 
   // ---------- chart ----------
@@ -211,6 +276,7 @@
 
   function render() {
     const { startCost, decline, coffee } = state;
+    const u = unitOf();
     const yearlyCoffee = coffee * 365;
     const tCrossRaw = yearsToCross(startCost, decline, coffee);
     const tCross = isFinite(tCrossRaw) ? Math.max(tCrossRaw, 0) : Infinity;
@@ -237,11 +303,14 @@
     }
 
     drawGrid(logMin, logMax, tMax, X, Y);
-    drawYearlyLine(yearlyCoffee, Y, plotW);
-    drawCoffeeLine(coffee, Y, plotW);
+    drawYearlyLine(yearlyCoffee, Y, plotW, u);
+    drawCoffeeLine(coffee, Y, plotW, u);
     drawCurve(startCost, decline, tMax, X, Y);
     drawMarker(tCross, coffee, tMax, X, Y);
     drawYearlyMarker(tYearly, yearlyCoffee, tMax, X, Y);
+
+    els.crossLabel.textContent = `Crosses the ${u.noun} line`;
+    els.yearlyCrossLabel.textContent = `Crosses a year of daily ${u.plural}`;
 
     // readout
     if (startCost <= coffee) {
@@ -300,25 +369,25 @@
     return t;
   }
 
-  function drawCoffeeLine(coffee, Y, plotW) {
+  function drawCoffeeLine(coffee, Y, plotW, u) {
     clearLayer(layers.coffee);
     const y = Y(coffee);
     layers.coffee.appendChild(el("line", {
       class: "coffee-line", x1: PAD.left, x2: VB_W - PAD.right, y1: y, y2: y,
     }));
     const label = el("text", { class: "coffee-label", x: PAD.left + 6, y: y - 8, "text-anchor": "start" });
-    label.textContent = `☕ cup of coffee — ${formatMoney(state.coffee)}`;
+    label.textContent = `${u.icon} ${u.noun} — ${formatMoney(state.coffee)}`;
     layers.coffee.appendChild(label);
   }
 
-  function drawYearlyLine(yearlyCoffee, Y, plotW) {
+  function drawYearlyLine(yearlyCoffee, Y, plotW, u) {
     clearLayer(layers.yearly);
     const y = Y(yearlyCoffee);
     layers.yearly.appendChild(el("line", {
       class: "yearly-line", x1: PAD.left, x2: VB_W - PAD.right, y1: y, y2: y,
     }));
     const label = el("text", { class: "yearly-label", x: VB_W - PAD.right - 6, y: y - 8, "text-anchor": "end" });
-    label.textContent = `📅 a year of daily coffees — ${formatMoney(yearlyCoffee)}`;
+    label.textContent = `📅 a year of daily ${u.plural} — ${formatMoney(yearlyCoffee)}`;
     layers.yearly.appendChild(label);
   }
 
@@ -390,12 +459,7 @@
     }
     const math = getPreset("mathresult");
     if (math) {
-      cards.push(cardFor("This week's math result", "podcast + projected", math.startCost, brownFactor, false));
-    }
-    const robot = getPreset("robotsubtask");
-    if (robot) {
-      const rFactor = Math.pow(robot.startCost / robot.endCost, 1 / robot.years);
-      cards.push(cardFor("Robot task cost (Ep 303)", "as stated on the podcast", robot.startCost, rFactor, false));
+      cards.push(cardFor("This week's math result", "illustrative + projected", math.startCost, brownFactor, false));
     }
     cards.push(cardFor("Your scenario", "live", state.startCost, state.decline, true));
 
@@ -407,7 +471,7 @@
 
   function renderHeroChips() {
     const chips = [];
-    [getPreset("brown"), getPreset("mathresult"), getPreset("robotsubtask")].forEach((p) => {
+    [getPreset("brown"), getPreset("mathresult")].forEach((p) => {
       if (!p) return;
       const decline = p.endCost ? Math.pow(p.startCost / p.endCost, 1 / p.years) : brownFactor;
       const t = yearsToCross(p.startCost, decline, state.coffee);
@@ -439,12 +503,68 @@
     return div;
   }
 
+  // ---------- shareable URL ----------
+
+  function updateURL() {
+    const params = new URLSearchParams();
+    params.set("startCost", trimNum(state.startCost));
+    params.set("decline", trimNum(state.decline));
+    params.set("coffee", trimNum(state.coffee));
+    params.set("unit", state.unit);
+    history.replaceState(null, "", `${location.pathname}?${params.toString()}`);
+  }
+
+  function applyStateFromURL() {
+    const params = new URLSearchParams(location.search);
+    if (!params.has("startCost") && !params.has("decline") && !params.has("coffee")) return false;
+
+    const unit = params.get("unit");
+    if (unit && UNITS[unit]) applyUnit(unit);
+
+    const startCost = parseFloat(params.get("startCost"));
+    if (isFinite(startCost) && startCost > 0) state.startCost = startCost;
+    const decline = parseFloat(params.get("decline"));
+    if (isFinite(decline) && decline > 1) state.decline = decline;
+    const coffee = parseFloat(params.get("coffee"));
+    if (isFinite(coffee) && coffee > 0) state.coffee = coffee;
+
+    state.isProjected = false;
+    syncInputsFromState();
+    setActivePreset("custom");
+    els.note.textContent = "Loaded from a shared link — adjust the sliders to explore further.";
+    updateProjectedBadge();
+    return true;
+  }
+
+  if (els.shareBtn) {
+    els.shareBtn.addEventListener("click", async () => {
+      updateURL();
+      try {
+        await navigator.clipboard.writeText(location.href);
+      } catch (e) {
+        // clipboard API unavailable; URL is still updated in the address bar
+      }
+      els.shareBtn.classList.add("is-copied");
+      const original = els.shareBtn.textContent;
+      els.shareBtn.textContent = "✓ Link copied";
+      setTimeout(() => {
+        els.shareBtn.classList.remove("is-copied");
+        els.shareBtn.textContent = original;
+      }, 1800);
+    });
+  }
+
   // ---------- init ----------
 
+  const loadedFromURL = applyStateFromURL();
   syncInputsFromState();
-  setActivePreset("brown");
-  els.note.textContent = "A frontier AI result that cost “hundreds of thousands of dollars” became doable for about $20 within roughly two years — cited by Peter Diamandis, attributed to Noam Brown. (as stated on the podcast)";
+  if (!loadedFromURL) {
+    setActivePreset("brown");
+    els.note.textContent = "Peter Diamandis, citing Noam Brown: a frontier AI result that cost “hundreds of thousands of dollars” (shown here as $300K) became doable for about $20 within roughly two years. (as stated on the podcast, exact starting figure is an illustrative instantiation)";
+  }
+  updateProjectedBadge();
   render();
+  updateURL();
   loadPresets().then(() => { render(); renderStrip(); });
 
   window.addEventListener("resize", render);

@@ -2,7 +2,7 @@
   "slug": "ep288-coffee-cup-horizon",
   "title": "Coffee Cup Horizon",
   "one_liner": "Enter what an AI feat costs today and see when it gets cheaper than a cup of coffee.",
-  "headline": "Pick a podcast-cited AI cost claim (or type your own), and watch an animated curve show exactly when it drops below a cup of coffee.",
+  "headline": "Type in what an AI result costs today, watch an animated log-scale curve fall, and see the exact month it crosses the price of a daily coffee.",
   "episode": {
     "slug": "should-we-slow-down-ai-progress-moonshots-288",
     "title": "Should we slow down AI progress? | MOONSHOTS #288",
@@ -12,7 +12,7 @@
   },
   "timestamp": "00:58:55",
   "idea_score": 4.55,
-  "version": 2,
+  "version": 3,
   "status": "ready",
   "scores": {
     "works": 9,
@@ -24,7 +24,7 @@
   },
   "overall": 8.35,
   "created": "2026-10-11T15:20:51+00:00",
-  "updated": "2026-10-21T12:11:11+00:00",
+  "updated": "2026-11-04T14:57:24+00:00",
   "history": [
     {
       "version": 1,
@@ -39,6 +39,15 @@
       "summary": "A well-executed, self-contained prototype that nails the episode's idea: three podcast-attributed presets, transparent exponential math, an animated log-scale chart with two crossing thresholds (one coffee, a year of coffees), and a side-by-side comparison strip. Code is clean, zero external dependencies, honest labeling throughout, and mobile/accessibility basics are handled. A couple of small polish items (decline slider range, unused params) keep it from being flawless but nothing blocks publishing.",
       "reasons": [
         "A newer episode (flying-tesla-car-robot-brains-halving-in-cost-every-3-weeks-and-why-incentives-decide-ai-alignment-303) revisits this topic: Watch the cost of an AI-driven robot task plunge toward zero as you slide through weeks of halving. (Imad cites a benchmark showing the cost for a frontier model to complete a robot subtask fell from $2.36 to about $0.38 in two months, an 84% drop, halving roughly every three weeks.)"
+      ]
+    },
+    {
+      "version": 3,
+      "at": "2026-11-04T14:57:24+00:00",
+      "overall": 8.35,
+      "summary": "A polished, well-labeled exponential-decay visualizer that matches the episode's \"Coffee Cup Horizon\" demo brief closely: podcast-quoted presets, free-form custom math, a second \"year of daily coffees\" line, a shareable URL, and a side-by-side comparison strip. Every illustrative or projected number is clearly flagged in the UI and README, math checks out (122.47×/yr = sqrt(300000/20), crossing dates line up with the on-screen math), and it works cleanly on both desktop and mobile with no console errors.",
+      "reasons": [
+        "A newer episode (chamath-agi-is-here-anthropics-100b-giveaway-elons-spacex-shares-for-72m-kids-ep-304) revisits this topic: Re-price your shopping cart, salary and rent in kilowatt-hours and kilograms instead of dollars. (Elon predicts conventional money stops mattering and currency becomes power and mass. Peter notes that whoever owns power plants, mines and rockets would then control the money supply.)"
       ]
     }
   ]
