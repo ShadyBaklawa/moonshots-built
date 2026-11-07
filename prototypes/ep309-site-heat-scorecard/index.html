@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Heat Scorecard — Moonshots, Built</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <svg class="brand-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 14.76V3.5a2 2 0 0 0-4 0v11.26a4 4 0 1 0 4 0Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="12" cy="17" r="2.2" fill="currentColor"/>
+        </svg>
+        <div>
+          <h1>Site Heat Scorecard</h1>
+          <p class="tagline">Score candidate data center sites for political &amp; permitting risk, then export a one-page memo.</p>
+        </div>
+      </div>
+      <p class="for-who">For data center developers, site-selection consultants and land brokers comparing which parcels are safe to pursue — enter your own sites below and act on the ranking.</p>
+    </div>
+  </header>
+
+  <section class="context-strip" aria-label="Episode context">
+    <div class="context-inner">
+      <span class="context-label">Why this matters <em>(as stated on the podcast)</em>:</span>
+      <div class="chip-row">
+        <span class="chip"><strong>56%</strong> opposed to big tech &amp; data centers</span>
+        <span class="chip"><strong>45%</strong> of planned US build could face restrictions <em>(Goldman Sachs est.)</em></span>
+        <span class="chip"><strong>12</strong> governor races won/led by pause candidates</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+
+    <!-- LEFT COLUMN: inputs -->
+    <section class="col col-input">
+
+      <div class="card" id="site-form-card">
+        <h2>Add a candidate site</h2>
+        <form id="site-form" novalidate>
+          <div class="field">
+            <label for="f-name">Site name</label>
+            <input id="f-name" name="name" type="text" placeholder="e.g. Riverton Parcel 12" required maxlength="60">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-state">State</label>
+              <input id="f-state" name="state" type="text" placeholder="GA" required maxlength="20">
+            </div>
+            <div class="field">
+              <label for="f-county">County</label>
+              <input id="f-county" name="county" type="text" placeholder="Walton" required maxlength="30">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-moratorium">Moratorium status</label>
+            <select id="f-moratorium" name="moratorium">
+              <option value="none">None on the table</option>
+              <option value="proposed">Proposed</option>
+              <option value="passed">Passed / in effect</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-vote-date">Next relevant vote date <span class="optional">(optional)</span></label>
+            <input id="f-vote-date" name="voteDate" type="date">
+          </div>
+
+          <div class="field">
+            <label for="f-distance">Distance to nearest homes (miles)</label>
+            <input id="f-distance" name="distance" type="number" min="0" step="0.1" placeholder="0.5" required>
+          </div>
+
+          <div class="field">
+            <label for="f-water">Water source</label>
+            <select id="f-water" name="water">
+              <option value="closed-loop">Closed-loop / air-cooled</option>
+              <option value="recycled">Recycled / reclaimed water</option>
+              <option value="groundwater">Groundwater / well</option>
+              <option value="municipal">Municipal / potable supply</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-abatement">Tax abatement</label>
+            <select id="f-abatement" name="abatement">
+              <option value="none">None requested</option>
+              <option value="pending">Pending</option>
+              <option value="approved">Approved</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-opposition">Known opposition groups <span class="optional">(comma-separated, blank if none)</span></label>
+            <input id="f-opposition" name="opposition" type="text" placeholder="e.g. Save Walton Water, Quiet Skies Coalition">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add site to scorecard</button>
+        </form>
+      </div>
+
+      <div class="card" id="weights-card">
+        <h2>Risk factor weights</h2>
+        <p class="hint">The tool's default assumptions — drag to match your own judgment. Scores update instantly.</p>
+        <div class="weights" id="weights"></div>
+        <button type="button" class="btn btn-ghost" id="reset-weights">Reset to defaults</button>
+      </div>
+
+      <div class="card" id="key-card">
+        <h2>Community talking points</h2>
+        <p class="hint">Optional — paste your own Anthropic API key to draft talking points per site. It stays only in this browser. Leave blank and we'll fill in labelled examples instead.</p>
+        <label for="api-key" class="sr-only">Anthropic API key</label>
+        <input id="api-key" type="password" placeholder="sk-ant-... (optional, stored in your browser only)" autocomplete="off">
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: results -->
+    <section class="col col-results">
+      <div class="results-head">
+        <h2>Scorecard <span id="site-count" class="count"></span></h2>
+        <button type="button" class="btn btn-primary" id="export-memo">Export memo</button>
+      </div>
+
+      <p class="hint" id="empty-hint">Add candidate sites on the left to see them ranked by risk here.</p>
+
+      <div id="scorecard" class="scorecard"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Inspired by Moonshots
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/the-great-collision-between-politics-and-ai-309" target="_blank" rel="noopener">#309</a>,
+    around 00:06:01. Fan-made prototype, not affiliated with the show.
+  </footer>
+</div>
+
+<!-- Printable memo, hidden on screen, shown via @media print -->
+<div id="memo" class="memo" aria-hidden="true">
+  <h1 id="memo-title">Site Heat Scorecard — Risk Memo</h1>
+  <p id="memo-date"></p>
+  <div id="memo-body"></div>
+  <p class="memo-footnote">Risk scores are a weighted estimate based on inputs supplied by the preparer, using the weights shown above. Not a substitute for legal or zoning advice.</p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

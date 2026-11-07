@@ -1,0 +1,37 @@
+{
+  "slug": "ep309-swarm-exposure",
+  "kind": "demo",
+  "title": "Swarm Exposure",
+  "one_liner": "Stack hundreds of simulated night-sky frames and watch satellite trails pile up into a glowing band.",
+  "headline": "Press Expose to watch 578 simulated photos stack into a satellite-trail band over Mount Taranaki, then drag a slider to turn it into a glowing future halo.",
+  "episode": {
+    "slug": "the-great-collision-between-politics-and-ai-309",
+    "title": "The Great Collision Between Politics and AI | #309",
+    "number": 309,
+    "date": "2026-11-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/the-great-collision-between-politics-and-ai-309"
+  },
+  "timestamp": "01:34:16",
+  "idea_score": 4.3,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 8,
+    "wow": 8,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-11-07T22:09:31+00:00",
+  "updated": "2026-11-07T22:09:31+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-07T22:09:31+00:00",
+      "overall": 8.35,
+      "summary": "A tight, self-contained canvas demo that nails the episode's image: frame-stacking animation, correctly sourced and clearly labelled \"today\" figures (578 frames, ~1,400 satellites, ~15,000 trail appearances), and an honestly-flagged illustrative slider that builds a convincing dusk halo. It resizes cleanly to mobile, handles reduced-motion, and the README documents a prior misattribution fix, showing real care about honesty. A few secondary-text sizes dip under the 15px guideline and the combined satellite readout could separate real from illustrative numbers more cleanly, but nothing here blocks publishing."
+    }
+  ]
+}

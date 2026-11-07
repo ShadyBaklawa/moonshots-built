@@ -1,0 +1,71 @@
+{
+  "title": "Moratorium Radar",
+  "one_liner": "A weekly briefing that tracks county and state data center moratoriums, zoning votes and opposition for site developers.",
+  "timestamp": "00:06:01",
+  "speaker": "Salim Ismail",
+  "context": "Salim says opposition to big tech and data centers shaped the midterms, Goldman estimates 45% of planned US build could face restrictions, and candidates calling for pauses won governor races. Dave adds that building will move to friendly states.",
+  "customer": "Mid-size data center developers, powered-land brokers, site-selection consultants and landowners trying to sell land for data centers in the US",
+  "problem": "Projects that are planned but not yet zoned can be killed by a local moratorium or a hostile county board. Today, tracking hundreds of county agendas, ordinances and opposition groups is done by hand or not at all.",
+  "revenue_model": "Subscription, about $300–$1,000 a month per firm for weekly state and county briefings, plus one-off site risk memos at about $1,500 each (estimate)",
+  "why_now": "The election made data centers a political issue in both parties. The hosts say the market priced in slowdowns for projects that are planned but not yet approved, and that building will move to states that welcome it.",
+  "first_steps": [
+    "Hand-build a tracker of data center moratorium and zoning actions in 3 states (for example Texas, Virginia, Tennessee) from public meeting agendas and local news",
+    "Send a free sample briefing to 20 developers and land brokers on LinkedIn and ask what they would pay for weekly coverage",
+    "Use an AI agent to summarise county agenda PDFs automatically, and sell 2 paid site risk memos"
+  ],
+  "cost_to_start": "About 2–3 weeks and under $500 (AI subscriptions, a newsletter tool, a domain) (estimate)",
+  "competition": "Some think-tank and advocacy reports on local data center opposition, plus general policy-monitoring platforms. Few focus on county-level data center votes.",
+  "risks": "Collecting county agendas is messy and some sites block scraping. Big developers may already pay lobbyists and consultants for this. The topic could cool off if the politics change.",
+  "money": 3,
+  "ease": 4,
+  "speed": 4,
+  "evidence": 5,
+  "tool": {
+    "title": "Site Heat Scorecard",
+    "one_liner": "Score candidate data center sites for local political and permitting risk, then export a one-page memo.",
+    "demo": "A developer enters candidate sites with simple facts: state, county, whether a moratorium is proposed or passed, the next vote date, distance to homes, water source, any tax abatement, and known opposition groups. The tool gives each site a weighted 0–100 risk score with the reasons spelled out, ranks the sites, and builds a printable memo. With a pasted API key it can also draft talking points for the community; without one, an example mode fills these in and labels them as examples.",
+    "data_plan": "The customer's own inputs. Default risk weights are editable and labelled as the tool's assumptions. Episode figures (56% opposition, 45% of planned build at risk, 12 governor races) appear only as context.",
+    "feasibility": 5,
+    "acceptance": [
+      "Entering 3 sites with different moratorium statuses gives 3 scores from 0–100, ranked, each with a list of the factors behind its score",
+      "Changing a factor weight slider re-scores and re-ranks the sites straight away",
+      "'Export memo' opens a print-ready one-page summary that names every site with its score and reasons",
+      "With no API key, the talking-points section fills with example text clearly labelled 'Example'",
+      "On a 375px-wide screen the site form and results stack into one readable column"
+    ]
+  },
+  "figures": [
+    {
+      "value": "56 percent",
+      "meaning": "share opposed to big tech and data centers in the midterm framing",
+      "timestamp": "00:06:01",
+      "said": "56 percent opposition to big tech and data centers",
+      "verified": true
+    },
+    {
+      "value": "45 percent",
+      "meaning": "Goldman Sachs estimate of planned US data center build that could face restrictions",
+      "timestamp": "00:06:01",
+      "said": "Goldman Sachs estimates 45 percent of planned U.S. center build",
+      "verified": true
+    },
+    {
+      "value": "12",
+      "meaning": "governor races where candidates calling for pauses won or led",
+      "timestamp": "00:06:01",
+      "said": "won or led in 12 gubernatorial races",
+      "verified": true
+    }
+  ],
+  "score": 3.9,
+  "slug": "ep309-moratorium-radar",
+  "episode": {
+    "slug": "the-great-collision-between-politics-and-ai-309",
+    "title": "The Great Collision Between Politics and AI | #309",
+    "number": 309,
+    "date": "2026-11-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/the-great-collision-between-politics-and-ai-309"
+  },
+  "tool_slug": "ep309-site-heat-scorecard",
+  "created": "2026-11-07T22:09:31+00:00"
+}
