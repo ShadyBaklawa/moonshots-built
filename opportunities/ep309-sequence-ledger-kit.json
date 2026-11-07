@@ -1,0 +1,64 @@
+{
+  "title": "Sequence Ledger Kit",
+  "one_liner": "Sets up record-keeping and vendor checks so small federally funded labs can follow new DNA-synthesis screening rules.",
+  "timestamp": "01:27:05",
+  "speaker": "Salim Ismail",
+  "context": "The White House issued NSTM-6. Federally funded researchers must use approved synthesis providers, with screening that generally covers sequences of 50 or more nucleotides, customer verification and record retention.",
+  "customer": "Small federally funded university labs, core facilities and early-stage US biotech startups with federal grants",
+  "problem": "New rules require researchers to buy only from approved providers and keep records for years. Small labs have no simple system to show which vendor was used, which orders were flagged, and when each record can be deleted.",
+  "revenue_model": "A $1,500 setup package (templates, a vendor-check workflow, training) plus a $49 a month logbook tool per lab (estimate)",
+  "why_now": "NSTM-6 was just released alongside new NIST standards, so labs must change how they buy synthetic DNA now.",
+  "first_steps": [
+    "Read NSTM-6 closely and write a two-page plain-language checklist",
+    "Share the checklist free with 30 lab managers and biosafety officers and ask what tracking they lack",
+    "Pilot the logbook tool with 2 labs for free in exchange for testimonials"
+  ],
+  "cost_to_start": "About 2 weeks and under $200 (estimate)",
+  "competition": "University biosafety offices, lab inventory and procurement software, and synthesis vendors' own portals",
+  "risks": "Institutional compliance offices may handle this centrally. The policy's details may change. It must avoid claiming legal certification. The market is small.",
+  "money": 2,
+  "ease": 4,
+  "speed": 3,
+  "evidence": 4,
+  "tool": {
+    "title": "Synthesis Order Logbook",
+    "one_liner": "A local, in-browser log of DNA/RNA orders that flags orders needing screening and tracks when records can be deleted.",
+    "demo": "A lab manager logs each order: date, vendor, whether the vendor is on the lab's approved list, sequence length, grant number and the requester's verification status. The tool flags orders at or above the 50-nucleotide screening threshold and orders from vendors not on the list. It works out each record's earliest deletion date from the order date and the eight-year retention period, and exports everything to CSV. Data stays in the browser's localStorage.",
+    "data_plan": "The customer's own entries, stored locally. The 50-nucleotide threshold and eight-year retention come from the episode and can be edited, with a note to check the official policy text.",
+    "feasibility": 5,
+    "acceptance": [
+      "Logging an order of 120 nucleotides from a vendor not on the approved list shows both a 'screening threshold' flag and an 'unapproved vendor' flag",
+      "An order dated 2026-11-07 shows a retention end date of 2034-11-07",
+      "'Export CSV' downloads a file containing every logged order and its flags",
+      "Reloading the page keeps the logged orders, and a visible note says the data is stored only in this browser",
+      "A banner says the thresholds are editable and that users should check the official policy"
+    ]
+  },
+  "figures": [
+    {
+      "value": "50 or more nucleotides",
+      "meaning": "sequence length generally covered by NSTM-6 screening",
+      "timestamp": "01:27:05",
+      "said": "screening generally covering sequences of 50 or more nucleotides",
+      "verified": true
+    },
+    {
+      "value": "eight-year",
+      "meaning": "record retention period under the policy",
+      "timestamp": "01:27:05",
+      "said": "customer verification, eight-year record retention, new NIST standards",
+      "verified": true
+    }
+  ],
+  "score": 3.05,
+  "slug": "ep309-sequence-ledger-kit",
+  "episode": {
+    "slug": "the-great-collision-between-politics-and-ai-309",
+    "title": "The Great Collision Between Politics and AI | #309",
+    "number": 309,
+    "date": "2026-11-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/the-great-collision-between-politics-and-ai-309"
+  },
+  "tool_slug": null,
+  "created": "2026-11-07T22:09:31+00:00"
+}

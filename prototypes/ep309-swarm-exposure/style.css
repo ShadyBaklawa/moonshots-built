@@ -1,0 +1,228 @@
+:root {
+  color-scheme: dark light;
+  --bg: #05060c;
+  --panel: #0d1020;
+  --ink: #e8ecf8;
+  --ink-dim: #9aa3c0;
+  --accent: #6fd6ff;
+  --accent2: #ffb86b;
+  --focus: #ffd36e;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 760px;
+  padding: 20px 16px 32px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(90deg, var(--ink), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header .sub {
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 20px 50px rgba(0,0,0,0.6);
+  background: #000;
+}
+
+#sky {
+  display: block;
+  width: 100%;
+  height: 58vh;
+  min-height: 320px;
+  max-height: 560px;
+}
+
+.overlay-readout {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.readout {
+  background: rgba(5, 8, 20, 0.62);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  display: flex;
+  flex-direction: column;
+  min-width: 108px;
+}
+
+.readout .num {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.readout .den {
+  color: var(--ink-dim);
+  font-size: 0.75rem;
+  margin-left: 2px;
+}
+
+.readout .lbl {
+  color: var(--ink-dim);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sim-label {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-dim);
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid var(--accent2);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.sim-label strong {
+  color: var(--ink);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+#exposeBtn {
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #3b8fb0);
+  color: #03131a;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 18px;
+  min-height: 44px;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+#exposeBtn:hover { filter: brightness(1.08); }
+#exposeBtn:active { transform: scale(0.98); }
+
+#exposeBtn:disabled {
+  cursor: default;
+  filter: grayscale(0.3) brightness(0.8);
+}
+
+#exposeBtn:focus-visible,
+#futureSlider:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.slider-block label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+#futureState {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+#futureSlider {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  accent-color: var(--accent2);
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  line-height: 1.4;
+}
+
+footer {
+  font-size: 0.75rem;
+  color: var(--ink-dim);
+  text-align: center;
+  line-height: 1.5;
+  padding-top: 4px;
+}
+
+footer a {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .overlay-readout {
+    gap: 6px;
+  }
+  .readout {
+    min-width: 92px;
+    padding: 5px 8px;
+  }
+  header h1 {
+    font-size: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #exposeBtn, .stage {
+    transition: none !important;
+  }
+}

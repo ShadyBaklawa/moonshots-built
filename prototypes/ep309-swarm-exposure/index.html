@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swarm Exposure — Moonshots, Built</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Swarm Exposure</h1>
+    <p class="sub">Stack hundreds of simulated night-sky frames and watch satellite trails pile into a glowing band.</p>
+  </header>
+
+  <div class="stage">
+    <canvas id="sky" aria-label="Simulated night sky over a mountain, with satellite trails that accumulate as frames are exposed"></canvas>
+    <div class="overlay-readout">
+      <div class="readout">
+        <span class="num" id="frameCount">0</span><span class="den">/578</span>
+        <span class="lbl">frames</span>
+      </div>
+      <div class="readout">
+        <span class="num" id="satCount">0</span>
+        <span class="lbl" id="satLabel">satellites (today)</span>
+      </div>
+      <div class="readout">
+        <span class="num" id="trailCount">0</span><span class="den">/~15,000</span>
+        <span class="lbl">trail appearances</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="sim-label">
+    ⚠ Orbits and trails are <strong>simulated</strong>, not real satellite tracking data.
+    The "today" preset numbers above are real: a photographer stacked <strong>578 photos</strong>
+    over Mount Taranaki, New Zealand, capturing <strong>~1,400 satellites</strong> and
+    <strong>~15,000 satellite trail appearances</strong> &mdash; as stated on the podcast, 01:34:16.
+  </p>
+
+  <div class="controls">
+    <button id="exposeBtn" type="button">Expose</button>
+
+    <div class="slider-block">
+      <label for="futureSlider">Future satellites <span id="futureState">— today —</span></label>
+      <input type="range" id="futureSlider" min="0" max="100" value="0" step="1" aria-describedby="futureHint">
+      <p id="futureHint" class="hint">Illustrative projection, not a measurement or forecast. Dragging to the
+        top adds a dense sun-synchronous ring that glows into a halo at dusk.</p>
+    </div>
+  </div>
+
+  <footer>
+    Inspired by Moonshots #309, "The Great Collision Between Politics and AI", around 01:34:16.
+    Fan-made prototype, not affiliated with the show.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/the-great-collision-between-politics-and-ai-309" target="_blank" rel="noopener">Episode source</a>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

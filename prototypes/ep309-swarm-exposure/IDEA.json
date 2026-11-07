@@ -1,0 +1,52 @@
+{
+  "title": "Swarm Exposure",
+  "one_liner": "Stack hundreds of simulated night-sky frames and watch satellite trails pile up into a glowing band.",
+  "timestamp": "01:34:16",
+  "speaker": "Salim Ismail",
+  "context": "A New Zealand photographer stacked hundreds of frames over Mount Taranaki and captured thousands of satellite trails. Alex calls it a baby Dyson swarm and predicts a visible compute halo in sun-synchronous orbit.",
+  "demo": "The visitor sees a dark sky over a mountain silhouette and presses 'Expose'. Frames stack one by one and the trails build up into a band with a running count of frames, satellites and trails. A 'future' slider adds more satellites, including a sun-synchronous ring, so the visitor can watch the band turn into a halo at dusk.",
+  "data_plan": "Simulated orbits rendered on a canvas, clearly labelled. The episode's photo figures (578 frames, ~1,400 satellites, ~15,000 trail appearances) are used as the default 'today' preset.",
+  "feasibility": 4,
+  "wow": 5,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Orbits are simplified, not real satellite data. It must be labelled as an illustration, not a forecast of brightness.",
+  "figures": [
+    {
+      "value": "578",
+      "meaning": "photos stacked in the Mount Taranaki image",
+      "timestamp": "01:34:16",
+      "said": "combined 578 photographs over two hours",
+      "verified": true
+    },
+    {
+      "value": "15,000",
+      "meaning": "satellite trail appearances captured",
+      "timestamp": "01:34:16",
+      "said": "almost 15,000 satellite trail appearances from about 1,400 satellites",
+      "verified": true
+    },
+    {
+      "value": "1,400",
+      "meaning": "distinct satellites in the image",
+      "timestamp": "01:34:16",
+      "said": "almost 15,000 satellite trail appearances from about 1,400 satellites",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Pressing 'Expose' stacks frames visibly, with a counter that climbs to 578 frames while trail lines build up",
+    "Moving the 'future satellites' slider to its highest setting draws a dense band or halo and updates the satellite count",
+    "A visible label says the orbits are simulated and names the photo figures used for the 'today' preset",
+    "The canvas resizes to fill a 375px-wide phone screen with controls below it"
+  ],
+  "score": 4.3,
+  "episode": {
+    "slug": "the-great-collision-between-politics-and-ai-309",
+    "title": "The Great Collision Between Politics and AI | #309",
+    "number": 309,
+    "date": "2026-11-07",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/the-great-collision-between-politics-and-ai-309"
+  }
+}
