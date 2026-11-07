@@ -81,3 +81,10 @@
 {"at": "2026-11-05T01:18:21+00:00", "label": "review:ep308-rubric-forge", "est_cost_usd": 0.2908, "turns": 19, "subtype": "success"}
 {"at": "2026-11-05T01:29:37+00:00", "label": "build:ep308-meltdown-monday", "est_cost_usd": 0.6725, "turns": 32, "subtype": "success"}
 {"at": "2026-11-05T01:32:57+00:00", "label": "review:ep308-meltdown-monday", "est_cost_usd": 0.3577, "turns": 17, "subtype": "success"}
+{"at": "2026-11-07T21:55:45+00:00", "label": "extract:the-great-collision-between-politics-and-ai-309", "est_cost_usd": 0.5468, "turns": 2, "subtype": "success"}
+{"at": "2026-11-07T21:59:46+00:00", "label": "build:ep309-site-heat-scorecard", "est_cost_usd": 0.5372, "turns": 19, "subtype": "success"}
+{"at": "2026-11-07T22:01:18+00:00", "label": "review:ep309-site-heat-scorecard", "est_cost_usd": 0.2692, "turns": 11, "subtype": "success"}
+{"at": "2026-11-07T22:05:48+00:00", "label": "build:ep309-swarm-exposure", "est_cost_usd": 0.523, "turns": 20, "subtype": "success"}
+{"at": "2026-11-07T22:07:43+00:00", "label": "review:ep309-swarm-exposure", "est_cost_usd": 0.2229, "turns": 10, "subtype": "success"}
+{"at": "2026-11-07T22:08:17+00:00", "label": "build:ep309-swarm-exposure:fix1", "est_cost_usd": 0.0983, "turns": 9, "subtype": "success"}
+{"at": "2026-11-07T22:09:31+00:00", "label": "review:ep309-swarm-exposure", "est_cost_usd": 0.1587, "turns": 10, "subtype": "success"}

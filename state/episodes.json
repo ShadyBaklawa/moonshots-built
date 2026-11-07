@@ -1,4 +1,62 @@
 {
+  "the-great-collision-between-politics-and-ai-309": {
+    "title": "The Great Collision Between Politics and AI | #309",
+    "date": "2026-11-07",
+    "number": 309,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/the-great-collision-between-politics-and-ai-309",
+    "status": "built",
+    "attempts": 0,
+    "found": "2026-11-07T21:53:30+00:00",
+    "updated": "2026-11-07T22:09:31+00:00",
+    "prototypes": [
+      "ep309-site-heat-scorecard",
+      "ep309-swarm-exposure"
+    ],
+    "briefs": [
+      "ep309-moratorium-radar",
+      "ep309-sequence-ledger-kit"
+    ],
+    "ideas": [
+      {
+        "title": "Swarm Exposure",
+        "score": 4.3,
+        "timestamp": "01:34:16"
+      },
+      {
+        "title": "Idea Batting Cage",
+        "score": 4.2,
+        "timestamp": "00:45:22"
+      },
+      {
+        "title": "The Grand Bargain",
+        "score": 4.2,
+        "timestamp": "00:18:35"
+      },
+      {
+        "title": "Watts to Wealth",
+        "score": 4.1,
+        "timestamp": "01:10:55"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Moratorium Radar",
+        "score": 3.9,
+        "timestamp": "00:06:01"
+      },
+      {
+        "title": "Sequence Ledger Kit",
+        "score": 3.05,
+        "timestamp": "01:27:05"
+      },
+      {
+        "title": "Host Deal Desk",
+        "score": 3.0,
+        "timestamp": "00:17:52"
+      }
+    ],
+    "summary": "With Peter away, Salim, Dave and Alex discuss a midterm election in which opposition to data centers became a real issue. They talk through Goldman's estimate that 45% of planned US data center build could face restrictions, the market selloff, and Alex's idea that towns should strike a 'grand bargain' with hyperscalers before compute moves to orbit. They also cover METR's finding that Anthropic's development is speeding up about 1.9x, a new joules-to-GDP benchmark (and an argued-over comparison of AI and New York City on value per gigawatt), the White House's new DNA-synthesis screening policy (NSTM-6), compute being sold out to small companies, and a long-exposure photo showing a 'baby Dyson swarm' of satellites."
+  },
   "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308": {
     "title": "Big Tech’s $3T AI Bet, Claude Writes 90% of Anthropic’s Code, AIs Editing AI Brains | EP #308",
     "date": "2026-11-05",
