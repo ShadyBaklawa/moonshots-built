@@ -1,0 +1,37 @@
+{
+  "slug": "ep310-egress-sniff-sheet",
+  "kind": "tool",
+  "title": "Egress Sniff Sheet",
+  "one_liner": "Paste a router or DNS log export and see which devices talk to the outside world, how much, and when.",
+  "headline": "Paste your lab's router or DNS export and get devices ranked by outbound traffic, after-hours flags, per-device destination lists, and a one-click network segmentation plan.",
+  "episode": {
+    "slug": "can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310",
+    "title": "Can Jensen Huang remain CEO? Inside NVIDIA’s next steps| MOONSHOTS #310",
+    "number": 310,
+    "date": "2026-11-12",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310"
+  },
+  "timestamp": "00:11:55",
+  "idea_score": 3.5,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 8,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.15,
+  "created": "2026-11-12T04:22:37+00:00",
+  "updated": "2026-11-12T04:22:37+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-12T04:22:37+00:00",
+      "overall": 8.15,
+      "summary": "A genuinely working, single-page audit tool that maps closely onto the Phone-Home Patrol opportunity: real client-side CSV parsing, correct after-hours detection, a working destination drill-down, and a segmentation plan that names actual flagged devices rather than canned output. Honesty is solid — simulated sample data and the in-browser-only claim are both clearly and accurately labeled, with no fabricated real-world figures. The main gaps are product-logic ones (rank- rather than threshold-based 'high volume' flagging, naive CSV parsing, exact-schema requirement) that limit it as a drop-in tool for messy real exports but don't block publishing."
+    }
+  ]
+}

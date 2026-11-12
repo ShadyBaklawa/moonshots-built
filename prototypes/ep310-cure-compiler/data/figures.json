@@ -1,0 +1,72 @@
+{
+  "episode": {
+    "number": 310,
+    "title": "Can Jensen Huang remain CEO? Inside NVIDIA's next steps| MOONSHOTS #310",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310"
+  },
+  "figures": [
+    {
+      "value": "$2 billion",
+      "meaning": "Approximate cost to bring one new drug to approval",
+      "timestamp": "00:53:48",
+      "said": "A new drug costs about $2 billion dollars",
+      "verified": true
+    },
+    {
+      "value": "10 trillion dollars",
+      "meaning": "Cost of 5,000 drugs at the conventional price",
+      "timestamp": "00:53:48",
+      "said": "5,000 of them is 10 trillion dollars",
+      "verified": true
+    },
+    {
+      "value": "30 years",
+      "meaning": "Years of global pharma research spending that $10T represents",
+      "timestamp": "00:53:48",
+      "said": "on earth for more than 30 years",
+      "verified": true
+    },
+    {
+      "value": "$2 million",
+      "meaning": "Hypothetical cost of adding one disease to an approved platform",
+      "timestamp": "00:54:40",
+      "said": "from $2 billion to $2 million",
+      "verified": true
+    },
+    {
+      "value": "$10 billion",
+      "meaning": "Cost of 5,000 diseases under the platform approach",
+      "timestamp": "00:54:40",
+      "said": "5,000 diseases cost $10 billion",
+      "verified": true
+    },
+    {
+      "value": "five years",
+      "meaning": "Typical wait for a molecular diagnosis among rare-disease patients who get one",
+      "timestamp": "00:55:33",
+      "said": "and the rest wait about five years",
+      "verified": true
+    },
+    {
+      "value": "1,200",
+      "meaning": "Certified medical geneticists in America",
+      "timestamp": "00:57:15",
+      "said": "America has about 1,200 certified medical geneticists",
+      "verified": true
+    },
+    {
+      "value": "25 to 30 million",
+      "meaning": "Americans with a rare disease",
+      "timestamp": "00:57:15",
+      "said": "for 25 to 30 million people with",
+      "verified": true
+    }
+  ],
+  "tissues": [
+    { "id": "liver", "label": "Liver", "diseases": 1200, "lockedByDefault": false, "note": "Lipid nanoparticles and AAV reliably reach the liver today." },
+    { "id": "blood", "label": "Blood / bone marrow", "diseases": 950, "lockedByDefault": false, "note": "Ex vivo editing of blood stem cells is already in clinical use." },
+    { "id": "eye", "label": "Eye", "diseases": 450, "lockedByDefault": false, "note": "A small, enclosed, easily injected compartment." },
+    { "id": "kidney", "label": "Kidney", "diseases": 900, "lockedByDefault": true, "note": "Filtration and tissue structure make durable delivery hard." },
+    { "id": "brain", "label": "Brain (most regions)", "diseases": 1500, "lockedByDefault": true, "note": "The blood-brain barrier blocks most delivery vehicles." }
+  ]
+}

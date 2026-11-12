@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cure Compiler &mdash; Moonshots, Built</title>
+<meta name="description" content="A thought experiment: what if curing 5,000 diseases cost billions instead of trillions?">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="banner" role="note">
+  <span class="banner-tag">THOUGHT EXPERIMENT</span>
+  <p>This scenario was voiced by an AI thought-experiment agent on the podcast, not a scientific
+  finding. It is <strong>not medical information or advice</strong> about any disease.</p>
+</header>
+
+<main class="wrap">
+
+  <h1>Cure Compiler<span class="cursor">_</span></h1>
+  <p class="subhead">Approve the delivery platform once. Compile a cure for each new disease
+    by swapping the sequence &mdash; as argued <span class="cite">(00:54:40)</span>.</p>
+
+  <section class="stage">
+
+    <!-- Body map: comes first in source so it stacks above the counter on phones -->
+    <section class="panel body-panel" aria-labelledby="body-heading">
+      <h2 id="body-heading">Delivery map <span class="sim-tag">simulated disease counts</span></h2>
+      <p class="panel-hint">Click a greyed tissue to "unlock" it and see how many more of the
+        5,000 diseases become reachable.</p>
+
+      <div class="body-stage">
+        <svg viewBox="0 0 220 420" class="body-svg" role="img" aria-label="Human body map with clickable tissues">
+          <path d="M110 18 C 70 18 55 55 60 110 C 40 130 30 180 35 230 L 55 225 C 50 280 45 330 55 400 L 90 400 L 95 300 L 110 300 L 125 300 L 130 400 L 165 400 C 175 330 170 280 165 225 L 185 230 C 190 180 180 130 160 110 C 165 55 150 18 110 18 Z"
+                fill="#0c1a16" stroke="#1d3a30" stroke-width="2"/>
+
+          <circle class="tissue" data-tissue="brain" cx="110" cy="55" r="30"/>
+          <circle class="tissue" data-tissue="eye" cx="122" cy="52" r="7"/>
+          <circle class="tissue" data-tissue="blood" cx="110" cy="150" r="22"/>
+          <circle class="tissue" data-tissue="liver" cx="88" cy="190" r="20"/>
+          <circle class="tissue" data-tissue="kidney" cx="95" cy="225" r="10"/>
+          <circle class="tissue" data-tissue="kidney" cx="130" cy="225" r="10"/>
+        </svg>
+
+        <ul class="legend" id="legend"></ul>
+      </div>
+
+      <p class="reachable">
+        Reachable today: <strong id="reachable-count">0</strong> / 5,000 diseases
+        <span class="sim-tag">simulated</span>
+      </p>
+    </section>
+
+    <!-- Cost counter -->
+    <section class="panel cost-panel" aria-labelledby="cost-heading">
+      <h2 id="cost-heading">Cost to cure 5,000 diseases</h2>
+      <div class="counter" id="total-cost" aria-live="polite">$10.00 trillion</div>
+      <p class="counter-sub"><span id="span-years">30 years</span> of global pharma R&amp;D
+        <span class="cite">(00:53:48)</span></p>
+
+      <label class="slider-label" for="cost-slider">
+        Cost per added disease: <strong id="cost-per-disease">$2,000,000,000</strong>
+        <span class="cite">(00:54:40)</span>
+      </label>
+      <input type="range" id="cost-slider" min="0" max="1000" value="1000" step="1"
+             aria-label="Cost per added disease, from 2 million to 2 billion dollars">
+      <div class="slider-ticks">
+        <span>$2M <em>platform approach</em></span>
+        <span>$2B <em>one drug at a time</em></span>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- Geneticist gauge -->
+  <section class="panel gauge-panel" aria-labelledby="gauge-heading">
+    <h2 id="gauge-heading">The other bottleneck: too few geneticists</h2>
+    <div class="gauge">
+      <div class="gauge-side">
+        <div class="gauge-num">1,200</div>
+        <div class="gauge-label">certified medical geneticists in America <span class="cite">(00:57:15)</span></div>
+      </div>
+      <div class="gauge-bar" role="img" aria-label="1200 geneticists versus 25 to 30 million patients">
+        <div class="gauge-fill"></div>
+      </div>
+      <div class="gauge-side right">
+        <div class="gauge-num">25&ndash;30M</div>
+        <div class="gauge-label">Americans with a rare disease <span class="cite">(00:57:15)</span></div>
+      </div>
+    </div>
+    <p class="gauge-derived">That's roughly <strong>1 geneticist per 21,000 patients</strong>
+      <span class="sim-tag">derived from the two figures above</span>. Most rare-disease patients
+      who get a molecular diagnosis still wait about <strong>five years</strong> for it
+      <span class="cite">(00:55:33)</span>.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310" target="_blank" rel="noopener">Moonshots #310</a>,
+  around 00:54:40. Fan-made prototype, not affiliated with the show.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

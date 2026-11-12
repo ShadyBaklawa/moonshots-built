@@ -1,0 +1,37 @@
+{
+  "slug": "ep310-cure-compiler",
+  "kind": "demo",
+  "title": "Cure Compiler",
+  "one_liner": "See how 'approve the process, not the drug' shrinks the bill for curing 5,000 diseases from trillions to billions.",
+  "headline": "Drag a slider to watch the bill for curing 5,000 diseases fall from $10 trillion to $10 billion, then click body parts to see which tissues gene-editing can actually reach today.",
+  "episode": {
+    "slug": "can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310",
+    "title": "Can Jensen Huang remain CEO? Inside NVIDIA’s next steps| MOONSHOTS #310",
+    "number": 310,
+    "date": "2026-11-12",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310"
+  },
+  "timestamp": "00:54:40",
+  "idea_score": 4.55,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-11-12T04:27:45+00:00",
+  "updated": "2026-11-12T04:27:45+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-12T04:27:45+00:00",
+      "overall": 8.35,
+      "summary": "A tight, well-executed embodiment of the episode's thought experiment: the log-scale slider, clickable body map, and geneticist gauge all work as specified, every real number traces to a verified figure, per-tissue counts are clearly tagged simulated and sum exactly to 5,000, and the thought-experiment banner plus footer credit are both present. Minor polish items remain (small SVG touch targets on mobile, static aria-labels on the circles) but nothing blocks publishing.</parameter>\n</invoke>\n"
+    }
+  ]
+}
