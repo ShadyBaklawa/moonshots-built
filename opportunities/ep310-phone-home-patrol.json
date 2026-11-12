@@ -1,0 +1,49 @@
+{
+  "title": "Phone-Home Patrol",
+  "one_liner": "Audits connected robots, cameras and lab gear for unexpected outbound traffic, then segments them off the network.",
+  "timestamp": "00:11:55",
+  "speaker": "Dave Blundin",
+  "context": "Dave says MIT investigated its Chinese-made robots internally and found them sending video and audio back to China. The robots are now confined to a separate room. He adds that anything connected to the internet can leak data in subtle ways.",
+  "customer": "University research labs, robotics and hardware startups, and small manufacturers running imported robots, cameras or IoT lab equipment",
+  "problem": "Labs plug in cheap connected robots and cameras without knowing what those devices send out. They have no time or in-house skill to watch the traffic, isolate the devices, or show a funder or partner that sensitive work isn't leaking.",
+  "revenue_model": "Fixed-fee audit, about $1,500–$5,000 per lab depending on device count, plus an optional quarterly re-check at about $500 (estimate)",
+  "why_now": "The hosts describe a confirmed case of lab robots leaking audio and video, and predict a broad push against Chinese hardware and software in research settings. Research-security scrutiny of labs is rising.",
+  "first_steps": [
+    "Run the audit on your own home lab or a friend's: capture a week of router/DNS logs and write up a sample report",
+    "Email 15 robotics and engineering lab managers offering a free device-traffic snapshot",
+    "Package a fixed-price offer (inventory, traffic capture, VLAN segmentation plan) and a one-page sample report"
+  ],
+  "cost_to_start": "About 2 weeks and $200–$500 for a small managed switch or router for demos, plus outreach",
+  "competition": "Enterprise network-detection vendors and IT security consultancies exist, but few target small labs with a fixed-price device audit",
+  "risks": "University IT departments may treat it as their job and block outside help. Labs may not be willing to pay. You need real networking skill, and a mistake could disrupt research gear. Monitor only with written authorisation from the lab.",
+  "money": 3,
+  "ease": 3,
+  "speed": 4,
+  "evidence": 4,
+  "tool": {
+    "title": "Egress Sniff Sheet",
+    "one_liner": "Paste a router or DNS log export and see which devices talk to the outside world, how much, and when.",
+    "demo": "The customer pastes a CSV exported from their router, firewall or DNS resolver (device, destination domain or IP, bytes, timestamp) and labels which devices are robots or cameras. The page ranks devices by outbound volume, flags traffic at night when the lab is empty and steady upload-heavy streams, and lists every external destination per device. It then writes a segmentation plan that suggests which devices to move to an isolated network and which destinations to allow.",
+    "data_plan": "Entirely the customer's own exported logs, parsed in the browser. Nothing is uploaded. A bundled sample log, clearly labelled as simulated, powers example mode.",
+    "feasibility": 4,
+    "acceptance": [
+      "Pasting the sample CSV shows a table of devices ranked by outbound megabytes, with the top uploader highlighted",
+      "Devices sending traffic between 22:00 and 06:00 get an 'after-hours' flag and their night-time bytes are shown",
+      "Clicking a device lists every external destination it contacted, with counts",
+      "'Generate plan' produces a segmentation checklist naming each flagged device",
+      "The sample log is labelled 'simulated example data' and the page states that nothing leaves the browser"
+    ]
+  },
+  "figures": [],
+  "score": 3.5,
+  "slug": "ep310-phone-home-patrol",
+  "episode": {
+    "slug": "can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310",
+    "title": "Can Jensen Huang remain CEO? Inside NVIDIA’s next steps| MOONSHOTS #310",
+    "number": 310,
+    "date": "2026-11-12",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310"
+  },
+  "tool_slug": "ep310-egress-sniff-sheet",
+  "created": "2026-11-12T04:27:45+00:00"
+}

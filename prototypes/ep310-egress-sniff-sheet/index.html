@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Egress Sniff Sheet — who's phoning home?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanline" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><span class="blip" aria-hidden="true"></span> Egress Sniff Sheet</h1>
+    <p class="tagline">For lab managers and PIs: paste your router, firewall or DNS export and see exactly which devices are talking to the outside world — how much, to where, and at what hour.</p>
+    <p class="privacy-note">🔒 Everything below runs in this browser tab. Your log is parsed on your device and is never uploaded, stored or sent anywhere.</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="panel" id="input-panel">
+    <h2>1. Load a log</h2>
+    <p class="hint">Paste CSV rows with columns <code>device, destination, bytes, timestamp</code> (one connection per row). Exported from your router, firewall or DNS resolver.</p>
+    <textarea id="csv-input" rows="8" placeholder="device,destination,bytes,timestamp
+Robot-Arm-07,telemetry.robofleet-cn.net,241172,2026-11-09 08:05:00
+Cam-Lobby-01,cam-relay.farcloud.io,4802478,2026-11-09 09:02:00
+..."></textarea>
+    <div class="input-row">
+      <input type="file" id="file-input" accept=".csv,text/csv" aria-label="Upload a CSV file">
+      <div class="button-row">
+        <button id="load-sample-btn" type="button" class="btn secondary">Load simulated example data</button>
+        <button id="analyze-btn" type="button" class="btn primary">Analyze traffic</button>
+      </div>
+    </div>
+    <p id="input-error" class="error-msg" role="alert" hidden></p>
+    <p id="sample-flag" class="sample-flag" hidden>⚠ This is simulated example data — a fictional lab network created to demonstrate the tool, not a real audit.</p>
+  </section>
+
+  <section class="panel" id="results-panel" hidden>
+    <h2>2. Devices ranked by outbound traffic</h2>
+    <div class="summary-bar" id="summary-bar"></div>
+    <div class="table-wrap">
+      <table id="device-table">
+        <thead>
+          <tr>
+            <th scope="col">Device</th>
+            <th scope="col">Type</th>
+            <th scope="col">Outbound</th>
+            <th scope="col">After-hours</th>
+            <th scope="col">Night bytes</th>
+            <th scope="col">Destinations</th>
+          </tr>
+        </thead>
+        <tbody id="device-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel" id="detail-panel" hidden>
+    <h2>3. Destinations for <span id="detail-device-name"></span></h2>
+    <p class="hint" id="detail-hint"></p>
+    <div class="table-wrap">
+      <table id="detail-table">
+        <thead>
+          <tr>
+            <th scope="col">Destination</th>
+            <th scope="col">Connections</th>
+            <th scope="col">Bytes</th>
+            <th scope="col">First seen</th>
+            <th scope="col">Last seen</th>
+          </tr>
+        </thead>
+        <tbody id="detail-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel" id="plan-panel" hidden>
+    <h2>4. Segmentation plan</h2>
+    <p class="hint">Flags every device worth isolating and the destinations it's safe to keep allowed, based on the traffic above.</p>
+    <button id="generate-plan-btn" type="button" class="btn primary">Generate plan</button>
+    <div id="plan-output"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310" target="_blank" rel="noopener">Moonshots #310</a>, around 00:11:55, where Dave Blundin describes MIT finding Chinese-made lab robots sending audio and video back to China. Fan-made prototype, not affiliated with the show.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

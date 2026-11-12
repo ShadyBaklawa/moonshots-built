@@ -1,0 +1,49 @@
+{
+  "title": "Origin Check Register",
+  "one_liner": "Inventories every AI model a regulated small firm uses, including inside vendors, and flags where each one comes from.",
+  "timestamp": "00:12:38",
+  "speaker": "Salim Ismail and Dave Blundin",
+  "context": "Salim predicts a hard push against Chinese open-source models after a study found auto-generated backdoors. Dave expects banking, insurance and other regulated industries to bar them entirely, and research labs to follow.",
+  "customer": "US community banks, credit unions, independent insurance agencies, fintech startups and small federal contractors with 20–500 staff",
+  "problem": "These firms often don't know which AI models are running in their tools. Many SaaS vendors quietly embed open-weight models. When an examiner, a prime contractor or a client asks them to prove no restricted-origin models are in use, they have no answer and no register.",
+  "revenue_model": "Fixed-fee inventory and register, about $2,500–$6,000 per firm, then about $300 a month to keep it current as vendors change (estimate)",
+  "why_now": "The hosts expect an imminent policy push against Chinese models in regulated and government-adjacent work, triggered by the espionage story and backdoor research. Firms that get ahead of it can answer vendor questionnaires before rules land.",
+  "first_steps": [
+    "Write a one-page 'AI model origin questionnaire' to send to software vendors and test it on 5 common SaaS tools",
+    "Offer a free 30-minute model inventory call to 10 credit unions or insurance agencies on LinkedIn",
+    "Build the register template plus a sample report from one real (anonymised) inventory and quote a fixed price"
+  ],
+  "cost_to_start": "About 1–2 weeks and under $300 for a site, templates and outreach tooling",
+  "competition": "Broad AI-governance platforms and GRC consultancies exist, but most are pricey and not focused on model provenance for small regulated firms",
+  "risks": "The predicted restrictions may never become formal rules. Vendors may refuse to disclose which models they use. Big GRC platforms may add a provenance field. It must not drift into legal advice, so frame it as an inventory, not a compliance opinion.",
+  "money": 3,
+  "ease": 4,
+  "speed": 4,
+  "evidence": 3,
+  "tool": {
+    "title": "Model Origin Sorter",
+    "one_liner": "Paste the AI tools and models your firm uses and get an origin-flagged register you can hand to an auditor.",
+    "demo": "The customer pastes a list of tools, models or API names, one per line, with an optional vendor column. The page matches each entry against a bundled table of common model families and lists their developer, developer country, licence type and whether the weights are open. Anything it can't match goes into a 'needs vendor answer' list, with a pre-written email to send the vendor. Output is a downloadable CSV register and a printable summary.",
+    "data_plan": "The customer's own list, plus a bundled, hand-curated table of well-known model families (developer, country, licence) from public model cards, with a 'last checked' date. No episode figures are used.",
+    "feasibility": 4,
+    "acceptance": [
+      "Pasting a list that includes 'Llama 3', 'Qwen2.5' and 'MyVendorBot' shows three rows: two matched with developer and country, and 'MyVendorBot' under 'Needs vendor answer'",
+      "Clicking 'Example' loads a 10-item sample list and fills the register and summary without typing",
+      "'Download CSV' produces a file whose rows match the on-screen register",
+      "Each unmatched item has a 'Copy vendor email' button that copies a questionnaire mentioning that tool's name",
+      "The page shows a visible note that the table is curated reference data with a last-checked date, not legal advice"
+    ]
+  },
+  "figures": [],
+  "score": 3.4,
+  "slug": "ep310-origin-check-register",
+  "episode": {
+    "slug": "can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310",
+    "title": "Can Jensen Huang remain CEO? Inside NVIDIA’s next steps| MOONSHOTS #310",
+    "number": 310,
+    "date": "2026-11-12",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310"
+  },
+  "tool_slug": null,
+  "created": "2026-11-12T04:27:45+00:00"
+}

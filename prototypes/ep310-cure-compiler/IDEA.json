@@ -1,0 +1,88 @@
+{
+  "title": "Cure Compiler",
+  "one_liner": "See how 'approve the process, not the drug' shrinks the bill for curing 5,000 diseases from trillions to billions.",
+  "timestamp": "00:54:40",
+  "speaker": "Dave Blundin (via an agent's thought experiment)",
+  "context": "Dave's agent argued that 5,000 drugs at about $2B each is unaffordable. Approve a gene-editing platform once and each new disease becomes a sequence change costing about $2M. The bottlenecks are delivery to tissues, late diagnosis, and too few geneticists.",
+  "demo": "A big counter shows the total cost of curing 5,000 diseases. A slider sets the cost per added disease, from $2B down to $2M, and the counter drops from $10 trillion toward $10 billion. A body map lights up the tissues where delivery works per the note (liver, blood, eye) and greys out kidney and most of the brain. Visitors can mark a tissue as 'unlocked' to see how many simulated diseases become reachable. A side gauge compares the number of geneticists to the number of patients.",
+  "data_plan": "A bundled dataset of the episode's stated figures. Disease counts per tissue are clearly labelled simulated illustrative data.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "This was a thought experiment voiced by an AI avatar, not established fact, and the page must say so. It is not medical information about any disease. Per-tissue disease counts are invented for illustration and must be labelled.",
+  "figures": [
+    {
+      "value": "$2 billion",
+      "meaning": "Approximate cost to bring one new drug to approval",
+      "timestamp": "00:53:48",
+      "said": "A new drug costs about $2 billion dollars",
+      "verified": true
+    },
+    {
+      "value": "10 trillion dollars",
+      "meaning": "Cost of 5,000 drugs at the conventional price",
+      "timestamp": "00:53:48",
+      "said": "5,000 of them is 10 trillion dollars",
+      "verified": true
+    },
+    {
+      "value": "30 years",
+      "meaning": "Years of global pharma research spending that $10T represents",
+      "timestamp": "00:53:48",
+      "said": "on earth for more than 30 years",
+      "verified": true
+    },
+    {
+      "value": "$2 million",
+      "meaning": "Hypothetical cost of adding one disease to an approved platform",
+      "timestamp": "00:54:40",
+      "said": "from $2 billion to $2 million",
+      "verified": true
+    },
+    {
+      "value": "$10 billion",
+      "meaning": "Cost of 5,000 diseases under the platform approach",
+      "timestamp": "00:54:40",
+      "said": "5,000 diseases cost $10 billion",
+      "verified": true
+    },
+    {
+      "value": "five years",
+      "meaning": "Typical wait for a molecular diagnosis among rare-disease patients who get one",
+      "timestamp": "00:55:33",
+      "said": "and the rest wait about five years",
+      "verified": true
+    },
+    {
+      "value": "1,200",
+      "meaning": "Certified medical geneticists in America",
+      "timestamp": "00:57:15",
+      "said": "America has about 1,200 certified medical geneticists",
+      "verified": true
+    },
+    {
+      "value": "25 to 30 million",
+      "meaning": "Americans with a rare disease",
+      "timestamp": "00:57:15",
+      "said": "for 25 to 30 million people with",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Dragging the cost-per-disease slider from $2B to $2M updates the total counter from $10 trillion to $10 billion",
+    "Clicking 'kidney' on the body map toggles it to unlocked and increases the reachable-disease count, which is labelled 'simulated'",
+    "A banner states the scenario is a thought experiment from the episode and not medical advice",
+    "The geneticist gauge shows 1,200 geneticists against 25–30 million patients, with the timestamp cited",
+    "On a phone-width screen the body map sits above the counter and both stay usable"
+  ],
+  "score": 4.55,
+  "episode": {
+    "slug": "can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310",
+    "title": "Can Jensen Huang remain CEO? Inside NVIDIA’s next steps| MOONSHOTS #310",
+    "number": 310,
+    "date": "2026-11-12",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310"
+  }
+}
