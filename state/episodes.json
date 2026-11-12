@@ -4,11 +4,59 @@
     "date": "2026-11-12",
     "number": 310,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310",
-    "status": "error",
+    "status": "built",
     "attempts": 1,
     "found": "2026-11-12T00:45:43+00:00",
-    "updated": "2026-11-12T00:46:12+00:00",
-    "note": "extract failed: extract:can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310: success: You've hit your 5-hour limit · resets 2am (UTC)"
+    "updated": "2026-11-12T04:27:45+00:00",
+    "note": "extract failed: extract:can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310: success: You've hit your 5-hour limit · resets 2am (UTC)",
+    "prototypes": [
+      "ep310-egress-sniff-sheet",
+      "ep310-cure-compiler"
+    ],
+    "briefs": [
+      "ep310-phone-home-patrol",
+      "ep310-origin-check-register"
+    ],
+    "ideas": [
+      {
+        "title": "Cure Compiler",
+        "score": 4.55,
+        "timestamp": "00:54:40"
+      },
+      {
+        "title": "Doubling Clock",
+        "score": 4.2,
+        "timestamp": "00:43:10"
+      },
+      {
+        "title": "Watt Wars",
+        "score": 4.1,
+        "timestamp": "00:20:15"
+      },
+      {
+        "title": "Robot Census",
+        "score": 4.1,
+        "timestamp": "01:19:35"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Phone-Home Patrol",
+        "score": 3.5,
+        "timestamp": "00:11:55"
+      },
+      {
+        "title": "Origin Check Register",
+        "score": 3.4,
+        "timestamp": "00:12:38"
+      },
+      {
+        "title": "Diversion Desk",
+        "score": 3.0,
+        "timestamp": "00:01:51"
+      }
+    ],
+    "summary": "The hosts open on alleged espionage and GPU-diversion reporting around NVIDIA's CEO. They predict a crackdown on Chinese open-weight models and Chinese-made hardware in regulated industries and research labs. Then they cover Anthropic's IPO and its Fable/Mythos 5.2 models, autonomy time horizons doubling every two months, Salim's AI-vs-human output-per-kWh crossover, an agent's 'compile 5,000 cures' thought experiment, Elon's TerraFab and robot-productivity math, Delaware's draft AI-run company structure, grocery restocking robots, NASA's lunar contracts, and a billionaires-vs-poverty chart."
   },
   "the-great-collision-between-politics-and-ai-309": {
     "title": "The Great Collision Between Politics and AI | #309",

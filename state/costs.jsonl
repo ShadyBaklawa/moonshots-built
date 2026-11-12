@@ -89,3 +89,8 @@
 {"at": "2026-11-07T22:08:17+00:00", "label": "build:ep309-swarm-exposure:fix1", "est_cost_usd": 0.0983, "turns": 9, "subtype": "success"}
 {"at": "2026-11-07T22:09:31+00:00", "label": "review:ep309-swarm-exposure", "est_cost_usd": 0.1587, "turns": 10, "subtype": "success"}
 {"at": "2026-11-12T00:46:12+00:00", "label": "extract:can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
+{"at": "2026-11-12T04:15:03+00:00", "label": "extract:can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310", "est_cost_usd": 0.6791, "turns": 2, "subtype": "success"}
+{"at": "2026-11-12T04:20:54+00:00", "label": "build:ep310-egress-sniff-sheet", "est_cost_usd": 0.914, "turns": 45, "subtype": "success"}
+{"at": "2026-11-12T04:22:37+00:00", "label": "review:ep310-egress-sniff-sheet", "est_cost_usd": 0.2906, "turns": 12, "subtype": "success"}
+{"at": "2026-11-12T04:26:16+00:00", "label": "build:ep310-cure-compiler", "est_cost_usd": 0.5155, "turns": 27, "subtype": "success"}
+{"at": "2026-11-12T04:27:45+00:00", "label": "review:ep310-cure-compiler", "est_cost_usd": 0.2119, "turns": 12, "subtype": "success"}
