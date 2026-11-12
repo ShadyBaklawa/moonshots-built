@@ -88,3 +88,4 @@
 {"at": "2026-11-07T22:07:43+00:00", "label": "review:ep309-swarm-exposure", "est_cost_usd": 0.2229, "turns": 10, "subtype": "success"}
 {"at": "2026-11-07T22:08:17+00:00", "label": "build:ep309-swarm-exposure:fix1", "est_cost_usd": 0.0983, "turns": 9, "subtype": "success"}
 {"at": "2026-11-07T22:09:31+00:00", "label": "review:ep309-swarm-exposure", "est_cost_usd": 0.1587, "turns": 10, "subtype": "success"}
+{"at": "2026-11-12T00:46:12+00:00", "label": "extract:can-jensen-huang-remain-ceo-inside-nvidia-s-next-steps-moonshots-310", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
