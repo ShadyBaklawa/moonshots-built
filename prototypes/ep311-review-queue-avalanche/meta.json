@@ -1,0 +1,37 @@
+{
+  "slug": "ep311-review-queue-avalanche",
+  "kind": "demo",
+  "title": "Review Queue Avalanche",
+  "one_liner": "Watch human code reviewers drown as AI output speeds up, until the loop closes by default.",
+  "headline": "Drag AI output and human-reviewer sliders to watch a pull-request avalanche bury code review until the \"loop closes by default.\"",
+  "episode": {
+    "slug": "jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live",
+    "title": "Jensen’s Departure, NVIDIA’s succession plan, AI doomer response, and Demis talks RSI | MOONSHOTS #311 (recorded live)",
+    "number": 311,
+    "date": "2026-11-14",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live"
+  },
+  "timestamp": "01:04:23",
+  "idea_score": 4.55,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-11-14T15:25:04+00:00",
+  "updated": "2026-11-14T15:25:04+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-14T15:25:04+00:00",
+      "overall": 8.35,
+      "summary": "A tight, accurate embodiment of the Demis/Emad exchange: the canvas avalanche, gauge, and closed-loop banner all respond correctly to the sliders, every real number traces to a verified `figures` entry with correct attribution, and assumptions/illustrative values are clearly tagged throughout the UI and README. Minor polish opportunities remain (active-preset highlighting, accessible labeling of the threshold marker) but nothing blocks publishing."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "ep311-overlap-finder",
+  "kind": "tool",
+  "title": "Overlap Finder",
+  "one_liner": "Paste your subscription list and see which tools an AI-assistant workspace could replace and the potential monthly savings.",
+  "headline": "List your SaaS tools and seats, get an instant 'replace / partial / keep' verdict against an AI workspace with reasons, running savings, and a printable migration checklist.",
+  "episode": {
+    "slug": "jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live",
+    "title": "Jensen’s Departure, NVIDIA’s succession plan, AI doomer response, and Demis talks RSI | MOONSHOTS #311 (recorded live)",
+    "number": 311,
+    "date": "2026-11-14",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live"
+  },
+  "timestamp": "01:13:01",
+  "idea_score": 3.8,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-11-14T15:16:09+00:00",
+  "updated": "2026-11-14T15:16:09+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-14T15:16:09+00:00",
+      "overall": 8.35,
+      "summary": "A clean, honestly-labeled audit tool that matches both the episode idea and the Seat Shed opportunity: real user-entered data drives every verdict and total, the rule table and the 50% partial-credit math are clearly disclosed as editable estimates rather than measurements, and all five acceptance criteria check out against the code and screenshots. The main gap is usefulness-at-scale — a genuine 15+ tool audit means adding each tool one at a time with no paste/CSV shortcut, which the demo spec implies should exist."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "title": "Groundtruth Desk Scan",
+  "one_liner": "Uses AI agents to scan public LiDAR and satellite data for possible archaeological features before a project breaks ground.",
+  "timestamp": "01:32:17",
+  "speaker": "Peter Diamandis",
+  "context": "A non-archaeologist set dozens of AI agents loose on public NASA LiDAR overnight. They flagged a possible unmapped Maya site, which Mexican officials said looks like a new find. Alex says archaeology is about to be 'cooked'.",
+  "customer": "US cultural resource management (CRM) consulting firms, plus the solar, wind and transmission developers that pay for their Phase I desk reviews",
+  "problem": "Before fieldwork, someone has to go through huge areas of LiDAR hillshade by hand looking for mounds, platforms and old earthworks. It is slow and expensive, and when a site is missed late, construction gets delayed.",
+  "revenue_model": "Per-project desk scan, about $1,500–$5,000 per site footprint, depending on area (estimate). A white-label subscription for CRM firms at about $500 a month (estimate).",
+  "why_now": "The episode describes 48 agents reviewing 1,200 square kilometres of public LiDAR overnight with no specialist model. It also covers the launch of a natural-language search over a decade of daily satellite imagery.",
+  "first_steps": [
+    "Download free USGS 3DEP LiDAR for one county where a solar project has been announced, run an AI-assisted hillshade review, and write up a sample anomaly report",
+    "Send the sample report to 10 CRM firm principals and ask what they currently pay for desk-based assessment hours",
+    "Offer one firm a free scan of a project they have already surveyed, so you can measure hits and misses against their field results"
+  ],
+  "cost_to_start": "About 2–3 weeks and under $500 for compute and model usage (estimate)",
+  "competition": "In-house GIS staff at CRM firms, academic LiDAR-survey groups and general geospatial AI vendors. A cheap service built only for pre-construction desk scans is probably rare.",
+  "risks": "False positives could erode trust. Site locations are sensitive, so reports have to stay confidential. A professional archaeologist still has to sign off, so the service supports CRM firms but cannot replace them. LiDAR coverage is uneven.",
+  "money": 3,
+  "ease": 3,
+  "speed": 3,
+  "evidence": 4,
+  "tool": {
+    "title": "Hillshade Hunter",
+    "one_liner": "Upload a LiDAR elevation tile and get a ranked list of candidate mounds, platforms and linear earthworks.",
+    "demo": "The user uploads an elevation grid (ASCII grid or a GeoTIFF exported as a PNG height map). The page renders a multi-angle hillshade, runs local-relief and flatness filters, and outlines candidate flat platforms and raised features with size estimates. It then exports a CSV and a printable anomaly sheet for a desk review.",
+    "data_plan": "The customer's own LiDAR tile, which they can download free from public sources like USGS 3DEP. A bundled synthetic sample tile powers example mode. All processing runs in the browser.",
+    "feasibility": 3,
+    "acceptance": [
+      "Loading the bundled sample tile draws a hillshade and outlines at least 3 candidate features, each with an ID",
+      "Moving the relief-threshold slider changes the number of outlined candidates and updates the ranked table",
+      "Clicking a row in the candidate table highlights that feature on the map and shows its estimated width and height",
+      "Clicking export downloads a CSV with candidate ID, pixel location, size and score",
+      "The sample tile is clearly labelled as synthetic example data"
+    ]
+  },
+  "figures": [
+    {
+      "value": "48",
+      "meaning": "number of AI agents used to review the LiDAR data",
+      "timestamp": "01:32:17",
+      "said": "48 agents reviewed 1200 square kilometers overnight",
+      "verified": true
+    },
+    {
+      "value": "1,200 square kilometres",
+      "meaning": "area of public LiDAR reviewed overnight",
+      "timestamp": "01:32:17",
+      "said": "48 agents reviewed 1200 square kilometers overnight",
+      "verified": true
+    },
+    {
+      "value": "8 to 12 metres",
+      "meaning": "height of the structures at the flagged possible Maya site",
+      "timestamp": "01:32:17",
+      "said": "at least eight to 12 meter tall structures",
+      "verified": true
+    },
+    {
+      "value": "10 years, 3,000+ layers",
+      "meaning": "depth of the satellite imagery archive now searchable in plain language",
+      "timestamp": "01:30:13",
+      "said": "search 10 years, 3000 plus layer archive of daily satellite imagery",
+      "verified": true
+    }
+  ],
+  "score": 3.25,
+  "slug": "ep311-groundtruth-desk-scan",
+  "episode": {
+    "slug": "jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live",
+    "title": "Jensen’s Departure, NVIDIA’s succession plan, AI doomer response, and Demis talks RSI | MOONSHOTS #311 (recorded live)",
+    "number": 311,
+    "date": "2026-11-14",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live"
+  },
+  "tool_slug": null,
+  "created": "2026-11-14T15:25:04+00:00"
+}

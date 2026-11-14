@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seat Shed — Overlap Finder</title>
+<meta name="description" content="Paste your subscription list and see which tools an AI-assistant workspace could replace, and the potential monthly savings.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="ledger-mark">SEAT SHED — SUBSCRIPTION AUDIT</p>
+    <h1>Overlap Finder</h1>
+    <p class="subtitle">For operations managers who pay for 15+ SaaS tools: list what you pay for and seats,
+      and see which ones your AI-assistant workspace could now replace &mdash; and how much that's worth per month.</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="panel" aria-labelledby="add-tool-heading">
+    <h2 id="add-tool-heading">1. Add your tools</h2>
+    <form id="addForm" class="add-form">
+      <div class="field">
+        <label for="toolName">Tool name</label>
+        <input id="toolName" name="toolName" type="text" placeholder="e.g. Acme Dashboards" required maxlength="60">
+      </div>
+      <div class="field">
+        <label for="toolCategory">Category</label>
+        <select id="toolCategory" name="toolCategory" required></select>
+      </div>
+      <div class="field field-narrow">
+        <label for="toolSeats">Seats</label>
+        <input id="toolSeats" name="toolSeats" type="number" min="1" step="1" value="10" required>
+      </div>
+      <div class="field field-narrow">
+        <label for="toolPrice">$ / seat / month</label>
+        <input id="toolPrice" name="toolPrice" type="number" min="0" step="0.01" value="10" required>
+      </div>
+      <div class="field field-button">
+        <button type="submit" class="btn btn-primary">Add tool</button>
+      </div>
+    </form>
+    <div class="quick-actions">
+      <button type="button" id="exampleBtn" class="btn btn-ghost">Try the example stack <span class="badge">EXAMPLE</span></button>
+      <button type="button" id="clearBtn" class="btn btn-ghost">Clear all</button>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="ledger-heading">
+    <h2 id="ledger-heading">2. Your audit</h2>
+    <p class="hint">Click a verdict chip to override it. Totals below update immediately.</p>
+
+    <div id="ledgerEmpty" class="empty-state">
+      No tools yet. Add one above, or try the example stack to see how it works.
+    </div>
+
+    <div id="exampleBanner" class="example-banner" hidden>
+      <span class="badge">EXAMPLE DATA</span> This is the sample 12-tool stack, not your real subscriptions.
+      Add or remove tools above to switch to your own list.
+    </div>
+
+    <div id="ledgerTable" class="ledger" role="table" aria-label="Subscription audit" hidden>
+      <div class="ledger-row ledger-head" role="row">
+        <div role="columnheader">Tool</div>
+        <div role="columnheader">Category</div>
+        <div role="columnheader">Seats</div>
+        <div role="columnheader">$/seat/mo</div>
+        <div role="columnheader">Monthly cost</div>
+        <div role="columnheader">Verdict</div>
+        <div role="columnheader" class="col-remove"><span class="sr-only">Remove</span></div>
+      </div>
+      <div id="ledgerBody"></div>
+    </div>
+  </section>
+
+  <section class="totals-bar" id="totalsBar" aria-labelledby="totals-heading">
+    <h2 id="totals-heading" class="sr-only">Savings summary</h2>
+    <div class="totals-grid">
+      <div class="total-stat">
+        <span class="total-label">Potential monthly savings</span>
+        <span class="total-value" id="monthlySavings">$0</span>
+      </div>
+      <div class="total-stat">
+        <span class="total-label">Potential annual savings</span>
+        <span class="total-value" id="annualSavings">$0</span>
+      </div>
+      <div class="total-stat total-stat-breakdown">
+        <span class="total-label">Verdicts</span>
+        <span class="total-value total-breakdown">
+          <span class="pill pill-replaceable" id="countReplaceable">0 replaceable</span>
+          <span class="pill pill-partial" id="countPartial">0 partial</span>
+          <span class="pill pill-keep" id="countKeep">0 keep</span>
+        </span>
+      </div>
+    </div>
+    <p class="totals-note">Partial-verdict tools count for 50% of their cost as a potential saving, since
+      only some of their work can likely move today. This is a calculation on the numbers you entered above,
+      not a measured figure.</p>
+    <button type="button" id="printChecklistBtn" class="btn btn-primary btn-print">Print checklist</button>
+  </section>
+
+</main>
+
+<div id="checklistModal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="checklistTitle">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h2 id="checklistTitle">Migration checklist</h2>
+      <button type="button" id="closeModalBtn" class="btn btn-ghost btn-small" aria-label="Close checklist">&times;</button>
+    </div>
+    <div id="checklistBody" class="checklist-body"></div>
+    <div class="modal-footer">
+      <button type="button" id="doPrintBtn" class="btn btn-primary">Print this checklist</button>
+      <button type="button" id="closeModalBtn2" class="btn btn-ghost">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>Inspired by Moonshots #311, around 01:13:01. Fan-made prototype, not affiliated with the show.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live" target="_blank" rel="noopener">Listen to the episode</a>.
+  </p>
+</footer>
+
+<script src="data/rules.js"></script>
+<script src="data/example-stack.js"></script>
+<script src="app.js" defer></script>
+</body>
+</html>

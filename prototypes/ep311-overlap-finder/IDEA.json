@@ -1,0 +1,52 @@
+{
+  "title": "Overlap Finder",
+  "one_liner": "Paste your subscription list and see which tools an AI-assistant workspace could replace and the potential monthly savings.",
+  "timestamp": "01:13:01",
+  "speaker": "Peter Diamandis",
+  "context": "Anthropic launched AI-built spreadsheets, whiteboards, data dashboards and meeting tools, plus connectors to popular work apps. The hosts said software is being absorbed by AI assistants and Microsoft shares fell.",
+  "demo": "The user pastes or types their tools with seats and monthly price. The page sorts each tool into a category (dashboards, whiteboard, forms, notes, slides and so on) and labels it 'likely replaceable', 'partially' or 'keep', with reasons. It totals the potential savings and produces a migration checklist they can print.",
+  "data_plan": "The customer's own subscription list and prices. The category-to-feature mapping is a bundled, editable rule table written by the builder. No episode numbers are used in the calculation.",
+  "feasibility": 5,
+  "risks": "AI features may be immature or beta, so replacements could break workflows. Vendor lock-in simply moves to the AI vendor. Savings per client may be small.",
+  "figures": [
+    {
+      "value": "3.5%",
+      "meaning": "drop in Microsoft shares on the day of the Anthropic launch",
+      "timestamp": "01:13:01",
+      "said": "Microsoft shares fell 3.5% on the news.",
+      "verified": true
+    },
+    {
+      "value": "$90 billion of $330 billion",
+      "meaning": "Office revenue versus Microsoft's total annual revenue, as stated by a host",
+      "timestamp": "01:16:30",
+      "said": "office is 90 billion dollars a year revenue",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Entering 5 tools with seats and prices produces a table labelling each one replaceable, partial or keep, with a reason",
+    "The total potential monthly and annual savings update immediately when a tool's verdict is toggled",
+    "An example button fills in a sample 12-tool stack, clearly marked as an example",
+    "Clicking 'Print checklist' shows a migration checklist listing only the tools marked replaceable",
+    "On a 375px-wide screen the table stacks into cards without horizontal scrolling"
+  ],
+  "related_existing": null,
+  "score": 3.8,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Seat Shed",
+    "one_liner": "Audits a small company's software subscriptions and replaces the ones an AI assistant's built-in sheets, boards and connectors now cover.",
+    "customer": "Operations managers at US companies with 15–150 staff that pay for 15 or more SaaS tools",
+    "problem": "Companies keep paying per-seat for dashboards, whiteboards, form builders and reporting add-ons that the AI plan they already pay for can now do. Nobody has time to map out what overlaps and run a safe migration.",
+    "revenue_model": "Fixed-fee audit of about $1,500 (estimate), plus an optional 20% share of the first year's savings for migration work (estimate).",
+    "why_now": "The episode reports AI vendors shipping sheets, whiteboards, dashboards and app connectors directly, and says markets reacted to the threat to traditional office and SaaS revenue."
+  },
+  "episode": {
+    "slug": "jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live",
+    "title": "Jensen’s Departure, NVIDIA’s succession plan, AI doomer response, and Demis talks RSI | MOONSHOTS #311 (recorded live)",
+    "number": 311,
+    "date": "2026-11-14",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live"
+  }
+}
