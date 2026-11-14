@@ -95,3 +95,10 @@
 {"at": "2026-11-12T04:26:16+00:00", "label": "build:ep310-cure-compiler", "est_cost_usd": 0.5155, "turns": 27, "subtype": "success"}
 {"at": "2026-11-12T04:27:45+00:00", "label": "review:ep310-cure-compiler", "est_cost_usd": 0.2119, "turns": 12, "subtype": "success"}
 {"at": "2026-11-14T06:28:31+00:00", "label": "extract:jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
+{"at": "2026-11-14T15:09:47+00:00", "label": "extract:jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live", "est_cost_usd": 0.5754, "turns": 2, "subtype": "success"}
+{"at": "2026-11-14T15:14:48+00:00", "label": "build:ep311-overlap-finder", "est_cost_usd": 0.8386, "turns": 38, "subtype": "success"}
+{"at": "2026-11-14T15:16:09+00:00", "label": "review:ep311-overlap-finder", "est_cost_usd": 0.2834, "turns": 19, "subtype": "success"}
+{"at": "2026-11-14T15:20:52+00:00", "label": "build:ep311-review-queue-avalanche", "est_cost_usd": 0.5843, "turns": 22, "subtype": "success"}
+{"at": "2026-11-14T15:22:32+00:00", "label": "review:ep311-review-queue-avalanche", "est_cost_usd": 0.1934, "turns": 10, "subtype": "success"}
+{"at": "2026-11-14T15:23:46+00:00", "label": "build:ep311-review-queue-avalanche:fix1", "est_cost_usd": 0.2933, "turns": 20, "subtype": "success"}
+{"at": "2026-11-14T15:25:04+00:00", "label": "review:ep311-review-queue-avalanche", "est_cost_usd": 0.1757, "turns": 10, "subtype": "success"}
