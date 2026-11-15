@@ -1,0 +1,60 @@
+{
+  "title": "Review Queue Avalanche",
+  "one_liner": "Watch human code reviewers drown as AI output speeds up, until the loop closes by default.",
+  "timestamp": "01:04:23",
+  "speaker": "Emad Mostaque",
+  "context": "Demis said today's RSI keeps humans reviewing code while engineers get several times more productive. Emad replied that no human can review thousands of tokens per second from a hundred thousand model instances.",
+  "demo": "Sliders set the number of human reviewers, model instances and tokens per second. An animated queue of pull requests piles up in front of the reviewers. A gauge shows the share of AI changes that actually get human review, and when it falls below a threshold the page flips to 'effectively closed loop'.",
+  "data_plan": "Episode figures preloaded as presets (3–5x productivity, 10,000 tokens per second, 100,000 instances). Human review speed is a user-adjustable assumption, clearly labelled.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "Review-speed assumptions are made up and must be labelled as such. This is an illustration, not a forecast.",
+  "figures": [
+    {
+      "value": "3–5x",
+      "meaning": "productivity boost for human engineers in today's early RSI, per Demis",
+      "timestamp": "00:58:03",
+      "said": "making a human engineer maybe three, four, five times",
+      "verified": true
+    },
+    {
+      "value": "10,000 tokens per second",
+      "meaning": "model speed Emad cited when arguing human review is impossible",
+      "timestamp": "01:04:23",
+      "said": "10 000 token a second model then there's a hundred thousand",
+      "verified": true
+    },
+    {
+      "value": "100,000",
+      "meaning": "number of model instances in Emad's example",
+      "timestamp": "01:04:23",
+      "said": "10 000 token a second model then there's a hundred thousand",
+      "verified": true
+    },
+    {
+      "value": "about an hour",
+      "meaning": "Emad's claimed time to train a DeepSeek V4-level model on a very large cluster",
+      "timestamp": "01:05:04",
+      "said": "level cluster is about an hour",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Dragging the model-instances slider up makes the pull-request queue grow visibly and lowers the 'human-reviewed share' gauge",
+    "When the reviewed share drops below the set threshold, a 'closed loop by default' banner appears",
+    "Preset buttons load the Demis (3–5x) and Emad (10,000 tokens per second, 100,000 instances) scenarios",
+    "Human review speed is shown as an editable assumption, labelled 'assumption'",
+    "Controls stack vertically on a 375px-wide screen"
+  ],
+  "score": 4.55,
+  "episode": {
+    "slug": "jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live",
+    "title": "Jensen’s Departure, NVIDIA’s succession plan, AI doomer response, and Demis talks RSI | MOONSHOTS #311 (recorded live)",
+    "number": 311,
+    "date": "2026-11-14",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live"
+  }
+}
