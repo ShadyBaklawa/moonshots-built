@@ -109,3 +109,6 @@
 {"at": "2026-11-17T03:19:47+00:00", "label": "review:2026-11-17-reflex-budget", "est_cost_usd": 0.3597, "turns": 12, "subtype": "success"}
 {"at": "2026-11-17T03:22:38+00:00", "label": "build:2026-11-17-reflex-budget:fix1", "est_cost_usd": 0.4292, "turns": 25, "subtype": "success"}
 {"at": "2026-11-17T03:25:19+00:00", "label": "review:2026-11-17-reflex-budget", "est_cost_usd": 0.258, "turns": 12, "subtype": "success"}
+{"at": "2026-11-17T13:33:16+00:00", "label": "extract:how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2", "est_cost_usd": 0.7356, "turns": 2, "subtype": "success"}
+{"at": "2026-11-17T13:37:21+00:00", "label": "build:2026-11-17-real-time-ruler", "est_cost_usd": 0.434, "turns": 22, "subtype": "success"}
+{"at": "2026-11-17T13:37:23+00:00", "label": "build:2026-11-17-sped-up-or-real", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}

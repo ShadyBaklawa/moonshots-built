@@ -64,12 +64,63 @@
   },
   "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2": {
     "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
-    "date": "2026-11-16",
+    "date": "2026-11-17",
     "number": null,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2",
-    "status": "new",
+    "status": "built",
     "attempts": 0,
-    "found": "2026-11-17T02:57:10+00:00"
+    "found": "2026-11-17T02:57:10+00:00",
+    "updated": "2026-11-17T13:37:23+00:00",
+    "prototypes": [],
+    "briefs": [
+      "2026-11-17-demo-forensics-desk",
+      "2026-11-17-twelve-benches-talent"
+    ],
+    "ideas": [
+      {
+        "title": "Sped-Up or Real?",
+        "score": 4.0,
+        "timestamp": "00:20:15"
+      },
+      {
+        "title": "Twenty Billion Bodies",
+        "score": 3.85,
+        "timestamp": "01:14:14"
+      },
+      {
+        "title": "Buck-an-Hour Meter",
+        "score": 3.75,
+        "timestamp": "00:31:46"
+      },
+      {
+        "title": "Open-Loop Ballet",
+        "score": 3.5,
+        "timestamp": "00:16:49"
+      },
+      {
+        "title": "Elbow Room",
+        "score": 3.15,
+        "timestamp": "00:38:28"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Demo Forensics Desk",
+        "score": 3.5,
+        "timestamp": "00:20:15"
+      },
+      {
+        "title": "Twelve Benches Talent",
+        "score": 3.35,
+        "timestamp": "01:38:40"
+      },
+      {
+        "title": "Robot Risk File",
+        "score": 2.4,
+        "timestamp": "00:53:52"
+      }
+    ],
+    "summary": "Brett Adcock walks Peter and Dave through Figure's campus, where robots now outnumber staff. He covers Helix 3's 'baby AGI' home demos, a 100x compute deal, a Figure 4 hand he calls an 'iPhone moment', a $300–$500/month home lease, 40,000 units a year of factory capacity, and a path to 20 billion humanoids. He dismisses Chinese robot demos as open-loop dancing, sped-up or teleoperated, and says compute and memory ran out worldwide in September 2026. He also discusses robot insurance, which he says doesn't exist yet, plus safety, hiring and his voice-AI company Hark."
   },
   "jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live": {
     "title": "Jensen’s Departure, NVIDIA’s succession plan, AI doomer response, and Demis talks RSI | MOONSHOTS #311 (recorded live)",
