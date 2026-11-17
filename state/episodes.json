@@ -1,4 +1,76 @@
 {
+  "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock": {
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "date": "2026-11-17",
+    "number": null,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock",
+    "status": "built",
+    "attempts": 0,
+    "found": "2026-11-17T02:57:10+00:00",
+    "updated": "2026-11-17T03:25:19+00:00",
+    "prototypes": [
+      "2026-11-17-line-spec-scorer",
+      "2026-11-17-reflex-budget"
+    ],
+    "briefs": [
+      "2026-11-17-shift-ready-robot-audit",
+      "2026-11-17-firstperson-field-crew"
+    ],
+    "ideas": [
+      {
+        "title": "Reflex Budget",
+        "score": 4.2,
+        "timestamp": "00:28:09"
+      },
+      {
+        "title": "Replay vs React",
+        "score": 4.0,
+        "timestamp": "00:16:49"
+      },
+      {
+        "title": "Flock Forecast",
+        "score": 3.9,
+        "timestamp": "01:14:14"
+      },
+      {
+        "title": "Lights-Out Bottleneck",
+        "score": 3.9,
+        "timestamp": "01:14:51"
+      },
+      {
+        "title": "Nines for a Billion",
+        "score": 3.9,
+        "timestamp": "00:50:09"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Shift-Ready Robot Audit",
+        "score": 3.4,
+        "timestamp": "00:03:59"
+      },
+      {
+        "title": "Firstperson Field Crew",
+        "score": 3.25,
+        "timestamp": "01:09:49"
+      },
+      {
+        "title": "Robot Pilot Risk File",
+        "score": 2.8,
+        "timestamp": "00:54:18"
+      }
+    ],
+    "summary": "Brett Adcock walks Peter and Dave through Figure's campus, where robots now outnumber staff. He lays out his four-chapter plan for humanoids (hardware, an AI recipe, scaling intelligence, scaling robots) and teases Helix 3 and a Figure 4 hand he says is close to human. Along the way he covers onboard versus cloud latency, a $3B+ compute deal, home lease prices of about $300–$500 a month, a world he says ran out of compute in September 2026, and why China's dancing robots are 'open loop'. He also notes that no robot insurance industry exists yet and that companies built around human shifts slow automation down."
+  },
+  "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2": {
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "date": "2026-11-16",
+    "number": null,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2",
+    "status": "new",
+    "attempts": 0,
+    "found": "2026-11-17T02:57:10+00:00"
+  },
   "jensen-s-departure-nvidia-s-succession-plan-ai-doomer-response-and-demis-talks-rsi-moonshots-311-recorded-live": {
     "title": "Jensen’s Departure, NVIDIA’s succession plan, AI doomer response, and Demis talks RSI | MOONSHOTS #311 (recorded live)",
     "date": "2026-11-14",
