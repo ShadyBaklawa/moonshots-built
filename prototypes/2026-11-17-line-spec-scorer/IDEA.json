@@ -1,0 +1,59 @@
+{
+  "title": "Line Spec Scorer",
+  "one_liner": "List a site's tasks and shift times to get a robot-readiness score per task and a map of idle time.",
+  "timestamp": "00:03:59",
+  "speaker": "Brett Adcock",
+  "context": "Brett says commercial work is easier because tasks are tightly specified, nearly writable on paper, but speed targets are strict. Later he says automated lines still stall because trucks and other human processes run on fixed shifts.",
+  "demo": "The manager enters each task with its cycle time, how much it varies, the heaviest item, whether a human hands work in, and the shift windows for trucks and staff. The tool scores each task against the episode's reference points (sub-3-second package moves, 50-pound boxes), ranks pilot candidates, and draws a 24-hour timeline showing when a robot would sit idle waiting on human-scheduled steps. The result exports as a printable one-page summary.",
+  "data_plan": "Task data comes from the customer. Reference thresholds are episode figures, labeled with their source. The scoring weights are the tool's own and are labeled as editable assumptions.",
+  "feasibility": 4,
+  "risks": "Pilots may stay rare for several years, so demand could be thin. The auditor needs credibility on the warehouse floor. Vendors may give scoping away for free.",
+  "figures": [
+    {
+      "value": "sub-three seconds",
+      "meaning": "target time for a robot to move one package",
+      "timestamp": "00:21:21",
+      "said": "at sub-three seconds a package",
+      "verified": true
+    },
+    {
+      "value": "50 pounds",
+      "meaning": "weight of boxes Figure robots carry using the neural network",
+      "timestamp": "01:05:37",
+      "said": "carrying big boxes around our 50 pounds",
+      "verified": true
+    },
+    {
+      "value": "200 hour",
+      "meaning": "length of Figure's logistics live stream",
+      "timestamp": "00:18:34",
+      "said": "200 hour live stream with logistics work",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Entering 5 tasks and clicking Score produces a ranked table with a 0–100 readiness score and a one-line reason for each task",
+    "Setting a truck window of 06:00–14:00 shades the hours outside it as robot idle time on the 24-hour timeline, and the idle-hours total updates",
+    "A task with an item heavier than 50 lb or a cycle time under 3 s is flagged, and the flag cites the figure from the episode",
+    "An Example button loads a sample warehouse that is clearly labeled as an example",
+    "The Print button produces a one-page summary; at 375px width the task form stacks into a single column"
+  ],
+  "related_existing": null,
+  "score": 3.4,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Shift-Ready Robot Audit",
+    "one_liner": "A fixed-fee site audit telling mid-size warehouses which tasks humanoid robots could take on first, and what blocks them.",
+    "customer": "Operations managers at US mid-size 3PL warehouses and light manufacturers (roughly 50–500 staff) that are being pitched humanoid or mobile-robot pilots",
+    "problem": "They get vendor demos but have no neutral way to tell which tasks are specified, fast and light enough for a robot today. They also can't see where shift-bound upstream steps would leave a robot idle.",
+    "revenue_model": "Fixed-fee audit of about $3,000–$8,000 per site, plus an optional $1,500 re-audit when a vendor proposal arrives (estimate)",
+    "why_now": "Brett says robots now handle a new client warehouse zero-shot, carry 50-pound boxes and target sub-three-second package moves. He also says human shift schedules are the next bottleneck. Buyers will soon need help scoping pilots."
+  },
+  "episode": {
+    "slug": "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock",
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "number": null,
+    "date": "2026-11-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock"
+  }
+}

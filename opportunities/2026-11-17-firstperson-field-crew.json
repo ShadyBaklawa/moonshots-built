@@ -1,0 +1,71 @@
+{
+  "title": "Firstperson Field Crew",
+  "one_liner": "A managed crew that records diverse first-person household and trade task data for robotics labs, to spec.",
+  "timestamp": "01:09:49",
+  "speaker": "Brett Adcock",
+  "context": "Brett says data diversity, like someone hosing down a dog or painting a house, made the robot better at folding laundry. He adds that physical interaction data can't be scraped and has to be collected, audited, cleaned and annotated.",
+  "customer": "Embodied-AI and robotics startups and university labs that need diverse egocentric task video in real homes and trades but have no field team",
+  "problem": "Real-world human demonstration data in varied homes is a key input, but recruiting, briefing, consenting and quality-checking contributors is slow, messy work that small labs can't staff.",
+  "revenue_model": "Per accepted hour of footage, about $60–$150 per hour delivered with metadata, or monthly retainers of $5,000–$20,000 per lab (estimate)",
+  "why_now": "Brett says the models are now starved for data rather than architecture, that data scaling looks log-linear, and that Figure collects at large scale in-house. Smaller labs need the same input without building their own crew.",
+  "first_steps": [
+    "Record 2 hours of sample footage yourself using a head-mounted camera and a written task protocol",
+    "Email 15 embodied-AI startups and lab leads offering a free 5-hour pilot dataset",
+    "Recruit 10 local contributors through a gig board using a clear consent form and fixed pay per task"
+  ],
+  "cost_to_start": "About 2–3 weeks and $500–$1,500 (estimate) for cameras, consent forms and a sample dataset",
+  "competition": "Data-labeling firms and some crowdsourced egocentric video projects exist, and big robotics labs collect in-house.",
+  "risks": "Privacy and consent problems inside homes. Labs may need force or glove sensor data that a camera can't capture. Big buyers keep collection in-house. Quality rejections can wipe out the margin.",
+  "money": 3,
+  "ease": 3,
+  "speed": 3,
+  "evidence": 4,
+  "tool": {
+    "title": "Capture Brief Builder",
+    "one_liner": "Turns a lab's data needs into a recording protocol, contributor checklist and price quote.",
+    "demo": "A lab enters the tasks it wants (for example 'load dishwasher'), the environment types, hours needed, camera setup and annotation level. The tool generates a numbered protocol per task, a contributor checklist and consent-form outline, a shot-diversity plan spread across home types, and an itemized quote using the operator's editable rates. If the visitor pastes an API key, AI drafts richer step lists; example mode works without one.",
+    "data_plan": "Requirements come from the customer and rates from the operator. Optional AI drafting uses a key the visitor pastes in; without one, the page runs on built-in templates.",
+    "feasibility": 4,
+    "acceptance": [
+      "Entering 3 tasks and 40 hours, then clicking Generate, produces a protocol section for each task plus a diversity table that splits the hours across environment types",
+      "Changing the per-hour rate field updates the quote total immediately",
+      "With no API key, example mode fills every section and labels it as an example template",
+      "A consent checklist always appears and includes a line about faces and children in the home",
+      "The brief can be downloaded as Markdown, and the layout works at 375px width"
+    ]
+  },
+  "figures": [
+    {
+      "value": "10 times",
+      "meaning": "how much more data Figure says it has waiting to train on than the model shown",
+      "timestamp": "01:42:04",
+      "said": "10 times more data that we can train",
+      "verified": true
+    },
+    {
+      "value": "15",
+      "meaning": "Brett's revised multiple of untrained data sitting on servers",
+      "timestamp": "01:42:24",
+      "said": "Maybe a factor of, like, 15 or so more data",
+      "verified": true
+    },
+    {
+      "value": "30",
+      "meaning": "rental homes where Helix 2.5 worked zero-shot",
+      "timestamp": "00:23:17",
+      "said": "we went into 30 rental homes that we rented",
+      "verified": true
+    }
+  ],
+  "score": 3.25,
+  "slug": "2026-11-17-firstperson-field-crew",
+  "episode": {
+    "slug": "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock",
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "number": null,
+    "date": "2026-11-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock"
+  },
+  "tool_slug": null,
+  "created": "2026-11-17T03:25:19+00:00"
+}

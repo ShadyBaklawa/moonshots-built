@@ -1,0 +1,14 @@
+{
+  "label": "Example warehouse — Midline Fulfillment Co. (sample data, not a real site)",
+  "truckStart": "06:00",
+  "truckEnd": "14:00",
+  "staffStart": "05:00",
+  "staffEnd": "21:00",
+  "tasks": [
+    { "name": "Tote de-palletizing", "cycleTime": 4.2, "variation": 8, "weight": 32, "handoff": false },
+    { "name": "Inbound trailer unload", "cycleTime": 6.5, "variation": 15, "weight": 45, "handoff": true },
+    { "name": "Pick-to-pack singles", "cycleTime": 2.4, "variation": 5, "weight": 6, "handoff": false },
+    { "name": "Bulk case stacking", "cycleTime": 9.0, "variation": 10, "weight": 61, "handoff": false },
+    { "name": "Outbound label & stage", "cycleTime": 3.8, "variation": 22, "weight": 18, "handoff": true }
+  ]
+}

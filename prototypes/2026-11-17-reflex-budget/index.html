@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reflex Budget — onboard brain vs. cloud control</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Reflex Budget</h1>
+    <p class="one-liner">Slide the network latency and watch a cloud-controlled robot lose its balance, while an onboard brain stays upright.</p>
+  </header>
+
+  <p class="banner" role="note">
+    ⚠️ Simplified physics simulation — the balance model is a toy inverted-pendulum, not real robot data. Only the latency figures below are from the episode.
+  </p>
+
+  <main class="arena">
+    <section class="robot-panel" id="panel-onboard">
+      <h2>Onboard brain</h2>
+      <canvas id="canvas-onboard" width="300" height="340" aria-label="Stick figure robot balancing with onboard control"></canvas>
+      <dl class="readout">
+        <div><dt>Control rate</dt><dd id="hz-onboard">—</dd></div>
+        <div><dt>Falls / min</dt><dd id="falls-onboard">0</dd></div>
+      </dl>
+    </section>
+
+    <section class="robot-panel" id="panel-cloud">
+      <h2>Cloud control</h2>
+      <canvas id="canvas-cloud" width="300" height="340" aria-label="Stick figure robot balancing with cloud control"></canvas>
+      <dl class="readout">
+        <div><dt>Control rate</dt><dd id="hz-cloud">—</dd></div>
+        <div><dt>Falls / min</dt><dd id="falls-cloud">0</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <p class="sim-status">
+    <span id="elapsed-line">Running for 0s</span> · falls/min uses a rolling 60s window, so it reads low at first ·
+    fall angle and shove strength are illustrative constants, not measured robot limits.
+  </p>
+
+  <section class="controls">
+    <div class="control-row">
+      <label for="latency">Per-leg network latency: <span id="latency-value">30</span> ms</label>
+      <input type="range" id="latency" min="0" max="30" step="1" value="30" />
+      <p class="derived">Round trip ≈ <span id="roundtrip-value">—</span> ms → cloud control rate <span id="hz-value">—</span></p>
+    </div>
+
+    <div class="control-row preset-row">
+      <button id="preset-5g" type="button">Episode 5G best case</button>
+      <span class="citation">Sets 25 ms/leg — Brett Adcock, 00:28:09, on best-case 5G round trip: "then you're at 20Hz just in the network itself"</span>
+    </div>
+
+    <div class="control-row">
+      <button id="reset-btn" type="button">Reset simulation</button>
+    </div>
+  </section>
+
+  <section class="figures">
+    <h3>Episode figures used here <span class="verified-tag">verified</span></h3>
+    <ul>
+      <li>20–30 ms best-case 5G latency per leg (00:28:09)</li>
+      <li>≈50 ms approximate full network round trip (00:28:09)</li>
+      <li>20 Hz control rate imposed by the network alone (00:28:09)</li>
+    </ul>
+  </section>
+
+  <footer class="page-footer">
+    Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock" target="_blank" rel="noopener">Moonshots: How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock</a>, around 00:28:09. Fan-made prototype, not affiliated with the show.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
