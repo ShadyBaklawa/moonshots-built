@@ -1,0 +1,53 @@
+{
+  "title": "Reflex Budget",
+  "one_liner": "Slide network latency and watch a cloud-controlled robot lose balance where an onboard brain stays upright.",
+  "timestamp": "00:28:09",
+  "speaker": "Brett Adcock",
+  "context": "Brett explains that all of Helix runs onboard because the best 5G gives about 20–30 ms per leg, roughly 50 ms round trip, which caps control at about 20Hz before any inference even starts.",
+  "demo": "Two side-by-side stick-figure humanoids balance on one foot while carrying a tray, and random shoves hit both. One runs an onboard control loop; the other routes through a 'cloud' with adjustable per-leg latency and inference time. A live readout shows the effective control rate in Hz. As latency grows, the cloud robot wobbles and falls, and a counter tracks falls per minute.",
+  "data_plan": "The latency anchors are episode figures. The balance physics is a simplified simulation, clearly labeled.",
+  "feasibility": 4,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "The pendulum physics is a toy. Fall thresholds should be labeled illustrative, not real robot data.",
+  "figures": [
+    {
+      "value": "20 to 30 milliseconds",
+      "meaning": "best-case 5G latency per leg",
+      "timestamp": "00:28:09",
+      "said": "maybe 20 to 30 milliseconds per leg",
+      "verified": true
+    },
+    {
+      "value": "50 milliseconds",
+      "meaning": "approximate full network round trip",
+      "timestamp": "00:28:09",
+      "said": "almost 50 milliseconds just for a full round trip",
+      "verified": true
+    },
+    {
+      "value": "20Hz",
+      "meaning": "control rate imposed by the network alone",
+      "timestamp": "00:28:09",
+      "said": "Then you're at 20Hz just in the network itself",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Dragging the per-leg latency slider from 0 to 30 ms updates the displayed control rate (25 ms per leg shows 20 Hz) and makes the cloud robot visibly wobble more",
+    "With the default shove strength at 30 ms per leg, the cloud robot falls at least once a minute while the onboard robot stays upright",
+    "A preset button marked 'Episode 5G best case' sets 25 ms per leg and cites the episode",
+    "A banner labels the physics as a simplified simulation",
+    "At 375px width the two robots stack vertically and the sliders stay usable"
+  ],
+  "score": 4.2,
+  "episode": {
+    "slug": "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock",
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "number": null,
+    "date": "2026-11-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock"
+  }
+}

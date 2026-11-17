@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line Spec Scorer — robot-readiness audit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="app-header">
+    <div class="brand">LINE SPEC<span class="dot">.</span>SCORER</div>
+    <span class="badge">Shift-Ready Robot Audit tool</span>
+    <div class="tagline">For operations managers scoping a humanoid or mobile-robot pilot: list your site's tasks and shift times, get a 0–100 robot-readiness score per task plus a map of where the robot would sit idle waiting on humans.</div>
+  </header>
+
+  <div class="toolbar">
+    <button id="exampleBtn" class="ghost">Load example warehouse</button>
+    <button id="resetBtn" class="ghost">Reset form</button>
+    <button id="printBtn" class="ghost">Print one-page summary</button>
+  </div>
+
+  <div id="exampleBanner" class="example-banner">⚠ Example data loaded — this is a made-up sample warehouse, not a real site.</div>
+
+  <section class="panel" id="windowsPanel">
+    <h2>Site shift windows</h2>
+    <p class="panel-note">A robot still needs trucks to arrive and staff to hand off work. Set when each is actually running — the timeline below shows the hours outside both as robot idle time.</p>
+    <div class="windows-grid">
+      <div class="field">
+        <label for="truckStart">Truck dock window</label>
+        <div class="time-row">
+          <input type="time" id="truckStart" value="06:00">
+          <span>to</span>
+          <input type="time" id="truckEnd" value="18:00">
+        </div>
+      </div>
+      <div class="field">
+        <label for="staffStart">Staff shift window</label>
+        <div class="time-row">
+          <input type="time" id="staffStart" value="00:00">
+          <span>to</span>
+          <input type="time" id="staffEnd" value="23:59">
+        </div>
+      </div>
+    </div>
+
+    <details class="assumptions">
+      <summary>Scoring weights (editable assumptions — not from the episode)</summary>
+      <div class="weights-grid">
+        <div class="weight-field">
+          <label for="wSpeed">Speed margin weight <output id="wSpeedOut">25</output></label>
+          <input type="range" id="wSpeed" min="0" max="50" value="25">
+        </div>
+        <div class="weight-field">
+          <label for="wWeight">Payload margin weight <output id="wWeightOut">25</output></label>
+          <input type="range" id="wWeight" min="0" max="50" value="25">
+        </div>
+        <div class="weight-field">
+          <label for="wVariation">Spec tightness weight <output id="wVariationOut">25</output></label>
+          <input type="range" id="wVariation" min="0" max="50" value="25">
+        </div>
+        <div class="weight-field">
+          <label for="wHandoff">No-handoff weight <output id="wHandoffOut">25</output></label>
+          <input type="range" id="wHandoff" min="0" max="50" value="25">
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="panel" id="timelinePanel">
+    <h2>24-hour idle map</h2>
+    <p class="panel-note">Shaded (hatched) hours are outside the truck and staff windows above — a robot on this line would have no human to hand off to or truck to load/unload during those hours.</p>
+    <div class="timeline-bar" id="timelineBar" aria-hidden="true"></div>
+    <div class="timeline-labels" id="timelineLabels"></div>
+    <div class="timeline-legend">
+      <span><i class="swatch active"></i>Robot can run with human/truck support</span>
+      <span><i class="swatch idle"></i>Robot idle, waiting on humans</span>
+      <span>Idle hours per day: <span class="idle-total" id="idleTotal">0.0</span></span>
+    </div>
+  </section>
+
+  <section class="panel tasks-panel" id="tasksPanel">
+    <h2>Tasks on the line</h2>
+    <p class="panel-note">Enter each task as it runs today — a human doing the job now, not a hoped-for robot pace. Reference points: Figure demos a sub-3-second package move and carries up to 50&nbsp;lb boxes (said on the episode, see citations below).</p>
+    <div id="taskRows"></div>
+    <div class="tasks-footer">
+      <button id="addTaskBtn" class="ghost small">+ Add task</button>
+      <button id="scoreBtn" class="primary">Score tasks</button>
+    </div>
+  </section>
+
+  <section class="panel" id="resultsPanel" style="display:none;">
+    <h2>Pilot candidate ranking</h2>
+    <p class="panel-note">Higher score = better first-pilot candidate under today's shift windows and the weights above. Flags cite the episode's reference figures.</p>
+    <table class="results-table" id="resultsTable">
+      <thead>
+        <tr><th>Rank</th><th>Task</th><th>Score</th><th>Reason</th><th>Flags</th></tr>
+      </thead>
+      <tbody id="resultsBody"></tbody>
+    </table>
+  </section>
+
+  <footer class="app-footer">
+    Inspired by Moonshots — "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock", around 00:03:59.
+    Fan-made prototype, not affiliated with the show.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock" target="_blank" rel="noopener">Episode source</a>.
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

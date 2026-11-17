@@ -1,0 +1,37 @@
+{
+  "slug": "2026-11-17-reflex-budget",
+  "kind": "demo",
+  "title": "Reflex Budget",
+  "one_liner": "Slide network latency and watch a cloud-controlled robot lose balance where an onboard brain stays upright.",
+  "headline": "Drag a network-latency slider and watch a cloud-controlled stick-figure robot wobble and fall while its onboard-brain twin stays balanced.",
+  "episode": {
+    "slug": "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock",
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "number": null,
+    "date": "2026-11-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock"
+  },
+  "timestamp": "00:28:09",
+  "idea_score": 4.2,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 8,
+    "wow": 6,
+    "ux": 7,
+    "code": 8,
+    "honesty": 8
+  },
+  "overall": 7.45,
+  "created": "2026-11-17T03:25:19+00:00",
+  "updated": "2026-11-17T03:25:19+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-17T03:25:19+00:00",
+      "overall": 7.45,
+      "summary": "A clean, dependency-free simulation that faithfully embodies Brett Adcock's 'reflex budget' point: the latency-to-Hz math matches the episode's verified figures, the preset button cites them correctly with a single short quote, and the UI is upfront that the balance physics is a toy. The one defect flagged in the prior review (an over-long strung-together transcript quote) has been fixed in v2, and the remaining gaps (no long-run empirical confirmation of the falls/min claim, a stray light/dark inconsistency) are minor enough to ship as improvements rather than blockers."
+    }
+  ]
+}
