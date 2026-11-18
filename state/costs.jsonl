@@ -112,3 +112,4 @@
 {"at": "2026-11-17T13:33:16+00:00", "label": "extract:how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2", "est_cost_usd": 0.7356, "turns": 2, "subtype": "success"}
 {"at": "2026-11-17T13:37:21+00:00", "label": "build:2026-11-17-real-time-ruler", "est_cost_usd": 0.434, "turns": 22, "subtype": "success"}
 {"at": "2026-11-17T13:37:23+00:00", "label": "build:2026-11-17-sped-up-or-real", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
+{"at": "2026-11-18T15:52:38+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
