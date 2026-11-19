@@ -1,0 +1,63 @@
+{
+  "title": "Twelve Benches Talent",
+  "one_liner": "Niche recruiting for robotics hardware specialists, such as actuators, firmware, thermals and harnessing, for robot startups outside the Bay Area.",
+  "timestamp": "01:38:40",
+  "speaker": "Brett Adcock",
+  "context": "Adcock says building one robot needs about 12 kinds of specialists. Startups in places like Austin or Boston persuade only one or two in 50 Bay Area candidates to move, while SF hires nearly all. He lists the actuator team's many disciplines.",
+  "customer": "Seed to Series B robotics and hardware startups in the US outside San Francisco (Austin, Boston, Pittsburgh, Denver) hiring mechatronics, motor, firmware and thermal engineers",
+  "problem": "These companies need a dozen narrow hardware specialties at once and can't attract them away from the Bay Area through generic recruiters who don't understand the roles.",
+  "revenue_model": "Contingency fee of about 20% of first-year salary per hire, or a retained search of about $8,000 per role (estimate)",
+  "why_now": "The guest describes an all-out humanoid race with capital pouring in, and says each robot program needs firmware, electrical, thermals, embedded, structures, motor, gear and harness people, a talent pool that's both scarce and concentrated.",
+  "first_steps": [
+    "List 40 non-Bay-Area robotics startups with open hardware roles from their careers pages",
+    "Use the gap-map tool to build a sample 'team gap' report for 3 of them and email it to their founders",
+    "Build a shortlist of 30 passive candidates in one specialty (e.g. actuator/motor design) to prove you can source them"
+  ],
+  "cost_to_start": "About 2 weeks and under $500 (estimate), mostly a LinkedIn Recruiter-style sourcing subscription and a landing page",
+  "competition": "General engineering recruiters and a few hardware-focused agencies exist; specialist robotics boutiques are fewer",
+  "risks": "Long placement cycles mean slow first revenue. Hiring freezes if robotics funding cools. Credibility is hard without a hardware background. Big startups hire in-house.",
+  "money": 4,
+  "ease": 3,
+  "speed": 3,
+  "evidence": 3,
+  "tool": {
+    "title": "Build-Team Gap Map",
+    "one_liner": "Enter your robot's subsystems and current team to see which specialist roles you're missing.",
+    "demo": "A founder ticks the subsystems they build in-house (actuators, hands, power, compute, harness, enclosure) and lists current engineers by discipline. The tool maps each subsystem to the specialties it needs, flags uncovered ones in red, and generates a draft job spec and a Boolean search string for each gap. An optional pasted AI key refines the job specs. Example mode fills a sample humanoid startup and is labelled as an example.",
+    "data_plan": "The customer's own input plus a bundled discipline list taken from the guest's description of what an in-house actuator needs (firmware, electrical, thermals, embedded software, structures, motor, gear design, packaging, harnessing).",
+    "feasibility": 4,
+    "acceptance": [
+      "Ticking 'actuators' with no thermals engineer listed marks Thermals as a red gap and adds it to the gap count",
+      "Each gap has a 'copy job spec' and 'copy search string' button that puts non-empty text on the clipboard",
+      "With no API key, example mode fills a sample startup's gaps and specs, each labelled 'Example'",
+      "Gap matrix stacks into a single column readable on a 375px-wide phone screen"
+    ]
+  },
+  "figures": [
+    {
+      "value": "12",
+      "meaning": "Rough number of specialist divisions needed to build one robot",
+      "timestamp": "01:38:40",
+      "said": "an order of 12 different divisions of folks",
+      "verified": true
+    },
+    {
+      "value": "1–2 out of 50",
+      "meaning": "Share of SF candidates a startup outside the Bay Area might persuade to move",
+      "timestamp": "01:38:24",
+      "said": "one out of 50 or so, two out of 50",
+      "verified": true
+    }
+  ],
+  "score": 3.35,
+  "slug": "2026-11-17-twelve-benches-talent",
+  "episode": {
+    "slug": "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2",
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "number": null,
+    "date": "2026-11-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2"
+  },
+  "tool_slug": null,
+  "created": "2026-11-17T13:37:23+00:00"
+}

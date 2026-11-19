@@ -1,0 +1,64 @@
+{
+  "title": "Demo Forensics Desk",
+  "one_liner": "Paid reports that check robot demo videos for speed-ups, hidden cuts and signs of remote control before investors or buyers commit.",
+  "timestamp": "00:20:15",
+  "speaker": "Brett Adcock",
+  "context": "Adcock says many robot demo videos are played 5–20x faster than real time and some are teleoperated or stitched-together macros. Dave notes YouTube makes China look far ahead when the tech underneath is contrived.",
+  "customer": "Angel syndicates and seed/Series A VCs looking at robotics startups; corporate innovation and procurement teams shortlisting humanoid or warehouse-robot vendors; tech newsletters covering robotics",
+  "problem": "Buyers and investors judge robots largely from marketing videos and can't easily tell real-time autonomy from sped-up, edited or remote-controlled footage. A mistake costs a bad pilot or a mispriced investment.",
+  "revenue_model": "Per-video report about $400; vendor diligence pack of 5–10 videos plus a call with the vendor's questions answered, about $3,000 (estimate)",
+  "why_now": "The guest says the field is full of sped-up and teleoperated demos, with about 150 humanoid companies in China alone, and capital is flowing heavily into robotics, so many more videos are being used to raise money and sell pilots.",
+  "first_steps": [
+    "Run the free tool on 5 public humanoid demo videos and publish one sample report on LinkedIn",
+    "DM 20 robotics-focused angels or VC associates offering a free first report in exchange for feedback",
+    "Write a one-page checklist of teleop and speed-up tells (gravity, cloth, hair, cut points, cycle time) as a lead magnet"
+  ],
+  "cost_to_start": "About 1–2 weeks and under $200 (estimate) for the tool page, sample reports and a simple landing page",
+  "competition": "General video-forensics consultants and technical due-diligence firms exist; a robotics-demo specialist is probably rare",
+  "risks": "Vendors may object to public calls and hint at defamation, so reports should stay private and evidence-based. Speed estimates need a visible falling or thrown object. Teleoperation is often impossible to prove from video alone. The pool of buyers is fairly small.",
+  "money": 3,
+  "ease": 3,
+  "speed": 4,
+  "evidence": 4,
+  "tool": {
+    "title": "Real-Time Ruler",
+    "one_liner": "Load a demo video to find hidden cuts and estimate its true playback speed from gravity.",
+    "demo": "The customer loads a local video file. The page scans it frame by frame and marks likely hard cuts on a timeline. The customer then clicks a dropped or tossed object in 4+ frames and enters a known reference length, and the tool fits a free-fall curve to estimate the playback multiplier (e.g. 'about 4x faster than real time'). A cycle-time counter lets them tap each completed item to get seconds per item at estimated real speed. The output is a printable findings summary.",
+    "data_plan": "The customer's own video, processed entirely in the browser with no upload. Physics uses standard gravity (9.81 m/s²). The episode's '5X, 10X, 20X' claim is shown as context only.",
+    "feasibility": 3,
+    "acceptance": [
+      "Loading a local MP4 and pressing Scan places cut markers on a timeline wherever frame-to-frame difference spikes, and clicking a marker jumps the video there",
+      "After clicking an object's position on at least 4 frames and entering a reference length, the page shows a fitted gravity curve and an estimated speed multiplier",
+      "Tapping 'item done' during playback gives average seconds per item, adjusted by the estimated multiplier",
+      "A bundled example clip (a synthetic ball drop rendered at 4x) lets visitors try every feature without their own video, and is labelled as synthetic",
+      "The summary panel prints to a one-page report that says speed estimates are approximate"
+    ]
+  },
+  "figures": [
+    {
+      "value": "5X, 10X, 20X",
+      "meaning": "Speed-ups the guest says robot demo videos are shot at",
+      "timestamp": "00:20:15",
+      "said": "These videos are shot with 5X, 10X, 20X speeds",
+      "verified": true
+    },
+    {
+      "value": "150",
+      "meaning": "Rough number of humanoid robot companies (said about China)",
+      "timestamp": "01:29:36",
+      "said": "Like 150 humanoid robot companies",
+      "verified": true
+    }
+  ],
+  "score": 3.5,
+  "slug": "2026-11-17-demo-forensics-desk",
+  "episode": {
+    "slug": "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2",
+    "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",
+    "number": null,
+    "date": "2026-11-17",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock-2"
+  },
+  "tool_slug": null,
+  "created": "2026-11-17T13:37:23+00:00"
+}
