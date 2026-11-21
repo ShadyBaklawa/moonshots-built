@@ -49,18 +49,30 @@ def pending_slugs(eps: dict) -> list[str]:
     return [s for _, s in sorted(todo)]
 
 
+def _episode_key(title: str, date: str) -> tuple[str, str]:
+    return (" ".join(title.split()).casefold(), date)
+
+
 def cmd_detect(_args) -> int:
     from .feed import fetch_listing
 
     listing = fetch_listing()
     eps = state.load_episodes()
     first_run = not eps
+    seen = {_episode_key(r.get("title", ""), r.get("date", "")): s for s, r in eps.items()
+            if r.get("status") != "duplicate"}
     for i, e in enumerate(listing):  # listing is newest first
         if e.slug in eps:
             continue
-        status = "skipped" if first_run and i >= config.BOOTSTRAP_LATEST else "new"
-        eps[e.slug] = {"title": e.title, "date": e.date, "number": e.number, "url": e.url,
-                       "status": status, "attempts": 0, "found": state.now()}
+        rec = {"title": e.title, "date": e.date, "number": e.number, "url": e.url,
+               "attempts": 0, "found": state.now()}
+        key = _episode_key(e.title, e.date)
+        if key in seen:  # podscripts sometimes lists one episode twice ("...-2" slug)
+            rec.update(status="duplicate", duplicate_of=seen[key])
+        else:
+            rec["status"] = "skipped" if first_run and i >= config.BOOTSTRAP_LATEST else "new"
+            seen[key] = e.slug
+        eps[e.slug] = rec
     state.save_episodes(eps)
     todo = pending_slugs(eps)
     print(json.dumps({"pending": todo}, indent=2))

@@ -23,7 +23,9 @@ permissions:
 
 jobs:
   watch:
-    runs-on: ubuntu-latest
+    # Pinned: Playwright 1.56 can't install Chromium on Ubuntu 26.04, which ubuntu-latest
+    # became on 2026-11-19. Go back to ubuntu-latest after a Playwright bump that supports it.
+    runs-on: ubuntu-24.04
     timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
@@ -96,3 +98,11 @@ jobs:
             prototypes/*/.review/
           if-no-files-found: ignore
           retention-days: 14
+
+      - name: Alert on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MSG: "Moonshots, Built: watching for episodes failed. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        run: python -c 'import os; from pipeline.notify import telegram; telegram(os.environ["MSG"])' || true
