@@ -10,12 +10,66 @@
   },
   "anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history": {
     "title": "Anthropic’s $1.4T IPO: The Biggest Wealth Event in Human History?",
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "number": null,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history",
-    "status": "new",
+    "status": "built",
     "attempts": 0,
-    "found": "2026-11-19T20:40:26+00:00"
+    "found": "2026-11-19T20:40:26+00:00",
+    "updated": "2026-11-21T22:23:27+00:00",
+    "prototypes": [
+      "2026-11-21-checkout-script-x-ray",
+      "2026-11-21-orbit-fare-machine"
+    ],
+    "briefs": [
+      "2026-11-21-tagline-script-sentinel",
+      "2026-11-21-basement-systems-map"
+    ],
+    "ideas": [
+      {
+        "title": "Orbit Fare Machine",
+        "score": 4.4,
+        "timestamp": "00:54:17"
+      },
+      {
+        "title": "Unicorn Countdown",
+        "score": 3.9,
+        "timestamp": "00:29:49"
+      },
+      {
+        "title": "Patch Race",
+        "score": 3.85,
+        "timestamp": "00:45:52"
+      },
+      {
+        "title": "Packet-Switched Moon",
+        "score": 3.65,
+        "timestamp": "00:58:53"
+      },
+      {
+        "title": "Liquidity Flood",
+        "score": 3.55,
+        "timestamp": "00:30:55"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Tagline Script Sentinel",
+        "score": 3.65,
+        "timestamp": "00:39:17"
+      },
+      {
+        "title": "Basement Systems Map",
+        "score": 3.6,
+        "timestamp": "00:50:25"
+      },
+      {
+        "title": "Bhasha Front Desk",
+        "score": 3.0,
+        "timestamp": "01:45:34"
+      }
+    ],
+    "summary": "Peter, Dave, Salim and Alex cover Anthropic's IPO, priced to value it at about $1.4T, and the huge pile of San Francisco wealth it creates. They also discuss NVIDIA's leadership crisis after Jensen's exit, a week of outages plus a confirmed injection of malicious third-party JavaScript, and the first tower catch of a Starship upper stage, with its cost-per-kilogram maths. Other topics: US chip export rules and a proposal to label Chinese AI models, xAI's four-to-five-month data center builds, GPT 6.2, Palmer Luckey's seasteading project, and listener questions, including what Indian AI founders should build."
   },
   "how-figure-ai-is-outcompeting-china-and-tesla-in-robotics-robotic-deep-dive-w-brett-adcock": {
     "title": "How Figure AI Is Outcompeting China and Tesla in Robotics | Robotic Deep-Dive w/ Brett Adcock",

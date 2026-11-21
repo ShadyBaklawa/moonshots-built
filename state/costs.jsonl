@@ -113,3 +113,10 @@
 {"at": "2026-11-17T13:37:21+00:00", "label": "build:2026-11-17-real-time-ruler", "est_cost_usd": 0.434, "turns": 22, "subtype": "success"}
 {"at": "2026-11-17T13:37:23+00:00", "label": "build:2026-11-17-sped-up-or-real", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
 {"at": "2026-11-18T15:52:38+00:00", "label": "review:ep288-coffee-cup-horizon", "est_cost_usd": 0.0, "turns": 1, "subtype": "success"}
+{"at": "2026-11-21T22:07:32+00:00", "label": "extract:anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history", "est_cost_usd": 0.608, "turns": 2, "subtype": "success"}
+{"at": "2026-11-21T22:13:24+00:00", "label": "build:2026-11-21-checkout-script-x-ray", "est_cost_usd": 0.9483, "turns": 39, "subtype": "success"}
+{"at": "2026-11-21T22:15:33+00:00", "label": "review:2026-11-21-checkout-script-x-ray", "est_cost_usd": 0.3446, "turns": 14, "subtype": "success"}
+{"at": "2026-11-21T22:16:26+00:00", "label": "build:2026-11-21-checkout-script-x-ray:fix1", "est_cost_usd": 0.1754, "turns": 16, "subtype": "success"}
+{"at": "2026-11-21T22:17:44+00:00", "label": "review:2026-11-21-checkout-script-x-ray", "est_cost_usd": 0.1967, "turns": 13, "subtype": "success"}
+{"at": "2026-11-21T22:21:07+00:00", "label": "build:2026-11-21-orbit-fare-machine", "est_cost_usd": 0.4717, "turns": 21, "subtype": "success"}
+{"at": "2026-11-21T22:23:27+00:00", "label": "review:2026-11-21-orbit-fare-machine", "est_cost_usd": 0.3193, "turns": 12, "subtype": "success"}
