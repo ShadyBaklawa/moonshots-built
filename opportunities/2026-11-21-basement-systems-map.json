@@ -1,0 +1,64 @@
+{
+  "title": "Basement Systems Map",
+  "one_liner": "A fixed-fee sprint that maps a mid-size company's legacy systems and data and delivers a safe AI-connection plan.",
+  "timestamp": "00:50:25",
+  "speaker": "Dave Blundin",
+  "context": "Dave urged semi-technical, articulate people to go into companies and work out where the data lives, what legacy systems exist and how to connect AI securely. He said most mid-size firms haven't had a single credible AI upgrade meeting.",
+  "customer": "Owner-led US firms with 50–500 staff (distributors, manufacturers, regional services) that run old ERP, Access or on-prem systems whose original builders are gone",
+  "problem": "They know AI could help but don't know which old systems hold which data, what is risky to expose, or where to start. Big consultancies are too expensive and vendors only push their own product.",
+  "revenue_model": "A fixed two-week discovery sprint at about $5,000–$12,000 (estimate), with optional retainer implementation at about $3,000 a month (estimate).",
+  "why_now": "Dave argued the AI wave arrived faster than the advisor community could form, so the gap is wide. Peter and Alex said fixing ancient systems is now cheap, and that leaving them unpatched is just inertia.",
+  "first_steps": [
+    "Use the free inventory tool with 3 friendly business owners and turn the results into anonymised sample reports",
+    "Offer 5 local firms a free 45-minute 'systems map' call that ends with their inventory score and a paid sprint proposal",
+    "Publish one sample report and a fixed-price sprint page on LinkedIn, then run outreach to 50 operations managers"
+  ],
+  "cost_to_start": "About 1–3 weeks and under $500 (templates, the tool, a basic site), as an estimate; mostly the founder's time",
+  "competition": "IT managed-service providers, local consultancies and large firms' AI practices all overlap. Few offer a fixed-price, AI-specific discovery package to mid-size firms.",
+  "risks": "Long sales cycles, and trust issues about giving an outsider access to systems. Deliverables can drift into open-ended consulting. Without technical depth the plan may be shallow.",
+  "money": 4,
+  "ease": 3,
+  "speed": 3,
+  "evidence": 4,
+  "tool": {
+    "title": "Legacy Ledger",
+    "one_liner": "List your business systems and get an age/risk score and a ranked plan for connecting AI to each one.",
+    "demo": "The owner enters each system they run (name, roughly what year it was installed, who maintains it, whether it faces the internet, what data it holds, whether it has an export or API). The tool scores each one on risk and AI-readiness, ranks quick wins against must-fix-first items, and produces a printable one-page systems map with suggested next steps. With a pasted AI key it also drafts plain-English notes for each system; example mode uses canned notes.",
+    "data_plan": "Customer's own input; scoring rules are transparent and bundled in the page. Optional AI notes use a visitor-pasted key; example mode works without one.",
+    "feasibility": 5,
+    "acceptance": [
+      "Loading the example company fills 6 systems, and each shows a risk score and an AI-readiness score with the reasons listed",
+      "Changing a system's 'internet-facing' field to yes raises its risk score and moves it up the 'fix first' list immediately",
+      "The Print/Export button produces a one-page summary containing every system and its ranked next step",
+      "Without an API key, the per-system notes are filled with example text clearly labelled 'Example'",
+      "At 375px width the system entry form and results stack vertically and stay usable"
+    ]
+  },
+  "figures": [
+    {
+      "value": "9 out of 10",
+      "meaning": "Dave's anecdotal share of mid-size companies that have had no credible AI upgrade meeting",
+      "timestamp": "00:51:48",
+      "said": "And nine times out of 10, they'll say not a single meeting yet.",
+      "verified": true
+    },
+    {
+      "value": "hundreds of thousands",
+      "meaning": "number of small and medium businesses Peter said need their systems overhauled",
+      "timestamp": "00:51:06",
+      "said": "hundreds of thousands of small and medium-sized businesses",
+      "verified": true
+    }
+  ],
+  "score": 3.6,
+  "slug": "2026-11-21-basement-systems-map",
+  "episode": {
+    "slug": "anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history",
+    "title": "Anthropic’s $1.4T IPO: The Biggest Wealth Event in Human History?",
+    "number": null,
+    "date": "2026-11-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history"
+  },
+  "tool_slug": null,
+  "created": "2026-11-21T22:23:27+00:00"
+}
