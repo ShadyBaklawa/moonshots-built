@@ -1,0 +1,45 @@
+{
+  "title": "Checkout Script X-Ray",
+  "one_liner": "Paste a page's HTML and see every outside script, its risk flags, and a ready-to-use CSP header.",
+  "timestamp": "00:39:17",
+  "speaker": "Peter Diamandis",
+  "context": "Peter described a confirmed attack in which a flaw in a website-experimentation vendor's sign-up flow let attackers inject hostile JavaScript into many big-brand sites. The script tried to skim cards, steal cookies and hijack crypto payments. He said trusted vendor scripts need rewriting.",
+  "demo": "The customer pastes the HTML source of their checkout or login page. The tool lists every external script and iframe by domain, marks which ones lack integrity (SRI) attributes, flags inline scripts and known tag-manager patterns, and drafts a Content-Security-Policy header plus a prioritised fix list they can hand to a developer.",
+  "data_plan": "Uses only the customer's pasted HTML, parsed in the browser with DOMParser. A bundled sample page drives example mode. The 178-organisation incident figure from the episode appears as context.",
+  "feasibility": 5,
+  "risks": "Customers may see it as a nice-to-have until they are breached. Strict CSP can break marketing tags and annoy growth teams. Bigger platforms may bundle script monitoring for free.",
+  "figures": [
+    {
+      "value": "178",
+      "meaning": "number of organisations whose sites received injected hostile JavaScript through the vendor flaw",
+      "timestamp": "00:39:17",
+      "said": "injected hostile JavaScript into 178 organizations",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Pasting the bundled sample HTML and clicking Analyze shows a table of external script domains with a count, and an 'SRI missing' flag on each script tag without an integrity attribute",
+    "The generated CSP header lists exactly the external script domains found and updates when the user unticks a domain",
+    "Inline scripts and tag-manager loaders are listed in a separate 'harder to control' section with a plain-language note",
+    "A 'Copy fix list' button copies a numbered checklist to the clipboard, and the page states that no data leaves the browser",
+    "At 375px width the table collapses into stacked cards without horizontal scrolling"
+  ],
+  "related_existing": null,
+  "score": 3.65,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Tagline Script Sentinel",
+    "one_liner": "Inventories every third-party script on a company's website, locks them down, and alerts the owner when one changes.",
+    "customer": "Mid-size e-commerce stores and SaaS companies (roughly 20–500 staff) that run many marketing, analytics and A/B-testing tags on checkout and login pages, but have no dedicated security team",
+    "problem": "Any vendor script on a checkout page can read card fields and cookies. Most small teams don't know how many such scripts they run, which domains they load from, or when their content changes, so one vendor breach becomes their breach.",
+    "revenue_model": "A one-off script audit plus a hardening setup (CSP headers, subresource integrity, removing unused tags) for about $1,500 (estimate), then change monitoring at about $99–$299 a month per site (estimate).",
+    "why_now": "The episode describes a fresh, confirmed incident in which one vendor's flaw put malicious code onto many organisations' sites at once. The hosts also argue that AI has made finding exploits cheap while defence is still slow and done by hand."
+  },
+  "episode": {
+    "slug": "anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history",
+    "title": "Anthropic’s $1.4T IPO: The Biggest Wealth Event in Human History?",
+    "number": null,
+    "date": "2026-11-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history"
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Checkout - Northfield Outfitters</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+  <script src="https://www.googletagmanager.com/gtm.js?id=GTM-NF4821"></script>
+</head>
+<body>
+  <header>
+    <h1>Northfield Outfitters</h1>
+  </header>
+
+  <main>
+    <form id="checkout-form">
+      <label>Card number <input type="text" name="card"></label>
+      <label>Expiry <input type="text" name="exp"></label>
+      <label>CVC <input type="text" name="cvc"></label>
+      <button type="submit">Pay now</button>
+    </form>
+
+    <iframe src="https://js.stripe.com/v3/elements-inner-card" title="card entry" width="400" height="60"></iframe>
+  </main>
+
+  <!-- Experimentation vendor widget, loaded without SRI -->
+  <script src="https://cdn.webexperiments-vendor.io/loader/v2/loader.js"></script>
+
+  <!-- Legacy promo banner script, still served over plain HTTP -->
+  <script src="http://assets.oldpromo.example.net/banner.js"></script>
+
+  <script src="https://cdn.segment.com/analytics.js/v1/abc123/analytics.min.js"></script>
+
+  <script>
+    // Inline snippet set up by the marketing team
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'checkout_view' });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"
+          integrity="sha384-nothing-real-but-present"></script>
+</body>
+</html>

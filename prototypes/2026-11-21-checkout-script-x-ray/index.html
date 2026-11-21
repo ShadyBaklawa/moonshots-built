@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Script X-Ray</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="page-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">⌁</span>
+      <div>
+        <h1>Checkout Script X-Ray</h1>
+        <p class="tagline">For e-commerce &amp; SaaS teams with no dedicated security staff: paste your checkout or login page's HTML and see every outside script, what's risky about it, and a CSP header you can hand to a developer today.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="panel context-panel" aria-label="Why this matters">
+    <p>
+      <strong>178 organisations</strong> had hostile JavaScript injected into their sites through a single
+      website-experimentation vendor's flaw — the attacker's script tried to skim card numbers, steal cookies
+      and hijack crypto payments.
+      <span class="src-tag">as stated on the podcast, Peter Diamandis, 00:39:17</span>
+    </p>
+    <p class="context-note">Every script below behaves like a vendor you already trust — until its code changes without your sign-off.</p>
+  </section>
+
+  <section class="panel input-panel" aria-labelledby="input-heading">
+    <h2 id="input-heading">1. Paste your page's HTML</h2>
+    <textarea id="html-input" rows="10" spellcheck="false"
+      placeholder="Paste the full HTML source of your checkout or login page here (Ctrl/Cmd+U in most browsers, then copy the source)."></textarea>
+    <div class="input-actions">
+      <button id="load-sample" class="btn btn-secondary" type="button">Load sample checkout page</button>
+      <button id="analyze" class="btn btn-primary" type="button">Analyze</button>
+      <span id="input-status" class="input-status" role="status"></span>
+    </div>
+    <p class="privacy-note">🔒 Nothing you paste is uploaded anywhere. Parsing runs entirely in your browser — no data leaves the browser.</p>
+  </section>
+
+  <section id="results" class="results" hidden>
+
+    <section class="panel" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">2. What's loading on this page</h2>
+      <div id="summary-stats" class="summary-stats"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="domains-heading">
+      <h2 id="domains-heading">External scripts &amp; iframes by domain</h2>
+      <p class="section-note">Untick a domain to drop it from the CSP header below. Each script tag missing a Subresource Integrity (SRI) attribute is flagged individually.</p>
+      <div class="table-wrap">
+        <table id="domains-table" class="domains-table">
+          <thead>
+            <tr>
+              <th scope="col">Include in CSP</th>
+              <th scope="col">Domain</th>
+              <th scope="col">Type</th>
+              <th scope="col">Count</th>
+              <th scope="col">Script tags &amp; SRI status</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody id="domains-tbody"></tbody>
+        </table>
+      </div>
+      <p id="no-external-note" class="section-note" hidden>No external scripts or iframes were found on this page.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="harder-heading">
+      <h2 id="harder-heading">Harder to control</h2>
+      <p class="section-note">
+        A Content-Security-Policy can allow or block a whole domain, but it can't inspect what a script does once it's
+        allowed to run. These two categories need more than a CSP entry.
+      </p>
+
+      <div class="harder-block">
+        <h3>Inline scripts</h3>
+        <p id="inline-count" class="harder-count"></p>
+        <p class="plain-note">Inline <code>&lt;script&gt;</code> blocks have no URL for a CSP to allow or block by domain.
+          The only ways to control them are <code>'unsafe-inline'</code> (which defeats most of the protection) or giving
+          each block a per-deploy nonce or hash — both require a developer to change how the page is built.</p>
+        <ul id="inline-list" class="harder-list"></ul>
+      </div>
+
+      <div class="harder-block">
+        <h3>Tag-manager &amp; dynamic loaders</h3>
+        <p id="tagmanager-count" class="harder-count"></p>
+        <p class="plain-note">These vendors (tag managers, experimentation and analytics containers) fetch and run
+          <em>additional</em> code after your page loads, on their own schedule. Allowing their domain in a CSP does not
+          stop them from pulling in new, unreviewed scripts later — the 178-organisation incident started exactly this way.</p>
+        <ul id="tagmanager-list" class="harder-list"></ul>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="csp-heading">
+      <h2 id="csp-heading">3. Draft Content-Security-Policy header</h2>
+      <p class="section-note">Built from the domains you've left ticked above. Paste this as a <code>Content-Security-Policy</code> response header, then test in <code>Content-Security-Policy-Report-Only</code> mode first.</p>
+      <pre id="csp-output" class="code-block" aria-label="Generated CSP header"></pre>
+      <button id="copy-csp" class="btn btn-secondary" type="button">Copy CSP header</button>
+    </section>
+
+    <section class="panel" aria-labelledby="fixlist-heading">
+      <h2 id="fixlist-heading">4. Prioritised fix list</h2>
+      <ol id="fix-list" class="fix-list"></ol>
+      <button id="copy-fixlist" class="btn btn-primary" type="button">Copy fix list</button>
+      <span id="copy-status" class="input-status" role="status"></span>
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="page-footer">
+  <p>
+    Inspired by Moonshots with Peter Diamandis, "Anthropic's $1.4T IPO: The Biggest Wealth Event in Human History?",
+    around 00:39:17.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history" target="_blank" rel="noopener noreferrer">Listen to the episode</a>.
+    Fan-made prototype, not affiliated with the show.
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

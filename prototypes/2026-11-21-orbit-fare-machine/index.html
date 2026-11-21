@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbit Fare Machine</title>
+<style>
+  :root{
+    --bg-0:#060a14;
+    --bg-1:#0b1326;
+    --panel:#101a33;
+    --panel-2:#0d1730;
+    --line:#223058;
+    --text:#eef2fb;
+    --muted:#9aaad0;
+    --accent:#ff7a3d;
+    --accent-2:#3dd6ff;
+    --good:#4ade80;
+    --focus:#ffd166;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1px 1px at 10% 20%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 80% 10%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 60% 70%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 30% 85%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 90% 60%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 45% 40%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 15% 55%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 70% 90%, #fff 50%, transparent 50%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1));
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size:16px;
+    line-height:1.45;
+    min-height:100vh;
+  }
+  a{color:var(--accent-2);}
+  .wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px;}
+
+  header.hero{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:18px 0 10px;
+    flex-wrap:wrap;
+  }
+  .rocket-badge{
+    width:52px;height:52px;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 35% 30%, #1c2b52, #0a1230);
+    border:1px solid var(--line);
+    border-radius:50%;
+    font-size:26px;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .rocket-badge{ animation: pulse 3.2s ease-in-out infinite; }
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 0 rgba(255,122,61,0.0); }
+    50%{ box-shadow:0 0 18px 2px rgba(255,122,61,0.35); }
+  }
+  h1{font-size:1.6rem;margin:0;letter-spacing:0.3px;}
+  .one-liner{color:var(--muted);margin:4px 0 0;font-size:0.98rem;max-width:640px;}
+
+  .layout{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:18px;
+    margin-top:18px;
+  }
+  @media (max-width: 760px){
+    .layout{grid-template-columns: 1fr;}
+  }
+
+  .panel{
+    background: linear-gradient(180deg, var(--panel), var(--panel-2));
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 18px 20px;
+  }
+  .panel h2{
+    margin:0 0 14px;
+    font-size:1.05rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .panel h2 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+
+  .control{margin-bottom:18px;}
+  .control:last-child{margin-bottom:0;}
+  .control label{
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+    font-size:0.92rem;
+    margin-bottom:6px;
+    flex-wrap:wrap;
+  }
+  .control label .name{color:var(--text);font-weight:600;}
+  .control label .val{color:var(--accent-2);font-weight:700;font-variant-numeric:tabular-nums;}
+  .control .hint{
+    font-size:0.78rem;
+    color:var(--muted);
+    margin-top:5px;
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  input[type="range"]{
+    width:100%;
+    height:40px;
+    -webkit-appearance:none;
+    appearance:none;
+    background:transparent;
+    cursor:pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track{
+    height:8px;
+    border-radius:5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  }
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:26px;height:26px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--accent);
+    margin-top:-9px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.5);
+  }
+  input[type="range"]::-moz-range-track{
+    height:8px;
+    border-radius:5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  }
+  input[type="range"]::-moz-range-thumb{
+    width:26px;height:26px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--accent);
+  }
+  input[type="range"]:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:4px;
+    border-radius:8px;
+  }
+
+  .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:0.72rem;
+    padding:2px 8px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    white-space:nowrap;
+  }
+  .tag.assumption{ color:#ffd98e; border-color:#5a4323; background:rgba(255,217,142,0.07); }
+  .tag.source{ color:#8fe3ff; border-color:#1f4a5c; background:rgba(143,227,255,0.08); }
+
+  .presets{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    flex-wrap:wrap;
+  }
+  button.preset{
+    flex:1 1 150px;
+    min-height:44px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:#152242;
+    color:var(--text);
+    font-size:0.88rem;
+    font-weight:600;
+    cursor:pointer;
+    padding:8px 10px;
+  }
+  button.preset:hover{ background:#1c2d57; }
+  button.preset:focus-visible{ outline:3px solid var(--focus); outline-offset:2px; }
+  button.preset .sub{ display:block; font-weight:400; color:var(--muted); font-size:0.74rem; margin-top:2px;}
+
+  .callout{
+    margin-top:14px;
+    padding:10px 12px;
+    border-radius:10px;
+    background:rgba(61,214,255,0.07);
+    border:1px solid #1f4a5c;
+    font-size:0.82rem;
+    color:#cfeefc;
+    display:none;
+  }
+  .callout.show{ display:block; }
+  .callout strong{ color:#fff; }
+
+  .readouts{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:10px;
+    margin-bottom:18px;
+  }
+  @media (max-width:520px){
+    .readouts{grid-template-columns: 1fr;}
+  }
+  .readout{
+    background:#0a1430;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px;
+    text-align:left;
+  }
+  .readout .label{font-size:0.74rem;color:var(--muted);margin-bottom:4px;}
+  .readout .big{font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums;color:#fff;}
+  .readout.ticket .big{color:var(--good);}
+
+  .chart-wrap{margin-top:6px;}
+  .chart-caption{font-size:0.78rem;color:var(--muted);margin-bottom:10px;}
+  .reduction{
+    font-size:0.92rem;
+    margin-top:12px;
+    padding:10px 12px;
+    border-radius:10px;
+    background:rgba(74,222,128,0.08);
+    border:1px solid #214a30;
+    color:#bdf5cf;
+  }
+  .reduction strong{color:#fff;font-size:1.05rem;}
+
+  svg text{ fill:var(--muted); font-size:11px; }
+  svg .bar-label{ fill:var(--text); font-size:12px; font-weight:700; }
+
+  .figures{ margin-top:18px; }
+  .figures ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  .figures li{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:8px 10px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:#0a1430;
+    font-size:0.82rem;
+    flex-wrap:wrap;
+  }
+  .figures li .fmean{ color:var(--muted); flex:1 1 200px; }
+  .figures li .fval{ color:#fff; font-weight:700; white-space:nowrap; }
+
+  footer{
+    margin-top:30px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:0.8rem;
+    text-align:center;
+  }
+
+  .visually-hidden{
+    position:absolute; width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="rocket-badge" aria-hidden="true">🚀</div>
+    <div>
+      <h1>Orbit Fare Machine</h1>
+      <p class="one-liner">Slide propellant cost, fuel share and payload to see the price per kilogram&nbsp;&mdash; and your own ticket to orbit.</p>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <section class="panel" aria-labelledby="controls-h">
+      <h2 id="controls-h"><span class="dot" aria-hidden="true"></span>Flight assumptions</h2>
+
+      <div class="control">
+        <label for="propellant"><span class="name">Propellant cost per flight</span><span class="val" id="propellantVal">$1,500,000</span></label>
+        <input type="range" id="propellant" min="200000" max="5000000" step="50000" value="1500000" aria-describedby="propellantHint">
+        <div class="hint" id="propellantHint">
+          <span class="tag assumption">your assumption</span>
+          <span class="tag source">Peter said $1M&ndash;$2M &middot; 00:54:17</span>
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="fuelShare"><span class="name">Fuel's share of operating cost</span><span class="val" id="fuelShareVal">25%</span></label>
+        <input type="range" id="fuelShare" min="10" max="50" step="1" value="25" aria-describedby="fuelShareHint">
+        <div class="hint" id="fuelShareHint">
+          <span class="tag assumption">your assumption</span>
+          <span class="tag source">Peter said ~25% &middot; 00:54:17</span>
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="payload"><span class="name">Payload per flight</span><span class="val" id="payloadVal">150 t</span></label>
+        <input type="range" id="payload" min="10" max="300" step="5" value="150" aria-describedby="payloadHint">
+        <div class="hint" id="payloadHint">
+          <span class="tag assumption">your assumption</span>
+          <span>Peter never stated a payload figure &mdash; this stays yours to set.</span>
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="weight"><span class="name">Your body weight</span><span class="val" id="weightVal">150 lb</span></label>
+        <input type="range" id="weight" min="80" max="300" step="5" value="150" aria-describedby="weightHint">
+        <div class="hint" id="weightHint">
+          <span class="tag assumption">your assumption</span>
+          <span>Stays in your browser &middot; Peter's example used "the average 150-pound American".</span>
+        </div>
+      </div>
+
+      <div class="presets" role="group" aria-label="Presets">
+        <button type="button" class="preset" id="presetPeter">Peter's case
+          <span class="sub">$1.5M propellant · 25% fuel share</span>
+        </button>
+        <button type="button" class="preset" id="presetElon">Elon update
+          <span class="sub">$500K propellant · 200 t payload</span>
+        </button>
+      </div>
+
+      <div class="callout" id="peterCallout">
+        <strong>Episode stated (00:54:17&ndash;00:55:06):</strong> at these numbers Peter put total cost around <strong>$4M&ndash;$8M</strong> per flight, or <strong>$27&ndash;$53 per kg</strong>, giving a ticket of roughly <strong>$2,000&ndash;$4,000</strong> for the average 150‑lb American. Your live readout at right uses your own payload slider, so it may differ &mdash; Peter never stated a payload figure.
+      </div>
+      <div class="callout" id="elonCallout">
+        <strong>Episode stated (00:55:36):</strong> with propellant down to <strong>$500,000</strong> and payload up to <strong>200 tons</strong>, Elon's update could drop tickets to <strong>below $1,000</strong> per person.
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="results-h">
+      <h2 id="results-h"><span class="dot" aria-hidden="true"></span>Live readout</h2>
+
+      <div class="readouts" aria-live="polite">
+        <div class="readout">
+          <div class="label">Cost per flight</div>
+          <div class="big" id="outFlight">$0</div>
+        </div>
+        <div class="readout">
+          <div class="label">Cost per kg to orbit</div>
+          <div class="big" id="outPerKg">$0</div>
+        </div>
+        <div class="readout ticket">
+          <div class="label">Your ticket price</div>
+          <div class="big" id="outTicket">$0</div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-caption">Cost per kilogram, log scale &mdash; your live figure vs. the Space Shuttle.</div>
+        <svg id="chart" viewBox="0 0 420 200" width="100%" height="200" role="img" aria-label="Log scale bar chart comparing cost per kilogram"></svg>
+        <div class="reduction" id="reductionNote">Your current cost per kg is <strong>&mdash;</strong> the Shuttle's.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="panel figures" aria-labelledby="figures-h">
+    <h2 id="figures-h"><span class="dot" aria-hidden="true"></span>Figures stated on the podcast</h2>
+    <ul id="figuresList"></ul>
+  </section>
+
+  <footer>
+    Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history" target="_blank" rel="noopener">Moonshots, "Anthropic's $1.4T IPO: The Biggest Wealth Event in Human History?"</a>, around 00:54:17. Fan-made prototype, not affiliated with the show.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var SHUTTLE_PER_KG = 54000;
+  var LB_TO_KG = 0.45359237;
+
+  var propellantEl = document.getElementById('propellant');
+  var fuelShareEl = document.getElementById('fuelShare');
+  var payloadEl = document.getElementById('payload');
+  var weightEl = document.getElementById('weight');
+
+  var propellantVal = document.getElementById('propellantVal');
+  var fuelShareVal = document.getElementById('fuelShareVal');
+  var payloadVal = document.getElementById('payloadVal');
+  var weightVal = document.getElementById('weightVal');
+
+  var outFlight = document.getElementById('outFlight');
+  var outPerKg = document.getElementById('outPerKg');
+  var outTicket = document.getElementById('outTicket');
+  var reductionNote = document.getElementById('reductionNote');
+  var chart = document.getElementById('chart');
+
+  var peterCallout = document.getElementById('peterCallout');
+  var elonCallout = document.getElementById('elonCallout');
+
+  function money(n, decimals){
+    if (decimals === undefined) decimals = 0;
+    return '$' + n.toLocaleString('en-US', {maximumFractionDigits: decimals, minimumFractionDigits: decimals});
+  }
+
+  function compute(){
+    var propellant = parseFloat(propellantEl.value);
+    var fuelShare = parseFloat(fuelShareEl.value) / 100;
+    var payloadTons = parseFloat(payloadEl.value);
+    var weightLb = parseFloat(weightEl.value);
+
+    var totalCost = propellant / fuelShare;
+    var payloadKg = payloadTons * 1000;
+    var perKg = totalCost / payloadKg;
+    var weightKg = weightLb * LB_TO_KG;
+    var ticket = perKg * weightKg;
+
+    return { propellant: propellant, fuelShare: fuelShare, payloadTons: payloadTons,
+             weightLb: weightLb, totalCost: totalCost, perKg: perKg, ticket: ticket };
+  }
+
+  function drawChart(perKg){
+    var W = 420, H = 200;
+    var padLeft = 60, padBottom = 28, padTop = 14, padRight = 14;
+    var plotH = H - padTop - padBottom;
+    var plotW = W - padLeft - padRight;
+
+    var domainMin = 1, domainMax = 100000;
+    var logMin = Math.log10(domainMin), logMax = Math.log10(domainMax);
+
+    function yFor(v){
+      var clamped = Math.max(domainMin, Math.min(domainMax, v));
+      var frac = (Math.log10(clamped) - logMin) / (logMax - logMin);
+      return padTop + plotH * (1 - frac);
+    }
+
+    var bars = [
+      { label: 'Shuttle', value: SHUTTLE_PER_KG, color: 'var(--accent)', tagId: 'shuttle' },
+      { label: 'Your figure', value: perKg, color: 'var(--accent-2)', tagId: 'yours' }
+    ];
+
+    var barW = 90;
+    var gap = (plotW - barW * bars.length) / (bars.length + 1);
+
+    var svgParts = [];
+
+    // gridlines at powers of ten
+    for (var p = 0; p <= 5; p++){
+      var gv = Math.pow(10, p);
+      if (gv < domainMin || gv > domainMax) continue;
+      var gy = yFor(gv);
+      svgParts.push('<line x1="' + padLeft + '" y1="' + gy + '" x2="' + (W - padRight) + '" y2="' + gy + '" stroke="#223058" stroke-width="1" />');
+      svgParts.push('<text x="' + (padLeft - 8) + '" y="' + (gy + 3) + '" text-anchor="end">$' + gv.toLocaleString('en-US') + '</text>');
+    }
+
+    bars.forEach(function(b, i){
+      var x = padLeft + gap * (i + 1) + barW * i;
+      var y = yFor(b.value);
+      var h = (padTop + plotH) - y;
+      svgParts.push('<rect x="' + x + '" y="' + y + '" width="' + barW + '" height="' + h + '" fill="' + b.color + '" rx="4" />');
+      svgParts.push('<text class="bar-label" x="' + (x + barW / 2) + '" y="' + (y - 8) + '" text-anchor="middle">$' + Math.round(b.value).toLocaleString('en-US') + '</text>');
+      svgParts.push('<text x="' + (x + barW / 2) + '" y="' + (padTop + plotH + 16) + '" text-anchor="middle">' + b.label + '</text>');
+    });
+
+    chart.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    chart.innerHTML = svgParts.join('');
+  }
+
+  function render(){
+    var r = compute();
+
+    propellantVal.textContent = money(r.propellant);
+    fuelShareVal.textContent = Math.round(r.fuelShare * 100) + '%';
+    payloadVal.textContent = r.payloadTons + ' t';
+    weightVal.textContent = r.weightLb + ' lb';
+
+    outFlight.textContent = money(r.totalCost);
+    outPerKg.textContent = money(r.perKg, r.perKg < 100 ? 2 : 0);
+    outTicket.textContent = money(r.ticket, r.ticket < 100 ? 2 : 0);
+
+    drawChart(r.perKg);
+
+    var factor = SHUTTLE_PER_KG / r.perKg;
+    reductionNote.innerHTML = 'Your current cost per kg is <strong>' + factor.toFixed(0) + 'x cheaper</strong> than the Shuttle\'s ' + money(SHUTTLE_PER_KG) + '/kg.';
+  }
+
+  [propellantEl, fuelShareEl, payloadEl, weightEl].forEach(function(el){
+    el.addEventListener('input', render);
+  });
+
+  document.getElementById('presetPeter').addEventListener('click', function(){
+    propellantEl.value = 1500000;
+    fuelShareEl.value = 25;
+    weightEl.value = 150;
+    peterCallout.classList.add('show');
+    elonCallout.classList.remove('show');
+    render();
+  });
+
+  document.getElementById('presetElon').addEventListener('click', function(){
+    propellantEl.value = 500000;
+    fuelShareEl.value = 25;
+    payloadEl.value = 200;
+    weightEl.value = 150;
+    elonCallout.classList.add('show');
+    peterCallout.classList.remove('show');
+    render();
+  });
+
+  var figures = [
+    { meaning: "Fuel's typical share of operating cost in mature reusable transport, per Peter", value: '25%', ts: '00:54:17' },
+    { meaning: 'Initial propellant cost estimate per Starship launch', value: '$1M–$2M', ts: '00:54:17' },
+    { meaning: 'Implied total cost per Starship flight', value: '$4M–$8M', ts: '00:54:17' },
+    { meaning: 'Implied Starship cost per kilogram', value: '$27–$53/kg', ts: '00:55:06' },
+    { meaning: 'Space Shuttle cost per kilogram', value: '$54,000/kg', ts: '00:55:06' },
+    { meaning: "Weight of the average American, used in Peter's ticket example", value: '150 lb', ts: '00:55:06' },
+    { meaning: "Peter's per-person orbit ticket estimate", value: '$2,000–$4,000', ts: '00:55:06' },
+    { meaning: "Elon's updated propellant cost per flight", value: '$500,000', ts: '00:55:36' },
+    { meaning: "Elon's updated Starship payload", value: '200 tons', ts: '00:55:36' },
+    { meaning: 'Resulting per-person ticket price to orbit', value: 'below $1,000', ts: '00:55:36' }
+  ];
+
+  var list = document.getElementById('figuresList');
+  list.innerHTML = figures.map(function(f){
+    return '<li><span class="fmean">' + f.meaning + '</span><span class="fval">' + f.value + ' <span class="tag source">' + f.ts + '</span></span></li>';
+  }).join('');
+
+  render();
+})();
+</script>
+</body>
+</html>

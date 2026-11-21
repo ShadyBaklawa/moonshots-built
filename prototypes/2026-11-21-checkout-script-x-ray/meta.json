@@ -1,0 +1,37 @@
+{
+  "slug": "2026-11-21-checkout-script-x-ray",
+  "kind": "tool",
+  "title": "Checkout Script X-Ray",
+  "one_liner": "Paste a page's HTML and see every outside script, its risk flags, and a ready-to-use CSP header.",
+  "headline": "Paste your checkout page's HTML and get a live inventory of every third-party script, an SRI/CSP risk report, and a ready-to-paste CSP header — all computed in your browser.",
+  "episode": {
+    "slug": "anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history",
+    "title": "Anthropic’s $1.4T IPO: The Biggest Wealth Event in Human History?",
+    "number": null,
+    "date": "2026-11-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history"
+  },
+  "timestamp": "00:39:17",
+  "idea_score": 3.65,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 8,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.55,
+  "created": "2026-11-21T22:17:44+00:00",
+  "updated": "2026-11-21T22:17:44+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-21T22:17:44+00:00",
+      "overall": 8.55,
+      "summary": "This is a genuinely working audit tool, not a mockup: every table row, flag, CSP line and fix-list item is computed live from DOMParser output on whatever HTML is pasted, verified by reading the analyze/render pipeline end to end. It matches the episode's idea and the opportunity's audit use case closely, handles mobile layout and accessibility correctly, keeps the one verified figure (178) accurately labeled and attributed, and ships no secrets or external dependencies."
+    }
+  ]
+}

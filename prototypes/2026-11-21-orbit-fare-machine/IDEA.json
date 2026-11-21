@@ -1,0 +1,102 @@
+{
+  "title": "Orbit Fare Machine",
+  "one_liner": "Slide propellant cost, fuel share and payload to see the price per kilogram and your own ticket to orbit.",
+  "timestamp": "00:54:17",
+  "speaker": "Peter Diamandis",
+  "context": "After the Starship tower catch, Peter reasoned that if fuel is about a quarter of operating cost, flights cost a few million dollars, or tens of dollars per kilogram. He compared that with the Shuttle, and later used Elon's lower fuel figure to get tickets under $1,000.",
+  "demo": "Visitors drag sliders for propellant cost per flight, fuel's share of operating cost and payload tons, and enter their body weight. A live readout shows cost per flight, cost per kg and their personal ticket price. A log-scale bar chart compares that with the Shuttle figure, and preset buttons load Peter's case and Elon's updated case.",
+  "data_plan": "A bundled set of figures stated on the podcast (propellant cost, 25% fuel share, Shuttle $/kg, Elon's $500,000 and 200-ton update); every other value comes from user sliders, clearly labelled as user assumptions.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 3,
+  "related_existing": null,
+  "risks": "Peter's own range implies a payload of roughly 150 tons that was never stated, so the 'Peter case' preset must not invent a payload; instead it should show the stated $/kg outputs. The fuel-share rule of thumb is a heuristic, not a SpaceX figure. Body weight is personal but stays local.",
+  "figures": [
+    {
+      "value": "25%",
+      "meaning": "fuel's typical share of operating cost in mature reusable transport, per Peter",
+      "timestamp": "00:54:17",
+      "said": "fuel typically represents only 25% of the operating cost",
+      "verified": true
+    },
+    {
+      "value": "$1 million to $2 million",
+      "meaning": "initial propellant cost estimate per Starship launch",
+      "timestamp": "00:54:17",
+      "said": "estimated $1 million to $2 million per launch",
+      "verified": true
+    },
+    {
+      "value": "$4 to $8 million",
+      "meaning": "implied total cost per Starship flight",
+      "timestamp": "00:54:17",
+      "said": "implies a total cost of $4 to $8",
+      "verified": true
+    },
+    {
+      "value": "$27 to $53",
+      "meaning": "implied Starship cost per kilogram",
+      "timestamp": "00:55:06",
+      "said": "million per flight, or $27 to $53 per kilogram",
+      "verified": true
+    },
+    {
+      "value": "$54,000",
+      "meaning": "Space Shuttle cost per kilogram",
+      "timestamp": "00:55:06",
+      "said": "space shuttle was operating at about $54,000 per kilogram",
+      "verified": true
+    },
+    {
+      "value": "150-pound",
+      "meaning": "weight of the average American used in Peter's ticket example",
+      "timestamp": "00:55:06",
+      "said": "the average 150-pound American",
+      "verified": true
+    },
+    {
+      "value": "$2,000 to $4,000",
+      "meaning": "Peter's per-person orbit ticket estimate",
+      "timestamp": "00:55:06",
+      "said": "can go to orbit for roughly $2,000 to $4,000",
+      "verified": true
+    },
+    {
+      "value": "$500,000",
+      "meaning": "Elon's updated propellant cost per flight",
+      "timestamp": "00:55:36",
+      "said": "propellant costs per flight will drop to $500,000",
+      "verified": true
+    },
+    {
+      "value": "200 tons",
+      "meaning": "Elon's updated Starship payload",
+      "timestamp": "00:55:36",
+      "said": "payload will increase to 200 tons",
+      "verified": true
+    },
+    {
+      "value": "below $1,000",
+      "meaning": "resulting per-person ticket price to orbit",
+      "timestamp": "00:55:36",
+      "said": "could drop to below $1,000 per person to orbit",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Moving the propellant-cost slider updates cost per flight, cost per kg and the personal ticket price immediately",
+    "Clicking the 'Elon update' preset sets $500,000 propellant and 200 tons payload, and the ticket for 150 lb shows under $1,000",
+    "A log-scale chart shows the current $/kg next to the Shuttle's $54,000/kg with the reduction factor labelled",
+    "Each episode figure has a source tag with its timestamp, and user-set values are labelled 'your assumption'",
+    "At 375px width the sliders stack above the chart and all readouts stay visible"
+  ],
+  "score": 4.4,
+  "episode": {
+    "slug": "anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history",
+    "title": "Anthropic’s $1.4T IPO: The Biggest Wealth Event in Human History?",
+    "number": null,
+    "date": "2026-11-21",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history"
+  }
+}
