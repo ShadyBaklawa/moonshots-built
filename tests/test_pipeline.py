@@ -130,6 +130,29 @@ def test_detect_bootstraps_then_finds_new(sandbox, monkeypatch, capsys):
         "guest-interview-on-oceans", "robots-run-the-farm-ep-300"]   # oldest first
 
 
+def test_detect_skips_duplicate_listing_of_same_episode(sandbox, monkeypatch):
+    """podscripts listed the Figure episode twice (slug and slug-2); build it once."""
+    from pipeline import cli, feed, state
+    from pipeline.feed import Episode
+    base = "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/"
+    first = Episode(slug="figure-deep-dive", url=base + "figure-deep-dive",
+                    title="How Figure AI Wins | Deep-Dive", date="2026-11-17")
+    state.save_episodes({"older-ep": {"title": "Older", "date": "2026-11-10", "status": "built"}})
+    monkeypatch.setattr(feed, "fetch_listing", lambda page=1: [first])
+    cli.main(["detect"])
+    again = Episode(slug="figure-deep-dive-2", url=base + "figure-deep-dive-2",
+                    title="How  Figure AI wins | Deep-Dive", date="2026-11-17")
+    other_day = Episode(slug="figure-rerun", url=base + "figure-rerun",
+                        title="How Figure AI Wins | Deep-Dive", date="2026-11-18")
+    monkeypatch.setattr(feed, "fetch_listing", lambda page=1: [other_day, again, first])
+    cli.main(["detect"])
+    eps = state.load_episodes()
+    assert eps["figure-deep-dive-2"]["status"] == "duplicate"
+    assert eps["figure-deep-dive-2"]["duplicate_of"] == "figure-deep-dive"
+    assert eps["figure-rerun"]["status"] == "new"          # same title, different date: real
+    assert cli.pending_slugs(eps) == ["figure-deep-dive", "figure-rerun"]
+
+
 def test_select_ranks_filters_and_routes_upgrades():
     from pipeline.extract import score, select
     mk = lambda t, f, w, fi, n, rel=None: {"title": t, "feasibility": f, "wow": w, "fidelity": fi,
