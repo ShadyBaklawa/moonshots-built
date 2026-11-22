@@ -1,0 +1,64 @@
+{
+  "title": "Seventy-Two Hour Back Room",
+  "one_liner": "Sets up and restocks emergency food, water and supply kits for small workplaces against official stockpile guidance.",
+  "timestamp": "00:17:14",
+  "speaker": "Peter Diamandis",
+  "context": "With outages and breaches in the news, Peter notes the UK and Finland advised keeping three days of food and water, while Sweden and Norway advised a week.",
+  "customer": "Small employers with on-site staff, such as childcare centres, care homes, small manufacturers and offices of 10–100 people, in the UK and Nordic countries first",
+  "problem": "Managers hear government stockpile advice but have no time to work out quantities for their headcount, buy the supplies, store them and rotate expiring items.",
+  "revenue_model": "Setup fee of about £300–£900 per site (sizing plus first stock, with goods billed at cost plus margin), then a restock and expiry-rotation visit at about £40–£80 a month (estimate).",
+  "why_now": "In the episode, several European governments have started telling people to keep three to seven days of supplies, during a run of infrastructure outages that the hosts expect to continue.",
+  "first_steps": [
+    "Build the sizing calculator below and a one-page printable plan for a 20-person site",
+    "Call 15 local childcare centres and small offices to ask whether anyone has acted on the guidance, and log the answers",
+    "Agree wholesale pricing for water, shelf-stable food and lighting with one supplier, and price a first pilot kit"
+  ],
+  "cost_to_start": "About 1 week and £500–£1,500 for a sample kit and a basic site. Stock is bought per order.",
+  "competition": "Consumer survival-kit sellers and corporate first-aid and safety suppliers. Few offer sizing plus ongoing expiry rotation for small sites.",
+  "risks": "Demand may fade once headlines cool. Margins on bulk goods are low. Storage space limits the size of kits. The service must not claim to meet official requirements beyond what the guidance actually says.",
+  "money": 2,
+  "ease": 4,
+  "speed": 4,
+  "evidence": 3,
+  "tool": {
+    "title": "Back Room Kit Sizer",
+    "one_liner": "Enter headcount and days to cover, and get a shopping list, storage footprint and expiry calendar.",
+    "demo": "A manager enters the number of people on site, picks a target (3 days or 7 days), notes any infants or special diets, and sets local prices. The page outputs a quantity list (water, shelf-stable meals, lighting, batteries, sanitation), an estimated cost, the shelf space needed and a rotation calendar of when items expire. All of it prints as one page.",
+    "data_plan": "The customer's own inputs. The 3-day and 7-day presets come from the episode. Per-person quantities use general public preparedness rules of thumb that the visitor can edit, labelled as editable assumptions rather than episode figures.",
+    "feasibility": 5,
+    "acceptance": [
+      "Changing headcount from 20 to 40 doubles the water and meal quantities and updates the total cost",
+      "Switching the preset from 3 days to 7 days recalculates every quantity and the shelf-space estimate",
+      "The per-person assumptions sit in an editable panel labelled as assumptions, with the 3-day and 7-day presets credited to the government advice cited in the episode",
+      "The rotation calendar lists each item with its expiry month and a restock reminder date",
+      "'Print plan' gives a one-page layout, and on a 390px-wide screen inputs stack above results"
+    ]
+  },
+  "figures": [
+    {
+      "value": "3 days",
+      "meaning": "food and water stockpile advised by the UK and Finland",
+      "timestamp": "00:17:14",
+      "said": "you should keep three days of food and water on",
+      "verified": true
+    },
+    {
+      "value": "a week",
+      "meaning": "stockpile advised by Sweden and Norway",
+      "timestamp": "00:18:04",
+      "said": "you need to keep a week on hand",
+      "verified": true
+    }
+  ],
+  "score": 3.05,
+  "slug": "ep314-seventy-two-hour-back-room",
+  "episode": {
+    "slug": "ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314",
+    "title": "AI Market Shocks, Anthropic’s Stock Slide, Gemini Releases, and Elon’s $435M Bet | #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314"
+  },
+  "tool_slug": null,
+  "created": "2026-11-22T23:53:25+00:00"
+}

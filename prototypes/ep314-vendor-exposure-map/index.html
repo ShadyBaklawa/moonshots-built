@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vendor Exposure Map — Moonshots, Built</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header no-print">
+  <h1>Vendor Exposure Map</h1>
+  <p class="subtitle">For the owner with no security team: list the outside tools that touch your customer data, see which ones are the biggest risk, and get a ready checklist for the day one of them gets breached.</p>
+  <p id="exampleBadge" class="example-badge" hidden>Example data loaded — this is a sample shop, not your real vendors.</p>
+</header>
+
+<main>
+
+  <section class="card toolbar no-print">
+    <div class="toolbar-buttons">
+      <button type="button" id="loadExampleBtn" class="btn">Load example shop</button>
+      <button type="button" id="clearBtn" class="btn btn-ghost">Clear all vendors</button>
+    </div>
+    <details class="ai-details">
+      <summary>Optional: use your own AI key to polish drafts</summary>
+      <label for="apiKey">Anthropic API key</label>
+      <input type="password" id="apiKey" placeholder="sk-ant-..." autocomplete="off">
+      <p class="hint">Kept only in your browser for this session, never saved or sent anywhere except directly to Anthropic when you click "Polish with AI". Everything else on this page works without it.</p>
+    </details>
+  </section>
+
+  <section class="card add-vendor no-print">
+    <h2>Add a vendor</h2>
+    <form id="vendorForm">
+      <div class="form-row">
+        <label for="vendorName">Vendor name</label>
+        <input type="text" id="vendorName" placeholder="e.g. PayFlow" required maxlength="60">
+        <label for="vendorCategory">Type</label>
+        <select id="vendorCategory">
+          <option>Email platform</option>
+          <option>Payment processor</option>
+          <option>CRM</option>
+          <option>Help desk</option>
+          <option>Shipping / logistics</option>
+          <option>Analytics</option>
+          <option selected>Other</option>
+        </select>
+      </div>
+      <fieldset class="data-checks">
+        <legend>What customer data does it hold?</legend>
+        <!-- checkboxes injected by app.js from DATA_TYPES, each data-key matching DATA_TYPES -->
+      </fieldset>
+      <button type="submit" class="btn">Add vendor</button>
+    </form>
+  </section>
+
+  <section class="card legend no-print">
+    <h2>Built-in scoring weights</h2>
+    <p class="hint">Exposure score = sum of the weights below for every data type a vendor holds. Higher weight means a breach there does more damage to a customer.</p>
+    <ul id="weightLegend" class="weight-legend"></ul>
+  </section>
+
+  <section class="card grid-section no-print">
+    <h2>Exposure grid — ranked by risk</h2>
+    <p class="hint">Tap a row to open that vendor's breach-day checklist.</p>
+    <div class="table-scroll">
+      <table id="vendorTable">
+        <thead>
+          <tr id="vendorTableHead"></tr>
+        </thead>
+        <tbody id="vendorTableBody">
+          <tr id="emptyRow"><td colspan="8" class="empty-state">No vendors yet. Add one above, or load the example shop.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card checklist-section no-print" id="checklistPanel" hidden>
+    <h2 id="checklistTitle">Breach-day checklist</h2>
+    <div class="checklist-grid">
+      <div>
+        <h3>Data this vendor holds</h3>
+        <ul id="checklistDataHeld"></ul>
+      </div>
+      <div>
+        <h3>Rotate / change now</h3>
+        <ul id="checklistRotate"></ul>
+      </div>
+      <div>
+        <h3>Ask the vendor</h3>
+        <ul id="checklistQuestions"></ul>
+      </div>
+    </div>
+    <div class="draft-note">
+      <h3>Draft heads-up note to customers</h3>
+      <p class="legal-notice">⚠️ This draft is a starting point only — <strong>not legal advice</strong>. Check your breach-notification duties with a lawyer before sending anything to customers.</p>
+      <textarea id="draftNote" rows="10"></textarea>
+      <div class="draft-actions">
+        <button type="button" id="polishBtn" class="btn btn-ghost">Polish draft with AI</button>
+        <span id="polishStatus" class="hint"></span>
+      </div>
+    </div>
+    <div class="checklist-actions">
+      <button type="button" id="printBtn" class="btn">Print / Save PDF</button>
+      <button type="button" id="closeChecklistBtn" class="btn btn-ghost">Close</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="no-print">
+  <p>Inspired by Moonshots #314, around 00:17:14. Fan-made prototype, not affiliated with the show.
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314" target="_blank" rel="noopener">Listen to the episode</a>.</p>
+</footer>
+
+<!-- Printable checklist, shown only when printing with a vendor selected -->
+<div id="checklistPrintWrap">
+  <h1 id="printVendorTitle"></h1>
+  <p id="printVendorMeta"></p>
+  <h2>Data this vendor holds</h2>
+  <ul id="printDataHeld"></ul>
+  <h2>Rotate / change now</h2>
+  <ul id="printRotate"></ul>
+  <h2>Ask the vendor</h2>
+  <ul id="printQuestions"></ul>
+  <h2>Draft heads-up note to customers</h2>
+  <p class="legal-notice">This draft is a starting point only — not legal advice. Check your breach-notification duties with a lawyer before sending anything to customers.</p>
+  <pre id="printDraftNote"></pre>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

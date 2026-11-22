@@ -1,0 +1,37 @@
+{
+  "slug": "ep314-wiggle-vs-whisper",
+  "kind": "demo",
+  "title": "Wiggle vs Whisper",
+  "one_liner": "Train the same tiny neural net with backprop and with 'tweak and check' training, and compare the cost.",
+  "headline": "Press Train and watch two identical tiny neural nets race — one learns with real backprop, the other by wiggling each weight one at a time — while a live counter shows how many more forward passes the wiggle method burns.",
+  "episode": {
+    "slug": "ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314",
+    "title": "AI Market Shocks, Anthropic’s Stock Slide, Gemini Releases, and Elon’s $435M Bet | #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314"
+  },
+  "timestamp": "01:19:30",
+  "idea_score": 3.7,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 9,
+    "wow": 6,
+    "ux": 7,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 7.75,
+  "created": "2026-11-22T23:53:25+00:00",
+  "updated": "2026-11-22T23:53:25+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-22T23:53:25+00:00",
+      "overall": 7.75,
+      "summary": "A genuinely simulated, mathematically correct side-by-side of backprop vs. coordinate-wise weight perturbation: both training loops, gradients, and pass-counters run for real in the browser, matched starting weights, and the single podcast figure (2 trillion weights) is correctly attributed and clearly scoped as a scale callout. Layout, mobile stacking, disclaimers and footer credit all meet the standards; the only real nit is a touch-action choice that could make mobile scrolling feel sticky over the heatmaps."
+    }
+  ]
+}
