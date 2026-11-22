@@ -1,0 +1,37 @@
+{
+  "slug": "ep314-offline-hour-planner",
+  "kind": "tool",
+  "title": "Offline Hour Planner",
+  "one_liner": "List your business tools and get a printable 'if this goes down' runbook with fallbacks and a priority order.",
+  "headline": "List the tools your business depends on and get a live-sorted, printable outage runbook with fallback steps and an emergency wall card.",
+  "episode": {
+    "slug": "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
+    "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314"
+  },
+  "timestamp": "00:17:14",
+  "idea_score": 3.8,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 8
+  },
+  "overall": 8.25,
+  "created": "2026-11-22T02:24:50+00:00",
+  "updated": "2026-11-22T02:24:50+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-22T02:24:50+00:00",
+      "overall": 8.25,
+      "summary": "A tight, well-scoped tool: the form, live priority re-sort, category fallback library, example loader and two-part print view all work exactly as the idea and acceptance criteria describe, with no dead ends and a clean phone layout. The generic-fallback approach is honestly disclosed and matches the stated data plan, though the lack of persistence and per-tool fallback editing are the clearest gaps between this and something an owner would return to monthly."
+    }
+  ]
+}

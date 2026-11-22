@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline Hour Planner — build your runbook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar no-print">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">⎍</span>
+      <div>
+        <h1>Offline Hour Planner</h1>
+        <p class="tagline">For the owner who wants a plain-paper answer ready before the next outage, not during it.</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button id="loadExample" class="btn btn-ghost" disabled>Load example business</button>
+      <button id="printBtn" class="btn btn-primary">Print runbook + wall card</button>
+    </div>
+  </div>
+</header>
+
+<main class="layout no-print">
+  <section class="panel form-panel" aria-labelledby="add-tool-heading">
+    <h2 id="add-tool-heading">Add a tool</h2>
+    <p class="hint">List the apps, systems and vendors your business depends on. We'll rank them and write the fallback steps.</p>
+    <form id="toolForm">
+      <label>
+        Tool name
+        <input type="text" id="f-name" placeholder="e.g. Square, Gmail, Calendly" required maxlength="60">
+      </label>
+      <label>
+        What it does
+        <input type="text" id="f-desc" placeholder="e.g. Takes card payments at the counter" maxlength="90">
+      </label>
+      <label>
+        Category
+        <select id="f-category"></select>
+      </label>
+      <label>
+        How critical if it goes down
+        <select id="f-criticality">
+          <option value="Critical">Critical — business stops</option>
+          <option value="High">High — major disruption</option>
+          <option value="Medium" selected>Medium — slows things down</option>
+          <option value="Low">Low — minor annoyance</option>
+        </select>
+      </label>
+      <label>
+        Owner / who handles it
+        <input type="text" id="f-owner" placeholder="e.g. Dana (manager)" maxlength="50">
+      </label>
+      <label>
+        Contact / status-check line
+        <input type="text" id="f-contact" placeholder="e.g. Dana cell 555-0142, or vendor status page">
+      </label>
+      <button type="submit" class="btn btn-primary btn-wide" id="submitBtn" disabled>Loading category data…</button>
+    </form>
+  </section>
+
+  <section class="panel runbook-panel" aria-labelledby="runbook-heading">
+    <div class="runbook-head">
+      <h2 id="runbook-heading">Your runbook — priority order</h2>
+      <span id="toolCount" class="count-badge">0 tools</span>
+    </div>
+    <p class="hint">Change criticality any time — the order updates right away. This is the live list; printing produces a clean copy.</p>
+    <ol id="toolList" class="tool-list"></ol>
+    <p id="emptyState" class="empty-state">No tools yet. Add one on the left, or load the example business to see a full runbook.</p>
+  </section>
+</main>
+
+<!-- ===================== PRINT-ONLY CONTENT ===================== -->
+<div id="printArea" class="print-only">
+
+  <section class="print-page runbook-print">
+    <header class="print-header">
+      <h1 id="pr-businessName">Offline Hour Planner — Runbook</h1>
+      <p>Printed <span id="pr-date"></span>. Keep a copy at every workstation and one in the paper binder.</p>
+    </header>
+    <div id="pr-list"></div>
+  </section>
+
+  <section class="print-page wallcard-print">
+    <header class="wallcard-header">
+      <h1>⚠ EMERGENCY WALL CARD</h1>
+      <p>If a critical tool is down, start here. Full runbook is in the binder.</p>
+    </header>
+    <div id="wc-list"></div>
+    <footer class="wallcard-footer">Offline Hour Planner — printed <span id="wc-date"></span></footer>
+  </section>
+
+</div>
+
+<footer class="site-footer no-print">
+  Inspired by Moonshots EP 314, around 00:17:14. Fan-made prototype, not affiliated with the show.
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314" target="_blank" rel="noopener">Episode source</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

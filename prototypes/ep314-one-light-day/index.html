@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Light Day — Ride Along With Voyager 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<header class="page-head">
+  <h1>One Light Day</h1>
+  <p class="subtitle">Ride along with Voyager 1: a live signal delay, a draining power budget, and instruments switching off by year.</p>
+</header>
+
+<main>
+
+  <!-- SIGNAL SIMULATOR -->
+  <section class="panel signal-panel" aria-labelledby="signal-heading">
+    <h2 id="signal-heading">Send a command to Voyager 1</h2>
+    <p class="fact">
+      Voyager 1 is <strong>16.1 billion miles</strong> away, past the heliopause, after a
+      <strong>49‑year</strong> journey.
+      <span class="tag">as stated on the podcast · 02:00:49</span>
+    </p>
+
+    <div class="lane" id="lane">
+      <div class="node earth" id="earth-node">
+        <div class="node-icon">🌍</div>
+        <div class="node-label">Earth<br><span class="deep-space-network">Deep Space Network</span></div>
+      </div>
+      <div class="track" id="track">
+        <div class="track-line"></div>
+        <div class="pulse" id="pulse" hidden></div>
+      </div>
+      <div class="node voyager" id="voyager-node">
+        <div class="node-icon">🛰️</div>
+        <div class="node-label">Voyager 1</div>
+      </div>
+    </div>
+
+    <div class="signal-controls">
+      <button id="send-btn" class="btn-primary">Send a command</button>
+      <div class="countdown" id="countdown-wrap" hidden>
+        <span id="leg-label">Outbound</span>:
+        <span id="countdown" class="mono">24:00:00</span>
+        <span class="tag">24 hours each way, time‑compressed for this demo · as stated on the podcast · 02:00:49</span>
+      </div>
+      <p class="status" id="status" role="status">Ready to send. One round trip (there and back) covers 48 real hours, compressed into a few seconds here.</p>
+    </div>
+  </section>
+
+  <!-- POWER BUDGET -->
+  <section class="panel power-panel" aria-labelledby="power-heading">
+    <h2 id="power-heading">Power budget over time</h2>
+    <p class="fact">
+      The plutonium generator currently makes about <strong>200 watts</strong> and loses about
+      <strong>4 watts a year</strong>; only <strong>two</strong> science instruments remain on.
+      <span class="tag">as stated on the podcast · 02:01:27</span>
+    </p>
+
+    <div class="slider-row">
+      <label for="year-slider">Years from now: <span id="year-readout">0</span>
+        <span class="tag">projection, straight‑line from the stated loss rate</span>
+      </label>
+      <input type="range" id="year-slider" min="0" max="50" step="1" value="0">
+    </div>
+
+    <div class="power-readout">
+      <div class="power-bar-track">
+        <div class="power-bar-fill" id="power-bar-fill"></div>
+      </div>
+      <div class="power-number"><span id="power-watts">200</span> W <span class="tag">projected</span></div>
+    </div>
+
+    <div class="instruments">
+      <div class="instrument" id="instrument-1">
+        <div class="instrument-dot"></div>
+        <div>
+          <div class="instrument-name">Instrument 1</div>
+          <div class="instrument-note">assumed shut‑off below 120 W</div>
+        </div>
+      </div>
+      <div class="instrument" id="instrument-2">
+        <div class="instrument-dot"></div>
+        <div>
+          <div class="instrument-name">Instrument 2</div>
+          <div class="instrument-note">assumed shut‑off below 40 W</div>
+        </div>
+      </div>
+    </div>
+    <p class="note">
+      The podcast doesn't name which two instruments are still active, so the 120 W / 40 W
+      shut‑off points above are made‑up assumptions for this demo, not real NASA thresholds.
+    </p>
+  </section>
+
+  <!-- COMPARISON PANEL -->
+  <section class="panel compare-panel" aria-labelledby="compare-heading">
+    <h2 id="compare-heading">How far past the plan</h2>
+
+    <div class="compare-block">
+      <h3>Design life vs. actual life</h3>
+      <div class="bar-row">
+        <div class="bar-label">Designed for<br><strong>5 years</strong></div>
+        <div class="bar-track"><div class="bar-fill design"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Operated for<br><strong>50 years</strong></div>
+        <div class="bar-track"><div class="bar-fill actual"></div></div>
+      </div>
+      <p class="tag block-tag">as stated on the podcast · 02:01:27</p>
+    </div>
+
+    <div class="compare-block">
+      <h3>Speed vs. the ISS and Parker Solar Probe</h3>
+      <div class="bar-row">
+        <div class="bar-label">ISS<br><strong>1x (baseline)</strong></div>
+        <div class="bar-track"><div class="bar-fill iss"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Voyager 1<br><strong>~2x ISS</strong></div>
+        <div class="bar-track"><div class="bar-fill voyager"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Parker Solar Probe<br><strong>&gt;10x Voyager 1</strong></div>
+        <div class="bar-track"><div class="bar-fill parker"></div><div class="bar-more">&gt;</div></div>
+      </div>
+      <p class="tag block-tag">as stated on the podcast · 02:03:47 &amp; 02:04:15</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="page-foot">
+  <p>
+    Inspired by Moonshots EP #314, around 02:00:49. Fan‑made prototype, not affiliated with
+    the show.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314" target="_blank" rel="noopener">Episode source</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

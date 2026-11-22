@@ -1,0 +1,82 @@
+{
+  "episode": {
+    "number": 314,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
+    "speaker": "Peter Diamandis",
+    "timestamp_primary": "02:00:49"
+  },
+  "figures": [
+    {
+      "id": "distance",
+      "value": "16.1 billion miles",
+      "meaning": "Voyager 1's distance from Earth at one light day",
+      "timestamp": "02:00:49"
+    },
+    {
+      "id": "journey",
+      "value": "49 years",
+      "meaning": "length of Voyager 1's journey so far",
+      "timestamp": "02:00:49"
+    },
+    {
+      "id": "oneway",
+      "value": "24 hours",
+      "meaning": "one-way signal time to Voyager 1",
+      "timestamp": "02:00:49"
+    },
+    {
+      "id": "power",
+      "value": "200 watts",
+      "meaning": "current output of Voyager 1's plutonium generator",
+      "timestamp": "02:01:27"
+    },
+    {
+      "id": "decay",
+      "value": "4 watts per year",
+      "meaning": "yearly power loss",
+      "timestamp": "02:01:27"
+    },
+    {
+      "id": "instruments",
+      "value": "two",
+      "meaning": "number of science instruments still on",
+      "timestamp": "02:01:27"
+    },
+    {
+      "id": "designlife",
+      "value": "five-year",
+      "meaning": "original design lifetime",
+      "timestamp": "02:01:27"
+    },
+    {
+      "id": "actuallife",
+      "value": "50 years",
+      "meaning": "how long it has actually operated",
+      "timestamp": "02:01:27"
+    },
+    {
+      "id": "iss_speed",
+      "value": "twice as fast as the ISS",
+      "meaning": "Voyager 1's speed compared with the ISS",
+      "timestamp": "02:03:47"
+    },
+    {
+      "id": "parker_speed",
+      "value": "10x faster",
+      "meaning": "how much faster Parker Solar Probe has gone",
+      "timestamp": "02:04:15"
+    },
+    {
+      "id": "past_distance",
+      "value": "19 and a half light hours",
+      "meaning": "Voyager 1's distance about 10 years earlier, per Salim",
+      "timestamp": "02:07:57"
+    }
+  ],
+  "assumptions": {
+    "note": "The two active instruments are not named in the podcast. For this demo, 'Instrument 1' and 'Instrument 2' stand in for them, with made-up shut-off thresholds used only to illustrate how the power budget narrows the mission over time.",
+    "instrument_1_threshold_watts": 120,
+    "instrument_2_threshold_watts": 40,
+    "projection": "Future power = 200W minus 4W per year from today (2026), a straight-line extrapolation of the stated loss rate."
+  }
+}
