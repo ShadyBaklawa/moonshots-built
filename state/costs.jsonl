@@ -125,3 +125,8 @@
 {"at": "2026-11-22T02:24:50+00:00", "label": "review:ep314-offline-hour-planner", "est_cost_usd": 0.3162, "turns": 15, "subtype": "success"}
 {"at": "2026-11-22T02:28:01+00:00", "label": "build:ep314-one-light-day", "est_cost_usd": 0.4527, "turns": 20, "subtype": "success"}
 {"at": "2026-11-22T02:29:19+00:00", "label": "review:ep314-one-light-day", "est_cost_usd": 0.2427, "turns": 15, "subtype": "success"}
+{"at": "2026-11-22T23:40:04+00:00", "label": "extract:ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314", "est_cost_usd": 0.6637, "turns": 2, "subtype": "success"}
+{"at": "2026-11-22T23:45:54+00:00", "label": "build:ep314-vendor-exposure-map", "est_cost_usd": 0.9656, "turns": 40, "subtype": "success"}
+{"at": "2026-11-22T23:47:08+00:00", "label": "review:ep314-vendor-exposure-map", "est_cost_usd": 0.2602, "turns": 17, "subtype": "success"}
+{"at": "2026-11-22T23:51:25+00:00", "label": "build:ep314-wiggle-vs-whisper", "est_cost_usd": 0.5682, "turns": 22, "subtype": "success"}
+{"at": "2026-11-22T23:53:25+00:00", "label": "review:ep314-wiggle-vs-whisper", "est_cost_usd": 0.2272, "turns": 11, "subtype": "success"}

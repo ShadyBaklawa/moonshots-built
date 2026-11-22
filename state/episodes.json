@@ -57,6 +57,64 @@
     ],
     "summary": "Steve Jurvetson tells how his firm first voted down investing in SpaceX in 2008, and how adding deal protections, such as 2x minimums, turned two partners from no to yes. The panel then covers the giant AI-lab IPO, a wave of AI-driven cyber outages, AI board observers, SpaceX's compute buildout, Starlink, the chip fab plan and Optimus. It closes with Voyager 1 passing one light day from Earth."
   },
+  "ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314": {
+    "title": "AI Market Shocks, Anthropic’s Stock Slide, Gemini Releases, and Elon’s $435M Bet | #314",
+    "date": "2026-11-22",
+    "number": 314,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314",
+    "attempts": 0,
+    "found": "2026-11-22T23:37:38+00:00",
+    "status": "built",
+    "updated": "2026-11-22T23:53:25+00:00",
+    "prototypes": [
+      "ep314-vendor-exposure-map",
+      "ep314-wiggle-vs-whisper"
+    ],
+    "briefs": [
+      "ep314-who-holds-our-list-desk",
+      "ep314-seventy-two-hour-back-room"
+    ],
+    "ideas": [
+      {
+        "title": "Vacuum Shortcut",
+        "score": 4.2,
+        "timestamp": "01:30:39"
+      },
+      {
+        "title": "Wiggle vs Whisper",
+        "score": 3.7,
+        "timestamp": "01:19:30"
+      },
+      {
+        "title": "Gigawatt Treadmill",
+        "score": 3.55,
+        "timestamp": "01:07:26"
+      },
+      {
+        "title": "Frontier Shrink Ray",
+        "score": 3.55,
+        "timestamp": "01:14:55"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Who-Holds-Our-List Desk",
+        "score": 3.4,
+        "timestamp": "00:17:14"
+      },
+      {
+        "title": "Seventy-Two Hour Back Room",
+        "score": 3.05,
+        "timestamp": "00:17:14"
+      },
+      {
+        "title": "Unsafe-Call Census",
+        "score": 3.0,
+        "timestamp": "00:24:53"
+      }
+    ],
+    "summary": "Steve Jurvetson joins the panel to talk about the Anthropic IPO's wobbly first days, a wave of AI-driven cyber outages and vendor breaches, and governments telling people to stock days of supplies. They also cover Google's fast run of Gemini releases, Elon's SpaceX update (500 MW of compute added a month, Anthropic's compute deals, TerraFab, Starlink laser links, Optimus in mining), whether small models and inference-time training will make today's GPU build-out obsolete, and Voyager 1 reaching one light day from Earth."
+  },
   "anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history": {
     "title": "Anthropic’s $1.4T IPO: The Biggest Wealth Event in Human History?",
     "date": "2026-11-21",
