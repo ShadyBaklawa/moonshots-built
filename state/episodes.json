@@ -1,12 +1,61 @@
 {
   "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314": {
     "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
-    "date": "2026-11-21",
+    "date": "2026-11-22",
     "number": 314,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
-    "status": "new",
+    "status": "built",
     "attempts": 0,
-    "found": "2026-11-21T20:32:42+00:00"
+    "found": "2026-11-21T20:32:42+00:00",
+    "updated": "2026-11-22T02:29:19+00:00",
+    "prototypes": [
+      "ep314-offline-hour-planner",
+      "ep314-one-light-day"
+    ],
+    "briefs": [
+      "ep314-paper-mode-runbooks",
+      "ep314-second-chair-board-desk"
+    ],
+    "ideas": [
+      {
+        "title": "One Light Day",
+        "score": 4.4,
+        "timestamp": "02:00:49"
+      },
+      {
+        "title": "Downside Armor",
+        "score": 4.25,
+        "timestamp": "00:05:26"
+      },
+      {
+        "title": "Wiggle vs. Whisper",
+        "score": 4.2,
+        "timestamp": "01:19:30"
+      },
+      {
+        "title": "Vacuum Lane",
+        "score": 3.85,
+        "timestamp": "01:30:39"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Paper Mode Runbooks",
+        "score": 3.8,
+        "timestamp": "00:17:14"
+      },
+      {
+        "title": "Second Chair Board Desk",
+        "score": 3.65,
+        "timestamp": "00:48:43"
+      },
+      {
+        "title": "First Tapeout Pathfinder",
+        "score": 2.85,
+        "timestamp": "01:40:53"
+      }
+    ],
+    "summary": "Steve Jurvetson tells how his firm first voted down investing in SpaceX in 2008, and how adding deal protections, such as 2x minimums, turned two partners from no to yes. The panel then covers the giant AI-lab IPO, a wave of AI-driven cyber outages, AI board observers, SpaceX's compute buildout, Starlink, the chip fab plan and Optimus. It closes with Voyager 1 passing one light day from Earth."
   },
   "anthropic-s-1-4t-ipo-the-biggest-wealth-event-in-human-history": {
     "title": "Anthropic’s $1.4T IPO: The Biggest Wealth Event in Human History?",

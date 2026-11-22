@@ -120,3 +120,8 @@
 {"at": "2026-11-21T22:17:44+00:00", "label": "review:2026-11-21-checkout-script-x-ray", "est_cost_usd": 0.1967, "turns": 13, "subtype": "success"}
 {"at": "2026-11-21T22:21:07+00:00", "label": "build:2026-11-21-orbit-fare-machine", "est_cost_usd": 0.4717, "turns": 21, "subtype": "success"}
 {"at": "2026-11-21T22:23:27+00:00", "label": "review:2026-11-21-orbit-fare-machine", "est_cost_usd": 0.3193, "turns": 12, "subtype": "success"}
+{"at": "2026-11-22T02:19:00+00:00", "label": "extract:steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314", "est_cost_usd": 0.6791, "turns": 2, "subtype": "success"}
+{"at": "2026-11-22T02:23:08+00:00", "label": "build:ep314-offline-hour-planner", "est_cost_usd": 0.7123, "turns": 35, "subtype": "success"}
+{"at": "2026-11-22T02:24:50+00:00", "label": "review:ep314-offline-hour-planner", "est_cost_usd": 0.3162, "turns": 15, "subtype": "success"}
+{"at": "2026-11-22T02:28:01+00:00", "label": "build:ep314-one-light-day", "est_cost_usd": 0.4527, "turns": 20, "subtype": "success"}
+{"at": "2026-11-22T02:29:19+00:00", "label": "review:ep314-one-light-day", "est_cost_usd": 0.2427, "turns": 15, "subtype": "success"}
