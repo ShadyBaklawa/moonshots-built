@@ -1,0 +1,64 @@
+{
+  "title": "Paper Mode Runbooks",
+  "one_liner": "Fixed-fee continuity runbooks that keep a small business operating when its key cloud tools or vendors go down.",
+  "timestamp": "00:17:14",
+  "speaker": "Peter Diamandis / Emad Mostaque",
+  "context": "Peter listed recent outages at major tech, aviation and banking systems, plus third-party vendor breaches. Several governments told citizens to keep days of supplies. Emad said more outages are coming and companies are moving far too slowly.",
+  "customer": "Owner-run firms with 10–100 staff that depend on SaaS for operations: clinics' front desks, property managers, logistics brokers, accounting practices",
+  "problem": "When email, payments, scheduling or the phone system goes down, staff freeze because nobody wrote down the manual fallback, the contact numbers or what to print ahead of time. Outages are becoming more frequent and arrive with no warning.",
+  "revenue_model": "Fixed fee of about $1,500–$3,000 per runbook, then about $150 a month for quarterly refresh and an outage drill (estimate)",
+  "why_now": "The episode describes a wave of AI-assisted attacks causing outages and vendor breaches. Defense is still human-in-the-loop while attacks scale in parallel. Governments are now issuing preparedness guidance.",
+  "first_steps": [
+    "Write a one-page runbook template and use it to build a free sample for one local business",
+    "Offer a $500 'outage tabletop hour' to ten local businesses through a chamber of commerce",
+    "Package three finished runbooks as case studies and raise the price"
+  ],
+  "cost_to_start": "About one week and under $100 (estimate)",
+  "competition": "Enterprise business continuity consultants and templates exist. Few serve very small firms at a fixed low price.",
+  "risks": "Small owners underinvest until after a crisis. The work can look like a commodity template. Selling is mostly local and one firm at a time.",
+  "money": 3,
+  "ease": 5,
+  "speed": 4,
+  "evidence": 4,
+  "tool": {
+    "title": "Offline Hour Planner",
+    "one_liner": "List your business tools and get a printable 'if this goes down' runbook with fallbacks and a priority order.",
+    "demo": "The owner enters each tool they use, what it does, how critical it is and who owns it. The page ranks the tools by impact and writes, for each one, a manual fallback step, a 'print in advance' list, and a contact and status-check line. The result is a printable runbook plus a one-page wall card for staff.",
+    "data_plan": "Only the customer's own input, plus a bundled library of generic fallback steps by tool category written by the builder. No outside API calls.",
+    "feasibility": 5,
+    "acceptance": [
+      "Adding a tool in the 'payments' category marked Critical puts it at the top of the runbook with a fallback step and a 'print in advance' list",
+      "Changing a tool from Critical to Low moves it down the priority order right away",
+      "Clicking Print shows a clean runbook and a separate one-page wall card in the print preview, without page chrome",
+      "A 'Load example business' button fills in a sample of 8 tools so every section shows output",
+      "The form is usable on a 375px phone screen with no sideways scrolling"
+    ]
+  },
+  "figures": [
+    {
+      "value": "three days",
+      "meaning": "food and water reserves that UK and Finland guidance tells households to keep",
+      "timestamp": "00:17:14",
+      "said": "you should keep three days of food and water on",
+      "verified": true
+    },
+    {
+      "value": "a week",
+      "meaning": "food and water reserves Sweden and Norway tell households to keep",
+      "timestamp": "00:18:04",
+      "said": "you need to keep a week on hand",
+      "verified": true
+    }
+  ],
+  "score": 3.8,
+  "slug": "ep314-paper-mode-runbooks",
+  "episode": {
+    "slug": "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
+    "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314"
+  },
+  "tool_slug": "ep314-offline-hour-planner",
+  "created": "2026-11-22T02:29:19+00:00"
+}

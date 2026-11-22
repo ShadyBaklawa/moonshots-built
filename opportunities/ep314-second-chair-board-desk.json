@@ -1,0 +1,49 @@
+{
+  "title": "Second Chair Board Desk",
+  "one_liner": "Sets up and runs an AI 'board observer' that critiques each startup board pack and tracks decisions over time.",
+  "timestamp": "00:48:43",
+  "speaker": "Emad Mostaque / Dave Blundin",
+  "context": "Emad argued that an AI on a company's board would already help it do better. Dave said every startup should now have an AI board member, and the panel settled on an observer or advisor role carrying the company's values.",
+  "customer": "Seed to Series B startup founders and their lead investors, especially venture firms with 10–40 portfolio boards to support",
+  "problem": "Board packs go out late and get read poorly. Nobody keeps a running record of what was decided, what was promised and which numbers quietly changed. Founders want hard questions before the meeting, not during it.",
+  "revenue_model": "Setup fee of about $1,500, then about $300 a month per company for prep before each meeting and a decision log (estimate). VC portfolio bundles at about $5k a month (estimate).",
+  "why_now": "The panel said models are now good enough to beat human board members at checking decisions. Founder succession and governance failures, such as a board asking a CEO for a succession plan for years with nothing produced, were raised as live problems.",
+  "first_steps": [
+    "Run three past board decks, offered by founder friends, through a model and send back an observer memo for free",
+    "Offer a 'pre-board red team' for $250 a meeting to five founders on LinkedIn and X",
+    "Pitch one seed fund's platform team on a portfolio-wide pilot"
+  ],
+  "cost_to_start": "About 1–2 weeks and under $200 for model credits and a simple landing page (estimate)",
+  "competition": "Board-management portals and generic AI assistants exist. Few offer a managed 'observer' service with a decision log carried across meetings.",
+  "risks": "Board materials are confidential, so data handling must be airtight. Founders may simply do this themselves with a chatbot. VCs may see an AI observer as a threat to their seat.",
+  "money": 3,
+  "ease": 4,
+  "speed": 4,
+  "evidence": 4,
+  "tool": {
+    "title": "Observer Memo Maker",
+    "one_liner": "Paste a board update and get the questions, missing metrics and decision log an observer would produce.",
+    "demo": "A founder pastes a board update or meeting notes. The page pulls out decisions, asks and promised dates using pattern rules, flags missing standard metrics such as burn and runway, and checks for a stated plan B. With a pasted API key it also writes a one-page observer memo with the ten hardest questions. Without a key, a labeled example memo shows the format.",
+    "data_plan": "Only the customer's pasted text. Optional AI through a key the visitor pastes in, called from the browser. A bundled sample board update powers example mode.",
+    "feasibility": 4,
+    "acceptance": [
+      "Pasting the bundled sample update and clicking Analyze fills a Decisions table, an Asks list and a Missing Metrics checklist, with at least one item in each",
+      "Deleting the burn/runway sentence from the sample and re-running adds 'runway' to the Missing Metrics list",
+      "With no API key, the Observer Memo section shows a full sample memo with a visible 'Example' label",
+      "Clicking Export downloads a markdown file containing the decision log and the questions",
+      "On a 375px-wide screen the input and result sections stack in one column with no sideways scrolling"
+    ]
+  },
+  "figures": [],
+  "score": 3.65,
+  "slug": "ep314-second-chair-board-desk",
+  "episode": {
+    "slug": "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
+    "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314"
+  },
+  "tool_slug": null,
+  "created": "2026-11-22T02:29:19+00:00"
+}

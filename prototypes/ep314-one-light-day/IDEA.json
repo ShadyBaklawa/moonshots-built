@@ -1,0 +1,108 @@
+{
+  "title": "One Light Day",
+  "one_liner": "Ride along with Voyager 1: a live signal delay, a draining power budget and instruments switching off by year.",
+  "timestamp": "02:00:49",
+  "speaker": "Peter Diamandis",
+  "context": "Peter announced that Voyager 1 passed one light day from Earth after about 49 years. A message now takes a day each way. Its generator makes about 200 watts and loses about 4 a year, and only two instruments remain on.",
+  "demo": "Visitors press 'Send a command' and watch a pulse travel the scaled distance for a sped-up 24-hour leg, with a countdown and a reply on the way back. A year slider runs the power budget down at the stated rate and switches instruments off as their threshold is crossed. A side chart compares the five-year design life with its actual 50 years, and the craft's speed with the ISS and Parker Solar Probe.",
+  "data_plan": "A bundled dataset of figures stated on the podcast. The future power path is a straight-line projection of the stated loss rate, and instrument shut-off thresholds are labeled as assumptions.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 5,
+  "novelty": 3,
+  "related_existing": null,
+  "risks": "The stated 200 W may differ from NASA's published power figures, so label it 'as stated on the podcast'. The straight-line projection and shut-off thresholds are simplifications.",
+  "figures": [
+    {
+      "value": "16.1 billion miles",
+      "meaning": "Voyager 1's distance from Earth at one light day",
+      "timestamp": "02:00:49",
+      "said": "16.1 billion miles going beyond the heliopause",
+      "verified": true
+    },
+    {
+      "value": "49 years",
+      "meaning": "length of Voyager 1's journey so far",
+      "timestamp": "02:00:49",
+      "said": "after more than a 49-year journey",
+      "verified": true
+    },
+    {
+      "value": "24 hours",
+      "meaning": "one-way signal time to Voyager 1",
+      "timestamp": "02:00:49",
+      "said": "takes 24 hours on the deep space network",
+      "verified": true
+    },
+    {
+      "value": "200 watts",
+      "meaning": "current output of Voyager 1's plutonium generator",
+      "timestamp": "02:01:27",
+      "said": "currently generating about 200 watts equivalent",
+      "verified": true
+    },
+    {
+      "value": "4 watts per year",
+      "meaning": "yearly power loss",
+      "timestamp": "02:01:27",
+      "said": "it's losing about 4 watts per year",
+      "verified": true
+    },
+    {
+      "value": "two",
+      "meaning": "number of science instruments still on",
+      "timestamp": "02:01:27",
+      "said": "Only two scientific instruments remain on",
+      "verified": true
+    },
+    {
+      "value": "five-year",
+      "meaning": "original design lifetime",
+      "timestamp": "02:01:27",
+      "said": "built with a five-year lifetime expectation",
+      "verified": true
+    },
+    {
+      "value": "50 years",
+      "meaning": "how long it has actually operated",
+      "timestamp": "02:01:27",
+      "said": "it's gone for 50 years",
+      "verified": true
+    },
+    {
+      "value": "twice as fast as the ISS",
+      "meaning": "Voyager 1's speed compared with the ISS",
+      "timestamp": "02:03:47",
+      "said": "it's going roughly twice as fast as the ISS",
+      "verified": true
+    },
+    {
+      "value": "10x faster",
+      "meaning": "how much faster Parker Solar Probe has gone",
+      "timestamp": "02:04:15",
+      "said": "gone more than 10x faster",
+      "verified": true
+    },
+    {
+      "value": "19 and a half light hours",
+      "meaning": "Voyager 1's distance about 10 years earlier, per Salim",
+      "timestamp": "02:07:57",
+      "said": "it was 19 and a half light hours away",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Clicking 'Send a command' animates a pulse to the craft and back, with a countdown labeled 24 hours each way (time-compressed and labeled as such)",
+    "Dragging the year slider forward lowers the power readout by 4 W per year and greys out an instrument when its labeled threshold is crossed",
+    "A comparison panel shows the five-year design life against 50 years of operation",
+    "Every podcast figure carries an 'as stated on the podcast' note, and projections are labeled as projections"
+  ],
+  "score": 4.4,
+  "episode": {
+    "slug": "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
+    "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314"
+  }
+}

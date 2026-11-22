@@ -1,0 +1,82 @@
+{
+  "payments": {
+    "label": "Payments",
+    "fallback": "Take payment manually: use a backup card terminal, cash, or a text/email invoice to collect later. Write every transaction on the paper log so nothing gets lost.",
+    "printItems": [
+      "Paper transaction log sheets",
+      "Backup card terminal provider name & support number",
+      "Manual invoice template"
+    ]
+  },
+  "email": {
+    "label": "Email",
+    "fallback": "Switch to phone or text for anything urgent. Log into the backup email account (webmail or a personal account) only for messages that truly can't wait.",
+    "printItems": [
+      "Printed contact list of regular clients & vendors",
+      "Backup email account login steps",
+      "IT/vendor support number for the outage"
+    ]
+  },
+  "scheduling": {
+    "label": "Scheduling / Booking",
+    "fallback": "Take bookings by phone and write them straight onto the paper day-sheet. Confirm each one back to the customer by text.",
+    "printItems": [
+      "Blank day-sheet template for the week",
+      "This week's bookings, printed fresh each morning",
+      "Overflow / waitlist paper form"
+    ]
+  },
+  "phone": {
+    "label": "Phone / Communications",
+    "fallback": "Forward the main line to a staff cell phone and post that number at the front desk. Use it for both incoming and outgoing calls until service returns.",
+    "printItems": [
+      "Staff cell number taped to the front desk",
+      "Script for staff answering on a personal phone",
+      "Backup messaging app list (who has what)"
+    ]
+  },
+  "website": {
+    "label": "Website / Online Orders",
+    "fallback": "Post a notice on social media and the front door directing people to call or visit. Take orders by phone or in person and write them on the paper order form.",
+    "printItems": [
+      "Paper order form",
+      "Pre-written 'we're taking orders by phone' social post",
+      "Current price list"
+    ]
+  },
+  "inventory": {
+    "label": "Inventory / POS",
+    "fallback": "Switch to a paper sales log. Use a calculator for totals and record item, quantity and price for later entry once the system is back.",
+    "printItems": [
+      "Paper sales log sheets",
+      "Current price list, printed",
+      "Manual receipt pad"
+    ]
+  },
+  "security": {
+    "label": "Security / Access",
+    "fallback": "Switch to physical keys and a manual sign-in sheet at the desk. Call the alarm or security company's direct line if the system can't be reached.",
+    "printItems": [
+      "Note of where physical keys are kept",
+      "Manual visitor/staff sign-in sheet",
+      "Security company's direct phone number"
+    ]
+  },
+  "accounting": {
+    "label": "Accounting / Payroll",
+    "fallback": "Record hours and transactions on paper. Either process payroll manually from those sheets or agree with staff on a short delay once the system restores.",
+    "printItems": [
+      "Paper timesheets",
+      "Manual payroll calculation worksheet",
+      "Bank's direct phone number for urgent transfers"
+    ]
+  },
+  "other": {
+    "label": "Other",
+    "fallback": "Write down the manual workaround for this specific tool, and who on the team knows how to run it by hand.",
+    "printItems": [
+      "Blank manual-process note for this tool",
+      "Vendor support contact"
+    ]
+  }
+}

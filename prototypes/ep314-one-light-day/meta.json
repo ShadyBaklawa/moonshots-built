@@ -1,0 +1,37 @@
+{
+  "slug": "ep314-one-light-day",
+  "kind": "demo",
+  "title": "One Light Day",
+  "one_liner": "Ride along with Voyager 1: a live signal delay, a draining power budget and instruments switching off by year.",
+  "headline": "Send a simulated command to Voyager 1, watch its power budget fade over 50 years, and see how far past its five-year design life it's flown.",
+  "episode": {
+    "slug": "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
+    "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314"
+  },
+  "timestamp": "02:00:49",
+  "idea_score": 4.4,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 9,
+    "honesty": 9
+  },
+  "overall": 8.45,
+  "created": "2026-11-22T02:29:19+00:00",
+  "updated": "2026-11-22T02:29:19+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-22T02:29:19+00:00",
+      "overall": 8.45,
+      "summary": "A tight, well-scoped single-screen demo that nails the brief: a working signal round-trip animation, a power-decay slider that greys out instruments at labeled (and honestly flagged as made-up) thresholds, and a comparison panel for design life and speed. Every real number is sourced to a verified podcast figure and tagged, assumptions are clearly separated from facts, and the mobile/desktop layouts are clean with no overflow or console errors. No must-fix issues; only polish-level suggestions remain."
+    }
+  ]
+}
