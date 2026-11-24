@@ -1,0 +1,37 @@
+{
+  "title": "Vendor Exposure Map",
+  "one_liner": "List your tools and what customer data each one holds, and get a ranked exposure map plus a breach-day checklist.",
+  "timestamp": "00:17:14",
+  "speaker": "Peter Diamandis",
+  "context": "Peter lists a week of outages and says big banks and card networks reported that their third-party vendors were breached, exposing customer names and emails. Salim adds that CEOs are panicking because defense still patches one hole at a time.",
+  "demo": "The owner pastes or types their vendors (e.g. email platform, payment processor, CRM, help desk) and ticks which data types each one holds (names, emails, addresses, payment details, health notes). The page scores each vendor's exposure, shows a colour-coded grid of who holds what, and produces a printable 'if this vendor is breached' checklist: which passwords and keys to rotate, what to ask the vendor, and a plain draft heads-up note to customers. An optional pasted AI key polishes the drafts. Example mode uses a sample shop.",
+  "data_plan": "Entirely the customer's own input plus built-in scoring weights shown on the page. No external data. The optional AI key is only used to rewrite the draft notes.",
+  "feasibility": 4,
+  "risks": "Owners may not see the value until after a breach. It must avoid giving legal advice on notification duties (refer that to counsel). Vendor lists change often, so maps go stale.",
+  "figures": [],
+  "acceptance": [
+    "Adding a vendor and ticking 'emails' and 'payment details' adds a row to the grid and moves that vendor up the ranked exposure list",
+    "Clicking a vendor opens its breach-day checklist, listing the data types it holds and the keys or passwords to rotate",
+    "With no API key, example mode loads a sample shop with at least 6 vendors, fills the grid and checklist, and labels them as an example",
+    "The draft customer note carries a visible notice that it isn't legal advice",
+    "The 'Print / Save PDF' button gives a clean one-page layout, and on a 390px-wide screen the grid scrolls sideways without overlapping text"
+  ],
+  "related_existing": null,
+  "score": 3.4,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Who-Holds-Our-List Desk",
+    "one_liner": "Maps which outside vendors hold a small company's customer data and prepares a ready-to-run plan for when one gets breached.",
+    "customer": "US and UK e-commerce shops, clinics-adjacent service businesses and small SaaS companies with 10–200 staff that use 15+ outside tools touching customer data (no in-house security team)",
+    "problem": "When a vendor announces a breach, the owner doesn't know which customer data that vendor held, who to tell, or what to change. So they lose days and trust working it out under pressure.",
+    "revenue_model": "Fixed-fee setup of about $1,500–$3,000 to build the vendor data map and response plan, then about $150 a month to watch vendors' breach news and keep the map current (estimate).",
+    "why_now": "In the episode, breaches are now arriving through third-party vendors at the biggest firms, and AI attackers can probe many weak points at once while defenders still work by hand. Small firms have the same vendor sprawl and no plan."
+  },
+  "episode": {
+    "slug": "ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314",
+    "title": "AI Market Shocks, Anthropic’s Stock Slide, Gemini Releases, and Elon’s $435M Bet | #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314"
+  }
+}

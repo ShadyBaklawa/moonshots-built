@@ -1,0 +1,39 @@
+{
+  "title": "Wiggle vs Whisper",
+  "one_liner": "Train the same tiny neural net with backprop and with 'tweak and check' training, and compare the cost.",
+  "timestamp": "01:19:30",
+  "speaker": "Dave Blundin",
+  "context": "Dave explains that backprop sends the error backward to adjust each weight, while inference-time training just nudges weights and watches the output change. The second way is the same maths but less efficient, and research is closing that gap.",
+  "demo": "Two identical small networks learn to fit a 2D pattern side by side. One uses backpropagation and the other uses weight perturbation (nudge, measure the loss, keep or revert). Live decision-boundary heatmaps, loss curves and a 'forward passes used' counter show how many more passes perturbation needs. Sliders for network size show the gap widening as weights increase.",
+  "data_plan": "Fully simulated in the browser on generated toy datasets, labelled as a teaching demo. The episode's '2 trillion weights' appears only as a callout for scale.",
+  "feasibility": 4,
+  "wow": 3,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "A toy demo may overstate or understate how efficient modern perturbation methods are. It should say that research techniques such as intermediate targets aren't modelled.",
+  "figures": [
+    {
+      "value": "2 trillion",
+      "meaning": "weights in a large model, in Dave's backprop explanation",
+      "timestamp": "01:19:30",
+      "said": "I randomly propagate through 2 trillion weights",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Pressing Train makes both heatmaps evolve, with loss curves plotted live for backprop and for perturbation",
+    "The 'forward passes used' counter for perturbation climbs much faster than for backprop at the same loss level",
+    "Increasing the hidden-layer slider widens the gap shown in a 'passes needed to reach target loss' readout",
+    "A label says the networks and data are a simulated teaching toy and real methods may differ",
+    "On a phone-width screen the two panels stack vertically and stay readable"
+  ],
+  "score": 3.7,
+  "episode": {
+    "slug": "ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314",
+    "title": "AI Market Shocks, Anthropic’s Stock Slide, Gemini Releases, and Elon’s $435M Bet | #314",
+    "number": 314,
+    "date": "2026-11-22",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "shopName": "Sample Shop Co.",
+  "vendors": [
+    { "name": "MailBlast", "category": "Email platform", "data": { "names": true, "emails": true, "addresses": false, "payment": false, "health": false } },
+    { "name": "PayFlow", "category": "Payment processor", "data": { "names": true, "emails": true, "addresses": true, "payment": true, "health": false } },
+    { "name": "CustomerDesk CRM", "category": "CRM", "data": { "names": true, "emails": true, "addresses": true, "payment": false, "health": false } },
+    { "name": "HelpDeskHero", "category": "Help desk", "data": { "names": true, "emails": true, "addresses": false, "payment": false, "health": false } },
+    { "name": "ShipTrack", "category": "Shipping / logistics", "data": { "names": true, "emails": false, "addresses": true, "payment": false, "health": false } },
+    { "name": "ClinicNotes Add-on", "category": "Other", "data": { "names": true, "emails": false, "addresses": false, "payment": false, "health": true } },
+    { "name": "SiteAnalytics", "category": "Analytics", "data": { "names": false, "emails": true, "addresses": false, "payment": false, "health": false } }
+  ]
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiggle vs Whisper — backprop vs weight perturbation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="whisper-word">Whisper</span> <span class="vs-word">vs</span> <span class="wiggle-word">Wiggle</span></h1>
+    <p class="one-liner">Two identical tiny neural nets learn the same 2D pattern. One learns by <b>backprop</b> — a single precise whisper of error sent backward. The other learns by <b>weight perturbation</b> — wiggling one weight at a time, checking if it helped.</p>
+  </header>
+
+  <div class="disclaimer">
+    <strong>Simulated teaching toy:</strong> both networks, the dataset and the training loops run live in your browser — nothing is pre-recorded. Real-world perturbation research (e.g. intermediate targets, clever sampling) can close the gap shown here faster than this simple nudge-and-check version.
+  </div>
+
+  <div class="controls">
+    <div class="control-group">
+      <label><span>Hidden layer size</span><span id="hiddenVal">6</span></label>
+      <input type="range" id="hiddenSlider" min="2" max="16" step="1" value="6" aria-label="Hidden layer size">
+    </div>
+    <div class="control-group">
+      <label><span>Target loss (readout)</span><span id="targetVal">0.12</span></label>
+      <input type="range" id="targetSlider" min="0.05" max="0.25" step="0.01" value="0.12" aria-label="Target loss">
+    </div>
+    <div class="buttons">
+      <button id="trainBtn">▶ Train</button>
+      <button id="resetBtn">⟲ Reset</button>
+    </div>
+  </div>
+
+  <div class="panels">
+    <section class="panel backprop">
+      <h2>Backprop — The Whisper</h2>
+      <p class="subtitle">One backward pass computes every weight's gradient at once.</p>
+      <canvas class="heatmap" id="bpCanvas" width="300" height="300"></canvas>
+      <div class="stats">
+        <div class="stat"><div class="label">Loss</div><div class="value" id="bpLoss">—</div></div>
+        <div class="stat"><div class="label">Epoch</div><div class="value" id="bpEpoch">0</div></div>
+        <div class="stat"><div class="label">Forward passes used</div><div class="value" id="bpPasses">0</div></div>
+      </div>
+    </section>
+
+    <section class="panel perturb">
+      <h2>Perturbation — The Wiggle</h2>
+      <p class="subtitle">Each weight is nudged and re-tested with its own forward pass.</p>
+      <canvas class="heatmap" id="pbCanvas" width="300" height="300"></canvas>
+      <div class="stats">
+        <div class="stat"><div class="label">Loss</div><div class="value" id="pbLoss">—</div></div>
+        <div class="stat"><div class="label">Epoch</div><div class="value" id="pbEpoch">0</div></div>
+        <div class="stat"><div class="label">Forward passes used</div><div class="value" id="pbPasses">0</div></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="chart-section">
+    <h3>Loss per epoch</h3>
+    <canvas id="lossChart" width="900" height="220"></canvas>
+    <div class="legend">
+      <span><span class="swatch whisper"></span> Backprop</span>
+      <span><span class="swatch wiggle"></span> Perturbation</span>
+    </div>
+  </div>
+
+  <div class="gap-section">
+    <h3>Passes needed to reach target loss</h3>
+    <div class="gap-readout" id="gapReadout">
+      <div class="gap-bar-row">
+        <span class="tag">Backprop</span>
+        <div class="gap-bar-track"><div class="gap-bar-fill whisper" id="bpBar" style="width:0%"></div></div>
+        <span id="bpBarLabel">—</span>
+      </div>
+      <div class="gap-bar-row">
+        <span class="tag">Perturbation</span>
+        <div class="gap-bar-track"><div class="gap-bar-fill wiggle" id="pbBar" style="width:0%"></div></div>
+        <span id="pbBarLabel">—</span>
+      </div>
+      <p id="ratioLine">Press Train to see how many more forward passes perturbation needs to reach the target loss.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>Why this matters at scale:</b> Dave Blundin, on the podcast at 01:19:30, described backprop on a real frontier model as propagating error back through "2 trillion weights" in one shot (as stated on the podcast). This toy uses a handful of weights, but the <em>shape</em> of the cost gap — one pass for backprop, one pass per weight for naive perturbation — is the same idea at a tiny scale.
+  </div>
+
+  <footer>
+    Inspired by Moonshots episode "AI Market Shocks, Anthropic's Stock Slide, Gemini Releases, and Elon's $435M Bet" (#314), around 01:19:30.<br>
+    Fan-made prototype, not affiliated with the show. <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314" target="_blank" rel="noopener">Listen to the episode</a>.
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
