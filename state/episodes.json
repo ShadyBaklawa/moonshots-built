@@ -1,4 +1,81 @@
 {
+  "jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315": {
+    "title": "Jensen Huang Is Back: Inside NVIDIA’s $1 Trillion Comeback After 11 Days Out | EP #315",
+    "date": "2026-11-25",
+    "number": 315,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315",
+    "attempts": 0,
+    "found": "2026-11-25T02:31:58+00:00",
+    "status": "built",
+    "updated": "2026-11-25T02:57:28+00:00",
+    "prototypes": [
+      "ep315-single-point-scanner",
+      "ep315-perplexity-staircase"
+    ],
+    "briefs": [
+      "ep315-head-only-inventory",
+      "ep315-bot-or-not-check"
+    ],
+    "ideas": [
+      {
+        "title": "Perplexity Staircase",
+        "score": 4.25,
+        "timestamp": "00:20:36"
+      },
+      {
+        "title": "19.9 Megawatt Sprawl",
+        "score": 4.2,
+        "timestamp": "00:40:38"
+      },
+      {
+        "title": "A Saga Per Second",
+        "score": 4.2,
+        "timestamp": "01:12:14"
+      },
+      {
+        "title": "Wait or Work",
+        "score": 3.9,
+        "timestamp": "00:43:56"
+      },
+      {
+        "title": "Leisure Boom Board",
+        "score": 3.75,
+        "timestamp": "00:57:03"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Head-Only Inventory",
+        "score": 3.65,
+        "timestamp": "00:05:03"
+      },
+      {
+        "title": "Bot-or-Not Check",
+        "score": 3.4,
+        "timestamp": "01:08:22"
+      },
+      {
+        "title": "Quiet Talk Fitout",
+        "score": 3.05,
+        "timestamp": "01:03:26"
+      },
+      {
+        "title": "Permit Shot Clock Desk",
+        "score": 3.0,
+        "timestamp": "00:35:58"
+      }
+    ],
+    "summary": "A Thanksgiving-week news episode. The hosts react to Jensen Huang returning to NVIDIA after 11 days out, with the White House reportedly involved, and argue over whether OpenAI publishing its pre-training perplexity chart is about safety, bragging, or forming a 'safety cartel'. They also cover the US push to keep data centers onshore (permit deadlines and a 20 MW cost rule), AI proofs of the Riemann hypothesis and Navier-Stokes, GTA 6's record launch built without generative AI, and a viral clip of an AI avatar recognising itself in a mirror."
+  },
+  "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315": {
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #315",
+    "date": "2026-11-24",
+    "number": 315,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315",
+    "attempts": 0,
+    "found": "2026-11-25T02:31:58+00:00",
+    "status": "new"
+  },
   "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314": {
     "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
     "date": "2026-11-22",
