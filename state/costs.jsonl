@@ -135,3 +135,10 @@
 {"at": "2026-11-25T02:40:43+00:00", "label": "review:ep315-single-point-scanner", "est_cost_usd": 0.3098, "turns": 11, "subtype": "success"}
 {"at": "2026-11-25T02:55:35+00:00", "label": "build:ep315-perplexity-staircase", "est_cost_usd": 1.8252, "turns": 1, "subtype": "success"}
 {"at": "2026-11-25T02:57:28+00:00", "label": "review:ep315-perplexity-staircase", "est_cost_usd": 0.2878, "turns": 15, "subtype": "success"}
+{"at": "2026-11-25T14:28:44+00:00", "label": "extract:thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315", "est_cost_usd": 0.5058, "turns": 2, "subtype": "success"}
+{"at": "2026-11-25T14:35:16+00:00", "label": "build:ep315-bot-honesty-scorecard", "est_cost_usd": 0.9462, "turns": 34, "subtype": "success"}
+{"at": "2026-11-25T14:37:20+00:00", "label": "review:ep315-bot-honesty-scorecard", "est_cost_usd": 0.3687, "turns": 17, "subtype": "success"}
+{"at": "2026-11-25T14:42:16+00:00", "label": "build:ep315-token-torrent", "est_cost_usd": 0.6171, "turns": 24, "subtype": "success"}
+{"at": "2026-11-25T14:43:34+00:00", "label": "review:ep315-token-torrent", "est_cost_usd": 0.191, "turns": 10, "subtype": "success"}
+{"at": "2026-11-25T14:44:53+00:00", "label": "build:ep315-token-torrent:fix1", "est_cost_usd": 0.289, "turns": 18, "subtype": "success"}
+{"at": "2026-11-25T14:46:15+00:00", "label": "review:ep315-token-torrent", "est_cost_usd": 0.1694, "turns": 7, "subtype": "success"}

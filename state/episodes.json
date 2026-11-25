@@ -69,12 +69,66 @@
   },
   "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315": {
     "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #315",
-    "date": "2026-11-24",
+    "date": "2026-11-25",
     "number": 315,
     "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315",
     "attempts": 0,
     "found": "2026-11-25T02:31:58+00:00",
-    "status": "new"
+    "status": "built",
+    "updated": "2026-11-25T14:46:15+00:00",
+    "prototypes": [
+      "ep315-bot-honesty-scorecard",
+      "ep315-token-torrent"
+    ],
+    "briefs": [
+      "ep315-is-this-a-bot-test-line",
+      "ep315-handshake-ledger"
+    ],
+    "ideas": [
+      {
+        "title": "Token Torrent",
+        "score": 4.2,
+        "timestamp": "01:12:14"
+      },
+      {
+        "title": "Perplexity Ladder",
+        "score": 4.05,
+        "timestamp": "00:20:36"
+      },
+      {
+        "title": "Zeta Zero Hunter",
+        "score": 4.0,
+        "timestamp": "00:45:27"
+      },
+      {
+        "title": "Moonshot Coriolis",
+        "score": 3.7,
+        "timestamp": "00:44:49"
+      },
+      {
+        "title": "Nineteen-Point-Nine",
+        "score": 3.55,
+        "timestamp": "00:40:38"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Is-This-a-Bot Test Line",
+        "score": 3.4,
+        "timestamp": "01:08:22"
+      },
+      {
+        "title": "Handshake Ledger",
+        "score": 3.15,
+        "timestamp": "00:05:03"
+      },
+      {
+        "title": "Under-Twenty Site Check",
+        "score": 2.6,
+        "timestamp": "00:40:38"
+      }
+    ],
+    "summary": "A Thanksgiving-week news episode. It covers Jensen Huang's reinstatement at NVIDIA after 11 days, with talk of government pressure, handshake deals and no succession plan, and OpenAI publishing its pre-training perplexity chart, which the hosts read as either a safety cartel or a bragging chart. Other stories: a US push to keep data centers onshore, with a 20 MW cost threshold that Alex expects to spawn 19.9 MW sites; an AI-assisted Riemann proof and 'math is cooked'; GTA 6's $3.79B launch day against generative game-making; and a viral AI avatar passing a mirror test, which raises questions about disclosure and memory."
   },
   "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314": {
     "title": "Steve Jurvetson on the SpaceX Deal That Almost Didn’t Happen | EP #314",
