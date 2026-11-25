@@ -4,17 +4,5 @@
     "reason": "Convert a day's AI token spend into 'human worker equivalents' and project it a year ahead. (Dave says one engineer burned half a billion tokens, about $5,000, in a day. At roughly a dollar per worker-day equivalent, that's about 5,000 people, and costs fall 10x a year, so it becomes 50,000 next year.)",
     "episode": "big-tech-s-3t-ai-bet-claude-writes-90-of-anthropic-s-code-ais-editing-ai-brains-ep-308",
     "added": "2026-11-05T01:01:39+00:00"
-  },
-  {
-    "prototype": "ep301-neutrino-phone",
-    "reason": "Pick two cities and race a fiber-optic route against a laser link between satellites in vacuum. (Jurvetson noted that light travels about 30% faster in a vacuum than in glass. Laser links between satellites also follow a straight path, unlike undersea cables that hug coastlines, so orbit can beat fiber on latency.)",
-    "episode": "steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314",
-    "added": "2026-11-22T02:19:00+00:00"
-  },
-  {
-    "prototype": "ep301-neutrino-phone",
-    "reason": "Race a data packet through undersea fiber against a laser relay through orbit between any two cities. (Steve explains that laser links between satellites beat fiber on the ground: light travels about 30% faster in vacuum than in glass, and space paths go straight instead of hugging coastlines.)",
-    "episode": "ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314",
-    "added": "2026-11-22T23:40:04+00:00"
   }
 ]
