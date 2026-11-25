@@ -1,0 +1,49 @@
+{
+  "title": "Handshake Ledger",
+  "one_liner": "Inventories a founder-led company's unsigned partner deals and founder-only relationships, then ranks the revenue at risk.",
+  "timestamp": "00:05:03",
+  "speaker": "Salim Ismail",
+  "context": "Salim's guess at why Jensen was pushed out: billion-dollar partnerships with no signed contracts, an ecosystem centred on one person, nepotism and no succession plan, with the board pressing for things to be written down.",
+  "customer": "Founder-led private companies with roughly 20–200 staff (distributors, agencies, manufacturers), especially those preparing for investment, a sale or a new COO",
+  "problem": "Big customer and supplier relationships rest on handshakes and the founder's personal contacts. Nobody knows how much revenue would wobble if the founder left or a partner walked, so buyers, boards and lenders discount the company.",
+  "revenue_model": "A fixed-fee 2-week inventory sprint of about $3,500–$6,000, with an annual refresh at about $1,500 (estimate). The finished ledger goes to the client's own lawyer for any contract drafting.",
+  "why_now": "The NVIDIA episode made key-person risk and unsigned mega-deals a headline topic. The hosts expect boards and Congress to dig into who promised what, which raises the value of having things written down.",
+  "first_steps": [
+    "Build a one-page ledger template (partner, revenue share, signed or unsigned, relationship owner, backup contact, renewal date)",
+    "Fill it in for 2 friendly small businesses for free and record how much revenue turned out to be unsigned or founder-only",
+    "Pitch the fixed-fee sprint to 15 M&A advisors and fractional CFOs as a pre-diligence add-on"
+  ],
+  "cost_to_start": "About 1 week and near-zero cash: a template, a sample report and outreach (estimate).",
+  "competition": "Lawyers, fractional COOs and due-diligence firms cover parts of this, usually at higher cost and only during a deal (unverified).",
+  "risks": "It can drift into legal advice, so it must stay an inventory and referral. Founders may resist exposing their dependence on themselves. Overlap with general diligence services may push prices down.",
+  "money": 3,
+  "ease": 4,
+  "speed": 3,
+  "evidence": 3,
+  "tool": {
+    "title": "Handshake Exposure Map",
+    "one_liner": "Paste your key partners and see what share of revenue rests on unsigned deals or a single person.",
+    "demo": "The user pastes or types rows of partner, annual revenue, contract status (signed, expired, verbal), relationship owner and backup contact. The tool ranks partners by exposure and shows totals: the percentage of revenue that is unsigned, founder-only or has no backup. It also produces a printable action list ordered by risk for the founder to take to their lawyer.",
+    "data_plan": "Entirely the customer's own input (pasted CSV or form rows), with a bundled fictional example company. No external data.",
+    "feasibility": 5,
+    "acceptance": [
+      "Pasting the example CSV and pressing Map ranks the partners and shows the percentage of revenue that is unsigned, single-owner and missing a backup contact",
+      "Changing one partner's status from 'verbal' to 'signed' immediately updates the totals and the ranking",
+      "Example mode loads a fictional company and labels it 'Example data'",
+      "The action list is printable and includes a note that it is not legal advice",
+      "Table and totals are readable on a phone, with no horizontal scroll on the summary"
+    ]
+  },
+  "figures": [],
+  "score": 3.15,
+  "slug": "ep315-handshake-ledger",
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315"
+  },
+  "tool_slug": null,
+  "created": "2026-11-25T14:46:15+00:00"
+}

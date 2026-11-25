@@ -1,0 +1,37 @@
+{
+  "slug": "ep315-bot-honesty-scorecard",
+  "kind": "tool",
+  "title": "Bot Honesty Scorecard",
+  "one_liner": "Builds a test script for your AI agent and scores a pasted transcript on disclosure, memory and pressure tactics.",
+  "headline": "Pick your business and channel, get a real probe script, then paste your AI agent's actual transcript to see it scored and flagged line-by-line for disclosure, memory, hand-off and sales-pressure honesty.",
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315"
+  },
+  "timestamp": "01:08:22",
+  "idea_score": 3.4,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 8,
+    "wow": 7,
+    "ux": 8,
+    "code": 9,
+    "honesty": 9
+  },
+  "overall": 8.0,
+  "created": "2026-11-25T14:37:20+00:00",
+  "updated": "2026-11-25T14:37:20+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-25T14:37:20+00:00",
+      "overall": 8.0,
+      "summary": "This is a genuinely working tool, not a mockup: the probe-script generator and the regex-based transcript scorer both do real work against whatever text the owner pastes, with quoted evidence lines per flag, and it's honest about being a rule-based heuristic rather than a certification. Code is clean, self-contained, and well-labeled; the only real gaps are heuristic brittleness (strict phrase matching can miss paraphrased good behaviour) and some minor polish items, none of which block publishing.</parameter>\n</invoke>\n"
+    }
+  ]
+}

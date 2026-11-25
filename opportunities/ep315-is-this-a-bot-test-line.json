@@ -1,0 +1,64 @@
+{
+  "title": "Is-This-a-Bot Test Line",
+  "one_liner": "Runs scripted test calls and chats on a business's AI receptionist or avatar to check disclosure, memory and sales pressure.",
+  "timestamp": "01:08:22",
+  "speaker": "Peter Diamandis",
+  "context": "After a viral clip of an AI avatar recognising itself in a mirror, Peter asked when an AI must say it is an AI, who owns what it remembers, and whether these faces will be used to persuade or sell.",
+  "customer": "US small businesses using AI voice receptionists or chat avatars (dental and medical front desks, home-services firms, car dealerships), plus the agencies that install those agents for them",
+  "problem": "Owners switch on an AI agent and never check how it answers 'am I talking to a bot?', what it says it remembers about callers, or how hard it pushes upsells. They find out when a customer complains or posts a recording.",
+  "revenue_model": "Fixed fee of about $400 per test pass (25 scripted probes across voice and chat) with a scored report, plus about $99 a month for a re-test after each agent or vendor update (estimate). Agencies get a white-label bulk rate.",
+  "why_now": "Avatar agents are now lifelike enough that a mirror-test demo drew nearly 24 million views and strong 'skin crawl' reactions. The hosts raised disclosure, memory ownership and persuasion as open questions as these agents spread.",
+  "first_steps": [
+    "Write a 25-question probe script (bot disclosure, memory, data deletion, upsell pressure, escalation to a human) and run it on 5 public AI receptionist demo lines",
+    "Turn one run into a sample scored report and send it to 20 local agencies that install AI receptionists",
+    "Offer 3 free test passes to small businesses in exchange for a testimonial and permission to publish an anonymised result"
+  ],
+  "cost_to_start": "About 1–2 weeks and under $200 for a phone number, call recording and a simple report template (estimate).",
+  "competition": "Enterprise conversational-AI QA and red-team platforms exist. A cheap, fixed-fee behaviour check for small businesses appears thin (unverified).",
+  "risks": "Customers may expect a legal compliance certificate, so the reports must be framed as behaviour tests, not legal advice. Agent vendors may add their own built-in tests. Each pass is low-ticket, so the business depends on agency volume.",
+  "money": 3,
+  "ease": 4,
+  "speed": 4,
+  "evidence": 3,
+  "tool": {
+    "title": "Bot Honesty Scorecard",
+    "one_liner": "Builds a test script for your AI agent and scores a pasted transcript on disclosure, memory and pressure tactics.",
+    "demo": "The owner picks their business type and channel (phone or chat) and gets a ready-to-run list of probe questions. After running them, they paste the transcript and get a score per category (admits it is AI, explains memory, offers a human, avoids pressure), with the quoted lines that caused each flag. Rule-based scoring works with no key. A visitor-pasted AI key adds a richer written review.",
+    "data_plan": "The customer's own transcript and business details. Probe questions come from a bundled list built from the episode's four questions. No external data.",
+    "feasibility": 4,
+    "acceptance": [
+      "Choosing 'dental clinic' and 'phone' produces a numbered probe script of at least 15 questions grouped under disclosure, memory, human hand-off and sales pressure",
+      "Pasting the bundled example transcript and pressing Score shows a 0–100 score per category and highlights the transcript lines that triggered each flag",
+      "With no API key, an example mode fills every report section and labels it 'Example – rule-based scoring'",
+      "The page states that the report is a behaviour test, not legal or compliance advice",
+      "The scorecard can be printed or saved as a single-page PDF via the browser, and the layout stacks into one column on a phone"
+    ]
+  },
+  "figures": [
+    {
+      "value": "24 million",
+      "meaning": "approximate views of the AI avatar mirror-test video",
+      "timestamp": "01:05:37",
+      "said": "has been seen nearly 24 million times",
+      "verified": true
+    },
+    {
+      "value": "175,000",
+      "meaning": "approximate likes on the top 'skin crawl' quote post",
+      "timestamp": "01:07:41",
+      "said": "with about 175,000 likes more than the video",
+      "verified": true
+    }
+  ],
+  "score": 3.4,
+  "slug": "ep315-is-this-a-bot-test-line",
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315"
+  },
+  "tool_slug": "ep315-bot-honesty-scorecard",
+  "created": "2026-11-25T14:46:15+00:00"
+}

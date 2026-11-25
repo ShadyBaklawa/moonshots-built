@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bot Honesty Scorecard</title>
+<meta name="description" content="Build a probe script for your AI phone or chat agent, then score the transcript for disclosure, memory, human hand-off and sales pressure.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Bot Honesty Scorecard</h1>
+  <p class="subtitle">For dental, medical, home-services and dealership owners running an AI phone or chat agent: get a ready-to-run test script, then score the transcript for disclosure, memory, hand-off and sales pressure.</p>
+  <p class="disclaimer-banner">This is a behaviour test, not legal or compliance advice.</p>
+</header>
+
+<main>
+
+  <section id="step1" class="card">
+    <h2>1. Build your test script</h2>
+    <div class="controls-row">
+      <label for="bizSelect">Business type
+        <select id="bizSelect">
+          <option value="dental">Dental clinic</option>
+          <option value="medical">Medical practice</option>
+          <option value="home_services">Home services company</option>
+          <option value="dealership">Car dealership</option>
+          <option value="other">Other business</option>
+        </select>
+      </label>
+      <div>
+        <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;margin-bottom:6px;">Channel</span>
+        <div class="channel-toggle" role="radiogroup" aria-label="Channel">
+          <button type="button" class="channel-btn active" data-channel="phone" aria-pressed="true">Phone call</button>
+          <button type="button" class="channel-btn" data-channel="chat" aria-pressed="false">Chat widget</button>
+        </div>
+      </div>
+    </div>
+    <button id="generateBtn" class="primary-btn" type="button">Generate probe script</button>
+
+    <div id="scriptOutput" class="script-output" hidden>
+      <p class="script-intro" id="scriptIntro"></p>
+      <div id="probeGroups"></div>
+    </div>
+  </section>
+
+  <section id="step2" class="card">
+    <h2>2. Run it, then paste the transcript</h2>
+    <p>Call or message your own agent and use the questions above, one at a time. Save the whole conversation, then paste it here using <code>Agent:</code> and <code>Caller:</code> labels if you can.</p>
+    <textarea id="transcriptInput" aria-label="Transcript" placeholder="Agent: Hi, thanks for calling...&#10;Caller: I'd like to book an appointment.&#10;Agent: ..."></textarea>
+    <div class="btn-row">
+      <button id="loadExampleBtn" class="secondary-btn" type="button">Load example transcript</button>
+      <button id="scoreBtn" class="primary-btn" type="button">Score transcript</button>
+    </div>
+    <p id="scoreError" class="error-note" hidden>Paste a transcript (or load the example) before scoring.</p>
+
+    <details class="ai-key-box">
+      <summary>Have an AI API key? Add it for a richer written review (optional)</summary>
+      <label for="apiKeyInput">Anthropic API key
+        <input type="password" id="apiKeyInput" placeholder="sk-ant-..." autocomplete="off">
+      </label>
+      <p class="key-note">Stays in your browser only — it is sent directly from your browser to Anthropic to generate the written review, never to us, and is never stored.</p>
+    </details>
+  </section>
+
+  <section id="reportSection" class="card" hidden>
+    <div class="report-header">
+      <h2>Scorecard</h2>
+      <span id="reportBadge" class="report-badge"></span>
+    </div>
+    <p class="disclaimer-banner">This is a behaviour test, not legal or compliance advice — not a certification of your agent's compliance.</p>
+    <div class="overall-score">
+      <div class="overall-number" id="overallScore">—</div>
+      <div>
+        <div>Overall score (0–100)</div>
+        <div class="meta-note" id="scoreMeta"></div>
+      </div>
+    </div>
+    <div class="category-grid" id="categoryGrid"></div>
+    <div id="aiReview" class="ai-review" hidden>
+      <h3>Written review</h3>
+      <div id="aiReviewBody"></div>
+    </div>
+    <div class="print-row">
+      <button id="printBtn" class="secondary-btn" type="button">Print / Save as PDF</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Inspired by <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315" target="_blank" rel="noopener">Moonshots EP #315</a>, around 01:08:22. Fan-made prototype, not affiliated with the show.
+</footer>
+
+<script src="data/probes.js"></script>
+<script src="data/example-transcript.js"></script>
+<script src="data/rules.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

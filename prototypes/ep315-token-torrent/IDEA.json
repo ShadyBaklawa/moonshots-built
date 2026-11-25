@@ -1,0 +1,53 @@
+{
+  "title": "Token Torrent",
+  "one_liner": "Talk for ten seconds and see how much text an avatar could write in that time at today's speed versus a million tokens per second.",
+  "timestamp": "01:12:14",
+  "speaker": "Dave Blundin",
+  "context": "Dave said real-time avatars run on dumb models today. He expects a jump from about 100 to a million tokens per second within 18 months, enough to write a full book series every second you speak.",
+  "demo": "The visitor presses a 'Speak' timer (or types a sentence) while two panes fill with text, one at 100 tokens/s and one at up to 1,000,000 tokens/s, shown as a page counter and a growing bookshelf. A speed slider moves between the two figures on a log scale, and a counter shows how many novel-length books fit into the visitor's own speaking time.",
+  "data_plan": "The 100 and 1,000,000 tokens/s figures and the 18-month window come from the episode. Words per token and book length are labelled estimates. Filler text is generated locally.",
+  "feasibility": 5,
+  "wow": 4,
+  "fidelity": 4,
+  "novelty": 3,
+  "related_existing": null,
+  "risks": "Book-length and token-to-word conversions are my estimates and must be labelled. The million tokens/s figure is a prediction, not a current product.",
+  "figures": [
+    {
+      "value": "100 tokens per second",
+      "meaning": "today's approximate speed of real-time avatar models, per Dave",
+      "timestamp": "01:12:14",
+      "said": "from about 100 tokens per second",
+      "verified": true
+    },
+    {
+      "value": "a million tokens per second",
+      "meaning": "speed Dave predicts avatars will reach",
+      "timestamp": "01:12:14",
+      "said": "to a million tokens per second",
+      "verified": true
+    },
+    {
+      "value": "18 months",
+      "meaning": "Dave's outer time frame for that jump",
+      "timestamp": "01:12:14",
+      "said": "within 18 months for sure",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Pressing Speak and then Stop after a few seconds shows the token and book count for both speeds over exactly that duration",
+    "Moving the speed slider updates the bookshelf animation and the books-per-second counter",
+    "Words-per-token and book-length assumptions are shown and labelled 'estimate', and the speed figures are cited to the episode",
+    "The 1M tokens/s pane is labelled as a prediction",
+    "Both panes stack vertically on a phone"
+  ],
+  "score": 4.2,
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315"
+  }
+}
