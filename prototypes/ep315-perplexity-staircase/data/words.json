@@ -1,0 +1,10 @@
+{
+  "sentence_prefix": "The researcher just discovered a new",
+  "sentence_suffix": "entirely.",
+  "candidates": [
+    "law", "planet", "species", "material", "theorem",
+    "particle", "element", "algorithm", "vaccine", "star",
+    "enzyme", "isotope", "pattern", "galaxy", "compound",
+    "molecule", "mineral", "virus", "protein", "signal"
+  ]
+}

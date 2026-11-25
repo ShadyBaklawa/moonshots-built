@@ -1,0 +1,57 @@
+{
+  "title": "Head-Only Inventory",
+  "one_liner": "A fixed-fee sprint that finds every deal, password and decision living only in a founder's head, then writes it down.",
+  "timestamp": "00:05:03",
+  "speaker": "Salim",
+  "context": "Salim guessed that the board pushed Jensen out partly over nepotism, no signed contracts with major partners, everything centred on one person and no succession plan. In his telling, the board wanted things written down and signed.",
+  "customer": "Founder-led US companies with 10–150 staff, especially ones preparing for a fundraise, sale or bank loan, where the owner holds key partner relationships personally",
+  "problem": "Key customer and supplier deals rest on handshakes. Critical knowledge and logins sit with one person, and nobody has a plan for when that person is out. Investors, buyers and lenders mark the company down for it, and an emergency absence can stall the business.",
+  "revenue_model": "Fixed-fee sprint at about $3,500–$7,500 per company, plus an optional $300 a month to keep the register up to date (estimate)",
+  "why_now": "The episode describes the world's most valuable company thrown into chaos over unsigned deals and no succession plan. That makes key-person risk an easy story to sell, and AI interview and transcription tools now let one consultant turn a founder's knowledge into documents quickly.",
+  "first_steps": [
+    "Write a 25-question 'what only you know' self-check and post it to founder communities",
+    "Offer three free 60-minute recorded interviews with local founders and turn each into a sample register",
+    "Pitch the sprint to two M&A advisors or fractional CFOs as something to refer clients to before a deal"
+  ],
+  "cost_to_start": "About 1–2 weeks and under $300 for templates, a transcription tool and a simple site",
+  "competition": "Business continuity consultants, succession planners and exit-planning advisors exist, but they mostly target large firms or focus on finance and tax rather than mapping unwritten operational knowledge",
+  "risks": "Founders may not want to spend time on it until a crisis hits. Writing deals down can surface disputes. Must not drift into legal contract drafting; hand that off to the client's lawyer.",
+  "money": 3,
+  "ease": 4,
+  "speed": 4,
+  "evidence": 4,
+  "tool": {
+    "title": "Single-Point Scanner",
+    "one_liner": "List your critical deals, systems and decisions, and see which ones depend on one person with nothing written down.",
+    "demo": "The owner fills in a table of rows: deal, system or decision; who holds it; whether it's signed or documented; whether there's a backup person; and how much revenue depends on it. The tool scores each row, ranks the single points of failure, gives a 'one person out for two weeks' exposure total, and produces a printable action list. An example company is preloaded.",
+    "data_plan": "Entirely the customer's own input, stored in the browser's local storage. Scoring rules are bundled and shown on the page.",
+    "feasibility": 5,
+    "acceptance": [
+      "Adding a row with 'no backup person' and 'not documented' moves it to the top of the ranked list with a red flag",
+      "The exposure total updates live as revenue-at-risk values are edited",
+      "The 'Load example' button fills in a sample company and labels it as an example",
+      "Clicking Print or Export shows a clean one-page action list",
+      "On a 375px-wide screen the table becomes stacked cards with no sideways scrolling"
+    ]
+  },
+  "figures": [
+    {
+      "value": "11 days",
+      "meaning": "how long Jensen was out as NVIDIA CEO",
+      "timestamp": "00:00:00",
+      "said": "Jensen was out for 11 days, 264 hours",
+      "verified": true
+    }
+  ],
+  "score": 3.65,
+  "slug": "ep315-head-only-inventory",
+  "episode": {
+    "slug": "jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315",
+    "title": "Jensen Huang Is Back: Inside NVIDIA’s $1 Trillion Comeback After 11 Days Out | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315"
+  },
+  "tool_slug": "ep315-single-point-scanner",
+  "created": "2026-11-25T02:57:28+00:00"
+}

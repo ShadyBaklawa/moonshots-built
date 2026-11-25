@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Single-Point Scanner — find your key-person risk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanline" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">◎</span>
+      <div>
+        <h1>Single-Point Scanner</h1>
+        <p class="tagline">For founders who hold deals, logins and decisions in their own head: find what breaks if you disappear for two weeks.</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button id="loadExampleBtn" class="btn btn-ghost" type="button">Load example</button>
+      <button id="resetBtn" class="btn btn-ghost" type="button">Clear all</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="exposure-panel" aria-label="Exposure summary">
+    <div class="exposure-readout">
+      <div class="dial" id="dial" role="img" aria-label="Overall exposure dial">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <circle cx="60" cy="60" r="52" class="dial-track"></circle>
+          <circle cx="60" cy="60" r="52" class="dial-fill" id="dialFill"></circle>
+        </svg>
+        <div class="dial-label">
+          <span id="dialScore">0</span>
+          <small>exposure score</small>
+        </div>
+      </div>
+    </div>
+    <div class="exposure-stats">
+      <div class="stat">
+        <span class="stat-label">"One person out for two weeks" revenue at risk</span>
+        <span class="stat-value" id="twoWeekExposure">$0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Single points of failure (no backup, undocumented)</span>
+        <span class="stat-value" id="spofCount">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Rows tracked</span>
+        <span class="stat-value" id="rowCount">0</span>
+      </div>
+    </div>
+    <div class="exposure-actions">
+      <button id="printBtn" class="btn btn-primary" type="button">Print / Export action list</button>
+      <p id="exampleNote" class="example-note" hidden>Showing <strong>example company</strong> data — edit any cell or load your own.</p>
+    </div>
+  </section>
+
+  <section class="table-section" aria-label="Deals, systems and decisions">
+    <div class="table-head-row">
+      <h2>Your deals, systems and decisions</h2>
+      <button id="addRowBtn" class="btn btn-secondary" type="button">+ Add row</button>
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="flag flag-red" aria-hidden="true"></span> Critical — no backup, not documented</span>
+      <span class="legend-item"><span class="flag flag-amber" aria-hidden="true"></span> At risk — missing one safeguard</span>
+      <span class="legend-item"><span class="flag flag-green" aria-hidden="true"></span> Covered</span>
+    </div>
+
+    <div id="tableWrap" class="table-wrap">
+      <table id="riskTable">
+        <thead>
+          <tr>
+            <th class="col-flag"></th>
+            <th class="col-name">Deal, system or decision</th>
+            <th class="col-holder">Who holds it</th>
+            <th class="col-check">Signed / documented?</th>
+            <th class="col-check">Backup person?</th>
+            <th class="col-revenue">Revenue at risk ($/yr)</th>
+            <th class="col-score">Score</th>
+            <th class="col-del"></th>
+          </tr>
+        </thead>
+        <tbody id="riskTableBody"></tbody>
+      </table>
+    </div>
+
+    <template id="rowTemplate">
+      <tr class="risk-row" draggable="false">
+        <td class="col-flag"><span class="flag" aria-hidden="true"></span></td>
+        <td class="col-name" data-label="Deal, system or decision">
+          <input type="text" class="f-name" placeholder="e.g. Acme Corp supply contract">
+        </td>
+        <td class="col-holder" data-label="Who holds it">
+          <input type="text" class="f-holder" placeholder="e.g. Founder">
+        </td>
+        <td class="col-check" data-label="Signed / documented?">
+          <label class="toggle">
+            <input type="checkbox" class="f-documented">
+            <span>Documented</span>
+          </label>
+        </td>
+        <td class="col-check" data-label="Backup person?">
+          <label class="toggle">
+            <input type="checkbox" class="f-backup">
+            <span>Has backup</span>
+          </label>
+        </td>
+        <td class="col-revenue" data-label="Revenue at risk ($/yr)">
+          <input type="number" class="f-revenue" min="0" step="1000" inputmode="numeric" placeholder="0">
+        </td>
+        <td class="col-score" data-label="Score"><span class="score-value">0</span></td>
+        <td class="col-del"><button class="btn-del" type="button" aria-label="Remove row">✕</button></td>
+      </tr>
+    </template>
+
+    <p class="empty-state" id="emptyState">No rows yet. Click "Load example" to see how it works, or "+ Add row" to start with your own.</p>
+  </section>
+
+  <section class="method-panel" aria-label="How scoring works">
+    <h2>How the score works</h2>
+    <p>Each row scores 0–10 from three bundled rules, shown here so nothing is a black box:</p>
+    <ul>
+      <li><strong>+5</strong> if it is not signed or documented anywhere.</li>
+      <li><strong>+4</strong> if there is no backup person who could step in.</li>
+      <li><strong>+1</strong> if annual revenue at risk is $100,000 or more (scales up to +1 per 10 rows ranked by revenue, see ranking).</li>
+    </ul>
+    <p>Rows are ranked by score first, then by revenue at risk. The "two week exposure" total adds the revenue at risk of every row with no backup person, since that is what stalls the moment one person is unreachable. This is a simple heuristic, not a legal or financial assessment — for actual contracts, talk to a lawyer.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Inspired by Moonshots episode 315, around 00:05:03 — Salim's read on NVIDIA's board pushing Jensen out partly over undocumented deals and no succession plan. Fan-made prototype, not affiliated with the show.
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315" target="_blank" rel="noopener">Listen to the episode</a>.</p>
+</footer>
+
+<div id="printSheet" class="print-sheet" aria-hidden="true">
+  <h1>Single-Point Scanner — Action List</h1>
+  <p class="print-meta" id="printMeta"></p>
+  <table id="printTable">
+    <thead>
+      <tr><th>Risk</th><th>Deal, system or decision</th><th>Holder</th><th>Documented?</th><th>Backup?</th><th>Revenue at risk</th><th>Score</th></tr>
+    </thead>
+    <tbody id="printTableBody"></tbody>
+  </table>
+  <p class="print-total" id="printTotal"></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "slug": "ep315-single-point-scanner",
+  "kind": "tool",
+  "title": "Single-Point Scanner",
+  "one_liner": "List your critical deals, systems and decisions, and see which ones depend on one person with nothing written down.",
+  "headline": "List every deal, login and decision that only lives in your head, and watch a live dollar exposure and ranked action list build as you fill it in.",
+  "episode": {
+    "slug": "jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315",
+    "title": "Jensen Huang Is Back: Inside NVIDIA’s $1 Trillion Comeback After 11 Days Out | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315"
+  },
+  "timestamp": "00:05:03",
+  "idea_score": 3.65,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 8.35,
+  "created": "2026-11-25T02:40:43+00:00",
+  "updated": "2026-11-25T02:40:43+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-25T02:40:43+00:00",
+      "overall": 8.35,
+      "summary": "A tight, self-contained single-file tool that matches the opportunity brief closely: a scored, ranked key-person-risk register with a live exposure dial, a printable action list, and an honestly-labeled example company, all backed by a transparent bundled scoring rule shown on the page. The math checks out end-to-end (per-row scores, average exposure dial, two-week revenue total all reconcile against the example data), there's no fabricated real-world figure, and mobile/print/local-storage all work as described. The only rough edges are a mislabeled example flag after a manual edit and missing programmatic labels/text for accessibility — both easy follow-ups, not blockers.</parameter>\n</invoke>\n"
+    }
+  ]
+}

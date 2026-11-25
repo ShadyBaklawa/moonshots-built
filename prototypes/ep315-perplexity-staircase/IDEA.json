@@ -1,0 +1,60 @@
+{
+  "title": "Perplexity Staircase",
+  "one_liner": "Drag a model down the log-perplexity scale and watch capability thresholds unlock, from chat to millennium-prize math.",
+  "timestamp": "00:20:36",
+  "speaker": "Peter Diamandis / Alex Wissner-Gross",
+  "context": "OpenAI published a pre-training log-perplexity chart with capability thresholds. Alex explained perplexity as the number of equally likely next words, and read the flat stretch from GPT-4 to about GPT-5.2 as OpenAI losing, then regaining, its pre-training edge.",
+  "demo": "A vertical slider sets log perplexity. A toy panel turns it into 'roughly N equally likely next words' and shows a sentence with that many candidate words fanning out. Threshold lines at the podcast's values light up as you pass them, and a toggle overlays a simulated plateau against a straight-line trend to show Alex's 'we're back' reading.",
+  "data_plan": "Bundled threshold values stated on the podcast. The candidate-word fan is computed from the slider, assuming log base 2 as in Alex's 'bits' explanation. The plateau and trend curves are clearly labelled illustrative, not OpenAI data.",
+  "feasibility": 5,
+  "wow": 3,
+  "fidelity": 5,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "OpenAI's actual chart wasn't shown in the transcript, so only three threshold values are known. The log base is assumed. Alex's 'back in 2002, 2003' is a slip for 2022–23, so don't reproduce it.",
+  "figures": [
+    {
+      "value": "0.99",
+      "meaning": "log perplexity of GPT-3.5, threshold for fluent conversation",
+      "timestamp": "00:20:36",
+      "said": "GPT 3.5 at about 0.99 gave us fluent conversations",
+      "verified": true
+    },
+    {
+      "value": "0.91",
+      "meaning": "log perplexity of GPT-4, threshold for benefiting from thinking before answering",
+      "timestamp": "00:20:36",
+      "said": "GPT 4 at 0.91 benefits from thinking",
+      "verified": true
+    },
+    {
+      "value": "0.76",
+      "meaning": "threshold labelled solving a millennium prize math problem",
+      "timestamp": "00:20:36",
+      "said": "At about 0.76 next to the GPT 6.2 Astra",
+      "verified": true
+    },
+    {
+      "value": "2027",
+      "meaning": "earliest year by which Jakub warns of an avalanche of breakthroughs",
+      "timestamp": "00:20:36",
+      "said": "He warns that as soon as 2027,",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Dragging the slider below 0.91 lights up the 'thinking before answering' threshold and updates the equally-likely-words count",
+    "The word fan shows more candidate words at higher perplexity and fewer at lower",
+    "The plateau overlay is labelled 'illustrative, not OpenAI data'",
+    "Each threshold label shows its podcast value (0.99, 0.91, 0.76)",
+    "On a 375px screen, the slider and word panel stack vertically"
+  ],
+  "score": 4.25,
+  "episode": {
+    "slug": "jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315",
+    "title": "Jensen Huang Is Back: Inside NVIDIA’s $1 Trillion Comeback After 11 Days Out | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315"
+  }
+}
