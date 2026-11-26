@@ -1,0 +1,37 @@
+{
+  "slug": "ep315-token-torrent",
+  "kind": "demo",
+  "title": "Token Torrent",
+  "one_liner": "Talk for ten seconds and see how much text an avatar could write in that time at today's speed versus a million tokens per second.",
+  "headline": "Press Speak, talk for a few seconds, and watch how many tokens, pages and books an avatar could have written at today's 100 tokens/second versus the million-token-per-second future Dave Blundin predicts.",
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315"
+  },
+  "timestamp": "01:12:14",
+  "idea_score": 4.2,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 7,
+    "code": 7,
+    "honesty": 8
+  },
+  "overall": 7.75,
+  "created": "2026-11-25T14:46:15+00:00",
+  "updated": "2026-11-25T14:46:15+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-25T14:46:15+00:00",
+      "overall": 7.75,
+      "summary": "A tight, single-file build that does exactly what the idea card asked: an honest, well-labelled comparison of real vs. predicted avatar speed driven by the visitor's own speaking time, with clean mobile stacking and no external dependencies. Figures are correctly cited and internally consistent (books/s, multiplier, and token math all check out), estimates are clearly tagged, and every acceptance criterion holds up against the code and screenshots. A few small polish items remain (duplicate animation loops, a stitched double-quote, minor duration-display rounding) but nothing blocks publishing."
+    }
+  ]
+}

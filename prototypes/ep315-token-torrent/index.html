@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Token Torrent — Moonshots, Built</title>
+<style>
+  :root{
+    --bg:#070a12;
+    --bg-panel:#0e1322;
+    --bg-panel2:#0b1120;
+    --line:#1e2740;
+    --text:#e7ecf7;
+    --muted:#8a93ad;
+    --accent:#49e3b0;
+    --accent2:#ff9f5a;
+    --today:#5aa8ff;
+    --pred:#ff9f5a;
+    --danger:#ff6b6b;
+    --focus:#ffd866;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f4f6fb;
+      --bg-panel:#ffffff;
+      --bg-panel2:#f0f2f8;
+      --line:#d6dced;
+      --text:#121626;
+      --muted:#5b6478;
+    }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:radial-gradient(circle at 50% -10%, #122034 0%, var(--bg) 55%);
+    color:var(--text);
+    font-family:"Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    font-size:16px;
+    line-height:1.45;
+    min-height:100vh;
+    padding:16px;
+  }
+  .wrap{max-width:1040px;margin:0 auto;}
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+  }
+
+  header{
+    text-align:center;
+    padding:18px 8px 6px;
+  }
+  header h1{
+    font-family:"Courier New", monospace;
+    font-size:clamp(28px, 6vw, 46px);
+    margin:0 0 6px;
+    letter-spacing:1px;
+    background:linear-gradient(90deg, var(--today), var(--pred));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  header p.tagline{
+    max-width:640px;
+    margin:0 auto 10px;
+    color:var(--muted);
+    font-size:16px;
+  }
+  .cite-chip{
+    display:inline-flex;
+    gap:6px;
+    align-items:center;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 14px;
+    font-size:13px;
+    color:var(--muted);
+  }
+
+  .speak-panel{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:18px;
+    margin:18px 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    align-items:center;
+    justify-content:center;
+  }
+  .speak-main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    min-width:180px;
+  }
+  #speakBtn{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:3px solid var(--accent);
+    background:radial-gradient(circle, rgba(73,227,176,0.18), transparent 70%);
+    color:var(--text);
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+    min-height:40px;
+  }
+  #speakBtn:hover{transform:scale(1.03);}
+  #speakBtn.recording{
+    border-color:var(--danger);
+    background:radial-gradient(circle, rgba(255,107,107,0.25), transparent 70%);
+    box-shadow:0 0 30px rgba(255,107,107,0.35);
+  }
+  #speakTimer{
+    font-family:"Courier New", monospace;
+    font-size:22px;
+    color:var(--accent);
+    min-height:28px;
+  }
+  .speak-hint{color:var(--muted); font-size:13px; text-align:center;}
+
+  .type-alt{
+    flex:1;
+    min-width:240px;
+    max-width:420px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .type-alt label{font-size:13px; color:var(--muted);}
+  .type-alt textarea{
+    width:100%;
+    min-height:64px;
+    resize:vertical;
+    background:var(--bg-panel2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    color:var(--text);
+    padding:10px;
+    font-size:15px;
+    font-family:inherit;
+  }
+  #typedEstimate{font-size:13px; color:var(--muted);}
+
+  .results-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin:4px 0 18px;
+  }
+  .result-card{
+    flex:1;
+    min-width:220px;
+    max-width:300px;
+    background:var(--bg-panel2);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px 14px;
+    text-align:center;
+  }
+  .result-card h4{margin:0 0 6px; font-size:13px; color:var(--muted); font-weight:600;}
+  .result-card .big{font-size:20px; font-weight:700; font-family:"Courier New", monospace;}
+  .result-card.today .big{color:var(--today);}
+  .result-card.pred .big{color:var(--pred);}
+  .result-card small{display:block; color:var(--muted); font-size:12px; margin-top:4px;}
+
+  .comparison{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .pane{
+    flex:1 1 400px;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    min-width:0;
+  }
+  .pane.today{border-top:4px solid var(--today);}
+  .pane.pred{border-top:4px solid var(--pred);}
+
+  .pane-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .pane-head h2{margin:0; font-size:18px;}
+  .badge{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:999px;
+  }
+  .badge.cited{background:rgba(90,168,255,0.18); color:var(--today);}
+  .badge.predicted{background:rgba(255,159,90,0.18); color:var(--pred);}
+
+  .speed-line{
+    font-family:"Courier New", monospace;
+    font-size:15px;
+    margin:6px 0 2px;
+  }
+  .pane.today .speed-line{color:var(--today);}
+  .pane.pred .speed-line{color:var(--pred);}
+  .source-note{font-size:12px; color:var(--muted); margin:0 0 10px;}
+
+  .slider-row{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin:10px 0 14px;
+  }
+  .slider-row label{font-size:13px; color:var(--muted);}
+  input[type=range]{
+    width:100%;
+    height:40px;
+    accent-color:var(--pred);
+    cursor:pointer;
+  }
+  .slider-vals{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    color:var(--muted);
+  }
+
+  .ambient-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8px;
+    margin:8px 0 6px;
+    flex-wrap:wrap;
+  }
+  .ambient-row .bps{font-family:"Courier New", monospace; font-weight:700;}
+  .pane.today .bps{color:var(--today);}
+  .pane.pred .bps{color:var(--pred);}
+
+  .progress-track{
+    height:10px;
+    border-radius:6px;
+    background:var(--bg-panel2);
+    border:1px solid var(--line);
+    overflow:hidden;
+    margin-bottom:10px;
+  }
+  .progress-fill{
+    height:100%;
+    width:0%;
+    border-radius:6px;
+    transition:width .1s linear;
+  }
+  .pane.today .progress-fill{background:var(--today);}
+  .pane.pred .progress-fill{background:var(--pred);}
+
+  .shelf-wrap{
+    position:relative;
+    height:92px;
+    overflow:hidden;
+    background:var(--bg-panel2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    margin-bottom:10px;
+  }
+  .shelf{
+    position:absolute;
+    bottom:0; left:0;
+    display:flex;
+    align-items:flex-end;
+    gap:2px;
+    padding:4px 4px 0;
+    flex-wrap:wrap-reverse;
+    height:100%;
+    overflow:hidden;
+  }
+  .spine{
+    width:9px;
+    border-radius:2px 2px 0 0;
+    flex-shrink:0;
+  }
+  .shelf-overflow{
+    position:absolute;
+    top:4px; right:8px;
+    font-size:11px;
+    color:var(--muted);
+    background:rgba(0,0,0,0.25);
+    padding:2px 6px;
+    border-radius:6px;
+  }
+
+  .textfill{
+    font-family:"Courier New", monospace;
+    font-size:12px;
+    line-height:1.5;
+    color:var(--muted);
+    background:var(--bg-panel2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:8px 10px;
+    height:70px;
+    overflow:hidden;
+    white-space:pre-wrap;
+    word-break:break-word;
+  }
+  .textfill-note{font-size:11px; color:var(--muted); margin:4px 0 0;}
+
+  .assumptions{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px 18px;
+    margin:18px 0;
+  }
+  .assumptions h3{margin-top:0; font-size:16px;}
+  .assumptions ul{margin:0; padding-left:18px; font-size:14px; color:var(--muted);}
+  .assumptions li{margin-bottom:6px;}
+  .tag-estimate{
+    background:rgba(255,216,102,0.18);
+    color:var(--focus);
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    padding:1px 7px;
+    border-radius:999px;
+    margin-left:4px;
+  }
+
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+    padding:20px 10px 8px;
+  }
+
+  @media (max-width:700px){
+    .comparison{flex-direction:column;}
+    .pane{flex-basis:auto;}
+    .speak-panel{flex-direction:column;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; animation:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>TOKEN TORRENT</h1>
+    <p class="tagline">Talk for a few seconds. Watch how much text an avatar could write in that time &mdash; at today's speed, and at the speed Dave Blundin says is coming.</p>
+    <span class="cite-chip">🎙️ Moonshots ep&nbsp;315 &middot; 01:12:14 &middot; Dave Blundin</span>
+  </header>
+
+  <section class="speak-panel">
+    <div class="speak-main">
+      <button id="speakBtn" type="button" aria-pressed="false">🎤 Speak</button>
+      <div id="speakTimer" aria-live="polite">0.0s</div>
+      <div class="speak-hint">Press, say something, press Stop.</div>
+    </div>
+    <div class="type-alt">
+      <label for="typedText">...or type what you'd say instead</label>
+      <textarea id="typedText" placeholder="e.g. Tell me about your biggest moonshot idea and why it matters to you."></textarea>
+      <div id="typedEstimate">Estimated speaking time: 0.0s (at ~150 words/min <span class="tag-estimate">estimate</span>)</div>
+    </div>
+  </section>
+
+  <section class="results-strip" aria-live="polite">
+    <div class="result-card today">
+      <h4>Today &middot; 100 tok/s, over <span id="durLabelToday">0.0s</span></h4>
+      <div class="big" id="resTokensToday">0 tokens</div>
+      <small id="resBooksToday">≈ 0 pages written</small>
+    </div>
+    <div class="result-card pred">
+      <h4>Prediction &middot; <span id="speedLabelShort">1,000,000</span> tok/s, over <span id="durLabelPred">0.0s</span></h4>
+      <div class="big" id="resTokensPred">0 tokens</div>
+      <small id="resBooksPred">≈ 0 books written</small>
+    </div>
+  </section>
+
+  <section class="comparison">
+
+    <div class="pane today">
+      <div class="pane-head">
+        <h2>Today</h2>
+        <span class="badge cited">as stated on the podcast</span>
+      </div>
+      <div class="speed-line">≈100 tokens/second</div>
+      <p class="source-note">"from about 100 tokens per second" &mdash; Dave Blundin, 01:12:14</p>
+
+      <div class="ambient-row">
+        <span>Books being written, continuously:</span>
+        <span class="bps" id="bpsToday">0.0008 books/s</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progToday"></div></div>
+      <div class="shelf-wrap">
+        <div class="shelf" id="shelfToday"></div>
+        <div class="shelf-overflow" id="overflowToday" hidden></div>
+      </div>
+      <div class="textfill" id="textToday"></div>
+      <p class="textfill-note">Live preview, filler text generated locally.</p>
+    </div>
+
+    <div class="pane pred">
+      <div class="pane-head">
+        <h2>Prediction</h2>
+        <span class="badge predicted">prediction, not a shipped product</span>
+      </div>
+      <div class="speed-line"><span id="speedLabel">1,000,000</span> tokens/second &mdash; <span id="speedMultiple">10,000&times;</span> today's speed</div>
+      <p class="source-note">Dave Blundin: "to a million tokens per second... within <strong>18 months</strong> for sure" &mdash; 01:12:14</p>
+
+      <div class="slider-row">
+        <label for="speedSlider">Speed slider &mdash; slide between today's speed and the predicted speed</label>
+        <input type="range" id="speedSlider" min="0" max="1000" value="1000" step="1">
+        <div class="slider-vals"><span>100 tok/s (today)</span><span>1,000,000 tok/s (prediction)</span></div>
+      </div>
+
+      <div class="ambient-row">
+        <span>Books being written, continuously:</span>
+        <span class="bps" id="bpsPred">8.33 books/s</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progPred"></div></div>
+      <div class="shelf-wrap">
+        <div class="shelf" id="shelfPred"></div>
+        <div class="shelf-overflow" id="overflowPred" hidden></div>
+      </div>
+      <div class="textfill" id="textPred"></div>
+      <p class="textfill-note">Live preview, filler text generated locally and throttled for your browser.</p>
+    </div>
+
+  </section>
+
+  <section class="assumptions">
+    <h3>Assumptions used for the math</h3>
+    <ul>
+      <li>≈0.75 words per token <span class="tag-estimate">estimate</span> (roughly how English tokenizers split words)</li>
+      <li>≈300 words per page <span class="tag-estimate">estimate</span> (standard manuscript page)</li>
+      <li>≈90,000 words per novel-length book <span class="tag-estimate">estimate</span></li>
+      <li>≈150 words per minute spoken <span class="tag-estimate">estimate</span> (used only to turn a typed sentence into an estimated speaking time)</li>
+      <li>100 tokens/second today and "a million tokens per second" within 18 months are figures Dave Blundin gives on the episode, cited above; everything else on this page is derived from those two numbers.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Inspired by Moonshots, Built ep&nbsp;315, "Thanksgiving Special: The Moments That Almost Ended Us (And Why We're Grateful)", around 01:12:14 &mdash; Dave Blundin on real-time avatar token speeds.
+    Fan-made prototype, not affiliated with the show.
+    <br>
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-315" target="_blank" rel="noopener">Listen to the episode</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- estimates (labelled in the UI) ----
+  var WORDS_PER_TOKEN = 0.75;
+  var WORDS_PER_PAGE = 300;
+  var WORDS_PER_BOOK = 90000;
+  var SPEAKING_WORDS_PER_SEC = 150 / 60; // 2.5
+
+  var SPEED_TODAY = 100;
+  var SPEED_MIN = 100;
+  var SPEED_MAX = 1000000;
+
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var FILLER_WORDS = ("the quick story begins where light first learned to speak across silent oceans of thought "+
+    "every avatar dreams in numbers folding ideas into pages that breathe new worlds open quietly beneath old skies "+
+    "rivers of language pour through small machines carrying whole libraries inside a single breath of code wonder "+
+    "characters wake inside endless chapters while clocks measure moments nobody has lived yet softly unfolding").split(/\s+/);
+
+  function randomWord(){ return FILLER_WORDS[Math.floor(Math.random()*FILLER_WORDS.length)]; }
+
+  function fmt(n, digits){
+    if (digits === undefined) digits = 0;
+    if (n < 1 && n > 0 && digits === 0) return n.toFixed(4);
+    return n.toLocaleString(undefined, {maximumFractionDigits:digits});
+  }
+
+  // ---------- Speak timer ----------
+  var speakBtn = document.getElementById('speakBtn');
+  var speakTimerEl = document.getElementById('speakTimer');
+  var typedText = document.getElementById('typedText');
+  var typedEstimate = document.getElementById('typedEstimate');
+
+  var speaking = false;
+  var speakStart = 0;
+  var duration = 0; // seconds, drives the results strip
+
+  function setDuration(d){
+    duration = d;
+    renderResults();
+  }
+
+  speakBtn.addEventListener('click', function(){
+    if (!speaking){
+      speaking = true;
+      speakStart = performance.now();
+      speakBtn.textContent = '⏹ Stop';
+      speakBtn.classList.add('recording');
+      speakBtn.setAttribute('aria-pressed', 'true');
+    } else {
+      speaking = false;
+      var d = (performance.now() - speakStart) / 1000;
+      speakBtn.textContent = '🎤 Speak';
+      speakBtn.classList.remove('recording');
+      speakBtn.setAttribute('aria-pressed', 'false');
+      speakTimerEl.textContent = d.toFixed(1) + 's';
+      setDuration(d);
+    }
+  });
+
+  typedText.addEventListener('input', function(){
+    if (speaking) return; // don't let typing fight with an in-progress recording
+    var words = typedText.value.trim().length ? typedText.value.trim().split(/\s+/).length : 0;
+    var est = words / SPEAKING_WORDS_PER_SEC;
+    typedEstimate.innerHTML = 'Estimated speaking time: ' + est.toFixed(1) + 's (at ~150 words/min <span class="tag-estimate">estimate</span>)';
+    setDuration(est);
+  });
+
+  // ---------- Results strip (exact duration math) ----------
+  var durLabelToday = document.getElementById('durLabelToday');
+  var durLabelPred = document.getElementById('durLabelPred');
+  var resTokensToday = document.getElementById('resTokensToday');
+  var resBooksToday = document.getElementById('resBooksToday');
+  var resTokensPred = document.getElementById('resTokensPred');
+  var resBooksPred = document.getElementById('resBooksPred');
+  var speedLabelShort = document.getElementById('speedLabelShort');
+
+  function statsFor(speed, d){
+    var tokens = speed * d;
+    var words = tokens * WORDS_PER_TOKEN;
+    var pages = words / WORDS_PER_PAGE;
+    var books = words / WORDS_PER_BOOK;
+    return {tokens:tokens, words:words, pages:pages, books:books};
+  }
+
+  function renderResults(){
+    var t = statsFor(SPEED_TODAY, duration);
+    var p = statsFor(currentPredSpeed, duration);
+
+    durLabelToday.textContent = duration.toFixed(1) + 's';
+    durLabelPred.textContent = duration.toFixed(1) + 's';
+    speedLabelShort.textContent = fmt(currentPredSpeed);
+
+    resTokensToday.textContent = fmt(t.tokens) + ' tokens';
+    resBooksToday.textContent = t.books >= 0.01
+      ? '≈ ' + fmt(t.books, 2) + ' books written'
+      : '≈ ' + fmt(t.pages, 2) + ' pages written';
+
+    resTokensPred.textContent = fmt(p.tokens) + ' tokens';
+    resBooksPred.textContent = p.books >= 0.01
+      ? '≈ ' + fmt(p.books, p.books < 10 ? 2 : 0) + ' books written'
+      : '≈ ' + fmt(p.pages, 2) + ' pages written';
+  }
+
+  // ---------- Prediction speed slider ----------
+  var speedSlider = document.getElementById('speedSlider');
+  var speedLabel = document.getElementById('speedLabel');
+  var speedMultiple = document.getElementById('speedMultiple');
+  var currentPredSpeed = SPEED_MAX;
+
+  function speedFromSlider(v){
+    return SPEED_MIN * Math.pow(SPEED_MAX / SPEED_MIN, v / 1000);
+  }
+
+  function updateSpeedMultiple(){
+    speedMultiple.textContent = fmt(currentPredSpeed / SPEED_TODAY) + '×';
+  }
+
+  speedSlider.addEventListener('input', function(){
+    currentPredSpeed = speedFromSlider(Number(speedSlider.value));
+    speedLabel.textContent = fmt(currentPredSpeed);
+    updateSpeedMultiple();
+    renderResults();
+  });
+
+  updateSpeedMultiple();
+
+  // ---------- Ambient bookshelf + books/s, driven purely by speed ----------
+  function makePaneState(shelfId, overflowId, progId, textId, color){
+    return {
+      shelf: document.getElementById(shelfId),
+      overflow: document.getElementById(overflowId),
+      prog: document.getElementById(progId),
+      text: document.getElementById(textId),
+      color: color,
+      bookProgress: 0,    // 0..1 of current book
+      spineCount: 0,
+      textAccum: 0,
+      lastWordAt: 0
+    };
+  }
+
+  var todayState = makePaneState('shelfToday','overflowToday','progToday','textToday', '#5aa8ff');
+  var predState = makePaneState('shelfPred','overflowPred','progPred','textPred', '#ff9f5a');
+
+  var MAX_SPINES = 70;
+
+  function addSpine(state){
+    var spine = document.createElement('div');
+    spine.className = 'spine';
+    var h = 30 + Math.random()*55;
+    spine.style.height = h + 'px';
+    spine.style.background = state.color;
+    spine.style.opacity = (0.55 + Math.random()*0.45).toFixed(2);
+    state.shelf.appendChild(spine);
+    state.spineCount++;
+    while (state.shelf.children.length > MAX_SPINES){
+      state.shelf.removeChild(state.shelf.firstChild);
+    }
+    if (state.spineCount > MAX_SPINES){
+      state.overflow.hidden = false;
+      state.overflow.textContent = fmt(state.spineCount) + ' total';
+    }
+  }
+
+  var bpsTodayEl = document.getElementById('bpsToday');
+  var bpsPredEl = document.getElementById('bpsPred');
+
+  var lastFrame = performance.now();
+
+  function tick(now){
+    var dt = Math.min((now - lastFrame) / 1000, 0.25);
+    lastFrame = now;
+
+    advancePane(todayState, SPEED_TODAY, dt, bpsTodayEl);
+    advancePane(predState, currentPredSpeed, dt, bpsPredEl);
+
+    requestAnimationFrame(tick);
+  }
+
+  function advancePane(state, speed, dt, bpsEl){
+    var wordsPerSec = speed * WORDS_PER_TOKEN;
+    var booksPerSec = wordsPerSec / WORDS_PER_BOOK;
+    bpsEl.textContent = (booksPerSec < 0.01 ? booksPerSec.toFixed(4) : booksPerSec.toFixed(2)) + ' books/s';
+
+    state.bookProgress += booksPerSec * dt;
+    while (state.bookProgress >= 1){
+      state.bookProgress -= 1;
+      addSpine(state);
+    }
+    state.prog.style.width = (state.bookProgress * 100).toFixed(2) + '%';
+
+    // text fill preview, throttled to stay smooth even at huge speeds
+    state.textAccum += wordsPerSec * dt;
+    var wordsToAdd = Math.min(Math.floor(state.textAccum), 25);
+    if (wordsToAdd > 0){
+      state.textAccum -= wordsToAdd;
+      var chunk = [];
+      for (var i=0;i<wordsToAdd;i++) chunk.push(randomWord());
+      state.text.textContent += (state.text.textContent ? ' ' : '') + chunk.join(' ');
+      if (state.text.textContent.length > 900){
+        state.text.textContent = state.text.textContent.slice(-900);
+      }
+      state.text.scrollTop = state.text.scrollHeight;
+    }
+  }
+
+  // live-update results while actually speaking
+  function liveSpeakLoop(){
+    if (speaking){
+      var d = (performance.now() - speakStart) / 1000;
+      speakTimerEl.textContent = d.toFixed(1) + 's';
+      setDuration(d);
+    }
+    requestAnimationFrame(liveSpeakLoop);
+  }
+
+  renderResults();
+  requestAnimationFrame(tick);
+  requestAnimationFrame(liveSpeakLoop);
+
+})();
+</script>
+</body>
+</html>
