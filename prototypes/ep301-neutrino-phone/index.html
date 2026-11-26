@@ -32,6 +32,20 @@
       <button id="fire" class="fire">Fire the beams</button>
     </section>
 
+    <section class="toggle-row">
+      <label class="fiberToggle">
+        <input type="checkbox" id="fiberMode">
+        Use real fiber-optic speed <span class="illustrative-pill">illustrative</span>
+      </label>
+      <p class="toggleHint">Off = both beams move at light speed in vacuum. On = the surface beam slows down the
+        way light actually does inside glass fiber &mdash; a rough, illustrative slowdown, not a measured figure.</p>
+    </section>
+
+    <div class="legend">
+      <p><span class="dot surfaceDot"></span> <span id="legendSurface">Fiber / satellite &mdash; follows the surface</span></p>
+      <p><span class="dot coreDot"></span> Neutrino beam &mdash; straight line through the core</p>
+    </div>
+
     <section class="stage" aria-label="Earth cross-section race animation">
       <svg id="earth" viewBox="0 0 400 420" role="img" aria-label="Cross section of Earth showing surface arc path and straight through-core path between the two chosen cities">
         <defs>
@@ -48,10 +62,18 @@
           </linearGradient>
         </defs>
 
-        <circle class="globeFill" cx="200" cy="190" r="150"/>
-        <circle class="layer mantle" cx="200" cy="190" r="118"/>
-        <circle class="layer outerCore" cx="200" cy="190" r="78"/>
-        <circle class="layer innerCore" cx="200" cy="190" r="38"/>
+        <circle class="globeFill" cx="200" cy="190" r="150">
+          <title>Crust (stylized, not to scale)</title>
+        </circle>
+        <circle class="layer mantle" cx="200" cy="190" r="118">
+          <title>Mantle (stylized, not to scale)</title>
+        </circle>
+        <circle class="layer outerCore" cx="200" cy="190" r="78">
+          <title>Outer core (stylized, not to scale)</title>
+        </circle>
+        <circle class="layer innerCore" cx="200" cy="190" r="38">
+          <title>Inner core (stylized, not to scale)</title>
+        </circle>
 
         <path id="arcPath" class="path surfacePath" fill="none"/>
         <path id="chordPath" class="path corePath" fill="none"/>
@@ -68,18 +90,13 @@
         <circle id="beamSurface" class="beam beamSurface" r="5"/>
         <circle id="beamCore" class="beam beamCore" r="5"/>
       </svg>
-
-      <div class="legend">
-        <p><span class="dot surfaceDot"></span> Fiber / satellite &mdash; follows the surface</p>
-        <p><span class="dot coreDot"></span> Neutrino beam &mdash; straight line through the core</p>
-      </div>
     </section>
 
     <section class="readout" aria-live="polite">
       <div class="card">
-        <h2>Surface route</h2>
+        <h2 id="surfaceCardTitle">Surface route</h2>
         <p class="big" id="surfaceDist">—</p>
-        <p class="small">light-speed transit: <strong id="surfaceTime">—</strong></p>
+        <p class="small"><span id="surfaceTimeLabel">light-speed transit</span>: <strong id="surfaceTime">—</strong></p>
       </div>
       <div class="card highlight">
         <h2>Through-core route</h2>
@@ -93,13 +110,24 @@
       </div>
     </section>
 
+    <p class="caption">
+      The dashed blue arc and the solid orange chord above are two routes across the <em>same</em> circle &mdash; the
+      one flattened plane that passes through both cities and Earth's center. A straight line between two points on a
+      circle is always shorter than the curve between them, so the chord (through the core) always beats the arc
+      (over the surface). This cutaway is that one plane, not a view of the globe from above, so city A always sits
+      at the top regardless of its real compass bearing to city B.
+    </p>
+
     <p class="disclaimer">
       <strong>Thought experiment, not a product.</strong> This assumes a neutrino beam could be aimed precisely enough
       to punch straight through the Earth and be caught on the other side &mdash; detecting a handful of neutrinos at all
       requires buildings full of equipment today, let alone a steerable point-to-point link. The animation is slowed
       down roughly <span id="slowFactor">—</span>&times; so the race is visible; real transit times are listed above.
-      Distances and light-speed latency are computed exactly from the two cities' coordinates &mdash; everything else
-      about building this is speculation from the episode.
+      Distances and light-speed latency are computed exactly from the two cities' coordinates &mdash; the "real fiber"
+      toggle's slowdown is an illustrative estimate of light in glass, not a precise measurement. As stated on the
+      podcast, Alex Wisner-Gross described wanting a neutrino-based link that shoots straight through the Earth,
+      beating fiber or satellite paths that must follow the surface or orbit &mdash; everything else about building
+      this is speculation beyond what was said in the episode.
     </p>
 
     <footer class="credit">

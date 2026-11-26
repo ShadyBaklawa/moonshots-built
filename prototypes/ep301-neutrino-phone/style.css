@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark light;
+  color-scheme: dark;
   --bg: #0a0b14;
   --panel: #13152280;
   --panel-border: #2c2f4a;
@@ -40,12 +40,12 @@ html, body {
 main {
   max-width: 760px;
   margin: 0 auto;
-  padding: 28px 18px 48px;
+  padding: 16px 18px 48px;
 }
 
 .intro {
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 10px;
 }
 
 .tag {
@@ -85,7 +85,7 @@ h1 {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 22px 0 18px;
+  margin: 12px 0 10px;
 }
 
 .field {
@@ -146,17 +146,68 @@ select:focus-visible, button:focus-visible {
 .fire:hover { filter: brightness(1.08); }
 .fire:active { transform: translateY(1px); }
 
+.toggle-row {
+  max-width: 520px;
+  margin: 0 auto 8px;
+  text-align: center;
+}
+
+.fiberToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fiberToggle input {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  accent-color: var(--accent-core);
+}
+
+.illustrative-pill {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--focus);
+  background: #ffd27a1a;
+  border: 1px solid #ffd27a55;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.toggleHint {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
 .stage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  margin: 10px 0 22px;
+  margin: 0 0 10px;
 }
+
+.caption {
+  max-width: 480px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 14px auto 0;
+}
+
+.layer, .globeFill { cursor: help; }
 
 #earth {
   width: 100%;
-  max-width: 420px;
+  max-width: 210px;
   height: auto;
 }
 
@@ -190,6 +241,7 @@ select:focus-visible, button:focus-visible {
   justify-content: center;
   color: var(--muted);
   font-size: 13px;
+  margin: 0 0 6px;
 }
 
 .legend p { margin: 0; display: flex; align-items: center; gap: 6px; }
@@ -207,7 +259,7 @@ select:focus-visible, button:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin: 10px 0 20px;
+  margin: 0 0 16px;
 }
 
 .card {
@@ -264,9 +316,17 @@ select:focus-visible, button:focus-visible {
 .credit a { color: var(--accent-surface); }
 
 @media (max-width: 560px) {
-  .readout { grid-template-columns: 1fr; }
   .field { min-width: 0; flex: 1 1 140px; }
   .controls { gap: 8px; }
+  .sub { font-size: 15px; }
+  .legend { gap: 6px 14px; font-size: 12px; }
+  .toggleHint { font-size: 11px; }
+  #earth { max-width: 150px; }
+  .readout { gap: 6px; }
+  .card { padding: 10px 6px; }
+  .card h2 { font-size: 10px; }
+  .big { font-size: 16px; }
+  .small { font-size: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

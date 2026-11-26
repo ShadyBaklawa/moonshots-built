@@ -28,6 +28,9 @@
 
   var EARTH_RADIUS_KM = 6371;
   var LIGHT_SPEED_KM_S = 299792.458;
+  // Illustrative only: a rough stand-in for how much slower light moves through glass fiber
+  // than through vacuum. Not a measured figure — see the "real fiber" toggle hint and README.
+  var ILLUSTRATIVE_FIBER_SLOWDOWN = 0.67;
   var CX = 200, CY = 190, R_PX = 150;
   var ANIM_MS = 2600;
 
@@ -35,6 +38,9 @@
   var cityBSelect = document.getElementById("cityB");
   var fireBtn = document.getElementById("fire");
   var swapBtn = document.getElementById("swap");
+  var fiberModeCheckbox = document.getElementById("fiberMode");
+  var legendSurface = document.getElementById("legendSurface");
+  var surfaceCardTitle = document.getElementById("surfaceCardTitle");
 
   CITIES.forEach(function (city, i) {
     var optA = document.createElement("option");
@@ -49,6 +55,20 @@
   });
   cityASelect.value = 0; // New York
   cityBSelect.value = 1; // London
+
+  // Picking the same city in both dropdowns makes theta = 0, so the arc/chord ratio
+  // becomes a 0/0 divide. Disable each select's own current city in the other select
+  // so that case can't happen.
+  function syncDisabledOptions() {
+    var aVal = cityASelect.value;
+    var bVal = cityBSelect.value;
+    Array.prototype.forEach.call(cityBSelect.options, function (opt) {
+      opt.disabled = opt.value === aVal;
+    });
+    Array.prototype.forEach.call(cityASelect.options, function (opt) {
+      opt.disabled = opt.value === bVal;
+    });
+  }
 
   function toRad(deg) { return (deg * Math.PI) / 180; }
 
@@ -104,15 +124,27 @@
   function render() {
     var a = CITIES[Number(cityASelect.value)];
     var b = CITIES[Number(cityBSelect.value)];
+    var fiberMode = fiberModeCheckbox.checked;
 
     var theta = centralAngle(a, b);
     var arcDistKm = EARTH_RADIUS_KM * theta;
     var chordDistKm = 2 * EARTH_RADIUS_KM * Math.sin(theta / 2);
 
-    var arcTimeMs = (arcDistKm / LIGHT_SPEED_KM_S) * 1000;
+    var surfaceSpeedKmS = fiberMode
+      ? LIGHT_SPEED_KM_S * ILLUSTRATIVE_FIBER_SLOWDOWN
+      : LIGHT_SPEED_KM_S;
+
+    var arcTimeMs = (arcDistKm / surfaceSpeedKmS) * 1000;
     var chordTimeMs = (chordDistKm / LIGHT_SPEED_KM_S) * 1000;
     var savedMs = arcTimeMs - chordTimeMs;
     var savedPct = arcTimeMs > 0 ? (savedMs / arcTimeMs) * 100 : 0;
+
+    surfaceCardTitle.textContent = fiberMode ? "Surface route (real fiber)" : "Surface route";
+    document.getElementById("surfaceTimeLabel").textContent =
+      fiberMode ? "fiber transit (illustrative)" : "light-speed transit";
+    legendSurface.textContent = fiberMode
+      ? "Fiber cable — slowed by glass (illustrative)"
+      : "Fiber / satellite — follows the surface";
 
     var angleA = -Math.PI / 2;
     var angleB = angleA + theta;
@@ -142,7 +174,7 @@
       angleA: angleA, angleB: angleB, theta: theta,
       ptA: ptA, ptB: ptB,
       arcDurationMs: ANIM_MS,
-      chordDurationMs: ANIM_MS * (chordDistKm / arcDistKm)
+      chordDurationMs: ANIM_MS * (chordTimeMs / arcTimeMs)
     };
 
     beamSurface.setAttribute("cx", ptA.x);
@@ -201,17 +233,20 @@
     beamCore.setAttribute("cy", current.ptA.y);
   }
 
-  cityASelect.addEventListener("change", function () { render(); resetBeams(); });
-  cityBSelect.addEventListener("change", function () { render(); resetBeams(); });
+  cityASelect.addEventListener("change", function () { syncDisabledOptions(); render(); resetBeams(); });
+  cityBSelect.addEventListener("change", function () { syncDisabledOptions(); render(); resetBeams(); });
   swapBtn.addEventListener("click", function () {
     var tmp = cityASelect.value;
     cityASelect.value = cityBSelect.value;
     cityBSelect.value = tmp;
+    syncDisabledOptions();
     render();
     resetBeams();
   });
   fireBtn.addEventListener("click", runRace);
+  fiberModeCheckbox.addEventListener("change", function () { render(); resetBeams(); });
 
+  syncDisabledOptions();
   render();
   resetBeams();
 })();

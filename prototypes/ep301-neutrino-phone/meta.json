@@ -2,7 +2,7 @@
   "slug": "ep301-neutrino-phone",
   "title": "Neutrino Phone",
   "one_liner": "Compare light-speed latency through Earth's core versus around its surface between any two cities.",
-  "headline": "Pick two cities and watch a neutrino beam racing straight through Earth's core beat a fiber signal curving over the surface — with exact light-speed math for both.",
+  "headline": "Pick two cities and watch an honest physics race decide whether tunneling a neutrino beam straight through Earth's core actually beats today's surface-hugging fiber and satellite links.",
   "episode": {
     "slug": "why-altman-says-accept-some-bad-things-happening-and-what-it-means-for-ai-safety-moonshots-301",
     "title": "Why Altman Says \"Accept Some Bad Things Happening\" and What It Means for AI Safety | MOONSHOTS #301",
@@ -12,25 +12,35 @@
   },
   "timestamp": "02:28:13",
   "idea_score": 4.5,
-  "version": 1,
+  "version": 2,
   "status": "ready",
   "scores": {
     "works": 9,
-    "fidelity": 8,
-    "wow": 7,
+    "fidelity": 7,
+    "wow": 6,
     "ux": 8,
-    "code": 7,
+    "code": 8,
     "honesty": 9
   },
-  "overall": 8.05,
+  "overall": 7.75,
   "created": "2026-10-20T21:29:43+00:00",
-  "updated": "2026-10-20T21:29:43+00:00",
+  "updated": "2026-11-25T17:38:47+00:00",
   "history": [
     {
       "version": 1,
       "at": "2026-10-20T21:29:43+00:00",
       "overall": 8.05,
       "summary": "A clean, self-contained physics toy that nails the core idea: real haversine/chord geometry, accurate light-speed latency, an animated cutaway race, and unusually thorough honesty framing (tag, disclaimer, README \"what's real\" section, footer credit). The one loose thread is a duplicated, unused `data/cities.json` file and a label (\"Through-core route\") that slightly overstates how close the straight-line path actually gets to the core for nearby city pairs."
+    },
+    {
+      "version": 2,
+      "at": "2026-11-25T17:38:47+00:00",
+      "overall": 7.75,
+      "summary": "A clean, self-contained, zero-dependency prototype that computes exact great-circle vs. chord geometry from real city coordinates and renders it as a labeled cross-section race. The physics and disclaimers are unusually careful and internally consistent (percentages check out against the geometry), though the default city pair (NY–London) only shows a 3.2% saving, which undersells the idea's drama compared to more antipodal pairs.",
+      "reasons": [
+        "A newer episode (steve-jurvetson-on-the-spacex-deal-that-almost-didn-t-happen-ep-314) revisits this topic: Pick two cities and race a fiber-optic route against a laser link between satellites in vacuum. (Jurvetson noted that light travels about 30% faster in a vacuum than in glass. Laser links between satellites also follow a straight path, unlike undersea cables that hug coastlines, so orbit can beat fiber on latency.)",
+        "A newer episode (ai-market-shocks-anthropic-s-stock-slide-gemini-releases-and-elon-s-435m-bet-314) revisits this topic: Race a data packet through undersea fiber against a laser relay through orbit between any two cities. (Steve explains that laser links between satellites beat fiber on the ground: light travels about 30% faster in vacuum than in glass, and space paths go straight instead of hugging coastlines.)"
+      ]
     }
   ]
 }
