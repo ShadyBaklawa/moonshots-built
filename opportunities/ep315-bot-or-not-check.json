@@ -1,0 +1,64 @@
+{
+  "title": "Bot-or-Not Check",
+  "one_liner": "Audits a business's AI voice, chat and avatar agents for clear 'I am an AI' disclosure and fixes the scripts.",
+  "timestamp": "01:08:22",
+  "speaker": "Peter Diamandis",
+  "context": "After a viral clip of an AI avatar recognising itself in a mirror, Peter asked when an AI must say it's an AI, who owns the memories it keeps, and whether these faces will be used to persuade and sell.",
+  "customer": "US and EU small-to-mid businesses running AI phone receptionists, sales chatbots or avatar agents, such as clinics' front desks, home-service companies and e-commerce brands",
+  "problem": "Companies are rolling out humanlike AI agents fast, often without consistent disclosure, memory notices or rules on persuasive selling. That risks customer backlash and trouble under emerging bot-disclosure rules, and nobody internally owns the question.",
+  "revenue_model": "A one-off audit and script rewrite at about $1,500 per agent, then $150 a month for re-testing after each update (estimate)",
+  "why_now": "The episode describes avatar agents realistic enough to pass a mirror test and going viral, with a public reaction largely of unease. That puts disclosure, memory and persuasion questions in front of every business that deploys one.",
+  "first_steps": [
+    "Call or chat with 20 local businesses' AI agents and log whether and when each one discloses that it's an AI",
+    "Publish the results as a short anonymised report and send it to the businesses with a fix offer",
+    "Build a one-page disclosure and memory-notice script template and sell the first two audits"
+  ],
+  "cost_to_start": "About 2 weeks and under $200 for call recording and a landing page",
+  "competition": "AI governance platforms and law firms cover this for enterprises. Small-business practical script audits seem thin (unknown).",
+  "risks": "Must stay practical rather than giving legal advice, so clients should be pointed to counsel on legal questions. Rules differ by state and country and keep changing, and some buyers will only care after an incident.",
+  "money": 3,
+  "ease": 4,
+  "speed": 4,
+  "evidence": 3,
+  "tool": {
+    "title": "Disclosure Script Grader",
+    "one_liner": "Paste your AI agent's opening script or a transcript and get a disclosure score plus a rewritten opening.",
+    "demo": "The user pastes the agent's greeting or a full conversation transcript. Rule-based checks flag whether the agent discloses that it's an AI, how early it does so, whether it mentions memory or recording, whether it offers a human, and any pressure-selling phrases. It returns a score and a suggested rewrite. If the visitor pastes their own AI key, the tool can also give a more detailed rewrite.",
+    "data_plan": "The customer's own pasted text, checked with bundled rules. The optional AI rewrite uses a key the visitor pastes in, and example mode uses canned transcripts.",
+    "feasibility": 5,
+    "acceptance": [
+      "Pasting a transcript where the AI never says it is an AI produces a failing disclosure score and highlights the first agent line",
+      "Pasting a script that opens with an AI disclosure and offers a human raises the score and clears those flags",
+      "With no API key, example mode shows a rewritten opening labelled as an example",
+      "A note on the page says this is a practical check and not legal advice",
+      "On a phone, the score and flag list stack under the text box"
+    ]
+  },
+  "figures": [
+    {
+      "value": "nearly 24 million",
+      "meaning": "views of the AI-avatar mirror-test video",
+      "timestamp": "01:05:37",
+      "said": "a video that has been seen nearly 24 million times",
+      "verified": true
+    },
+    {
+      "value": "about 175,000",
+      "meaning": "likes on the most popular uneasy quote post about the video",
+      "timestamp": "01:07:41",
+      "said": "about 175,000 likes more than the video itself",
+      "verified": true
+    }
+  ],
+  "score": 3.4,
+  "slug": "ep315-bot-or-not-check",
+  "episode": {
+    "slug": "jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315",
+    "title": "Jensen Huang Is Back: Inside NVIDIA’s $1 Trillion Comeback After 11 Days Out | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315"
+  },
+  "tool_slug": null,
+  "created": "2026-11-25T02:57:28+00:00"
+}

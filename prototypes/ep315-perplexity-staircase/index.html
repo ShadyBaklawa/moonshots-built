@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perplexity Staircase — Moonshots, Built</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="hero">
+    <p class="kicker">Moonshots, Built — demo</p>
+    <h1>The Perplexity Staircase</h1>
+    <p class="sub">Drag a model down the log‑perplexity scale and watch capability thresholds unlock, from
+      fluent chat to a millennium‑prize math proof.</p>
+  </header>
+
+  <main class="stage">
+
+    <section class="slider-panel" aria-label="Log perplexity control">
+      <div class="slider-head">
+        <span class="slider-label">log perplexity</span>
+        <span class="value-readout"><span id="valDisplay">1.50</span></span>
+      </div>
+
+      <div class="slider-track-wrap">
+        <div class="staircase" aria-hidden="true">
+          <div class="step step-3" id="step3"></div>
+          <div class="step step-2" id="step2"></div>
+          <div class="step step-1" id="step1"></div>
+        </div>
+
+        <div class="ticks" id="ticks"></div>
+
+        <input type="range" id="plexSlider" class="v-slider"
+               min="0.3" max="3.3" step="0.01" value="1.5"
+               aria-label="Log perplexity, lower is more capable"
+               aria-valuemin="0.3" aria-valuemax="3.3">
+      </div>
+
+      <p class="slider-hint">Top = high perplexity, more uncertain. Bottom = low perplexity, more capable.</p>
+      <p class="tick-legend">Podcast thresholds: <strong>0.99</strong> · <strong>0.91</strong> · <strong>0.76</strong></p>
+    </section>
+
+    <section class="word-panel" aria-label="Candidate next-word fan">
+      <p class="panel-title">What the model is choosing between</p>
+      <div class="fan-stage" id="fanStage">
+        <div class="sentence" id="sentence"></div>
+        <div class="focal-point" id="focalPoint"></div>
+        <svg class="fan-svg" id="fanSvg"></svg>
+        <div class="word-chips" id="wordChips"></div>
+      </div>
+      <p class="count-readout">≈ <strong><span id="countDisplay">4</span></strong> roughly equally likely next words
+        <span class="note">(2<sup>log perplexity</sup>, Alex's "bits" reading, base 2)</span></p>
+    </section>
+
+  </main>
+
+  <section class="thresholds" aria-label="Capability thresholds">
+    <h2>Thresholds stated on the podcast</h2>
+    <div class="threshold-grid">
+      <article class="threshold-card" id="th-099" data-threshold="0.99">
+        <span class="th-value">0.99</span>
+        <span class="th-label">Fluent conversation</span>
+        <span class="th-model">GPT‑3.5 era</span>
+      </article>
+      <article class="threshold-card" id="th-091" data-threshold="0.91">
+        <span class="th-value">0.91</span>
+        <span class="th-label">Benefits from thinking before answering</span>
+        <span class="th-model">GPT‑4 era</span>
+      </article>
+      <article class="threshold-card" id="th-076" data-threshold="0.76">
+        <span class="th-value">0.76</span>
+        <span class="th-label">Solving a millennium‑prize math problem</span>
+        <span class="th-model">near the "GPT‑6.2 Astra" mark, as stated on the podcast</span>
+      </article>
+    </div>
+    <p class="avalanche-note">Jakub Pachocki's warning: an avalanche of breakthroughs could start "as soon as 2027"
+      — as stated on the podcast.</p>
+  </section>
+
+  <section class="plateau-section">
+    <button id="toggleChart" class="toggle-btn" aria-expanded="false" aria-controls="chartWrap">
+      Show pretraining trend overlay (illustrative)
+    </button>
+    <div class="chart-wrap hidden" id="chartWrap">
+      <div class="chart-legend">
+        <span class="legend-item"><span class="swatch swatch-trend"></span>straight-line trend</span>
+        <span class="legend-item"><span class="swatch swatch-actual"></span>simulated plateau, then catch‑up</span>
+      </div>
+      <svg viewBox="0 0 360 170" class="trend-svg" role="img" aria-label="Illustrative chart of a straight trend line versus a simulated plateau that catches back up">
+        <line x1="30" y1="150" x2="340" y2="150" stroke="var(--grid)" stroke-width="1"/>
+        <line x1="30" y1="10" x2="30" y2="150" stroke="var(--grid)" stroke-width="1"/>
+        <polyline points="30,150 340,20" fill="none" stroke="var(--trend)" stroke-width="2" stroke-dasharray="6 5"/>
+        <polyline points="30,150 120,90 150,85 230,82 260,70 340,24"
+                   fill="none" stroke="var(--actual)" stroke-width="3"/>
+      </svg>
+      <p class="axis-caption">y: capability (illustrative) &nbsp;·&nbsp; x: pretraining compute (illustrative) →</p>
+      <p class="illustrative-tag">illustrative, not OpenAI data.</p>
+      <p class="chart-caption">Alex's reading: after a flat stretch around GPT‑4, capability catches back up to the
+        original trend — "we're back".</p>
+    </div>
+  </section>
+
+  <footer class="credit">
+    <p>Inspired by Moonshots EP #315, "Jensen Huang Is Back: Inside NVIDIA's $1 Trillion Comeback After 11 Days Out",
+      around 00:20:36. Fan-made prototype, not affiliated with the show.
+      <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315" target="_blank" rel="noopener">Episode source</a>
+    </p>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

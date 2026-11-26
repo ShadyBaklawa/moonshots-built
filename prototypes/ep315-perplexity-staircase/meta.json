@@ -1,0 +1,37 @@
+{
+  "slug": "ep315-perplexity-staircase",
+  "kind": "demo",
+  "title": "Perplexity Staircase",
+  "one_liner": "Drag a model down the log-perplexity scale and watch capability thresholds unlock, from chat to millennium-prize math.",
+  "headline": "Drag a vertical slider down the log-perplexity scale and watch a model's capability thresholds — fluent chat, thinking before answering, solving a millennium-prize problem — light up one by one.",
+  "episode": {
+    "slug": "jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315",
+    "title": "Jensen Huang Is Back: Inside NVIDIA’s $1 Trillion Comeback After 11 Days Out | EP #315",
+    "number": 315,
+    "date": "2026-11-25",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315"
+  },
+  "timestamp": "00:20:36",
+  "idea_score": 4.25,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 9,
+    "fidelity": 9,
+    "wow": 7,
+    "ux": 8,
+    "code": 8,
+    "honesty": 8
+  },
+  "overall": 8.25,
+  "created": "2026-11-25T02:57:28+00:00",
+  "updated": "2026-11-25T02:57:28+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-25T02:57:28+00:00",
+      "overall": 8.25,
+      "summary": "A clean, self-contained single-idea toy that faithfully reproduces the episode's log-perplexity staircase, with correctly attributed podcast figures, a clearly labeled illustrative plateau overlay, and solid mobile/accessibility handling. No dependencies, no console errors, and all five acceptance criteria check out against the code and screenshots. It's a smaller, quieter demo than some — the word fan's numeric range is modest and the most interesting overlay is tucked behind a button — but it's honest, correct, and ready to publish as-is."
+    }
+  ]
+}
