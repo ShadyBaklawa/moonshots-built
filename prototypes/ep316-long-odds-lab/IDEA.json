@@ -1,0 +1,67 @@
+{
+  "title": "Long-Odds Lab",
+  "one_liner": "Explore how '8x more likely' claims about foreign-born, dropout and adopted tech CEOs are calculated from base rates.",
+  "timestamp": "00:31:34",
+  "speaker": "Dave Blundin",
+  "context": "Dave had an AI compare top tech CEOs by market cap with the general population. He says about 14% of Americans are foreign-born but 60% of top tech CEOs are, and that dropouts and adoptees are also heavily overrepresented.",
+  "demo": "The visitor sees two bars for each trait: share of the population and share of the CEO group. Sliders adjust both shares and the CEO sample size. A live readout shows the representation ratio and the odds ratio side by side, explains why they differ, and shows how much uncertainty a small group of CEOs creates. Preset buttons load the episode's stated figures.",
+  "data_plan": "Episode figures are bundled as presets. Everything else comes from the user's slider inputs, with formulas shown on screen. No outside data.",
+  "feasibility": 5,
+  "wow": 3,
+  "fidelity": 4,
+  "novelty": 4,
+  "related_existing": null,
+  "risks": "The episode's numbers don't fit together cleanly. 60% ÷ 14% is about 4.3x as a representation ratio, while the episode says 8x. The 8x may be an odds ratio or rest on a different base, so the tool must point out this gap and not settle it silently. The 3x dropout and 10x adopted figures have no base rates given on the show. Avoid suggesting causation or encouraging stereotypes.",
+  "figures": [
+    {
+      "value": "14%",
+      "meaning": "share of the US population that is foreign-born and naturalized, as stated",
+      "timestamp": "00:31:34",
+      "said": "14% of the U.S. is foreign-born and naturalized.",
+      "verified": true
+    },
+    {
+      "value": "60%",
+      "meaning": "share of tech CEOs by market cap who are foreign-born, as stated",
+      "timestamp": "00:31:34",
+      "said": "60% of tech CEOs by market cap are foreign-born.",
+      "verified": true
+    },
+    {
+      "value": "8x",
+      "meaning": "how much more likely a foreign-born person is to be a top tech CEO, per Dave's AI analysis",
+      "timestamp": "00:31:34",
+      "said": "you're eight times more likely to be a great",
+      "verified": true
+    },
+    {
+      "value": "3x",
+      "meaning": "stated likelihood multiplier for US-born college dropouts",
+      "timestamp": "00:31:34",
+      "said": "if you're a college dropout, you're three times more likely.",
+      "verified": true
+    },
+    {
+      "value": "10x",
+      "meaning": "stated likelihood multiplier for adoptees",
+      "timestamp": "00:32:17",
+      "said": "if you're adopted, you're 10 times more likely",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Clicking the 'Foreign-born (episode)' preset sets the bars to 14% and 60% and shows the representation ratio of about 4.3x next to an odds-ratio readout",
+    "A visible note explains that the episode's 8x does not equal 60/14 and lists possible reasons",
+    "Moving the CEO sample-size slider widens or narrows a shown uncertainty band around the ratio",
+    "Presets for 3x and 10x are labeled 'claimed on show — base rates not given'",
+    "At 390px width the bars and sliders stack vertically and all readouts stay visible"
+  ],
+  "score": 4.05,
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #316",
+    "number": 316,
+    "date": "2026-11-27",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316"
+  }
+}
