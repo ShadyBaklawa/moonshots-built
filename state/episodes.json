@@ -1,4 +1,61 @@
 {
+  "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316": {
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #316",
+    "date": "2026-11-27",
+    "number": 316,
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316",
+    "attempts": 0,
+    "found": "2026-11-27T04:17:16+00:00",
+    "status": "built",
+    "updated": "2026-11-27T04:33:56+00:00",
+    "prototypes": [
+      "ep316-mission-match-board",
+      "ep316-long-odds-lab"
+    ],
+    "briefs": [
+      "ep316-stated-goal-sponsor-finder"
+    ],
+    "ideas": [
+      {
+        "title": "Long-Odds Lab",
+        "score": 4.05,
+        "timestamp": "00:31:34"
+      },
+      {
+        "title": "The Seven Percent Club",
+        "score": 3.85,
+        "timestamp": "00:48:02"
+      },
+      {
+        "title": "One Hundred Fifty Nos",
+        "score": 3.55,
+        "timestamp": "00:45:22"
+      },
+      {
+        "title": "Daily Toll Clock",
+        "score": 3.55,
+        "timestamp": "00:09:26"
+      }
+    ],
+    "opportunities": [
+      {
+        "title": "Stated-Goal Sponsor Finder",
+        "score": 3.4,
+        "timestamp": "00:46:25"
+      },
+      {
+        "title": "Before-It's-Lost Family Interviews",
+        "score": 2.95,
+        "timestamp": "00:30:15"
+      },
+      {
+        "title": "Table-Ready AI Briefs",
+        "score": 2.6,
+        "timestamp": "00:50:04"
+      }
+    ],
+    "summary": "This is a Thanksgiving gratitude episode with almost no news. Peter, Salim, Dave and Alex each tell stories about near-disasters that turned out well: a stolen fetal pig, a board nearly firing a CEO, a failed startup, a rejection from a summer program, and about 150 rejections before the first $10M space prize found its sponsor. In between, they share a few numbers: foreign-born and adopted founders being overrepresented among tech CEOs, Google linking employee success to adversity overcome early, 150,000 deaths a day, and the claim that about 7% of all humans who ever lived are alive now."
+  },
   "jensen-huang-is-back-inside-nvidia-s-1-trillion-comeback-after-11-days-out-ep-315": {
     "title": "Jensen Huang Is Back: Inside NVIDIA’s $1 Trillion Comeback After 11 Days Out | EP #315",
     "date": "2026-11-25",

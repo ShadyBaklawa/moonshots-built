@@ -147,3 +147,8 @@
 {"at": "2026-11-25T17:32:54+00:00", "label": "review:ep301-neutrino-phone", "est_cost_usd": 0.2446, "turns": 16, "subtype": "success"}
 {"at": "2026-11-25T17:37:26+00:00", "label": "upgrade:ep301-neutrino-phone:fix1", "est_cost_usd": 0.9438, "turns": 53, "subtype": "success"}
 {"at": "2026-11-25T17:38:47+00:00", "label": "review:ep301-neutrino-phone", "est_cost_usd": 0.1744, "turns": 10, "subtype": "success"}
+{"at": "2026-11-27T04:19:44+00:00", "label": "extract:thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316", "est_cost_usd": 0.4249, "turns": 2, "subtype": "success"}
+{"at": "2026-11-27T04:24:41+00:00", "label": "build:ep316-mission-match-board", "est_cost_usd": 0.752, "turns": 41, "subtype": "success"}
+{"at": "2026-11-27T04:27:01+00:00", "label": "review:ep316-mission-match-board", "est_cost_usd": 0.2792, "turns": 9, "subtype": "success"}
+{"at": "2026-11-27T04:31:33+00:00", "label": "build:ep316-long-odds-lab", "est_cost_usd": 0.6699, "turns": 30, "subtype": "success"}
+{"at": "2026-11-27T04:33:56+00:00", "label": "review:ep316-long-odds-lab", "est_cost_usd": 0.2528, "turns": 14, "subtype": "success"}
