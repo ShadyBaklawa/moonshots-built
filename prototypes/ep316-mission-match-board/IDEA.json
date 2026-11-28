@@ -1,0 +1,59 @@
+{
+  "title": "Mission Match Board",
+  "one_liner": "Paste your prize mission and a list of prospect bios to get a ranked list of who has publicly said they care about your goal.",
+  "timestamp": "00:46:25",
+  "speaker": "Peter Diamandis",
+  "context": "Peter's space prize was turned down at least 150 times over about four and a half years. He finally found his sponsor by reading a magazine list of wealthy young women, where one profile said she wanted to fly suborbital.",
+  "demo": "The organizer types a short mission description and pastes prospect profiles, one per block (name plus bio or interview text they collected). The tool pulls out goal phrases and scores each prospect on overlap with the mission's keywords and synonyms. It shows the matching sentences highlighted and ranks the list. Each prospect gets a draft outreach angle, either from a template or using the visitor's own pasted AI key, and the result exports as CSV.",
+  "data_plan": "Mission text and prospect profiles come from the customer. Bundled example profiles are clearly marked fictional. AI drafting only works with a key the visitor pastes in. Without one, example mode uses template drafts.",
+  "feasibility": 4,
+  "risks": "Rich prospects are hard to reach even when they match well, so results depend on the client's outreach. There are privacy and ethics questions in profiling individuals, so stick to their public statements. Clients may judge the service only on dollars raised. The '150 times' figure is one anecdote, not market data.",
+  "figures": [
+    {
+      "value": "$10 million",
+      "meaning": "size of the private spaceflight prize Peter announced",
+      "timestamp": "00:44:09",
+      "said": "this $10 million prize for private spaceflight",
+      "verified": true
+    },
+    {
+      "value": "150",
+      "meaning": "minimum number of times the prize pitch was rejected",
+      "timestamp": "00:45:22",
+      "said": "we were rejected 150 times at least",
+      "verified": true
+    },
+    {
+      "value": "40",
+      "meaning": "number of women on the magazine list Peter used to find the sponsor",
+      "timestamp": "00:46:25",
+      "said": "the wealthiest 40 women under 40",
+      "verified": true
+    }
+  ],
+  "acceptance": [
+    "Pasting a mission and 3+ prospect blocks then clicking Rank shows a sorted table with a match score and the highlighted sentences that drove each score",
+    "Loading the example set fills the page with fictional prospects labeled 'Example — fictional profiles' and ranks them",
+    "Each ranked row has a draft outreach paragraph that quotes that prospect's matched sentence; with no API key it is labeled template-generated",
+    "Export CSV downloads a file with name, score, matched evidence and draft for every prospect",
+    "At 390px width the ranking table becomes stacked cards with no horizontal scrolling"
+  ],
+  "related_existing": null,
+  "score": 3.4,
+  "kind": "tool",
+  "opportunity": {
+    "title": "Stated-Goal Sponsor Finder",
+    "one_liner": "Research service that finds wealthy individuals and companies whose public statements match a prize, challenge or event's mission.",
+    "customer": "Small nonprofits, foundations and organizers of incentive prizes, hackathons, student competitions and challenge grants in the US who have no full-time development staff",
+    "problem": "Organizers send the same pitch to generic lists of rich people and corporations, and nearly all of them say no. What they need is the few prospects who have said in public that they care about this exact goal. Finding them takes slow manual reading of profiles, interviews and filings.",
+    "revenue_model": "Fixed-fee prospect sprint, about $1,500–$3,000 for a ranked list of 25 matched prospects with evidence quotes and outreach angles (estimate). Optional monthly refresh at about $300 (estimate).",
+    "why_now": "The episode shows that the winning match came from a specific stated goal, not from wealth alone. AI research agents can now read hundreds of public profiles and interviews cheaply and pull out stated goals with sources, which used to take a development team weeks."
+  },
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #316",
+    "number": 316,
+    "date": "2026-11-27",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316"
+  }
+}

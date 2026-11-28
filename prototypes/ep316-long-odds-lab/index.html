@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long-Odds Lab — Moonshots, Built</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Long-Odds Lab</h1>
+    <p class="one-liner">How do "8x more likely" claims about tech CEOs actually get calculated from base rates? Slide the numbers and find out.</p>
+  </header>
+
+  <section class="presets" aria-label="Presets">
+    <button class="preset preset-foreign" data-preset="foreign" type="button">
+      <span class="preset-title">Foreign-born (episode)</span>
+      <span class="preset-sub">14% of US → 60% of top CEOs</span>
+    </button>
+    <button class="preset preset-dropout" data-preset="dropout" type="button">
+      <span class="preset-title">Dropout — claimed 3x</span>
+      <span class="preset-sub warn">claimed on show — base rates not given</span>
+    </button>
+    <button class="preset preset-adopted" data-preset="adopted" type="button">
+      <span class="preset-title">Adopted — claimed 10x</span>
+      <span class="preset-sub warn">claimed on show — base rates not given</span>
+    </button>
+  </section>
+
+  <div id="noBaseRateBanner" class="banner hidden" role="status"></div>
+
+  <main class="lab">
+
+    <section class="bars-panel" aria-label="Population vs CEO group shares">
+      <div class="bar-row">
+        <div class="bar-label">
+          <span>General US population</span>
+          <span class="bar-value" id="popValueLabel">14%</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill bar-pop" id="popBar" style="width:14%"></div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">
+          <span>Top tech CEOs (by market cap)</span>
+          <span class="bar-value" id="ceoValueLabel">60%</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill bar-ceo" id="ceoBar" style="width:60%"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls-panel" aria-label="Controls">
+      <div class="control">
+        <label for="popSlider">Population share with trait <span id="popSliderVal">14%</span></label>
+        <input type="range" id="popSlider" min="1" max="50" step="1" value="14">
+      </div>
+      <div class="control">
+        <label for="ceoSlider">CEO-group share with trait <span id="ceoSliderVal">60%</span></label>
+        <input type="range" id="ceoSlider" min="1" max="99" step="1" value="60">
+      </div>
+      <div class="control">
+        <label for="nSlider">Number of top CEOs sampled <span id="nSliderVal">10</span></label>
+        <input type="range" id="nSlider" min="5" max="50" step="1" value="10">
+      </div>
+    </section>
+
+    <section class="readout-panel" aria-label="Ratio readouts">
+      <div class="readout-grid">
+        <div class="readout-card">
+          <h2>Representation ratio</h2>
+          <p class="formula">CEO share ÷ population share</p>
+          <p class="big-number" id="repRatioValue">4.29x</p>
+          <p class="range-text" id="repRatioRange">range at this sample size: 2.6x – 7.1x</p>
+          <div class="scale" id="repScale">
+            <div class="scale-band" id="repBand"></div>
+            <div class="scale-point" id="repPoint"></div>
+            <div class="scale-target hidden" id="repTarget"></div>
+          </div>
+        </div>
+        <div class="readout-card">
+          <h2>Odds ratio</h2>
+          <p class="formula">(CEO odds) ÷ (population odds)</p>
+          <p class="big-number" id="oddsRatioValue">9.21x</p>
+          <p class="range-text" id="oddsRatioRange">range at this sample size: 3.1x – 23.4x</p>
+          <div class="scale" id="oddsScale">
+            <div class="scale-band" id="oddsBand"></div>
+            <div class="scale-point" id="oddsPoint"></div>
+            <div class="scale-target hidden" id="oddsTarget"></div>
+          </div>
+        </div>
+      </div>
+      <p class="uncertainty-note">The shaded band is the uncertainty in the CEO-group share itself: with only <span id="nEcho">10</span> CEOs in the sample, each individual CEO is worth about <span id="perCeoPct">10</span> percentage points, so the "true" share could plausibly sit anywhere in that band (95% Wilson interval). Fewer CEOs sampled → wider band.</p>
+    </section>
+
+    <section class="explainer" aria-label="Why 60 over 14 is not 8">
+      <h2>Why doesn't 60% ÷ 14% = 8x?</h2>
+      <p>Dave's AI said foreign-born founders are <strong>8x more likely</strong> to be a top tech CEO. But 60% ÷ 14% is about <strong>4.3x</strong> — a <em>representation ratio</em>, not the 8x stated on the show. A few things could explain the gap, and the tool doesn't pick one for you:</p>
+      <ul>
+        <li><strong>Different kind of ratio.</strong> The <em>odds ratio</em> for these same two numbers — (60/40) ÷ (14/86) — comes out to about <strong>9.2x</strong>, much closer to the stated 8x than the simple 4.3x representation ratio is. "X times more likely" is easy to say about either one, and they're genuinely different quantities.</li>
+        <li><strong>Different CEO set or year.</strong> The AI's "top tech CEOs by market cap" sample may not be exactly the same list, cutoff, or point in time used to produce the 60% figure quoted on the show.</li>
+        <li><strong>Loose wording.</strong> "Times more likely" in conversation doesn't always map onto one specific formula — it can blend ratio, odds ratio, and rough intuition.</li>
+        <li><strong>Small-sample noise.</strong> As the band below shows, "60% of top CEOs" estimated from a handful of people carries real uncertainty, so the point estimate itself has wiggle room.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Inspired by Moonshots EP #316, "Thanksgiving Special: The Moments That Almost Ended Us (And Why We're Grateful)", around 00:31:34. Fan-made prototype, not affiliated with the show.
+    <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316" target="_blank" rel="noopener">Episode source</a></p>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

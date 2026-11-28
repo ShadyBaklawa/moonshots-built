@@ -1,0 +1,37 @@
+{
+  "slug": "ep316-long-odds-lab",
+  "kind": "demo",
+  "title": "Long-Odds Lab",
+  "one_liner": "Explore how '8x more likely' claims about foreign-born, dropout and adopted tech CEOs are calculated from base rates.",
+  "headline": "Drag two sliders to see why the podcast's '8x more likely' claim about foreign-born tech CEOs doesn't actually equal 60% ÷ 14%.",
+  "episode": {
+    "slug": "thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316",
+    "title": "Thanksgiving Special: The Moments That Almost Ended Us (And Why We’re Grateful) | EP #316",
+    "number": 316,
+    "date": "2026-11-27",
+    "url": "https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316"
+  },
+  "timestamp": "00:31:34",
+  "idea_score": 4.05,
+  "version": 1,
+  "status": "ready",
+  "scores": {
+    "works": 8,
+    "fidelity": 9,
+    "wow": 6,
+    "ux": 7,
+    "code": 8,
+    "honesty": 9
+  },
+  "overall": 7.75,
+  "created": "2026-11-27T04:33:56+00:00",
+  "updated": "2026-11-27T04:33:56+00:00",
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-11-27T04:33:56+00:00",
+      "overall": 7.75,
+      "summary": "A tightly-scoped, honest stats explainer that does exactly what the idea brief asked: live representation vs. odds ratios, a sample-size-driven uncertainty band, and a clear, unresolved explanation of the 8x vs. 4.3x gap. Every number on screen traces back to a verified IDEA.json figure or a clearly-labeled derived/illustrative calculation, and all five acceptance criteria hold up under the code and screenshots. It's a bit dry and keeps its real payoff below the fold, but it's clean, self-contained, and faithful enough to show the hosts without embarrassment."
+    }
+  ]
+}

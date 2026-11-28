@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission Match Board — find who already cares about your mission</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">For prize &amp; challenge organizers</p>
+    <h1>Mission Match Board</h1>
+    <p class="sub">Paste your mission and the prospect bios you've collected. Get a ranked list of
+      who has <em>already said in public</em> that they care about your exact goal — with the
+      sentence that proves it.</p>
+    <p class="origin">Peter Diamandis' $10M spaceflight prize was turned down 150+ times — until he
+      read a magazine profile of a young woman who said she wanted to fly suborbital.
+      <span class="tag">as stated on the podcast</span></p>
+  </div>
+</header>
+
+<main>
+  <section class="panel" id="input-panel">
+    <div class="panel-head">
+      <h2>1. Your mission &amp; prospects</h2>
+      <button type="button" id="load-example" class="btn btn-ghost">Load example</button>
+    </div>
+
+    <div id="example-banner" class="example-banner" hidden>
+      Example — fictional profiles. These prospects and quotes are invented for demonstration.
+    </div>
+
+    <label for="mission-input">Mission description</label>
+    <textarea id="mission-input" rows="3"
+      placeholder="e.g. We're funding student teams who build low-cost water filters for refugee camps."></textarea>
+
+    <label for="prospects-input">Prospect profiles</label>
+    <p class="hint">One prospect per block. First line is their name, the rest is their bio,
+      interview quotes or public statements. Separate blocks with a blank line or a line of
+      <code>---</code>.</p>
+    <textarea id="prospects-input" rows="12"
+      placeholder="Jordan Reyes
+Tech investor who told a conference she wants to fund clean water access for displaced families.
+
+---
+
+Avery Chen
+Runs a logistics company, no public statements about water or refugees found."></textarea>
+
+    <div class="key-row">
+      <label for="api-key">Optional: your Anthropic API key, for AI-drafted outreach</label>
+      <input type="password" id="api-key" placeholder="sk-ant-... (kept only in your browser, never sent to us)" autocomplete="off">
+      <p class="hint small">Leave blank and drafts use a template instead. The key is held in
+        this page's memory only — not saved, not sent anywhere but Anthropic's API.</p>
+    </div>
+
+    <div class="action-row">
+      <button type="button" id="rank-btn" class="btn btn-primary">Rank prospects</button>
+      <span id="status-msg" class="status-msg" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="panel" id="results-panel" hidden>
+    <div class="panel-head">
+      <h2>2. Ranked matches</h2>
+      <button type="button" id="export-csv" class="btn btn-ghost">Export CSV</button>
+    </div>
+    <p class="hint">Scores compare each prospect's words against your mission's keywords and
+      common synonyms. This is simple keyword overlap, not proof of real interest — always read
+      the highlighted sentence yourself before reaching out.</p>
+
+    <table id="results-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Matched evidence</th>
+          <th>Draft outreach</th>
+        </tr>
+      </thead>
+      <tbody id="results-body"></tbody>
+    </table>
+  </section>
+</main>
+
+<footer>
+  Inspired by Moonshots EP #316, around 00:46:25. Fan-made prototype, not affiliated with the show.
+  <a href="https://podscripts.co/podcasts/moonshots-with-peter-diamandis/thanksgiving-special-the-moments-that-almost-ended-us-and-why-we-re-grateful-ep-316" target="_blank" rel="noopener">Episode source</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
